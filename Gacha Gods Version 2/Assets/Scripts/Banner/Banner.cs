@@ -14,7 +14,7 @@ public enum BannerType
 public class Banner : MonoBehaviour
 {
     [ReadOnly] public BannerType bannerType;
-    [SerializeField] int RateUpChances = 25;
+    [SerializeField] int RateUpChances = 10;
 
     [Header("Characters")]
     [ReadOnly, SerializeField, ShowIf("bannerType", BannerType.RateUp)] List<Character> rateUpCharacters = new List<Character>();

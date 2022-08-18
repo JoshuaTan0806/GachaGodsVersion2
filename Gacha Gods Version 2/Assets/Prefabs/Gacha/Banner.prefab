@@ -149,6 +149,7 @@ GameObject:
   - component: {fileID: 5915361989927485685}
   - component: {fileID: 1295327979107470875}
   - component: {fileID: 8077600917033480098}
+  - component: {fileID: 9215875680704084958}
   m_Layer: 5
   m_Name: 10 Pull
   m_TagString: Untagged
@@ -348,6 +349,19 @@ MonoBehaviour:
   roundedOutlineFilled: {fileID: 0}
   roundedOutlineText: {fileID: 0}
   roundedOutlineTextHighligted: {fileID: 0}
+--- !u!114 &9215875680704084958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 213512423796998305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7612dc167b5a70458770192ca9ab918, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: c6648b1e39d12be43998249c51aa0f86, type: 3}
 --- !u!1 &260499708082719798
 GameObject:
   m_ObjectHideFlags: 0
@@ -517,7 +531,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bannerType: 0
-  RateUpChances: 25
+  RateUpChances: 10
   rateUpCharacters: []
   charactersPulled: []
   PremiumRollButtonReference: {fileID: 494241637925213024}
@@ -1308,6 +1322,7 @@ GameObject:
   - component: {fileID: 5024277818147037464}
   - component: {fileID: 3328686829380132223}
   - component: {fileID: 728412043700660510}
+  - component: {fileID: 5225111333135302011}
   m_Layer: 5
   m_Name: 1 Pull
   m_TagString: Untagged
@@ -1507,6 +1522,19 @@ MonoBehaviour:
   roundedOutlineFilled: {fileID: 0}
   roundedOutlineText: {fileID: 0}
   roundedOutlineTextHighligted: {fileID: 0}
+--- !u!114 &5225111333135302011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4842030724063574906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7612dc167b5a70458770192ca9ab918, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: c6648b1e39d12be43998249c51aa0f86, type: 3}
 --- !u!1 &4869082565158821408
 GameObject:
   m_ObjectHideFlags: 0
@@ -1951,6 +1979,7 @@ GameObject:
   - component: {fileID: 494241637925213024}
   - component: {fileID: 8171435340688909515}
   - component: {fileID: 3127405115129439806}
+  - component: {fileID: 1055317323312246338}
   m_Layer: 5
   m_Name: Premium Pull
   m_TagString: Untagged
@@ -2150,6 +2179,19 @@ MonoBehaviour:
   roundedOutlineFilled: {fileID: 0}
   roundedOutlineText: {fileID: 0}
   roundedOutlineTextHighligted: {fileID: 0}
+--- !u!114 &1055317323312246338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6700562603891839633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7612dc167b5a70458770192ca9ab918, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: c6648b1e39d12be43998249c51aa0f86, type: 3}
 --- !u!1 &6814034843795520837
 GameObject:
   m_ObjectHideFlags: 0
@@ -2164,6 +2206,7 @@ GameObject:
   - component: {fileID: 846743493630130865}
   - component: {fileID: 4208034891857437123}
   - component: {fileID: 7580531192796478609}
+  - component: {fileID: 395160871873469051}
   m_Layer: 5
   m_Name: Character Odds
   m_TagString: Untagged
@@ -2363,6 +2406,19 @@ MonoBehaviour:
   roundedOutlineFilled: {fileID: 0}
   roundedOutlineText: {fileID: 0}
   roundedOutlineTextHighligted: {fileID: 0}
+--- !u!114 &395160871873469051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6814034843795520837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7612dc167b5a70458770192ca9ab918, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: c6648b1e39d12be43998249c51aa0f86, type: 3}
 --- !u!1 &6996265470801684168
 GameObject:
   m_ObjectHideFlags: 0
