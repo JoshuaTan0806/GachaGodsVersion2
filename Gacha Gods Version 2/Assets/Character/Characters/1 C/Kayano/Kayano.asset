@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df548b6b88a01f843b037cc5cba429e6, type: 3}
+  m_Name: Kayano
+  m_EditorClassIdentifier: 
+  series: ASsassination classroom
+  prefab: {fileID: 7531212531100412206, guid: 5288f6f8fd7e6fa4289f401549e9dc95, type: 3}
+  icon: {fileID: 0}
+  roles:
+  - {fileID: 11400000, guid: 2e97f9336ab26b6489cf2ff55d672b70, type: 2}
+  archetypes:
+  - {fileID: 11400000, guid: 02004ea139a9ea74d9d9a8a4088c422e, type: 2}
+  rarity: {fileID: 11400000, guid: 5caa1fcf88ed40b4abb3e1f7df2d8f23, type: 2}
+  baseStats:
+    m_keys: 0000000002000000010000000500000007000000
+    m_values:
+    - 562
+    - 176
+    - 2
+    - 0.7716296
+    - 0.90568775
+  mastery:
+  - {fileID: 11400000, guid: 6a3b551027850904e8f042a2bedb6991, type: 2}
+  - {fileID: 11400000, guid: 719891823c66c084699358900e73b9ca, type: 2}
+  - {fileID: 11400000, guid: f1eadde3633f6044397ba90e42a30169, type: 2}
+  - {fileID: 11400000, guid: a20d3c71ecd4f5542bb554b0a940f53c, type: 2}
+  - {fileID: 11400000, guid: 17f6bd8f779111041b7e85bd2b247dd5, type: 2}
+  - {fileID: 11400000, guid: 0ac0066ba20904448b938ae86b2a3cc8, type: 2}
+  attack: {fileID: 11400000, guid: 1e3a63950690fae45b5a4bdc2c8f2c56, type: 2}
+  spell: {fileID: 11400000, guid: e092cd60e812a8c4b8491b1bdf2939a1, type: 2}

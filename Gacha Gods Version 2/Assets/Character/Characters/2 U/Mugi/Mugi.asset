@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df548b6b88a01f843b037cc5cba429e6, type: 3}
+  m_Name: Mugi
+  m_EditorClassIdentifier: 
+  series: k-on
+  prefab: {fileID: 2630857784946583904, guid: 2fcf777c1dba1cf42b05cf5fd2823062, type: 3}
+  icon: {fileID: 0}
+  roles:
+  - {fileID: 11400000, guid: f60c0bb05b3f1e64f9e9065c6bf73a4f, type: 2}
+  archetypes:
+  - {fileID: 11400000, guid: 3780752fe85e61541add83dd3a9a3790, type: 2}
+  rarity: {fileID: 11400000, guid: 46abe82243041d443bc2279cd6345bb0, type: 2}
+  baseStats:
+    m_keys: 0000000002000000010000000500000007000000
+    m_values:
+    - 598
+    - 169
+    - 3
+    - 0.6510042
+    - 0.8093554
+  mastery:
+  - {fileID: 11400000, guid: 228ec08877e2a584dbd042d0739a4015, type: 2}
+  - {fileID: 11400000, guid: 5c1c390e2f7d69b46b02fdf1f7d369b5, type: 2}
+  - {fileID: 11400000, guid: 8363d3bbfd0625b42a6385b52e266e34, type: 2}
+  - {fileID: 11400000, guid: 303dd925311b4b245ad6d90bf71658a4, type: 2}
+  - {fileID: 11400000, guid: dcdc3b6e4eb032f46ad6dded2b9defae, type: 2}
+  - {fileID: 11400000, guid: 78b47cb5f3007414e826588fc3901f22, type: 2}
+  attack: {fileID: 11400000, guid: a703119985c913c4ebb77f95388e6896, type: 2}
+  spell: {fileID: 11400000, guid: 82ef18daa47eea240b3b2fc1a6690f34, type: 2}

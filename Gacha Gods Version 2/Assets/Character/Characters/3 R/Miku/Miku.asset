@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df548b6b88a01f843b037cc5cba429e6, type: 3}
+  m_Name: Miku
+  m_EditorClassIdentifier: 
+  series: Quints
+  prefab: {fileID: 8844663964833255663, guid: 6e03b4f49af2de0429e0b50baa0a0e8c, type: 3}
+  icon: {fileID: 0}
+  roles:
+  - {fileID: 11400000, guid: 3a67598af6bef5541b390cec4871b3fe, type: 2}
+  archetypes:
+  - {fileID: 11400000, guid: 02004ea139a9ea74d9d9a8a4088c422e, type: 2}
+  rarity: {fileID: 11400000, guid: 27d5dc7d806f2df4f80365ac1b3a74b0, type: 2}
+  baseStats:
+    m_keys: 0000000002000000010000000500000007000000
+    m_values:
+    - 618
+    - 180
+    - 4
+    - 0.89900774
+    - 0.94092
+  mastery:
+  - {fileID: 11400000, guid: b3fd7e3c604a5bd49be1e8221a3103ea, type: 2}
+  - {fileID: 11400000, guid: 6a45b3cf0192a7d40904faaa1dba9090, type: 2}
+  - {fileID: 11400000, guid: daf5e4184bfaf5742bbc614fd2e3ecf1, type: 2}
+  - {fileID: 11400000, guid: 56d76c1d221aabd42ab304e50e06f7e0, type: 2}
+  - {fileID: 11400000, guid: 2115d40784bff084da78b4620c2e35c4, type: 2}
+  - {fileID: 11400000, guid: f8edd2a1c35833848b7f78eb37e90338, type: 2}
+  attack: {fileID: 11400000, guid: d038e14dc4212434bb4cf38732fc25b4, type: 2}
+  spell: {fileID: 11400000, guid: 0ca752527aaa2e6469cecec5e8596299, type: 2}

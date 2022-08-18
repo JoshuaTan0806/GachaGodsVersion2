@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df548b6b88a01f843b037cc5cba429e6, type: 3}
+  m_Name: Yuri
+  m_EditorClassIdentifier: 
+  series: DDLC
+  prefab: {fileID: 4882377217396744901, guid: a18568db342ff364ab6e3e92366164f9, type: 3}
+  icon: {fileID: 0}
+  roles:
+  - {fileID: 11400000, guid: f60c0bb05b3f1e64f9e9065c6bf73a4f, type: 2}
+  archetypes:
+  - {fileID: 11400000, guid: bef0f7b6bd5394345b1174b05e1314be, type: 2}
+  rarity: {fileID: 11400000, guid: 27d5dc7d806f2df4f80365ac1b3a74b0, type: 2}
+  baseStats:
+    m_keys: 0000000002000000010000000500000007000000
+    m_values:
+    - 801
+    - 137
+    - 2
+    - 0.7382709
+    - 0.9408012
+  mastery:
+  - {fileID: 11400000, guid: 212ecb6e200a29e459557f29daff8815, type: 2}
+  - {fileID: 11400000, guid: cd5c1978c9270ca49bdb029b7c679610, type: 2}
+  - {fileID: 11400000, guid: af5bae4ec2ebcf340a6b07ecba3af2c9, type: 2}
+  - {fileID: 11400000, guid: e8603adcd9aab3a4b815075c81db32b8, type: 2}
+  - {fileID: 11400000, guid: aec74d71df648ba47a5a8a4de78965e5, type: 2}
+  - {fileID: 11400000, guid: 3ea896870afd3a548a16813310175655, type: 2}
+  attack: {fileID: 11400000, guid: 125a417825cf6dd40b2ac7f574493565, type: 2}
+  spell: {fileID: 11400000, guid: c375a0cef7fac3f4493e061b69e7955d, type: 2}

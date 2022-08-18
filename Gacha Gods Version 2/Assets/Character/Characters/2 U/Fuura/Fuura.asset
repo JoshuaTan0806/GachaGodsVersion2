@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df548b6b88a01f843b037cc5cba429e6, type: 3}
+  m_Name: Fuura
+  m_EditorClassIdentifier: 
+  series: Comic Girls
+  prefab: {fileID: 2019319123658798567, guid: 8c6db4b85f7db634aa342bba04496587, type: 3}
+  icon: {fileID: 0}
+  roles:
+  - {fileID: 11400000, guid: 312f5fb9d9c16134c8254a44153f90f2, type: 2}
+  archetypes:
+  - {fileID: 11400000, guid: ba9c782aa7b698c49942ae8c9c12ea1d, type: 2}
+  rarity: {fileID: 11400000, guid: 46abe82243041d443bc2279cd6345bb0, type: 2}
+  baseStats:
+    m_keys: 0000000002000000010000000500000007000000
+    m_values:
+    - 687
+    - 199
+    - 1
+    - 0.97583354
+    - 0.9127347
+  mastery:
+  - {fileID: 11400000, guid: f8dbb87acda506b4dbdd8c4068283941, type: 2}
+  - {fileID: 11400000, guid: 286d856db8ac97a439bbb337c0d803b8, type: 2}
+  - {fileID: 11400000, guid: 430883f7bb4572e4bb056276ff2692eb, type: 2}
+  - {fileID: 11400000, guid: 0901bab07b5f4bb43be778385a57f887, type: 2}
+  - {fileID: 11400000, guid: 8350f441d2fa7bc4281b2c46f904511b, type: 2}
+  - {fileID: 11400000, guid: f029012de91f34f46abd38465a8ceaf4, type: 2}
+  attack: {fileID: 11400000, guid: c26d5f854a2d4f942b64fcfd19e12a30, type: 2}
+  spell: {fileID: 11400000, guid: b22382c5817f64e4f8848746af311406, type: 2}

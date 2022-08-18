@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df548b6b88a01f843b037cc5cba429e6, type: 3}
+  m_Name: Kyouko
+  m_EditorClassIdentifier: 
+  series: Yuru yuri
+  prefab: {fileID: 4435648862748390721, guid: ae79e79e74a066340b04b66e3740daf8, type: 3}
+  icon: {fileID: 0}
+  roles:
+  - {fileID: 11400000, guid: 7874320ddd40d8b4ebd78f9245280999, type: 2}
+  archetypes:
+  - {fileID: 11400000, guid: ba9c782aa7b698c49942ae8c9c12ea1d, type: 2}
+  rarity: {fileID: 11400000, guid: 46abe82243041d443bc2279cd6345bb0, type: 2}
+  baseStats:
+    m_keys: 0000000002000000010000000500000007000000
+    m_values:
+    - 782
+    - 106
+    - 1
+    - 0.5109255
+    - 0.93304753
+  mastery:
+  - {fileID: 11400000, guid: d7e7cda70fbd27c46bbd5670ff8f81be, type: 2}
+  - {fileID: 11400000, guid: 934c031475c96554293151b3378957b8, type: 2}
+  - {fileID: 11400000, guid: 69dbb8d4034cedd4b97ce56bebd8e38f, type: 2}
+  - {fileID: 11400000, guid: 4465aa66c332e654aa074139a556c28a, type: 2}
+  - {fileID: 11400000, guid: 9c8bd3b997b778f4ab3b134ae0224803, type: 2}
+  - {fileID: 11400000, guid: dbadbc6318e9be04babeb23bd2e5a11a, type: 2}
+  attack: {fileID: 11400000, guid: 5a007823866d0c34585a78b425ca1005, type: 2}
+  spell: {fileID: 11400000, guid: 08b4f9a8acffcd24a96e16d85e1d0674, type: 2}

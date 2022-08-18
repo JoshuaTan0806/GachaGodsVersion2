@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df548b6b88a01f843b037cc5cba429e6, type: 3}
+  m_Name: Kanoko
+  m_EditorClassIdentifier: 
+  series: Recipe for happiness
+  prefab: {fileID: 2917667721236569216, guid: be94894d9b8c8f34ea63e780d396f508, type: 3}
+  icon: {fileID: 0}
+  roles:
+  - {fileID: 11400000, guid: f60c0bb05b3f1e64f9e9065c6bf73a4f, type: 2}
+  archetypes:
+  - {fileID: 11400000, guid: 786cf183703fa3c47b6f53f33259a748, type: 2}
+  rarity: {fileID: 11400000, guid: 5caa1fcf88ed40b4abb3e1f7df2d8f23, type: 2}
+  baseStats:
+    m_keys: 0000000002000000010000000500000007000000
+    m_values:
+    - 916
+    - 192
+    - 2
+    - 0.8545032
+    - 0.95096195
+  mastery:
+  - {fileID: 11400000, guid: 042785f53c3e2074a81469d1cd097833, type: 2}
+  - {fileID: 11400000, guid: 30a47328b875007489bd177e02857e3f, type: 2}
+  - {fileID: 11400000, guid: a3a1702b5c835c340b5345f5e126a0d7, type: 2}
+  - {fileID: 11400000, guid: 2e147552879e40546a910802650e23de, type: 2}
+  - {fileID: 11400000, guid: d0edc2e7d8fa61b46acd374a16f7daa3, type: 2}
+  - {fileID: 11400000, guid: f512d09bef6889f46bbf524b2e50fb6c, type: 2}
+  attack: {fileID: 11400000, guid: e43ec66f65250cb4f8fdafa7e652cb4b, type: 2}
+  spell: {fileID: 11400000, guid: 295d3fb2b1b6a9f4e9cf61e6b06c9df1, type: 2}

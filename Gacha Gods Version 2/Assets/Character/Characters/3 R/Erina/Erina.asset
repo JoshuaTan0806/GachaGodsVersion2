@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df548b6b88a01f843b037cc5cba429e6, type: 3}
+  m_Name: Erina
+  m_EditorClassIdentifier: 
+  series: Shokugeki
+  prefab: {fileID: 4190498515081699290, guid: c84be6324cadc2f40b31f2fb728f2f4b, type: 3}
+  icon: {fileID: 0}
+  roles:
+  - {fileID: 11400000, guid: 3bccd85134a05fe42a7014ef843ddd50, type: 2}
+  archetypes:
+  - {fileID: 11400000, guid: 3780752fe85e61541add83dd3a9a3790, type: 2}
+  rarity: {fileID: 11400000, guid: 27d5dc7d806f2df4f80365ac1b3a74b0, type: 2}
+  baseStats:
+    m_keys: 0000000002000000010000000500000007000000
+    m_values:
+    - 744
+    - 192
+    - 4
+    - 0.78077567
+    - 0.94890535
+  mastery:
+  - {fileID: 11400000, guid: 53c4ac3e44f31b3449a138511180fe84, type: 2}
+  - {fileID: 11400000, guid: b32c3fa896378a346a4231921ff64e56, type: 2}
+  - {fileID: 11400000, guid: ba6d494a28a8da947be3dc2871b9a766, type: 2}
+  - {fileID: 11400000, guid: b44f94db0e109a44893e5e55ad6cac4f, type: 2}
+  - {fileID: 11400000, guid: e3f21d7b488470a438769c8df6ab727f, type: 2}
+  - {fileID: 11400000, guid: 212f1eebc4c847c4fb49e5a3389ce088, type: 2}
+  attack: {fileID: 11400000, guid: 78b104c936bb74c4aaf891518b2d1195, type: 2}
+  spell: {fileID: 11400000, guid: 0b04a631d60bdd147be5b6fc58ef8098, type: 2}

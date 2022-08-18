@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df548b6b88a01f843b037cc5cba429e6, type: 3}
+  m_Name: Isuzu
+  m_EditorClassIdentifier: 
+  series: Amagi
+  prefab: {fileID: 9039002044610584383, guid: 908a8cfe64ef3e849bb5fb69c640da51, type: 3}
+  icon: {fileID: 0}
+  roles:
+  - {fileID: 11400000, guid: 7874320ddd40d8b4ebd78f9245280999, type: 2}
+  archetypes:
+  - {fileID: 11400000, guid: bef0f7b6bd5394345b1174b05e1314be, type: 2}
+  rarity: {fileID: 11400000, guid: 27d5dc7d806f2df4f80365ac1b3a74b0, type: 2}
+  baseStats:
+    m_keys: 0000000002000000010000000500000007000000
+    m_values:
+    - 509
+    - 189
+    - 3
+    - 0.99874365
+    - 0.94819295
+  mastery:
+  - {fileID: 11400000, guid: d60102f813c32884b80dae1afccd4c53, type: 2}
+  - {fileID: 11400000, guid: 5e20e4234edad7a4abec366cc31d116d, type: 2}
+  - {fileID: 11400000, guid: caee9e3e0bddc234a9c824d45247b1ee, type: 2}
+  - {fileID: 11400000, guid: caf140a8e0f67a545945f2df99aba592, type: 2}
+  - {fileID: 11400000, guid: aa5d5ba04ca1e4b4980dfdbb6afdb858, type: 2}
+  - {fileID: 11400000, guid: 7f7eb63db97f68b48b4969ce4f7d5380, type: 2}
+  attack: {fileID: 11400000, guid: 0a5bda12ce282134fbfb558df20658d0, type: 2}
+  spell: {fileID: 11400000, guid: 824ecac92bb296f4cb816aaa2ddda448, type: 2}

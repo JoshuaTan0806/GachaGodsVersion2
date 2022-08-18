@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df548b6b88a01f843b037cc5cba429e6, type: 3}
+  m_Name: Amakusa
+  m_EditorClassIdentifier: 
+  series: koikimo
+  prefab: {fileID: 3571081394931386936, guid: cf855e0d4ce83804fbb8bb37f9423329, type: 3}
+  icon: {fileID: 0}
+  roles:
+  - {fileID: 11400000, guid: 312f5fb9d9c16134c8254a44153f90f2, type: 2}
+  archetypes:
+  - {fileID: 11400000, guid: 3780752fe85e61541add83dd3a9a3790, type: 2}
+  rarity: {fileID: 11400000, guid: 46abe82243041d443bc2279cd6345bb0, type: 2}
+  baseStats:
+    m_keys: 0000000002000000010000000500000007000000
+    m_values:
+    - 593
+    - 143
+    - 2
+    - 0.53056735
+    - 0.8243299
+  mastery:
+  - {fileID: 11400000, guid: ec2dfaf1b44cdd141a38a1d86123ef67, type: 2}
+  - {fileID: 11400000, guid: c20f5c8a9312c234690782e8fba2fc51, type: 2}
+  - {fileID: 11400000, guid: 26217b04450ab6a40b930453259413db, type: 2}
+  - {fileID: 11400000, guid: 4e5e07b3d201a414591746ab17b96f21, type: 2}
+  - {fileID: 11400000, guid: f8312350ab06f9547a092b7b929c4201, type: 2}
+  - {fileID: 11400000, guid: 3817f70b55c75614d878e5a3773a44f3, type: 2}
+  attack: {fileID: 11400000, guid: 271d98c8f8316ac4296e4c9f7ff69405, type: 2}
+  spell: {fileID: 11400000, guid: 1da3ae59742eb724a86fa204ac15ec5e, type: 2}

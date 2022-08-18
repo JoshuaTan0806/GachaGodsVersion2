@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df548b6b88a01f843b037cc5cba429e6, type: 3}
+  m_Name: Theresia
+  m_EditorClassIdentifier: 
+  series: Rezero
+  prefab: {fileID: 8967458912283227869, guid: e9a884a8fa44c6b47a3bd4ac617e5ab9, type: 3}
+  icon: {fileID: 0}
+  roles:
+  - {fileID: 11400000, guid: 7874320ddd40d8b4ebd78f9245280999, type: 2}
+  archetypes:
+  - {fileID: 11400000, guid: 3fb58b23d85771d4fbe1b45b57184c76, type: 2}
+  rarity: {fileID: 11400000, guid: 5caa1fcf88ed40b4abb3e1f7df2d8f23, type: 2}
+  baseStats:
+    m_keys: 0000000002000000010000000500000007000000
+    m_values:
+    - 898
+    - 146
+    - 4
+    - 0.72561693
+    - 0.95565856
+  mastery:
+  - {fileID: 11400000, guid: 39b33a5ca7ea77445bdb6d7bf034282e, type: 2}
+  - {fileID: 11400000, guid: 621e9462439f0944482ec81d1a7ebac4, type: 2}
+  - {fileID: 11400000, guid: 613a5aaffbe3a8e46aa126861869ad75, type: 2}
+  - {fileID: 11400000, guid: 8022ace7cfee3e14d9fd805a650acf4a, type: 2}
+  - {fileID: 11400000, guid: 0ecd000126a3c8c4caa0e2785295fc46, type: 2}
+  - {fileID: 11400000, guid: 224d311cbd1dc2a4c851aa0d6365f701, type: 2}
+  attack: {fileID: 11400000, guid: 32c7bdb0719551b41a9f4053505a89a8, type: 2}
+  spell: {fileID: 11400000, guid: dc78a253e07ac4441a49569773bbe325, type: 2}

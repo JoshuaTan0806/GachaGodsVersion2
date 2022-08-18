@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df548b6b88a01f843b037cc5cba429e6, type: 3}
+  m_Name: Hibiki
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 3095699092270835841, guid: c98c87066e0918f45bf75efc9331a3f4, type: 3}
+  icon: {fileID: 0}
+  roles: []
+  archetypes: []
+  rarity: {fileID: 11400000, guid: 5caa1fcf88ed40b4abb3e1f7df2d8f23, type: 2}
+  baseStats:
+    m_keys: 0000000002000000010000000500000007000000
+    m_values:
+    - 626
+    - 171
+    - 1
+    - 0.8031653
+    - 0.8301672
+  mastery:
+  - {fileID: 11400000, guid: a4c32357a181488458661bea9505a05b, type: 2}
+  - {fileID: 11400000, guid: a9f284d4f6a758c47b12fead0ce43530, type: 2}
+  - {fileID: 11400000, guid: 4994324ef1b10f24baa8b7502010a8e7, type: 2}
+  - {fileID: 11400000, guid: 501f820b6782b72418665413a2548690, type: 2}
+  - {fileID: 11400000, guid: 316ffb9ec83b11e418510e4d9698854a, type: 2}
+  - {fileID: 11400000, guid: e1c99de0feb5c2742a56d5264feeb746, type: 2}
+  attack: {fileID: 11400000, guid: b1ea48cf6cdee714391ad6a4f59842bc, type: 2}
+  spell: {fileID: 11400000, guid: 9baad23b93d2efb418fbf5dad18735ce, type: 2}

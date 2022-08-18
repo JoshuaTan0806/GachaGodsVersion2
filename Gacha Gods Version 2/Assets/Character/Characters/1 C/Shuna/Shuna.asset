@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df548b6b88a01f843b037cc5cba429e6, type: 3}
+  m_Name: Shuna
+  m_EditorClassIdentifier: 
+  series: Slime
+  prefab: {fileID: 5534775155583053694, guid: 88ceb578c0200d74db48b7dd121c3010, type: 3}
+  icon: {fileID: 0}
+  roles:
+  - {fileID: 11400000, guid: 3bccd85134a05fe42a7014ef843ddd50, type: 2}
+  archetypes:
+  - {fileID: 11400000, guid: bef0f7b6bd5394345b1174b05e1314be, type: 2}
+  rarity: {fileID: 11400000, guid: 5caa1fcf88ed40b4abb3e1f7df2d8f23, type: 2}
+  baseStats:
+    m_keys: 0000000002000000010000000500000007000000
+    m_values:
+    - 950
+    - 124
+    - 2
+    - 0.8850142
+    - 0.92382926
+  mastery:
+  - {fileID: 11400000, guid: f9682413b03e0274cb0898fa9a318369, type: 2}
+  - {fileID: 11400000, guid: 62742baedb1b1bf479ef63843f14d40b, type: 2}
+  - {fileID: 11400000, guid: b9bf4ed1d950be94f9722db0fc44dd94, type: 2}
+  - {fileID: 11400000, guid: 96dffdf3015397945b69a79740320fb4, type: 2}
+  - {fileID: 11400000, guid: 00fe51c6c4cf17b4a8c1fe5fa20f1a06, type: 2}
+  - {fileID: 11400000, guid: f78562c6354e5d347affe342418000ff, type: 2}
+  attack: {fileID: 11400000, guid: 56407099b9a213549b1339c3257db25b, type: 2}
+  spell: {fileID: 11400000, guid: c9a101f8b569a054fae8b62c9a6332d3, type: 2}

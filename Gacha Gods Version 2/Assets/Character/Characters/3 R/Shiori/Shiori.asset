@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df548b6b88a01f843b037cc5cba429e6, type: 3}
+  m_Name: Shiori
+  m_EditorClassIdentifier: 
+  series: TWGOK
+  prefab: {fileID: 5053366011595505292, guid: 8458e23d451da6d44b3943a1d3006b9c, type: 3}
+  icon: {fileID: 0}
+  roles:
+  - {fileID: 11400000, guid: 3bccd85134a05fe42a7014ef843ddd50, type: 2}
+  archetypes:
+  - {fileID: 11400000, guid: bef0f7b6bd5394345b1174b05e1314be, type: 2}
+  rarity: {fileID: 11400000, guid: 27d5dc7d806f2df4f80365ac1b3a74b0, type: 2}
+  baseStats:
+    m_keys: 0000000002000000010000000500000007000000
+    m_values:
+    - 928
+    - 171
+    - 3
+    - 0.8261023
+    - 0.9151914
+  mastery:
+  - {fileID: 11400000, guid: 017633019bb7c8f42a9bc54169177d38, type: 2}
+  - {fileID: 11400000, guid: c206fb5a8ed15614ca4b9ea5b0ebbda9, type: 2}
+  - {fileID: 11400000, guid: 8005d0ccb8df7df46b503ed65a7bb2c2, type: 2}
+  - {fileID: 11400000, guid: 0ef2787dd5b98034ea94db3e88235744, type: 2}
+  - {fileID: 11400000, guid: 662dcaa368bfdaa40a4275c925a26a18, type: 2}
+  - {fileID: 11400000, guid: 3aca4160961e6844fb17a1bee31148ec, type: 2}
+  attack: {fileID: 11400000, guid: d2d747b4686eef8489c1b2e2b54df88d, type: 2}
+  spell: {fileID: 11400000, guid: 80237f8401e800c43a6996794058108d, type: 2}

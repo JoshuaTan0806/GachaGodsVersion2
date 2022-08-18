@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df548b6b88a01f843b037cc5cba429e6, type: 3}
+  m_Name: Kurona
+  m_EditorClassIdentifier: 
+  series: gabriel dropout
+  prefab: {fileID: 955089771653488226, guid: 8e765728e001b0b448b4decc6c28093d, type: 3}
+  icon: {fileID: 0}
+  roles:
+  - {fileID: 11400000, guid: 3bccd85134a05fe42a7014ef843ddd50, type: 2}
+  archetypes:
+  - {fileID: 11400000, guid: ba9c782aa7b698c49942ae8c9c12ea1d, type: 2}
+  rarity: {fileID: 11400000, guid: 46abe82243041d443bc2279cd6345bb0, type: 2}
+  baseStats:
+    m_keys: 0000000002000000010000000500000007000000
+    m_values:
+    - 680
+    - 194
+    - 4
+    - 0.88150233
+    - 0.98172545
+  mastery:
+  - {fileID: 11400000, guid: 9c6982be70c19344e8cdd3c16d2cbf25, type: 2}
+  - {fileID: 11400000, guid: c3727bc87496a764ea6d35e47d6cb458, type: 2}
+  - {fileID: 11400000, guid: c4d982e0608e2b241b5f388b1274fcaf, type: 2}
+  - {fileID: 11400000, guid: 36a4f695e73ecbe4dae9a22f570cfe9d, type: 2}
+  - {fileID: 11400000, guid: b98a95786f6f9504e9b6b38e181416c3, type: 2}
+  - {fileID: 11400000, guid: 45ee894c3a6789e4788b3304b98e08f7, type: 2}
+  attack: {fileID: 11400000, guid: a1cb3cea910ddc94ea6b9a51a8d80dc5, type: 2}
+  spell: {fileID: 11400000, guid: 27c852bf142670e44b9ed4604206990b, type: 2}

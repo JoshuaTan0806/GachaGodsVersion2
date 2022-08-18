@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df548b6b88a01f843b037cc5cba429e6, type: 3}
+  m_Name: Est
+  m_EditorClassIdentifier: 
+  series: Blade Dance
+  prefab: {fileID: 7297367479011841563, guid: af3f12776dbcbfc4487f29be11ece267, type: 3}
+  icon: {fileID: 0}
+  roles:
+  - {fileID: 11400000, guid: 7874320ddd40d8b4ebd78f9245280999, type: 2}
+  archetypes:
+  - {fileID: 11400000, guid: bef0f7b6bd5394345b1174b05e1314be, type: 2}
+  rarity: {fileID: 11400000, guid: 5caa1fcf88ed40b4abb3e1f7df2d8f23, type: 2}
+  baseStats:
+    m_keys: 0000000002000000010000000500000007000000
+    m_values:
+    - 645
+    - 166
+    - 4
+    - 0.81136274
+    - 0.8338951
+  mastery:
+  - {fileID: 11400000, guid: 331318f521e1354489ecd5d3fadefac5, type: 2}
+  - {fileID: 11400000, guid: 9daa50691d903054dbc4b478d2d86eee, type: 2}
+  - {fileID: 11400000, guid: b3124e69585a56149a0da95da73fb2a7, type: 2}
+  - {fileID: 11400000, guid: 69bb47c1b426f024aaf67d2f3b711b95, type: 2}
+  - {fileID: 11400000, guid: c6f906f4dca2e96428af6f99e9c3424c, type: 2}
+  - {fileID: 11400000, guid: a5afca27003164640996036a70f93089, type: 2}
+  attack: {fileID: 11400000, guid: 168d1aedd64941046b5820fa1bee03d4, type: 2}
+  spell: {fileID: 11400000, guid: 522ffeff22880e741a5a103c430c4a6f, type: 2}

@@ -19,7 +19,6 @@ public class CharacterManager : Factories.FactoryBase
     static Role assassin;
     [SerializeField] Role _assassin;
 
-
     public static List<Archetype> Archetypes => archetypes;
     static List<Archetype> archetypes = new List<Archetype>();
     [SerializeField] List<Archetype> _archetypes;

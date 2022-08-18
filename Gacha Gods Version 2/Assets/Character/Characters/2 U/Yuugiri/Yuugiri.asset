@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df548b6b88a01f843b037cc5cba429e6, type: 3}
+  m_Name: Yuugiri
+  m_EditorClassIdentifier: 
+  series: Zombieland
+  prefab: {fileID: 4048649977571774334, guid: 9baee667c6bbf0c47bb86f3153dadad4, type: 3}
+  icon: {fileID: 0}
+  roles:
+  - {fileID: 11400000, guid: 2e97f9336ab26b6489cf2ff55d672b70, type: 2}
+  archetypes:
+  - {fileID: 11400000, guid: 6c6a0c3be76d00949a0dc31ba1da33f9, type: 2}
+  rarity: {fileID: 11400000, guid: 46abe82243041d443bc2279cd6345bb0, type: 2}
+  baseStats:
+    m_keys: 0000000002000000010000000500000007000000
+    m_values:
+    - 609
+    - 176
+    - 2
+    - 0.6118281
+    - 0.8749761
+  mastery:
+  - {fileID: 11400000, guid: 0688999f69a65b14ca9608fa6996647a, type: 2}
+  - {fileID: 11400000, guid: 0469f3351f59c6c46916cc911467c2c7, type: 2}
+  - {fileID: 11400000, guid: d7737327aaf4a3241a60e42018733671, type: 2}
+  - {fileID: 11400000, guid: d08ffe9e37df8e04690281fa8e39186e, type: 2}
+  - {fileID: 11400000, guid: 2782c4f76def8b44b8644feda7666533, type: 2}
+  - {fileID: 11400000, guid: 914cf96e1d4109e4daca202a5c0e2ef1, type: 2}
+  attack: {fileID: 11400000, guid: 78eea0dfd5c88014ab387fd0d1e7911a, type: 2}
+  spell: {fileID: 11400000, guid: 13ecf13159b0b6349b188d32162adef4, type: 2}

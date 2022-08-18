@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df548b6b88a01f843b037cc5cba429e6, type: 3}
+  m_Name: Katou
+  m_EditorClassIdentifier: 
+  series: Saekano
+  prefab: {fileID: 1779834664684112956, guid: 67b3fbb3f92662e4a83ccd4b7046d792, type: 3}
+  icon: {fileID: 0}
+  roles:
+  - {fileID: 11400000, guid: 312f5fb9d9c16134c8254a44153f90f2, type: 2}
+  archetypes:
+  - {fileID: 11400000, guid: 3780752fe85e61541add83dd3a9a3790, type: 2}
+  rarity: {fileID: 11400000, guid: 27d5dc7d806f2df4f80365ac1b3a74b0, type: 2}
+  baseStats:
+    m_keys: 0000000002000000010000000500000007000000
+    m_values:
+    - 834
+    - 146
+    - 3
+    - 0.7560971
+    - 0.9720135
+  mastery:
+  - {fileID: 11400000, guid: 0a8c822f7663a7f4aad7bde7fbc31407, type: 2}
+  - {fileID: 11400000, guid: 211acce483c25a0438426207fd3baeda, type: 2}
+  - {fileID: 11400000, guid: e93277e63d6a8e648a03a6d17c8f77bd, type: 2}
+  - {fileID: 11400000, guid: 44ede0261ec410949ba80f61e6dd870c, type: 2}
+  - {fileID: 11400000, guid: 6f585ff6cd969744095f62f67eb8b87f, type: 2}
+  - {fileID: 11400000, guid: 4901c1db9a4d03142ae652d8e724b745, type: 2}
+  attack: {fileID: 11400000, guid: 66a2512f6471a794bb737049c825c417, type: 2}
+  spell: {fileID: 11400000, guid: 02e5f057ae6d8214e92e99146042d783, type: 2}

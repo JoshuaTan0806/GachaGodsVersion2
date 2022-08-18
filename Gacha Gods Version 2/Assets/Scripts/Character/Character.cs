@@ -8,7 +8,6 @@ using UnityEditor;
 [CreateAssetMenu(menuName = "Character/Character")]
 public class Character : ScriptableObject
 {
-    [SerializeField] string series;
     public GameObject Prefab => prefab;
     [SerializeField] GameObject prefab;
     public Sprite Icon => icon;

@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df548b6b88a01f843b037cc5cba429e6, type: 3}
+  m_Name: Shiina
+  m_EditorClassIdentifier: 
+  series: Sakurasou
+  prefab: {fileID: 910608573367125318, guid: c1d7725b176d11440ab66e08d3490763, type: 3}
+  icon: {fileID: 0}
+  roles:
+  - {fileID: 11400000, guid: 3bccd85134a05fe42a7014ef843ddd50, type: 2}
+  archetypes:
+  - {fileID: 11400000, guid: 3b5b4aa8ee8a9a14093cd5f5c9fd3d78, type: 2}
+  rarity: {fileID: 11400000, guid: dc32ef1f41aec134bafd5224085d3d74, type: 2}
+  baseStats:
+    m_keys: 0000000002000000010000000500000007000000
+    m_values:
+    - 677
+    - 196
+    - 3
+    - 0.6136206
+    - 0.89983606
+  mastery:
+  - {fileID: 11400000, guid: f0281d1f43ed91d438c9e2e695f84da7, type: 2}
+  - {fileID: 11400000, guid: 990b629f4e6e63b418234089fe5e33b8, type: 2}
+  - {fileID: 11400000, guid: d1147f07db3703848884dbcf532d39ad, type: 2}
+  - {fileID: 11400000, guid: 25e685e8acd87c2499d9f443ca52db55, type: 2}
+  - {fileID: 11400000, guid: b02d296abbdf59e4aa5ee911350b323e, type: 2}
+  - {fileID: 11400000, guid: b15c7a213f0f8154980164fd0466981c, type: 2}
+  attack: {fileID: 11400000, guid: d78360f182433a341a5616560e12f70d, type: 2}
+  spell: {fileID: 11400000, guid: 3c1dd59e7bbfe6f4c971a2533a1067bd, type: 2}

@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df548b6b88a01f843b037cc5cba429e6, type: 3}
+  m_Name: Shino
+  m_EditorClassIdentifier: 
+  series: Remake our life
+  prefab: {fileID: 3046734884171135598, guid: a3014ddb2b9a9ae4087b42efc9fd884e, type: 3}
+  icon: {fileID: 0}
+  roles:
+  - {fileID: 11400000, guid: 3bccd85134a05fe42a7014ef843ddd50, type: 2}
+  archetypes:
+  - {fileID: 11400000, guid: ba9c782aa7b698c49942ae8c9c12ea1d, type: 2}
+  rarity: {fileID: 11400000, guid: dc32ef1f41aec134bafd5224085d3d74, type: 2}
+  baseStats:
+    m_keys: 0000000002000000010000000500000007000000
+    m_values:
+    - 858
+    - 148
+    - 3
+    - 0.7756568
+    - 0.92007625
+  mastery:
+  - {fileID: 11400000, guid: 23363d3f4566f5e48a9bbcd898082914, type: 2}
+  - {fileID: 11400000, guid: 3b8ec0238364e704ba1b7d4f3187510f, type: 2}
+  - {fileID: 11400000, guid: 2e12325fbf376dc4fa3eb0fb50eefa1c, type: 2}
+  - {fileID: 11400000, guid: d204a413abe461548af801086ac68d3d, type: 2}
+  - {fileID: 11400000, guid: 6305083ab940e98478b191d9e2bb2a01, type: 2}
+  - {fileID: 11400000, guid: ec8e158515281fe47876f0e44b5abd9b, type: 2}
+  attack: {fileID: 11400000, guid: 06a86629a38c6b2448e2c27f494df3b8, type: 2}
+  spell: {fileID: 11400000, guid: 53bc6ae27548359408d05a3b85416fac, type: 2}

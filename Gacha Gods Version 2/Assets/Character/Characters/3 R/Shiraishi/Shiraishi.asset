@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df548b6b88a01f843b037cc5cba429e6, type: 3}
+  m_Name: Shiraishi
+  m_EditorClassIdentifier: 
+  series: Yamada
+  prefab: {fileID: 6476217049088016383, guid: eebd5381522c9b647a511dfab919f821, type: 3}
+  icon: {fileID: 0}
+  roles:
+  - {fileID: 11400000, guid: 3a67598af6bef5541b390cec4871b3fe, type: 2}
+  archetypes:
+  - {fileID: 11400000, guid: 3780752fe85e61541add83dd3a9a3790, type: 2}
+  rarity: {fileID: 11400000, guid: 27d5dc7d806f2df4f80365ac1b3a74b0, type: 2}
+  baseStats:
+    m_keys: 0000000002000000010000000500000007000000
+    m_values:
+    - 859
+    - 130
+    - 1
+    - 0.9008822
+    - 0.8174799
+  mastery:
+  - {fileID: 11400000, guid: 3f161a58f173b9d42842de7d3662d708, type: 2}
+  - {fileID: 11400000, guid: 56e5377f6fd1c4d4e853762f1fa35d40, type: 2}
+  - {fileID: 11400000, guid: 9f09627ef72da274a800a94481aad8ea, type: 2}
+  - {fileID: 11400000, guid: e3d4f40233bece84b863cf0575db8bf1, type: 2}
+  - {fileID: 11400000, guid: a5eb8ac5dec446444a92e9123541da42, type: 2}
+  - {fileID: 11400000, guid: 04c6811d0d37ee645a1a480bbbb1126e, type: 2}
+  attack: {fileID: 11400000, guid: 7c19222e20c555c4fbf1e87a08eb864f, type: 2}
+  spell: {fileID: 11400000, guid: f4bdd23c6c1adce4faeec0f08534d7da, type: 2}

@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df548b6b88a01f843b037cc5cba429e6, type: 3}
+  m_Name: Mikan
+  m_EditorClassIdentifier: 
+  series: To Love Ru
+  prefab: {fileID: 521344412153805050, guid: 1f75a90e3c992854db942ef35975a041, type: 3}
+  icon: {fileID: 0}
+  roles:
+  - {fileID: 11400000, guid: 7874320ddd40d8b4ebd78f9245280999, type: 2}
+  archetypes:
+  - {fileID: 11400000, guid: 6c6a0c3be76d00949a0dc31ba1da33f9, type: 2}
+  rarity: {fileID: 11400000, guid: 46abe82243041d443bc2279cd6345bb0, type: 2}
+  baseStats:
+    m_keys: 0000000002000000010000000500000007000000
+    m_values:
+    - 858
+    - 188
+    - 1
+    - 0.9412833
+    - 0.89439154
+  mastery:
+  - {fileID: 11400000, guid: 6bda63853cddc124b83cb4fac11736ed, type: 2}
+  - {fileID: 11400000, guid: 458784428299b264cb24603f510e4c04, type: 2}
+  - {fileID: 11400000, guid: 993114cb53a37a64e984c57c77c746c9, type: 2}
+  - {fileID: 11400000, guid: e070dd30700c81241baed87ae7ed522d, type: 2}
+  - {fileID: 11400000, guid: 2ca33f3baeeb32f48a553517504948b8, type: 2}
+  - {fileID: 11400000, guid: f8d855d9dd9c7d0489382b46ea4c520b, type: 2}
+  attack: {fileID: 11400000, guid: de29f308f4290c54490a8cc5260c5cb8, type: 2}
+  spell: {fileID: 11400000, guid: cdda8a9d10ed1924990e92cd9154d283, type: 2}
