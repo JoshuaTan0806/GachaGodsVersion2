@@ -81,7 +81,7 @@ public class GameManager : MonoBehaviour
         //LoadGame();
         StartGame();
         RoundNumber = 1;
-        Level = 1;
+        Level = 5;
         Gold = 10;
         Gems = 0;
     }

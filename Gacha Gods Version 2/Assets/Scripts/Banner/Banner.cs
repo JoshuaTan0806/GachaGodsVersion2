@@ -19,9 +19,6 @@ public class Banner : MonoBehaviour
     [Header("Characters")]
     [ReadOnly, SerializeField, ShowIf("bannerType", BannerType.RateUp)] List<Character> rateUpCharacters = new List<Character>();
 
-    [Header("Pull Data")]
-    [ReadOnly, SerializeField] List<Character> charactersPulled = new List<Character>();
-
     [Header("References")]
     [SerializeField] Button PremiumRollButtonReference;
     [SerializeField] Button OneRollButtonReference;
@@ -30,6 +27,9 @@ public class Banner : MonoBehaviour
     [SerializeField] Transform RateUpReference;
     [SerializeField] List<Image> RateUpCharactersPositionReference;
     GameObject CharacterOddsReference;
+
+    [Header("Prefabs")]
+    [SerializeField] GachaChoice GachaChoice;
 
     private void Awake()
     {
@@ -58,11 +58,11 @@ public class Banner : MonoBehaviour
     {
         rateUpCharacters = new List<Character>();
 
-        if(bannerType == BannerType.Regular)
+        if (bannerType == BannerType.Regular)
         {
             RateUpReference.gameObject.SafeSetActive(false);
         }
-        else if(bannerType == BannerType.RateUp)
+        else if (bannerType == BannerType.RateUp)
         {
             for (int i = 0; i < CharacterManager.Rarities.Count; i++)
             {
@@ -86,7 +86,7 @@ public class Banner : MonoBehaviour
         else
         {
             GameManager.RemoveGold(1);
-            RollAtLevel();
+            StartCoroutine(RollGacha(1));
         }
     }
 
@@ -97,7 +97,7 @@ public class Banner : MonoBehaviour
         else
         {
             GameManager.RemoveGold(10);
-            Roll10AtLevel();
+            StartCoroutine(RollGacha(10));
         }
     }
 
@@ -108,18 +108,51 @@ public class Banner : MonoBehaviour
         else
         {
             GameManager.RemoveGems(1);
-            RollAtLevel();
+            StartCoroutine(RollGacha(1));
         }
     }
 
-    void RollAtLevel()
+    IEnumerator RollGacha(int numberOfRolls)
     {
-        charactersPulled.Clear();
-        Roll(GameManager.Level);
-        //SpawnGacha();
+        int counter = 0;
+        GachaChoice gachaPrefab = Instantiate(GachaChoice);
+
+        while (counter < numberOfRolls)
+        {
+            Rarity rarityToRollAt;
+
+            if(counter == 9)
+            {
+                rarityToRollAt = RollRarity(GameManager.Level + 1);
+            }
+            else
+            {
+                rarityToRollAt = RollRarity(GameManager.Level);
+            }
+
+            List<Character> characters = new List<Character>();
+
+            for (int i = 0; i < 3; i++)
+            {
+                characters.Add(RollCharacterOfRarity(rarityToRollAt));
+            }
+
+            gachaPrefab.Initialise(characters);
+
+            while(!gachaPrefab.HasBeenPicked)
+            {
+                yield return new WaitForSeconds(0.1f);
+            }
+
+            yield return new WaitForSeconds(1);
+
+            counter++;
+        }
+
+        Destroy(gachaPrefab.gameObject);
     }
 
-    void Roll(int level)
+    Rarity RollRarity(int level)
     {
         OddsDictionary odds = FindOdds(level);
 
@@ -132,32 +165,14 @@ public class Banner : MonoBehaviour
 
             if (roll < counter)
             {
-                RollCharacterOfRarity(item.Key);
-                return;
+                return item.Key;
             }
         }
 
         throw new System.Exception("Roll total is above 100.");
     }
 
-    void Roll10AtLevel()
-    {
-        charactersPulled.Clear();
-        Roll10(GameManager.Level);
-        //SpawnGacha();
-    }
-
-    void Roll10(int level)
-    {
-        for (int i = 0; i < 9; i++)
-        {
-            Roll(level);
-        }
-
-        Roll(level + 1);
-    }
-
-    void RollCharacterOfRarity(Rarity rarity)
+    Character RollCharacterOfRarity(Rarity rarity)
     {
         //pull a character
         List<Character> charactersOfSameRarity = rarity.FilterOnly(CharacterManager.Characters);
@@ -173,16 +188,7 @@ public class Banner : MonoBehaviour
             }
         }
 
-        if (charactersPulled == null)
-            throw new System.Exception("Character pulled cannot be null.");
-        else
-            AddCharacter(characterPulled);
-    }
-
-    void AddCharacter(Character character)
-    {
-        charactersPulled.Add(character);
-        CharacterManager.AddCharacter(character);
+        return characterPulled;
     }
 
     OddsDictionary FindOdds(int level)
@@ -249,10 +255,5 @@ public class Banner : MonoBehaviour
     //    }
     //    else
     //        Destroy(CharacterOddsReference);
-    //}
-
-    //void SpawnGacha()
-    //{
-    //    Instantiate(PrefabManager.Gacha).GetComponent<Gacha>().InitialiseCharacters(charactersPulled);
     //}
 }
