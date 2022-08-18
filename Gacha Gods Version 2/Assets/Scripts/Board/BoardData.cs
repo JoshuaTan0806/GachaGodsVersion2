@@ -13,7 +13,6 @@ public class BoardData
     public ActiveArchetypes Archetypes => archetypes;
     ActiveArchetypes archetypes;
 
-
     public BoardData(int roundNumber, List<CharacterData> characterDatas, ActiveRoles roles, ActiveArchetypes archetypes)
     {
         this.roundNumber = roundNumber;

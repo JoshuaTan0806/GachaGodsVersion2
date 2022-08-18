@@ -12,6 +12,7 @@ public class BoardDatabase : Factories.FactoryBase
 
     public override void Initialise()
     {
+
     }
 
     public static void SaveBoard(BoardData boardData)
