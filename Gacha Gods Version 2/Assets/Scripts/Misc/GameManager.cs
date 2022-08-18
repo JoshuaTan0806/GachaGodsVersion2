@@ -14,10 +14,13 @@ public class GameManager : MonoBehaviour
     public static System.Action OnRoundWon;
     public static System.Action OnRoundLost;
 
+    public static int RoundNumber;
+
     private void Start()
     {
         //LoadGame();
         StartGame();
+        RoundNumber = 1;
     }
 
     [Button]
@@ -30,12 +33,12 @@ public class GameManager : MonoBehaviour
     public static void EndGame()
     {
         OnGameEnd?.Invoke();
+        RoundNumber++;
     }
 
     [Button]
     public static void StartRound()
     {
-     
         OnRoundStart?.Invoke();
     }
 
