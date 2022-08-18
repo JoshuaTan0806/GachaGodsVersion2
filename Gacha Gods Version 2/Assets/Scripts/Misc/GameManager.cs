@@ -16,11 +16,74 @@ public class GameManager : MonoBehaviour
 
     public static int RoundNumber;
 
+    public static int Level
+    {
+        get
+        {
+            return level;
+        }
+        set
+        {
+            level = value;
+            OnLevelChanged?.Invoke();
+        }
+    }
+    static int level;
+    public static System.Action OnLevelChanged;
+
+    public static int Gold
+    {
+        get
+        {
+            return gold;
+        }
+        set
+        {
+            gold = value;
+            OnGoldChanged?.Invoke();
+        }
+    }
+    static int gold;
+    public static System.Action OnGoldChanged;
+
+    public static int Gems
+    {
+        get
+        {
+            return gems;
+        }
+        set
+        {
+            gems = value;
+            OnGemsChanged?.Invoke();
+        }
+    }
+    static int gems;
+    public static System.Action OnGemsChanged;
+
+    public static int Experience
+    {
+        get
+        {
+            return experience;
+        }
+        set
+        {
+            experience = value;
+            OnExperienceChanged?.Invoke();
+        }
+    }
+    static int experience;
+    public static System.Action OnExperienceChanged;
+
     private void Start()
     {
         //LoadGame();
         StartGame();
         RoundNumber = 1;
+        Level = 1;
+        Gold = 10;
+        Gems = 0;
     }
 
     [Button]
@@ -53,6 +116,41 @@ public class GameManager : MonoBehaviour
 #if UNITY_EDITOR
         SpeedUp();
 #endif
+    }
+
+    public static void AddGold(int num)
+    {
+        Gold += num;
+    }
+
+    public static void RemoveGold(int num)
+    {
+        Gold -= num;
+    }
+
+    public static void AddGems(int num)
+    {
+        Gems += num;
+    }
+
+    public static void RemoveGems(int num)
+    {
+        Gems -= num;
+    }
+
+    public static void AddExperience(int num)
+    {
+        Experience += num;
+    }
+
+    public static void ResetExperience()
+    {
+        Experience = 0;
+    }
+
+    public static void AddLevel()
+    {
+        Level++;
     }
 
     void SpeedUp()
