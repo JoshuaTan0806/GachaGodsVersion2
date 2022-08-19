@@ -19,6 +19,7 @@ public class UIManager : MonoBehaviour
     {
         GameManager.OnRoundStart += SpawnRoundStartPrefab;
         GameManager.OnRoundStart += ActivateMainCanvas;
+        GameManager.OnBattleStart += DeactivateMainCanvas;
 
         uiCanvas.SafeSetActive(true);
         mainCanvas.SafeSetActive(true);
@@ -32,12 +33,18 @@ public class UIManager : MonoBehaviour
     {
         GameManager.OnRoundStart -= SpawnRoundStartPrefab;
         GameManager.OnRoundStart -= ActivateMainCanvas;
+        GameManager.OnBattleStart -= DeactivateMainCanvas;
     }
 
     void ActivateMainCanvas()
     {
         uiCanvas.SafeSetActive(true);
         mainCanvas.SafeSetActive(true);
+    }
+
+    void DeactivateMainCanvas()
+    {
+        uiCanvas.SafeSetActive(false);
     }
 
     void SpawnRoundStartPrefab()
