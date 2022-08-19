@@ -214,9 +214,9 @@ MonoBehaviour:
   uiCanvas: {fileID: 1149295690}
   mainCanvas: {fileID: 999274474}
   teamCanvas: {fileID: 402534490635755610}
-  gachaCanvas: {fileID: 0}
-  achievementsCanvas: {fileID: 0}
-  characterCanvas: {fileID: 0}
+  gachaCanvas: {fileID: 4312478131289729152}
+  achievementsCanvas: {fileID: 4312478131289729151}
+  characterCanvas: {fileID: 4312478131289729150}
   roundStartPrefab: {fileID: 7561690045132176480, guid: 6a053756dc6844044b1802d136e6533a, type: 3}
 --- !u!1 &531238837
 GameObject:
@@ -900,3 +900,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90aea9a4efa56734691fa837e1094f9f, type: 3}
+--- !u!1 &4312478131289729150 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8654393740704663486, guid: 90aea9a4efa56734691fa837e1094f9f, type: 3}
+  m_PrefabInstance: {fileID: 4312478131289729149}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4312478131289729151 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 881586644268903746, guid: 90aea9a4efa56734691fa837e1094f9f, type: 3}
+  m_PrefabInstance: {fileID: 4312478131289729149}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4312478131289729152 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6717803676560411516, guid: 90aea9a4efa56734691fa837e1094f9f, type: 3}
+  m_PrefabInstance: {fileID: 4312478131289729149}
+  m_PrefabAsset: {fileID: 0}
