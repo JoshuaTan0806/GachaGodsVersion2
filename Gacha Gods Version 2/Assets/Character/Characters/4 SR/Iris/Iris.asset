@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df548b6b88a01f843b037cc5cba429e6, type: 3}
   m_Name: Iris
   m_EditorClassIdentifier: 
-  series: Konosuba
   prefab: {fileID: 158434060324910003, guid: 6a998ae54fdae7e4283e61e9d57791e6, type: 3}
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 6a13cce74df6e71439c67adc95ad9867, type: 3}
   roles:
   - {fileID: 11400000, guid: 2e97f9336ab26b6489cf2ff55d672b70, type: 2}
   archetypes:

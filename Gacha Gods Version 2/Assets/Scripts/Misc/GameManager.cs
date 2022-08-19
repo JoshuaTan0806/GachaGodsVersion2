@@ -80,7 +80,7 @@ public class GameManager : MonoBehaviour
     {
         //LoadGame();
         RoundNumber = 1;
-        Level = 1;
+        Level = 3;
         Gold = 10;
         Gems = 0;
         StartGame();

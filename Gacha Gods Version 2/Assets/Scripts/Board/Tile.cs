@@ -26,15 +26,13 @@ public class Tile : MonoBehaviour
 
     void ViewCharacters()
     {
-        if (CharacterManager.ActiveCharacters.Count == GameManager.Level)
-            return;
-
         StartCoroutine(PickCharacter());
     }
 
     IEnumerator PickCharacter()
     {
         CharacterSelection g = Instantiate(characterSelection);
+        g.Initialise(unitType);
 
         while (!g.HasChosen)
         {
@@ -42,6 +40,7 @@ public class Tile : MonoBehaviour
         }
 
         PlaceCharacter(g.ChosenCharacter);
+        Destroy(g.gameObject);
     }
 
     void RemoveCharacter()
@@ -53,18 +52,32 @@ public class Tile : MonoBehaviour
 
     void PlaceCharacter(Character chosenCharacter)
     {
+        if (chosenCharacter == null && character != null)
+        {
+            CharacterManager.DeactivateCharacter(character);
+            RemoveCharacter();
+            return;
+        }
+
         //if the chosen character isn't on the field...
         if (!CharacterManager.ActiveCharacters.Contains(chosenCharacter))
         {
-            //add them
-            CharacterManager.ActivateCharacter(chosenCharacter);
-
             //if theres a character on this spot..
             if (character != null)
             {
                 //replace them
                 CharacterManager.DeactivateCharacter(character);
             }
+            else
+            {
+                //we can't add any more characters
+                if (CharacterManager.ActiveCharacters.Count == GameManager.Level)
+                    return;
+            }
+
+            //add them
+            if (chosenCharacter != null)
+                CharacterManager.ActivateCharacter(chosenCharacter);
         }
         //if the chosen character is on the field...
         else
@@ -92,6 +105,8 @@ public class Tile : MonoBehaviour
 
         character = chosenCharacter;
         characterIcon.gameObject.SetActive(true);
-        characterIcon.sprite = chosenCharacter.Icon;
+
+        if (chosenCharacter != null)
+            characterIcon.sprite = chosenCharacter.Icon;
     }
 }

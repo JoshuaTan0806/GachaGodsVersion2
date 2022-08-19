@@ -20,7 +20,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1378262455147797338
 RectTransform:
   m_ObjectHideFlags: 0
@@ -108,7 +108,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitType: 2
-  characterSelection: {fileID: 0}
+  characterSelection: {fileID: 5051084574112215606, guid: ad7552278530eb84cbabb26d36b9d549, type: 3}
   characterIcon: {fileID: 2926077115632661697}
 --- !u!114 &704323430038098686
 MonoBehaviour:
@@ -171,7 +171,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1946487252295731320
 RectTransform:
   m_ObjectHideFlags: 0

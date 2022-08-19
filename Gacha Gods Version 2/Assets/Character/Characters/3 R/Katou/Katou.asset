@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df548b6b88a01f843b037cc5cba429e6, type: 3}
   m_Name: Katou
   m_EditorClassIdentifier: 
-  series: Saekano
   prefab: {fileID: 1779834664684112956, guid: 67b3fbb3f92662e4a83ccd4b7046d792, type: 3}
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 6a13cce74df6e71439c67adc95ad9867, type: 3}
   roles:
   - {fileID: 11400000, guid: 312f5fb9d9c16134c8254a44153f90f2, type: 2}
   archetypes:

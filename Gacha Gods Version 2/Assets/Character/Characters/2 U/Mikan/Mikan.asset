@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df548b6b88a01f843b037cc5cba429e6, type: 3}
   m_Name: Mikan
   m_EditorClassIdentifier: 
-  series: To Love Ru
   prefab: {fileID: 521344412153805050, guid: 1f75a90e3c992854db942ef35975a041, type: 3}
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 6a13cce74df6e71439c67adc95ad9867, type: 3}
   roles:
   - {fileID: 11400000, guid: 7874320ddd40d8b4ebd78f9245280999, type: 2}
   archetypes:

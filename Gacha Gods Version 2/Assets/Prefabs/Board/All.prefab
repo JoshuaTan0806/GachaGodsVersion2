@@ -108,7 +108,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitType: 1
-  characterSelection: {fileID: 0}
+  characterSelection: {fileID: 5051084574112215606, guid: ad7552278530eb84cbabb26d36b9d549, type: 3}
   characterIcon: {fileID: 8552361487265960232}
 --- !u!114 &8830516039860740827
 MonoBehaviour:

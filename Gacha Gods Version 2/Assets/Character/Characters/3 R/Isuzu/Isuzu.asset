@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df548b6b88a01f843b037cc5cba429e6, type: 3}
   m_Name: Isuzu
   m_EditorClassIdentifier: 
-  series: Amagi
   prefab: {fileID: 9039002044610584383, guid: 908a8cfe64ef3e849bb5fb69c640da51, type: 3}
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 6a13cce74df6e71439c67adc95ad9867, type: 3}
   roles:
   - {fileID: 11400000, guid: 7874320ddd40d8b4ebd78f9245280999, type: 2}
   archetypes:

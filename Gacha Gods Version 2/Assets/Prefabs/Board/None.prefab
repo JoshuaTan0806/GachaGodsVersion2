@@ -184,7 +184,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitType: 0
-  characterSelection: {fileID: 0}
+  characterSelection: {fileID: 5051084574112215606, guid: ad7552278530eb84cbabb26d36b9d549, type: 3}
   characterIcon: {fileID: 8426903398328623985}
 --- !u!114 &6021597649153988628
 MonoBehaviour:

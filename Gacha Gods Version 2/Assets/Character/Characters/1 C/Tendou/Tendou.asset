@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df548b6b88a01f843b037cc5cba429e6, type: 3}
   m_Name: Tendou
   m_EditorClassIdentifier: 
-  series: Gamers
   prefab: {fileID: 7115326709939199421, guid: 2ec38ceecededf140861b880b4efdda1, type: 3}
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 6a13cce74df6e71439c67adc95ad9867, type: 3}
   roles:
   - {fileID: 11400000, guid: 2e97f9336ab26b6489cf2ff55d672b70, type: 2}
   archetypes:
