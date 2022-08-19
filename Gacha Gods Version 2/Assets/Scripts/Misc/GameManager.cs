@@ -118,6 +118,7 @@ public class GameManager : MonoBehaviour
     {
         OnRoundEnd?.Invoke();
         RoundNumber++;
+        StartRound();
     }
 
     private void Update()
