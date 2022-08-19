@@ -22,15 +22,14 @@ public class Banner : MonoBehaviour
 
     private void Awake()
     {
-        GameManager.OnGameStart += RefreshBanner;
         GameManager.OnRoundEnd += RefreshBanner;
+        RefreshBanner();
 
         gameObject.AddListenerToButton(() => SetAsCurrentBanner());
     }
 
     private void OnDestroy()
     {
-        GameManager.OnGameStart -= RefreshBanner;
         GameManager.OnRoundEnd -= RefreshBanner;
     }
 

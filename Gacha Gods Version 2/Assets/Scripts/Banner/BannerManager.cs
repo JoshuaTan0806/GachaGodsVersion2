@@ -41,11 +41,13 @@ public class BannerManager : MonoBehaviour
         if (banner.BannerType == BannerType.Regular)
             RateUpReference.gameObject.SafeSetActive(false);
         else
+        {
             RateUpReference.gameObject.SafeSetActive(true);
 
-        for (int i = 0; i < RateUpCharactersPositionReference.Count; i++)
-        {
-            //RateUpCharactersPositionReference[i].sprite = banner.RateUpCharacters[i].Icon;
+            for (int i = 0; i < RateUpCharactersPositionReference.Count; i++)
+            {
+                RateUpCharactersPositionReference[i].sprite = banner.RateUpCharacters[i].Icon;
+            }
         }
     }
 
