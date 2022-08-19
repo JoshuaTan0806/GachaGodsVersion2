@@ -81,7 +81,7 @@ public class GameManager : MonoBehaviour
         //LoadGame();
         StartGame();
         RoundNumber = 1;
-        Level = 5;
+        Level = 1;
         Gold = 10;
         Gems = 0;
     }
@@ -90,6 +90,7 @@ public class GameManager : MonoBehaviour
     public static void StartGame()
     {
         OnGameStart?.Invoke();
+        StartRound();
     }
 
     [Button]
@@ -109,6 +110,7 @@ public class GameManager : MonoBehaviour
     public static void EndRound()
     {
         OnRoundEnd?.Invoke();
+        RoundNumber++;
     }
 
     private void Update()

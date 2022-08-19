@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DestroyOnClick : MonoBehaviour
+public class DestroyGameObjectButton : MonoBehaviour
 {
     [SerializeField] GameObject GameObjectToDestroy;
 
