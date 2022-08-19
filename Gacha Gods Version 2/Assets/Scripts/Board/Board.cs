@@ -9,33 +9,18 @@ public class Board : MonoBehaviour
 
     private void Awake()
     {
-        GameManager.OnRoundStart += OnRoundStart;
-        GameManager.OnRoundEnd += OnRoundEnd;
-
+        GameManager.OnBattleStart += OnRoundStart;
         Tiles = tiles;
     }
 
     private void OnDestroy()
     {
-        GameManager.OnRoundStart -= OnRoundStart;
-        GameManager.OnRoundEnd -= OnRoundEnd;
+        GameManager.OnBattleStart -= OnRoundStart;
     }
 
     public void LoadBoardData()
     {
-        //BoardData boardData = BoardDatabase.LoadBoard();
 
-        //foreach (var item in boardData.CharacterDatas)
-        //{
-        //    Vector3 spawnPos = board[item.Position.x, item.Position.y].transform.position;
-        //    CharacterStats stats = Instantiate(item.Character.Prefab, spawnPos, Quaternion.identity, alliesReference).GetComponent<CharacterStats>();
-        //    board[item.Position.x, item.Position.y].PlaceCharacter(stats);
-        //    stats.UpgradeAttack(item.Attack);
-        //    stats.UpgradeSpell(item.Spell);
-        //    stats.SetStats(item.Stats);
-        //}
-
-        //load global buffs
     }
 
     public void LoadEnemyBoardData()
@@ -87,10 +72,7 @@ public class Board : MonoBehaviour
             LoadEnemyBoardData();
             SaveBoardData();
         }
-    }
 
-    void OnRoundEnd()
-    {
         LoadBoardData();
     }
 }

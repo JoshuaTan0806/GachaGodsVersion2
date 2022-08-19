@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public static System.Action OnGameStart;
     public static System.Action OnGameEnd;
     public static System.Action OnRoundStart;
+    public static System.Action OnBattleStart;
     public static System.Action OnRoundEnd;
     public static System.Action OnRoundWon;
     public static System.Action OnRoundLost;
@@ -104,6 +105,12 @@ public class GameManager : MonoBehaviour
     public static void StartRound()
     {
         OnRoundStart?.Invoke();
+    }
+
+    [Button]
+    public static void StartBattle()
+    {
+        OnBattleStart?.Invoke();
     }
 
     [Button]
