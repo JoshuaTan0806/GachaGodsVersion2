@@ -28,22 +28,13 @@ public class CharacterData
     Character character;
     public int Mastery => mastery;
     int mastery;
-    public Attack Attack => attack;
-    Attack attack;
-    public Spell Spell => spell;
-    Spell spell;
-    public StatDictionary Stats => stats;
-    StatDictionary stats;
-    public Vector2Int Position => position;
-    Vector2Int position;
+    public int Position => position;
+    int position;
 
-    public CharacterData(Character character, int mastery, Attack attack, Spell spell, StatDictionary stats, Vector2Int position)
+    public CharacterData(Character character, int mastery, int position)
     {
         this.character = character;
         this.mastery = mastery;
-        this.attack = attack;
-        this.spell = spell;
-        this.stats = stats;
         this.position = position;
     }
 }
