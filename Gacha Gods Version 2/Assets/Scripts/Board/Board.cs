@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class Board : MonoBehaviour
 {
+    public static List<Tile> Tiles;
     [SerializeField] List<Tile> tiles;
 
     private void Awake()
     {
         GameManager.OnRoundStart += OnRoundStart;
         GameManager.OnRoundEnd += OnRoundEnd;
+
+        Tiles = tiles;
     }
 
     private void OnDestroy()

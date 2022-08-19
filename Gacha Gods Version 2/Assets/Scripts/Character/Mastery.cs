@@ -22,58 +22,27 @@ public class Mastery : ScriptableObject
     public MasteryType MasteryType => masteryType;
     [SerializeField] MasteryType masteryType;
 
+    public List<Role> Roles => roles;
     [ShowIf("MasteryType", MasteryType.Role), SerializeField]
-    List<Role> Roles;
+    List<Role> roles;
 
+    public List<Archetype> Archetypes => Archetypes;
     [ShowIf("MasteryType", MasteryType.Archetype), SerializeField]
-    List<Archetype> Archetypes;
+    List<Archetype> archetypes;
 
+    public List<StatData> Stats => stats;
     [ShowIf("MasteryType", MasteryType.Stat), SerializeField]
-    List<StatData> Stats;
+    List<StatData> stats;
 
+    public List<StatData> GlobalStats => globalStats;
     [ShowIf("MasteryType", MasteryType.GlobalStat), SerializeField]
-    List<StatData> GlobalStats;
+    List<StatData> globalStats;
 
+    public Attack Attack => attack;
     [ShowIf("MasteryType", MasteryType.Attack), SerializeField]
-    Attack Attack;
+    Attack attack;
 
+    public Spell Spell => spell;
     [ShowIf("MasteryType", MasteryType.Spell), SerializeField]
-    Spell Spell;
-
-
-    public void ActivateMastery(CharacterStats stats)
-    {
-        switch (MasteryType)
-        {
-            case MasteryType.Role:
-                foreach (var item in Roles)
-                {
-                }
-                break;
-            case MasteryType.Archetype:
-                foreach (var item in Archetypes)
-                {
-                }
-                break;
-            case MasteryType.Stat:
-                foreach (var item in Stats)
-                {
-                    stats.AddStat(item);
-                }
-                break;
-            case MasteryType.GlobalStat:
-                foreach (var item in GlobalStats)
-                {
-                }
-                break;
-            case MasteryType.Attack:
-                stats.UpgradeAttack(Attack);
-                break;
-            case MasteryType.Spell:
-                stats.UpgradeSpell(Spell);
-                break;
-            default:
-                break;
-        }
-    }
+    Spell spell;
 }

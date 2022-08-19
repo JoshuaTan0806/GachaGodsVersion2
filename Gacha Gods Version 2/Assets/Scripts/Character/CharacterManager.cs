@@ -63,6 +63,20 @@ public class CharacterManager : Factories.FactoryBase
                     else
                         roles.Add(role, 1);
                 }
+
+                for (int i = 0; i < characterMastery[character]; i++)
+                {
+                    if(character.Mastery[i].MasteryType == MasteryType.Role)
+                    {
+                        foreach (var role in character.Mastery[i].Roles)
+                        {
+                            if (roles.ContainsKey(role))
+                                roles[role]++;
+                            else
+                                roles.Add(role, 1);
+                        }
+                    }
+                }
             }
 
             return roles;
@@ -83,6 +97,20 @@ public class CharacterManager : Factories.FactoryBase
                         archetypes[archetype]++;
                     else
                         archetypes.Add(archetype, 1);
+                }
+
+                for (int i = 0; i < characterMastery[character]; i++)
+                {
+                    if (character.Mastery[i].MasteryType == MasteryType.Role)
+                    {
+                        foreach (var archetype in character.Mastery[i].Archetypes)
+                        {
+                            if (archetypes.ContainsKey(archetype))
+                                archetypes[archetype]++;
+                            else
+                                archetypes.Add(archetype, 1);
+                        }
+                    }
                 }
             }
 
