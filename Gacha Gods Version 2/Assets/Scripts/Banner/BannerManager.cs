@@ -1,95 +1,168 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Linq;
 using UnityEngine.UI;
+using System.Linq;
 
 public class BannerManager : MonoBehaviour
 {
-    public static Dictionary<RectTransform, Banner> Banners = new Dictionary<RectTransform, Banner>();
+    Banner currentBanner;
+    [SerializeField] int RateUpChances = 10;
 
-    public static Banner CurrentBanner
-    {
-        get
-        {
-            return currentBanner;
-        }
-        set
-        {
-            currentBanner = value;
-            ChangeBanner();
-        }
-    }
-    static Banner currentBanner;
-   
     [Header("References")]
-    [SerializeField] Transform GachaHolder;
-    [SerializeField] Transform BannerHolder;
-    [SerializeField] Transform BannerOptionHolder;
+    [SerializeField] List<Banner> banners;
+    [SerializeField] Button PremiumRollButtonReference;
+    [SerializeField] Button OneRollButtonReference;
+    [SerializeField] Button TenRollButtonReference;
+    [SerializeField] Transform RateUpReference;
+    [SerializeField] List<Image> RateUpCharactersPositionReference;
 
     [Header("Prefabs")]
-    [SerializeField] GameObject BannerPrefab;
-    [SerializeField] GameObject BannerOptionPrefab;
-
-    [Header("Names")]
-    [SerializeField] List<string> bannerNames;
-    public static List<string> BannerNames;
+    [SerializeField] GachaChoice GachaChoice;
 
     private void Awake()
     {
-        GameManager.OnRoundEnd += ResetBannerNames;
-        GameManager.OnRoundEnd += SnapToFirstBanner;
-        ResetBannerNames();
-        InitialiseBanners();
-        currentBanner = Banners.Values.First();
-        ChangeBanner();
+        currentBanner = banners[0];
+
+        OneRollButtonReference.AddListenerToButton(Use1Gold);
+        PremiumRollButtonReference.AddListenerToButton(Use1Gem);
+        TenRollButtonReference.AddListenerToButton(Use10Gold);
     }
 
-    private void OnDestroy()
+    private void OnEnable()
     {
-        GameManager.OnRoundEnd -= ResetBannerNames;
-        GameManager.OnRoundEnd -= SnapToFirstBanner;
+        InitialiseBanner(currentBanner);
     }
 
-    void ResetBannerNames()
+    public void InitialiseBanner(Banner banner)
     {
-        BannerNames = new List<string>(bannerNames);
-    }
+        currentBanner = banner;
 
-    void InitialiseBanners()
-    {
-        Banners = new Dictionary<RectTransform, Banner>();
+        if (banner.BannerType == BannerType.Regular)
+            RateUpReference.gameObject.SafeSetActive(false);
+        else
+            RateUpReference.gameObject.SafeSetActive(true);
 
-        SpawnBanner(BannerType.Regular);
-
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < RateUpCharactersPositionReference.Count; i++)
         {
-            SpawnBanner(BannerType.RateUp);
+            //RateUpCharactersPositionReference[i].sprite = banner.RateUpCharacters[i].Icon;
+        }
+    }
+
+    void Use1Gold()
+    {
+        if (GameManager.Gold < 1)
+            return;
+        else
+        {
+            GameManager.RemoveGold(1);
+            StartCoroutine(RollGacha(1));
+        }
+    }
+
+    void Use10Gold()
+    {
+        if (GameManager.Gold < 10)
+            return;
+        else
+        {
+            GameManager.RemoveGold(10);
+            StartCoroutine(RollGacha(10));
+        }
+    }
+
+    void Use1Gem()
+    {
+        if (GameManager.Gems < 1)
+            return;
+        else
+        {
+            GameManager.RemoveGems(1);
+            StartCoroutine(RollGacha(1));
+        }
+    }
+
+    IEnumerator RollGacha(int numberOfRolls)
+    {
+        int counter = 0;
+        GachaChoice gachaPrefab = Instantiate(GachaChoice);
+
+        while (counter < numberOfRolls)
+        {
+            Rarity rarityToRollAt;
+
+            if (counter == 9)
+            {
+                rarityToRollAt = RollRarity(GameManager.Level + 1);
+            }
+            else
+            {
+                rarityToRollAt = RollRarity(GameManager.Level);
+            }
+
+            List<Character> characters = new List<Character>();
+
+            for (int i = 0; i < 3; i++)
+            {
+                characters.Add(RollCharacterOfRarity(rarityToRollAt));
+            }
+
+            gachaPrefab.Initialise(characters);
+
+            while (!gachaPrefab.HasBeenPicked)
+            {
+                yield return new WaitForSeconds(0.1f);
+            }
+
+            yield return new WaitForSeconds(1);
+
+            counter++;
         }
 
-        SnapToFirstBanner();
+        Destroy(gachaPrefab.gameObject);
     }
 
-    void SpawnBanner(BannerType bannerType)
+    Rarity RollRarity(int level)
     {
-        Banner b = Instantiate(BannerPrefab, BannerHolder).GetComponent<Banner>();
-        b.bannerType = bannerType;
-        RectTransform t = Instantiate(BannerOptionPrefab, BannerOptionHolder).GetComponent<RectTransform>();
-        Banners.Add(t, b);
-    }
+        OddsDictionary odds = FindOdds(level);
 
-    static void ChangeBanner()
-    {
-        foreach (var item in Banners)
+        float roll = Random.Range(0, 100);
+        float counter = 0;
+
+        foreach (var item in odds)
         {
-            item.Value.gameObject.SafeSetActive(false);
+            counter += item.Value;
+
+            if (roll < counter)
+            {
+                return item.Key;
+            }
         }
 
-        CurrentBanner.gameObject.SafeSetActive(true);
+        throw new System.Exception("Roll total is above 100.");
     }
 
-    void SnapToFirstBanner()
+    Character RollCharacterOfRarity(Rarity rarity)
     {
-        GetComponentInChildren<BannerSlider>().SnapToBanner(Banners.First().Key);
+        //pull a character
+        List<Character> charactersOfSameRarity = rarity.FilterOnly(CharacterManager.Characters);
+        Character characterPulled = charactersOfSameRarity.ChooseRandomElementInList();
+
+        //if theres rate up, we have a chance of overriding that with the rate up
+        if (currentBanner.RateUpCharacters.Where(x => x.Rarity == rarity).ToList().Count > 0)
+        {
+            int num = Random.Range(0, 100);
+            if (num < RateUpChances)
+            {
+                characterPulled = currentBanner.RateUpCharacters.Where(x => x.Rarity == rarity).ToList()[0];
+            }
+        }
+
+        return characterPulled;
+    }
+
+    OddsDictionary FindOdds(int level)
+    {
+        return CharacterManager.Odds[level];
     }
 }

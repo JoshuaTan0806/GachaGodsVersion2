@@ -79,11 +79,11 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         //LoadGame();
-        StartGame();
         RoundNumber = 1;
         Level = 1;
         Gold = 10;
         Gems = 0;
+        StartGame();
     }
 
     [Button]

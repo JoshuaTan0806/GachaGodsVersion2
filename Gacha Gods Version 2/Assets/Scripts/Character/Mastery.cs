@@ -48,13 +48,11 @@ public class Mastery : ScriptableObject
             case MasteryType.Role:
                 foreach (var item in Roles)
                 {
-                    CharacterManager.AddRole(item);
                 }
                 break;
             case MasteryType.Archetype:
                 foreach (var item in Archetypes)
                 {
-                    CharacterManager.AddArchetype(item);
                 }
                 break;
             case MasteryType.Stat:
@@ -66,7 +64,6 @@ public class Mastery : ScriptableObject
             case MasteryType.GlobalStat:
                 foreach (var item in GlobalStats)
                 {
-                    CharacterManager.AddGlobalBuff(item);
                 }
                 break;
             case MasteryType.Attack:
@@ -75,42 +72,6 @@ public class Mastery : ScriptableObject
             case MasteryType.Spell:
                 stats.UpgradeSpell(Spell);
                 break;
-            default:
-                break;
-        }
-    }
-
-    public void DeactiveMastery(CharacterStats stats)
-    {
-        switch (MasteryType)
-        {
-            case MasteryType.Role:
-                foreach (var item in Roles)
-                {
-                    CharacterManager.RemoveRole(item);
-                }
-                break;
-            case MasteryType.Archetype:
-                foreach (var item in Archetypes)
-                {
-                    CharacterManager.RemoveArchetype(item);
-                }
-                break;
-            case MasteryType.Stat:
-                foreach (var item in Stats)
-                {
-                    stats.RemoveStat(item);
-                }
-                break;
-            case MasteryType.GlobalStat:
-                foreach (var item in GlobalStats)
-                {
-                    CharacterManager.RemoveGlobalBuff(item);
-                }
-                break;
-            case MasteryType.Attack:
-                break;
-            case MasteryType.Spell:
             default:
                 break;
         }
