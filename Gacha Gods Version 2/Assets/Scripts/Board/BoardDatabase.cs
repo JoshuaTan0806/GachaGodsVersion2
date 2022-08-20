@@ -8,7 +8,7 @@ public class BoardDatabase : Factories.FactoryBase
 {
     public static Dictionary<int, List<BoardData>> Database => database;
     static Dictionary<int, List<BoardData>> database = new Dictionary<int, List<BoardData>>();
-    static BoardData PlayerBoard;
+    public static BoardData PlayerBoard;
 
     public override void Initialise()
     {
@@ -27,11 +27,6 @@ public class BoardDatabase : Factories.FactoryBase
             boardDatas.Add(boardData);
             database.Add(boardData.RoundNumber, boardDatas);
         }
-    }
-
-    public static BoardData LoadBoard()
-    {
-        return PlayerBoard;
     }
 
     public static BoardData LoadEnemyBoard(int roundNumber)

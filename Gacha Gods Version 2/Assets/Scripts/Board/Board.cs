@@ -9,47 +9,29 @@ public class Board : MonoBehaviour
 
     private void Awake()
     {
-        GameManager.OnBattleStart += OnRoundStart;
         Tiles = tiles;
     }
 
-    private void OnDestroy()
+    private void OnEnable()
     {
-        GameManager.OnBattleStart -= OnRoundStart;
+        GameManager.OnRoundEnd += SaveBoardData;
     }
 
-    public void LoadBoardData()
+    private void OnDisable()
     {
-
+        GameManager.OnRoundEnd -= SaveBoardData;
     }
 
-    public void LoadEnemyBoardData()
-    {
-        //BoardData boardData = BoardDatabase.LoadEnemyBoard(GameManager.RoundNumber);
-
-        //foreach (var item in boardData.CharacterDatas)
-        //{
-        //    Vector3 spawnPos = board[width - 1 - item.Position.x, item.Position.y].transform.position;
-        //    CharacterStats stats = Instantiate(item.Character.Prefab, spawnPos, Quaternion.identity, enemiesReference).GetComponent<CharacterStats>();
-        //    stats.UpgradeAttack(item.Attack);
-        //    stats.UpgradeSpell(item.Spell);
-        //    stats.SetStats(item.Stats);
-        //    stats.GetComponent<AI>().SetAsEnemy();
-        //}
-
-        //load global buffs
-    }
-
-    public void SaveBoardData()
+    public static void SaveBoardData()
     {
         List<CharacterData> characterDatas = new List<CharacterData>();
 
-        for (int i = 0; i < tiles.Count; i++)
+        for (int i = 0; i < Tiles.Count; i++)
         {
-            if (tiles[i].Character == null)
+            if (Tiles[i].Character == null)
                 continue;
 
-            Character character = tiles[i].Character;
+            Character character = Tiles[i].Character;
 
             CharacterData characterData = new CharacterData(character, CharacterManager.CharacterMastery[character], i);
             characterDatas.Add(characterData);
@@ -57,22 +39,5 @@ public class Board : MonoBehaviour
 
         BoardData boardData = new BoardData(GameManager.RoundNumber, characterDatas, CharacterManager.ActiveRoles, CharacterManager.ActiveArchetypes);
         BoardDatabase.SaveBoard(boardData);
-    }
-
-
-    void OnRoundStart()
-    {
-        if (BoardDatabase.DatabaseIsEmpty(GameManager.RoundNumber))
-        {
-            SaveBoardData();
-            LoadEnemyBoardData();
-        }
-        else
-        {
-            LoadEnemyBoardData();
-            SaveBoardData();
-        }
-
-        LoadBoardData();
     }
 }
