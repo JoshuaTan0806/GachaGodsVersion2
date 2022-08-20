@@ -65,7 +65,7 @@ public class BattleManager : MonoBehaviour
         foreach (var item in boardData.CharacterDatas)
         {
             Vector3 spawnPos = spawnPoints[item.Position].position;
-            CharacterStats stats = Instantiate(item.Character.Prefab, spawnPos, Quaternion.identity);
+            CharacterStats stats = Instantiate(item.Character.Prefab, spawnPos, Quaternion.identity, transform);
 
             for (int i = 0; i < item.Mastery; i++)
             {
@@ -150,7 +150,7 @@ public class BattleManager : MonoBehaviour
         foreach (var item in boardData.CharacterDatas)
         {
             Vector3 spawnPos = spawnPoints[spawnPoints.Count - 1 - item.Position].position;
-            CharacterStats stats = Instantiate(item.Character.Prefab, spawnPos, Quaternion.identity).GetComponent<CharacterStats>();
+            CharacterStats stats = Instantiate(item.Character.Prefab, spawnPos, Quaternion.identity, transform).GetComponent<CharacterStats>();
 
             for (int i = 0; i < item.Mastery; i++)
             {
