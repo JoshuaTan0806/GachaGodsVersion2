@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df548b6b88a01f843b037cc5cba429e6, type: 3}
   m_Name: Hibiki
   m_EditorClassIdentifier: 
-  prefab: {fileID: 3095699092270835841, guid: c98c87066e0918f45bf75efc9331a3f4, type: 3}
+  prefab: {fileID: -330335870900928024, guid: 178fb3e03156f1344b5d8ac13deff374, type: 3}
   icon: {fileID: 21300000, guid: 6a13cce74df6e71439c67adc95ad9867, type: 3}
   roles: []
   archetypes: []

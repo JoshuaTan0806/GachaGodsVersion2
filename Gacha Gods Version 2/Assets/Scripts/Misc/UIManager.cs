@@ -19,9 +19,8 @@ public class UIManager : MonoBehaviour
 
     private void OnEnable()
     {
-        GameManager.OnRoundStart += SpawnRoundStartPrefab;
-        GameManager.OnRoundStart += ActivateMainCanvas;
-        GameManager.OnBattleStart += DeactivateMainCanvas;
+        GameManager.OnRoundStart += OnRoundStart;
+        GameManager.OnBattleStart += OnBattleStart;
 
         uiCanvas.SafeSetActive(true);
         mainCanvas.SafeSetActive(true);
@@ -33,9 +32,19 @@ public class UIManager : MonoBehaviour
 
     private void OnDisable()
     {
-        GameManager.OnRoundStart -= SpawnRoundStartPrefab;
-        GameManager.OnRoundStart -= ActivateMainCanvas;
-        GameManager.OnBattleStart -= DeactivateMainCanvas;
+        GameManager.OnRoundStart -= OnRoundStart;
+        GameManager.OnBattleStart -= OnBattleStart;
+    }
+    
+    void OnRoundStart()
+    {
+        SpawnRoundStartPrefab();
+        ActivateMainCanvas();
+    }
+
+    void OnBattleStart()
+    {
+        DeactivateMainCanvas();
     }
 
     void ActivateMainCanvas()
@@ -51,7 +60,6 @@ public class UIManager : MonoBehaviour
 
     void SpawnRoundStartPrefab()
     {
-        GameObject g = Instantiate(roundStartPrefab);
-        g.GetComponentInChildren<TMPro.TextMeshProUGUI>().SetText("Day " + GameManager.RoundNumber);
+        Instantiate(roundStartPrefab);
     }
 }

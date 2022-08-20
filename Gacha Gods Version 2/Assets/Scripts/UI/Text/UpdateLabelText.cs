@@ -90,7 +90,7 @@ public class UpdateLabelText : MonoBehaviour
                 label.SetText("Level: " + GameManager.Level);
                 break;
             case TextType.RoundNumber:
-                label.SetText("RoundNumber: " + GameManager.RoundNumber);
+                label.SetText("Day " + GameManager.RoundNumber);
                 break;
             default:
                 break;

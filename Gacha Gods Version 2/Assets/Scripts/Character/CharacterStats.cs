@@ -59,15 +59,15 @@ public class CharacterStats : MonoBehaviour
 
     private void OnEnable()
     {
-        OnHealthChanged += ResetHealthBar;
-        OnStatsChanged += ResetHealthBar;
+        //OnHealthChanged += ResetHealthBar;
+        //OnStatsChanged += ResetHealthBar;
         GameManager.OnRoundEnd += EndRound;
     }
 
     private void OnDisable()
     {
-        OnHealthChanged -= ResetHealthBar;
-        OnStatsChanged -= ResetHealthBar;
+        //OnHealthChanged -= ResetHealthBar;
+        //OnStatsChanged -= ResetHealthBar;
         GameManager.OnRoundEnd -= EndRound;
     }
 

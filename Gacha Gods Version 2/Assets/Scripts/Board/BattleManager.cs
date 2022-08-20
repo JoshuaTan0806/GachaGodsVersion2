@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class BattleManager : MonoBehaviour
 {
-    public static List<CharacterStats> allies;
-    public static List<CharacterStats> enemies;
+    public static List<CharacterStats> allies = new List<CharacterStats>();
+    public static List<CharacterStats> enemies = new List<CharacterStats>();
 
-    public static List<CharacterStats> targetableAllies;
-    public static List<CharacterStats> targetableEnemies;
+    public static List<CharacterStats> targetableAllies = new List<CharacterStats>();
+    public static List<CharacterStats> targetableEnemies = new List<CharacterStats>();
+
+    public static BoardData playerBoardData;
+    public static BoardData enemyBoardData;
 
     [SerializeField] List<Transform> spawnPoints;
+    [SerializeField] GameObject battleStartPrefab;
 
     private void OnEnable()
     {
@@ -27,6 +31,8 @@ public class BattleManager : MonoBehaviour
     public void LoadBoardData()
     {
         BoardData boardData = BoardDatabase.PlayerBoard;
+
+        playerBoardData = boardData;
 
         List<StatData> globalBuffs = new List<StatData>();
 
@@ -111,6 +117,8 @@ public class BattleManager : MonoBehaviour
 
         BoardData boardData = BoardDatabase.LoadEnemyBoard(GameManager.RoundNumber);
 
+        enemyBoardData = boardData;
+
         List<StatData> globalBuffs = new List<StatData>();
 
         foreach (var item in boardData.Archetypes)
@@ -189,6 +197,7 @@ public class BattleManager : MonoBehaviour
     {
         LoadEnemyBoardData();
         LoadBoardData();
+        Instantiate(battleStartPrefab);
     }
 
     void ClearBoard()
