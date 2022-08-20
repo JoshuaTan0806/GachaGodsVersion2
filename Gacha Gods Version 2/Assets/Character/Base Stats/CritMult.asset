@@ -16,7 +16,7 @@ MonoBehaviour:
   statRequirement: 0
   archetype: {fileID: 0}
   role: {fileID: 0}
-  flat: 1.5
-  percent: 0
+  flat: 1
+  percent: 50
   multiplier: 1
   total: 1.5

@@ -15,6 +15,4 @@ MonoBehaviour:
   description: 
   icon: {fileID: 0}
   setData:
-    m_keys: 02000000
-    m_values:
-    - {fileID: 11400000, guid: 412d3aedb0a971440bf3ab38c349228b, type: 2}
+    m_keys: 020000000400000006000000080000000a000000

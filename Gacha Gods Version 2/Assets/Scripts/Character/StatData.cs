@@ -120,6 +120,7 @@ public enum Stat
     ManaGainPerHit,
     AtkSpd,
     SpellSpd,
+    SpellDmg,
     Spd,
     CritChance,
     CritMult
