@@ -117,6 +117,7 @@ public class GameManager : MonoBehaviour
     public static void EndRound()
     {
         OnRoundEnd?.Invoke();
+        AddGold(10);
         RoundNumber++;
         StartRound();
     }
