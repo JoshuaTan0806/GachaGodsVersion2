@@ -23,4 +23,23 @@ public class Archetype : ScriptableObject
     {
         return characters.Where(x => !x.Archetypes.Contains(this)).ToList();
     }
+
+    public StatData FindStats(int num)
+    {
+        if (SetData.IsNullOrEmpty())
+            return null;
+
+        //need to find the highest number that exists in the setdata that is lower than num
+        int setNum = num;
+
+        while (!SetData.ContainsKey(setNum))
+        {
+            setNum--;
+
+            if (setNum == 0)
+                return null;
+        }
+
+        return SetData[setNum];
+    }
 }

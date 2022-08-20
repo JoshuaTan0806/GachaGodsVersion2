@@ -23,4 +23,23 @@ public class Role : ScriptableObject
     {
         return characters.Where(x => !x.Roles.Contains(this)).ToList();
     }
+
+    public StatData FindStats(int num)
+    {
+        //need to find the highest number that exists in the setdata that is lower than num
+        if (SetData.IsNullOrEmpty())
+            return null;
+
+        int setNum = num;
+
+        while(!SetData.ContainsKey(setNum))
+        {
+            setNum--;
+
+            if (setNum == 0)
+                return null;
+        }
+
+        return SetData[setNum];
+    }
 }

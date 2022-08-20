@@ -30,14 +30,20 @@ public class BattleManager : MonoBehaviour
 
         List<StatData> globalBuffs = new List<StatData>();
 
-        foreach (var archetype in boardData.Archetypes)
+        foreach (var item in boardData.Archetypes)
         {
+            StatData stats = item.Key.FindStats(item.Value);
 
+            if (stats != null)
+                globalBuffs.Add(stats);
         }
 
-        foreach (var role in boardData.Roles)
+        foreach (var item in boardData.Roles)
         {
+            StatData stats = item.Key.FindStats(item.Value);
 
+            if (stats != null)
+                globalBuffs.Add(stats);
         }
 
         foreach (var item in boardData.CharacterDatas)
@@ -97,14 +103,20 @@ public class BattleManager : MonoBehaviour
 
         List<StatData> globalBuffs = new List<StatData>();
 
-        foreach (var archetype in boardData.Archetypes)
+        foreach (var item in boardData.Archetypes)
         {
+            StatData stats = item.Key.FindStats(item.Value);
 
+            if (stats != null)
+                globalBuffs.Add(stats);
         }
 
-        foreach (var role in boardData.Roles)
+        foreach (var item in boardData.Roles)
         {
+            StatData stats = item.Key.FindStats(item.Value);
 
+            if (stats != null)
+                globalBuffs.Add(stats);
         }
 
         foreach (var item in boardData.CharacterDatas)
