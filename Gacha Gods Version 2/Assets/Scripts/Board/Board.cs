@@ -22,7 +22,7 @@ public class Board : MonoBehaviour
         GameManager.OnRoundEnd -= SaveBoardData;
     }
 
-    public static void SaveBoardData()
+    public static BoardData PlayerBoard()
     {
         List<CharacterData> characterDatas = new List<CharacterData>();
 
@@ -37,7 +37,11 @@ public class Board : MonoBehaviour
             characterDatas.Add(characterData);
         }
 
-        BoardData boardData = new BoardData(GameManager.RoundNumber, characterDatas, CharacterManager.ActiveRoles, CharacterManager.ActiveArchetypes);
-        BoardDatabase.SaveBoard(boardData);
+        return new BoardData(GameManager.RoundNumber, characterDatas, CharacterManager.ActiveRoles, CharacterManager.ActiveArchetypes);
+    }
+
+    public static void SaveBoardData()
+    {
+        BoardDatabase.SaveBoard(PlayerBoard());
     }
 }

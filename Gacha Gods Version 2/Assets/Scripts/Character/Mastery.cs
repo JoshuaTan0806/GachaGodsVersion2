@@ -26,7 +26,7 @@ public class Mastery : ScriptableObject
     [ShowIf("MasteryType", MasteryType.Role), SerializeField]
     List<Role> roles;
 
-    public List<Archetype> Archetypes => Archetypes;
+    public List<Archetype> Archetypes => archetypes;
     [ShowIf("MasteryType", MasteryType.Archetype), SerializeField]
     List<Archetype> archetypes;
 

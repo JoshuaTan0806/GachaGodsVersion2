@@ -17,21 +17,16 @@ MonoBehaviour:
   roles:
   - {fileID: 11400000, guid: f60c0bb05b3f1e64f9e9065c6bf73a4f, type: 2}
   archetypes:
-  - {fileID: 11400000, guid: 6c6a0c3be76d00949a0dc31ba1da33f9, type: 2}
+  - {fileID: 11400000, guid: bef0f7b6bd5394345b1174b05e1314be, type: 2}
   rarity: {fileID: 11400000, guid: 46abe82243041d443bc2279cd6345bb0, type: 2}
   baseStats:
-    m_keys: 0000000002000000010000000a0000000b0000000600000009000000030000000400000005000000
+    m_keys: 0000000002000000010000000600000009000000
     m_values:
-    - 500
-    - 100
-    - 1
-    - 25
-    - 1
-    - 1
-    - 5
-    - 100
-    - 0
-    - 10
+    - 786
+    - 131
+    - 3
+    - 0.9919593
+    - 0.82402366
   mastery:
   - {fileID: 11400000, guid: b4b4f808936d53742a69a226d10430fd, type: 2}
   - {fileID: 11400000, guid: 4f94251e18b451d4895d910760d38ec2, type: 2}

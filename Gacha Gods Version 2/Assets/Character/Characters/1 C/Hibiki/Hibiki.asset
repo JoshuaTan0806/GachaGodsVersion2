@@ -14,22 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: -330335870900928024, guid: 178fb3e03156f1344b5d8ac13deff374, type: 3}
   icon: {fileID: 21300000, guid: 6a13cce74df6e71439c67adc95ad9867, type: 3}
-  roles: []
-  archetypes: []
+  roles:
+  - {fileID: 11400000, guid: f60c0bb05b3f1e64f9e9065c6bf73a4f, type: 2}
+  archetypes:
+  - {fileID: 11400000, guid: 3b5b4aa8ee8a9a14093cd5f5c9fd3d78, type: 2}
   rarity: {fileID: 11400000, guid: 5caa1fcf88ed40b4abb3e1f7df2d8f23, type: 2}
   baseStats:
-    m_keys: 0000000002000000010000000a0000000b0000000600000009000000030000000400000005000000
+    m_keys: 0000000002000000010000000600000009000000
     m_values:
-    - 500
-    - 100
-    - 1
-    - 25
-    - 1
-    - 1
-    - 5
-    - 100
-    - 0
-    - 10
+    - 890
+    - 181
+    - 2
+    - 0.7934749
+    - 0.94043404
   mastery:
   - {fileID: 11400000, guid: a4c32357a181488458661bea9505a05b, type: 2}
   - {fileID: 11400000, guid: a9f284d4f6a758c47b12fead0ce43530, type: 2}

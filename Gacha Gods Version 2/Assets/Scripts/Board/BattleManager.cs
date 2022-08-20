@@ -14,7 +14,7 @@ public class BattleManager : MonoBehaviour
     public static BoardData enemyBoardData;
 
     [SerializeField] List<Transform> spawnPoints;
-    [SerializeField] GameObject battleStartPrefab;
+    [SerializeField] BattleStartCanvas battleStartPrefab;
 
     private void OnEnable()
     {
@@ -30,7 +30,7 @@ public class BattleManager : MonoBehaviour
 
     public void LoadBoardData()
     {
-        BoardData boardData = BoardDatabase.PlayerBoard;
+        BoardData boardData = Board.PlayerBoard();
 
         playerBoardData = boardData;
 
@@ -197,7 +197,8 @@ public class BattleManager : MonoBehaviour
     {
         LoadEnemyBoardData();
         LoadBoardData();
-        Instantiate(battleStartPrefab);
+        BattleStartCanvas g = Instantiate(battleStartPrefab);
+        g.Initialise(playerBoardData, enemyBoardData);
     }
 
     void ClearBoard()

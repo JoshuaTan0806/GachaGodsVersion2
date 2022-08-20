@@ -527,7 +527,7 @@ MonoBehaviour:
   gachaCanvas: {fileID: 4312478131289729152}
   achievementsCanvas: {fileID: 4312478131289729151}
   characterCanvas: {fileID: 4312478131289729150}
-  roundStartPrefab: {fileID: 7561690045132176480, guid: 6a053756dc6844044b1802d136e6533a, type: 3}
+  roundStartPrefab: {fileID: 7561690045132176480, guid: 33af105a970ceb44e9959254755b2b74, type: 3}
 --- !u!1 &381025536
 GameObject:
   m_ObjectHideFlags: 0
@@ -2599,7 +2599,7 @@ MonoBehaviour:
   - {fileID: 1591394658}
   - {fileID: 1976210694}
   - {fileID: 156963997}
-  battleStartPrefab: {fileID: 7561690045132176480, guid: 33af105a970ceb44e9959254755b2b74, type: 3}
+  battleStartPrefab: {fileID: 4778340183604792129, guid: 6a053756dc6844044b1802d136e6533a, type: 3}
 --- !u!1 &1891534095
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,6 +7,7 @@ using UnityEngine;
 public class Role : ScriptableObject
 {
     public string Name => name;
+
     public string Description => description;
     [SerializeField] string description;
     public Sprite Icon => icon;
