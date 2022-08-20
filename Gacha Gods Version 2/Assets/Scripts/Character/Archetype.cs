@@ -24,7 +24,7 @@ public class Archetype : ScriptableObject
         return characters.Where(x => !x.Archetypes.Contains(this)).ToList();
     }
 
-    public List<StatData> FindStats(int num)
+    public StatDatas FindStats(int num)
     {
         if (SetData.IsNullOrEmpty())
             return null;

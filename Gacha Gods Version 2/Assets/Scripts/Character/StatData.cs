@@ -125,6 +125,7 @@ public enum Stat
     Spd,
     CritChance,
     CritMult,
+    Lifesteal
 }
 
 public enum StatModifier

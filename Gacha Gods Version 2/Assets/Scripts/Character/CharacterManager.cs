@@ -199,5 +199,5 @@ public class CharacterManager : Factories.FactoryBase
 public class CharacterMastery : SerializableDictionary<Character, int> { }
 public class ActiveRoles : SerializableDictionary<Role, int> { }
 public class ActiveArchetypes : SerializableDictionary<Archetype, int> { }
-[System.Serializable] public class SetData : SerializableDictionary<int, List<StatData>> { }
+[System.Serializable] public class SetData : SerializableDictionary<int, StatDatas> { }
 [System.Serializable] public class OddsDictionary : SerializableDictionary<Rarity, int> { }

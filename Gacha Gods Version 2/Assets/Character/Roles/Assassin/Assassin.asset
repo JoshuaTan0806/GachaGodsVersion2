@@ -15,4 +15,10 @@ MonoBehaviour:
   description: 
   icon: {fileID: 0}
   setData:
-    m_keys: 05000000
+    m_keys: 020000000400000006000000080000000a000000
+    m_values:
+    - {fileID: 11400000, guid: e22e5b1267408b747a0d64a16a942410, type: 2}
+    - {fileID: 11400000, guid: 23ba6e13685b43a48a1b78b056b400c5, type: 2}
+    - {fileID: 11400000, guid: ee19fd50b9494bb4e9d19b57a15605fa, type: 2}
+    - {fileID: 11400000, guid: 6820ae59dd7cc874ab4b2af1f52e5efa, type: 2}
+    - {fileID: 11400000, guid: 080bf02b12cf3bf4d88ce8f1a9cfb822, type: 2}

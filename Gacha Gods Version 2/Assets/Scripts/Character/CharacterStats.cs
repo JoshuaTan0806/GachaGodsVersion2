@@ -73,11 +73,6 @@ public class CharacterStats : MonoBehaviour
 
     void Start()
     {
-        foreach (var item in StatManager.StatDictionary)
-        {
-            AddStat(item.Value);
-        }
-
         foreach (var item in Character.BaseStats)
         {
             AddStat(StatManager.CreateStat(item.Key, item.Value));
