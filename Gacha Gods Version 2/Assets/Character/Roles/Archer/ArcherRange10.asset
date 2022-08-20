@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ea081abe43720704da89d92321d2b0ba, type: 3}
-  m_Name: AtkSpd
+  m_Name: ArcherRange10
   m_EditorClassIdentifier: 
-  stat: 6
-  statRequirement: 0
+  stat: 1
+  statRequirement: 2
   archetype: {fileID: 0}
-  role: {fileID: 0}
-  flat: 1
+  role: {fileID: 11400000, guid: 3bccd85134a05fe42a7014ef843ddd50, type: 2}
+  flat: 25
   percent: 0
   multiplier: 1
-  total: 1
+  total: 25

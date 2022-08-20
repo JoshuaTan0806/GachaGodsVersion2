@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea081abe43720704da89d92321d2b0ba, type: 3}
   m_Name: AssassinCritChance6
   m_EditorClassIdentifier: 
-  stat: 8
+  stat: 10
   statRequirement: 2
   archetype: {fileID: 0}
   role: {fileID: 11400000, guid: f60c0bb05b3f1e64f9e9065c6bf73a4f, type: 2}

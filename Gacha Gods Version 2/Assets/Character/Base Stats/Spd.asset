@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea081abe43720704da89d92321d2b0ba, type: 3}
   m_Name: Spd
   m_EditorClassIdentifier: 
-  stat: 8
+  stat: 9
   statRequirement: 0
   archetype: {fileID: 0}
   role: {fileID: 0}

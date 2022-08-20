@@ -117,13 +117,14 @@ public enum Stat
     Range,
     Dmg,
     ManaCost,
+    StartingMana,
     ManaGainPerHit,
     AtkSpd,
     SpellSpd,
     SpellDmg,
     Spd,
     CritChance,
-    CritMult
+    CritMult,
 }
 
 public enum StatModifier
