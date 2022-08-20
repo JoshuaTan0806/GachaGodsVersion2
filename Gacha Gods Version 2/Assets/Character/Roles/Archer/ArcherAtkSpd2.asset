@@ -9,7 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eeb8b6d7551bef946960ba98061640a1, type: 3}
-  m_Name: Archer
+  m_Script: {fileID: 11500000, guid: ea081abe43720704da89d92321d2b0ba, type: 3}
+  m_Name: ArcherAtkSpd2
   m_EditorClassIdentifier: 
-  description: 
+  stat: 5
+  statRequirement: 2
+  archetype: {fileID: 0}
+  role: {fileID: 11400000, guid: 3bccd85134a05fe42a7014ef843ddd50, type: 2}
+  flat: 1
+  percent: 25
+  multiplier: 1
+  total: 1.25

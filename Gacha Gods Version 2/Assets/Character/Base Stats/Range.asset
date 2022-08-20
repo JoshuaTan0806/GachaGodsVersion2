@@ -10,10 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ea081abe43720704da89d92321d2b0ba, type: 3}
-  m_Name: Health
+  m_Name: Range
   m_EditorClassIdentifier: 
-  stat: 1
-  flat: 0
+  stat: 0
+  statRequirement: 0
+  archetype: {fileID: 0}
+  role: {fileID: 0}
+  flat: 1
   percent: 0
   multiplier: 1
-  total: 0
+  total: 1

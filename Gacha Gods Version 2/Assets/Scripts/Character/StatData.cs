@@ -36,7 +36,7 @@ public class StatData : ScriptableObject
             CalculateTotal();
         }
     }
-    [SerializeField] float flat;
+    [SerializeField] float flat = 1;
 
     public float Percent
     {
@@ -120,7 +120,9 @@ public enum Stat
     ManaGainPerHit,
     AtkSpd,
     SpellSpd,
-    Spd
+    Spd,
+    CritChance,
+    CritMult
 }
 
 public enum StatModifier
