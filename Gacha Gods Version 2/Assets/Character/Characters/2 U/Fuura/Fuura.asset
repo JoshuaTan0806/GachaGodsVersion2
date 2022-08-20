@@ -20,13 +20,18 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ba9c782aa7b698c49942ae8c9c12ea1d, type: 2}
   rarity: {fileID: 11400000, guid: 46abe82243041d443bc2279cd6345bb0, type: 2}
   baseStats:
-    m_keys: 0000000002000000010000000500000007000000
+    m_keys: 0000000002000000010000000a0000000b0000000600000009000000030000000400000005000000
     m_values:
-    - 687
-    - 199
+    - 500
+    - 100
     - 1
-    - 0.97583354
-    - 0.9127347
+    - 25
+    - 1
+    - 1
+    - 5
+    - 100
+    - 0
+    - 10
   mastery:
   - {fileID: 11400000, guid: f8dbb87acda506b4dbdd8c4068283941, type: 2}
   - {fileID: 11400000, guid: 286d856db8ac97a439bbb337c0d803b8, type: 2}

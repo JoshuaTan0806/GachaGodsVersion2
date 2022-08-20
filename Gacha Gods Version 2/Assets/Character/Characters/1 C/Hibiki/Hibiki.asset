@@ -18,13 +18,18 @@ MonoBehaviour:
   archetypes: []
   rarity: {fileID: 11400000, guid: 5caa1fcf88ed40b4abb3e1f7df2d8f23, type: 2}
   baseStats:
-    m_keys: 0000000002000000010000000500000007000000
+    m_keys: 0000000002000000010000000a0000000b0000000600000009000000030000000400000005000000
     m_values:
-    - 626
-    - 171
+    - 500
+    - 100
     - 1
-    - 0.8031653
-    - 0.8301672
+    - 25
+    - 1
+    - 1
+    - 5
+    - 100
+    - 0
+    - 10
   mastery:
   - {fileID: 11400000, guid: a4c32357a181488458661bea9505a05b, type: 2}
   - {fileID: 11400000, guid: a9f284d4f6a758c47b12fead0ce43530, type: 2}
