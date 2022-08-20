@@ -15,8 +15,8 @@ public class StatManager : Factories.FactoryBase
     {
         for (int i = 0; i < stats.Count; i++)
         {
-            if (!StatDictionary.ContainsKey(stats[i].stat))
-                statDictionary.Add(stats[i].stat, stats[i]);
+            if (!StatDictionary.ContainsKey(stats[i].Stat))
+                statDictionary.Add(stats[i].Stat, stats[i]);
         }
     }
 

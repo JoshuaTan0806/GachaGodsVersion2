@@ -93,23 +93,6 @@ public class CharacterStats : MonoBehaviour
         attack = character.Attack;
     }
 
-    public void SetStats(StatDictionary stats)
-    {
-        StartCoroutine(LateSetStats(stats));
-    }
-
-    public IEnumerator LateSetStats(StatDictionary stats)
-    {
-        yield return new WaitForEndOfFrame();
-
-        this.stats = new StatDictionary();
-
-        foreach (var item in stats)
-        {
-            AddStat(item.Value);
-        }
-    }
-
     public float GetStat(Stat stat)
     {
         return stats.ContainsKey(stat) ? stats[stat].Total : StatManager.NullStat(stat).Total;
@@ -117,34 +100,45 @@ public class CharacterStats : MonoBehaviour
 
     public void AddStat(StatData stat)
     {
-        if(stats.ContainsKey(stat.stat))
+        if(stat.StatRequirement == StatRequirement.Archetype)
         {
-            stats[stat.stat] += stat;
+            if (!Character.Archetypes.Contains(stat.Archetype))
+                return;
+        }
+        else if (stat.StatRequirement == StatRequirement.Role)
+        {
+            if (!Character.Roles.Contains(stat.Role))
+                return;
+        }
+
+        if (stats.ContainsKey(stat.Stat))
+        {
+            stats[stat.Stat] += stat;
         }
         else
         {
-            stats.Add(stat.stat, StatManager.NullStat(stat.stat));
-            stats[stat.stat] += stat;
+            stats.Add(stat.Stat, StatManager.NullStat(stat.Stat));
+            stats[stat.Stat] += stat;
         }
 
-        totalStats[stat.stat] = stats[stat.stat].Total;
+        totalStats[stat.Stat] = stats[stat.Stat].Total;
 
         OnStatsChanged?.Invoke();
     }
 
     public void RemoveStat(StatData stat)
     {
-        if (stats.ContainsKey(stat.stat))
+        if (stats.ContainsKey(stat.Stat))
         {
-            stats[stat.stat] -= stat;
+            stats[stat.Stat] -= stat;
         }
         else
         {
-            stats.Add(stat.stat, StatManager.NullStat(stat.stat));
-            stats[stat.stat] -= stat;
+            stats.Add(stat.Stat, StatManager.NullStat(stat.Stat));
+            stats[stat.Stat] -= stat;
         }
 
-        totalStats[stat.stat] = stats[stat.stat].Total;
+        totalStats[stat.Stat] = stats[stat.Stat].Total;
 
         OnStatsChanged?.Invoke();
     }

@@ -3,10 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using Sirenix.OdinInspector;
 
+public enum StatRequirement
+{
+    None,
+    Archetype,
+    Role
+}
+
 [CreateAssetMenu(menuName = "Character/Stat")]
 public class StatData : ScriptableObject
 {
-    public Stat stat;
+    public Stat Stat => stat;
+    [SerializeField] Stat stat;
+
+    public StatRequirement StatRequirement => statRequirement;
+    [SerializeField] StatRequirement statRequirement = StatRequirement.None;
+
+    public Archetype Archetype => archetype;
+    [ShowIf("statRequirement", StatRequirement.Archetype), SerializeField] Archetype archetype;
+    public Role Role => role;
+    [ShowIf("statRequirement", StatRequirement.Role), SerializeField] Role role;
 
     public float Flat
     {
@@ -65,10 +81,10 @@ public class StatData : ScriptableObject
 
     public static StatData operator+ (StatData l, StatData r)
     {
-        if (l.stat != r.stat)
+        if (l.Stat != r.Stat)
             throw new System.Exception("Stats are different");
 
-        StatData stat = StatManager.NullStat(l.stat);
+        StatData stat = StatManager.NullStat(l.Stat);
 
         stat.Flat = l.Flat + r.Flat;
         stat.Percent = l.Percent + r.Percent;
@@ -79,10 +95,10 @@ public class StatData : ScriptableObject
 
     public static StatData operator - (StatData l, StatData r)
     {
-        if (l.stat != r.stat)
+        if (l.Stat != r.Stat)
             throw new System.Exception("Stats are different");
 
-        StatData stat = StatManager.NullStat(l.stat);
+        StatData stat = StatManager.NullStat(l.Stat);
 
         stat.Flat = l.Flat - r.Flat;
         stat.Percent = l.Percent - r.Percent;
