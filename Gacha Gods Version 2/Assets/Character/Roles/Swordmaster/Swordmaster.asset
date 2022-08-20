@@ -17,8 +17,8 @@ MonoBehaviour:
   setData:
     m_keys: 020000000400000006000000080000000a000000
     m_values:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
+    - {fileID: 11400000, guid: 2d7db5bc0eab5654c8c584fa0dfbf467, type: 2}
+    - {fileID: 11400000, guid: 73a3e2ce86cff7743af8979318759158, type: 2}
+    - {fileID: 11400000, guid: e325c0296a981f744bbb9ed5219561f0, type: 2}
+    - {fileID: 11400000, guid: a14337f814cf1214780d6eb1c6818f53, type: 2}
+    - {fileID: 11400000, guid: 661dcbc01c2d97b41b3249b3f8dcf718, type: 2}
