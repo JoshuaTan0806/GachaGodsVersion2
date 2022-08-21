@@ -62,15 +62,15 @@ public class CharacterStats : MonoBehaviour
 
     private void OnEnable()
     {
-        //OnHealthChanged += ResetHealthBar;
-        //OnStatsChanged += ResetHealthBar;
+        OnHealthChanged += ResetHealthBar;
+        OnStatsChanged += ResetHealthBar;
         GameManager.OnRoundEnd += EndRound;
     }
 
     private void OnDisable()
     {
-        //OnHealthChanged -= ResetHealthBar;
-        //OnStatsChanged -= ResetHealthBar;
+        OnHealthChanged -= ResetHealthBar;
+        OnStatsChanged -= ResetHealthBar;
         GameManager.OnRoundEnd -= EndRound;
     }
 
@@ -87,6 +87,11 @@ public class CharacterStats : MonoBehaviour
         spell = character.Spell;
         attack = character.Attack;
         enemies = BattleManager.FindEnemies(this);
+
+        if (enemies == BattleManager.targetableEnemies)
+            healthBar.color = Color.green;
+        else
+            healthBar.color = Color.red;
     }
 
     public float GetStat(Stat stat)
