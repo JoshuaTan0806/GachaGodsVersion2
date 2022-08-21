@@ -107,13 +107,9 @@ public class BannerManager : MonoBehaviour
             Rarity rarityToRollAt;
 
             if (counter == 9)
-            {
                 rarityToRollAt = RollRarity(GameManager.Level + 1);
-            }
             else
-            {
                 rarityToRollAt = RollRarity(GameManager.Level);
-            }
 
             List<Character> characters = new List<Character>();
 

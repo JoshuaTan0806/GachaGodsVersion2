@@ -13,8 +13,12 @@ public class BattleManager : MonoBehaviour
     public static BoardData playerBoardData;
     public static BoardData enemyBoardData;
 
+    [Header("References")]
     [SerializeField] List<Transform> spawnPoints;
+
+    [Header("Prefabs")]
     [SerializeField] BattleStartCanvas battleStartPrefab;
+    [SerializeField] CharacterStats BaseCharacterPrefab;
 
     private void OnEnable()
     {
@@ -26,6 +30,14 @@ public class BattleManager : MonoBehaviour
     {
         GameManager.OnBattleStart -= OnBattleStart;
         GameManager.OnRoundEnd -= ClearBoard;
+    }
+
+    public static List<CharacterStats> FindEnemies(CharacterStats stats)
+    {
+        if (targetableAllies.Contains(stats))
+            return targetableEnemies;
+        else
+            return targetableAllies;
     }
 
     public void LoadBoardData()
@@ -65,7 +77,8 @@ public class BattleManager : MonoBehaviour
         foreach (var item in boardData.CharacterDatas)
         {
             Vector3 spawnPos = spawnPoints[item.Position].position;
-            CharacterStats stats = Instantiate(item.Character.Prefab, spawnPos, Quaternion.identity, transform);
+            CharacterStats stats = Instantiate(BaseCharacterPrefab, spawnPos, Quaternion.identity, transform);
+            Instantiate(item.Character.Prefab, stats.transform);
 
             for (int i = 0; i < item.Mastery; i++)
             {

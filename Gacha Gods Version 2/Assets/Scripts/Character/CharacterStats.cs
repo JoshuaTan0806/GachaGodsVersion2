@@ -9,8 +9,8 @@ public class CharacterStats : MonoBehaviour
     StatDictionary stats = new StatDictionary();
     [ReadOnly, SerializeField] StatFloatDictionary totalStats = new StatFloatDictionary();
     public System.Action OnStatsChanged;
-    public Character Character => character;
-    [SerializeField] Character character;
+
+    Character character;
 
     List<Buff> buffs = new List<Buff>();
     public System.Action OnDeath;
@@ -71,18 +71,15 @@ public class CharacterStats : MonoBehaviour
         GameManager.OnRoundEnd -= EndRound;
     }
 
-    void Start()
+    public void InitialiseCharacter(Character character)
     {
-        foreach (var item in Character.BaseStats)
+        foreach (var item in character.BaseStats)
         {
             AddStat(StatManager.CreateStat(item.Key, item.Value));
         }
 
         CurrentHealth = stats[Stat.Health].Total;
-    }
 
-    public void InitialiseCharacter(Character character)
-    {
         this.character = character;
         spell = character.Spell;
         attack = character.Attack;
@@ -97,12 +94,12 @@ public class CharacterStats : MonoBehaviour
     {
         if(stat.StatRequirement == StatRequirement.Archetype)
         {
-            if (!Character.Archetypes.Contains(stat.Archetype))
+            if (!character.Archetypes.Contains(stat.Archetype))
                 return;
         }
         else if (stat.StatRequirement == StatRequirement.Role)
         {
-            if (!Character.Roles.Contains(stat.Role))
+            if (!character.Roles.Contains(stat.Role))
                 return;
         }
 
