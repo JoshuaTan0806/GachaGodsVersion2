@@ -16,6 +16,7 @@ public class BannerManager : MonoBehaviour
     [SerializeField] Button TenRollButtonReference;
     [SerializeField] Transform RateUpReference;
     [SerializeField] List<Image> RateUpCharactersPositionReference;
+    [SerializeField] List<Image> RarityOddsReference;
 
     [Header("Prefabs")]
     [SerializeField] GachaChoice GachaChoice;
@@ -32,6 +33,7 @@ public class BannerManager : MonoBehaviour
     private void OnEnable()
     {
         InitialiseBanner(currentBanner);
+        UpdateRarityOdds();
     }
 
     public void InitialiseBanner(Banner banner)
@@ -81,6 +83,17 @@ public class BannerManager : MonoBehaviour
         {
             GameManager.RemoveGems(1);
             StartCoroutine(RollGacha(1));
+        }
+    }
+
+    void UpdateRarityOdds()
+    {
+        OddsDictionary odds = FindOdds(GameManager.Level);
+
+        for (int i = 0; i < CharacterManager.Rarities.Count; i++)
+        {
+            RarityOddsReference[i].color = CharacterManager.Rarities[i].Gradient.Evaluate(0);
+            RarityOddsReference[i].GetComponentInChildren<TMPro.TextMeshProUGUI>().SetText(odds[CharacterManager.Rarities[i]] + "%");
         }
     }
 
