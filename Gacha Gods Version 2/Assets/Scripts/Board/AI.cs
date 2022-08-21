@@ -16,14 +16,12 @@ public class AI : MonoBehaviour
     public System.Action OnAttack;
     public System.Action OnSpellCast;
 
-    List<CharacterStats> enemies = new List<CharacterStats>();
+    List<CharacterStats> enemies => stats.Enemies;
 
     private void Awake()
     {
         stats = GetComponent<CharacterStats>();
         //animator = GetComponent<Animator>();
-
-        enemies = BattleManager.FindEnemies(stats);
     }
 
     private void OnEnable()
@@ -38,7 +36,7 @@ public class AI : MonoBehaviour
 
     void Update()
     {
-        if (BattleManager.FindEnemies(stats).Count == 0)
+        if (enemies.Count == 0)
             return;
 
         if (stats.IsDead())

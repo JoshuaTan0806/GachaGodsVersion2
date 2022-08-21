@@ -36,7 +36,7 @@ public class BattleManager : MonoBehaviour
         GameManager.OnBattleStart -= OnBattleStart;
         GameManager.OnRoundEnd -= ClearBoard;
     }
-
+ 
     public static List<CharacterStats> FindEnemies(CharacterStats stats)
     {
         if (allies.Contains(stats))
@@ -83,6 +83,7 @@ public class BattleManager : MonoBehaviour
         {
             Vector3 spawnPos = spawnPoints[item.Position].position;
             CharacterStats stats = Instantiate(BaseCharacterPrefab, spawnPos, Quaternion.identity, transform);
+            allies.Add(stats);
             stats.InitialiseCharacter(item.Character);
             Instantiate(item.Character.Prefab, stats.transform);
 
@@ -114,8 +115,6 @@ public class BattleManager : MonoBehaviour
                         break;
                 }
             }
-
-            allies.Add(stats);
         }
 
         foreach (var ally in allies)

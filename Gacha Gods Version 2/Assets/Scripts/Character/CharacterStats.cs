@@ -10,6 +10,7 @@ public class CharacterStats : MonoBehaviour
     [ReadOnly, SerializeField] StatFloatDictionary totalStats = new StatFloatDictionary();
     public System.Action OnStatsChanged;
 
+    public Character Character => character;
     Character character;
 
     List<Buff> buffs = new List<Buff>();
@@ -56,6 +57,8 @@ public class CharacterStats : MonoBehaviour
     [SerializeField] UnityEngine.UI.Image healthBar;
     public UnityEngine.UI.Image HealthBar => healthBar;
     [SerializeField] TMPro.TextMeshProUGUI HealthLabel;
+    public List<CharacterStats> Enemies => enemies;
+    List<CharacterStats> enemies;
 
     private void OnEnable()
     {
@@ -83,6 +86,7 @@ public class CharacterStats : MonoBehaviour
         this.character = character;
         spell = character.Spell;
         attack = character.Attack;
+        enemies = BattleManager.FindEnemies(this);
     }
 
     public float GetStat(Stat stat)
