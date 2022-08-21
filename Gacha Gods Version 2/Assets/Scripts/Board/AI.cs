@@ -38,7 +38,7 @@ public class AI : MonoBehaviour
 
     void Update()
     {
-        if (enemies.Count == 0)
+            if (enemies.Count == 0)
             return;
 
         if (stats.IsDead())
@@ -64,11 +64,6 @@ public class AI : MonoBehaviour
 
     CharacterStats FindClosestEnemy()
     {
-        List<CharacterStats> enemies = BattleManager.FindEnemies(stats);
-
-        if (enemies.Count == 0)
-            return null;
-        
         float minDist = Mathf.Infinity;
         CharacterStats closestEnemy = null;
 

@@ -20,6 +20,11 @@ public class BattleManager : MonoBehaviour
     [SerializeField] BattleStartCanvas battleStartPrefab;
     [SerializeField] CharacterStats BaseCharacterPrefab;
 
+    private void Awake()
+    {
+        ClearBoard();
+    }
+
     private void OnEnable()
     {
         GameManager.OnBattleStart += OnBattleStart;
@@ -229,13 +234,13 @@ public class BattleManager : MonoBehaviour
         foreach (var item in allies)
         {
             //5 if its in the back square
-            MakeCharacterTargetable(item, targetableEnemies, 3);
+            StartCoroutine(MakeCharacterTargetable(item, targetableEnemies, 3));
         }
 
         foreach (var item in enemies)
         {
             //5 if its in the back square
-            MakeCharacterTargetable(item, targetableEnemies, 3);
+            StartCoroutine(MakeCharacterTargetable(item, targetableEnemies, 3));
         }
     }
 
