@@ -21,7 +21,7 @@ public class AI : MonoBehaviour
     private void Awake()
     {
         stats = GetComponent<CharacterStats>();
-        animator = GetComponent<Animator>();
+        //animator = GetComponent<Animator>();
 
         enemies = BattleManager.FindEnemies(stats);
     }
@@ -38,7 +38,7 @@ public class AI : MonoBehaviour
 
     void Update()
     {
-            if (enemies.Count == 0)
+        if (BattleManager.FindEnemies(stats).Count == 0)
             return;
 
         if (stats.IsDead())
@@ -99,11 +99,10 @@ public class AI : MonoBehaviour
         return false;
     }
 
-    [Button]
     void Attack()
     {
         OnAttack?.Invoke();
-        animator.Play("Attack");
+        //animator.Play("Attack");
         canChooseAction = false;
         StartCoroutine(AllowAction(1 / stats.GetStat(Stat.AtkSpd)));
 
@@ -114,15 +113,14 @@ public class AI : MonoBehaviour
 
     void Move()
     {
-        animator.Play("Move");
+        //animator.Play("Move");
         transform.MoveToPosition(target.transform.position, stats.GetStat(Stat.Spd));
     }
 
-    [Button]
     void Cast()
     {
         OnSpellCast?.Invoke();
-        animator.Play("Cast");
+        //animator.Play("Cast");
         canChooseAction = false;
         StartCoroutine(AllowAction(1 / stats.GetStat(Stat.SpellSpd)));
 
@@ -131,7 +129,7 @@ public class AI : MonoBehaviour
 
     void GetStunned(float time)
     {
-        animator.Play("Stun");
+        //animator.Play("Stun");
         canChooseAction = false;
         StartCoroutine(AllowAction(time));
     }

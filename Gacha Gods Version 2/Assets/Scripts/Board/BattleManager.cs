@@ -39,7 +39,7 @@ public class BattleManager : MonoBehaviour
 
     public static List<CharacterStats> FindEnemies(CharacterStats stats)
     {
-        if (targetableAllies.Contains(stats))
+        if (allies.Contains(stats))
             return targetableEnemies;
         else
             return targetableAllies;
@@ -128,7 +128,7 @@ public class BattleManager : MonoBehaviour
     }
     public void LoadEnemyBoardData()
     {
-        if(BoardDatabase.DatabaseIsEmpty(GameManager.RoundNumber))
+        if (BoardDatabase.DatabaseIsEmpty(GameManager.RoundNumber))
         {
             Board.SaveBoardData();
         }
@@ -229,18 +229,18 @@ public class BattleManager : MonoBehaviour
         while (g != null)
             yield return new WaitForSeconds(0.1f);
 
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1);
 
         foreach (var item in allies)
         {
             //5 if its in the back square
-            StartCoroutine(MakeCharacterTargetable(item, targetableEnemies, 3));
+            StartCoroutine(MakeCharacterTargetable(item, targetableAllies, 1));
         }
 
         foreach (var item in enemies)
         {
             //5 if its in the back square
-            StartCoroutine(MakeCharacterTargetable(item, targetableEnemies, 3));
+            StartCoroutine(MakeCharacterTargetable(item, targetableEnemies, 1));
         }
     }
 
@@ -254,12 +254,14 @@ public class BattleManager : MonoBehaviour
     {
         foreach (var ally in allies)
         {
-            Destroy(ally.gameObject);
+            if (ally != null)
+                Destroy(ally.gameObject);
         }
 
         foreach (var enemy in enemies)
         {
-            Destroy(enemy.gameObject);
+            if (enemy != null)
+                Destroy(enemy.gameObject);
         }
 
         allies.Clear();
@@ -278,7 +280,7 @@ public class BattleManager : MonoBehaviour
             if (allies.Count == 0)
                 CoroutineManager.instance.StartCoroutine(EndRound());
         }
-        else if(enemies.Contains(stats))
+        else if (enemies.Contains(stats))
         {
             enemies.Remove(stats);
             targetableEnemies.Remove(stats);
