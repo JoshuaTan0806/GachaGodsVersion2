@@ -105,6 +105,8 @@ public class GameManager : MonoBehaviour
     public static void StartRound()
     {
         OnRoundStart?.Invoke();
+
+        
     }
 
     [Button]
@@ -117,6 +119,9 @@ public class GameManager : MonoBehaviour
     public static void EndRound()
     {
         OnRoundEnd?.Invoke();
+
+        int interest = Mathf.Min(gold / 10, 5);
+        AddGold(interest);
         AddGold(10);
         RoundNumber++;
         StartRound();

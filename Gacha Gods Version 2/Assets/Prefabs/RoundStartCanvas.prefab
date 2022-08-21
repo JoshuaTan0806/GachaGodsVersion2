@@ -67,7 +67,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Tip:'
+  m_text: Tip
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -150,11 +150,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tips:
   - The last pull in a ten pull has a chance of getting higher rarity characters
-  - You gain interest for every 10 gold you have, up to a maximum of 5
+  - You gain a bonus for every 10 gold you have at the end of the round, up to a
+    maximum of 5
   - Getting duplicates of characters automatically makes them stronger
   - Meeting milestones for roles and archetypes gives bonus stats to your characters
   - Achievements give gems upon completion
   - Assassins can be placed behind the opponents
+  - You gain 10 gold at the start of every round
 --- !u!1 &7561690044078346494
 GameObject:
   m_ObjectHideFlags: 0
