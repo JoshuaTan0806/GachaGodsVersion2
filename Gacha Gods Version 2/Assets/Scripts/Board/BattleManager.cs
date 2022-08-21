@@ -107,7 +107,6 @@ public class BattleManager : MonoBehaviour
             }
         }
     }
-
     public void LoadEnemyBoardData()
     {
         if(BoardDatabase.DatabaseIsEmpty(GameManager.RoundNumber))
@@ -197,8 +196,37 @@ public class BattleManager : MonoBehaviour
     {
         LoadEnemyBoardData();
         LoadBoardData();
+
+        StartCoroutine(StartBattle());
+    }
+
+    IEnumerator StartBattle()
+    {
         BattleStartCanvas g = Instantiate(battleStartPrefab);
         g.Initialise(playerBoardData, enemyBoardData);
+
+        while (g != null)
+            yield return new WaitForSeconds(0.1f);
+
+        yield return new WaitForSeconds(3);
+
+        foreach (var item in allies)
+        {
+            //5 if its in the back square
+            MakeCharacterTargetable(item, targetableEnemies, 3);
+        }
+
+        foreach (var item in enemies)
+        {
+            //5 if its in the back square
+            MakeCharacterTargetable(item, targetableEnemies, 3);
+        }
+    }
+
+    IEnumerator MakeCharacterTargetable(CharacterStats stats, List<CharacterStats> team, float timeInSeconds)
+    {
+        yield return new WaitForSeconds(timeInSeconds);
+        team.Add(stats);
     }
 
     void ClearBoard()
