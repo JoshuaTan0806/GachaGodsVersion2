@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System.Linq;
 
 public class BattleStartCanvas : MonoBehaviour
 {
@@ -29,40 +30,67 @@ public class BattleStartCanvas : MonoBehaviour
             enemyCharacters[i].SetText(enemyBoard.CharacterDatas[i].Character.name + " (" + enemyBoard.CharacterDatas[i].Mastery + ")");
         }
 
-        //ally sets
+        SetAllyTraits(allyBoard);
+        SetEnemyTraits(enemyBoard);
+    }
 
-        List<string> allySetNames = new List<string>();
+    void SetAllyTraits(BoardData allyBoard)
+    {
+        List<ScriptableObject> traits = new List<ScriptableObject>();
+
         foreach (var item in allyBoard.Archetypes)
         {
-            allySetNames.Add(item.Key.name + " (" + item.Value + ")");
+            traits.Add(item.Key);
         }
+
         foreach (var item in allyBoard.Roles)
         {
-            allySetNames.Add(item.Key.name + " (" + item.Value + ")");
+            traits.Add(item.Key);
         }
 
-        for (int i = 0; i < allySetNames.Count; i++)
+        traits = traits.OrderByDescending(x => x as Archetype != null ? allyBoard.Archetypes[(Archetype)x] : allyBoard.Roles[(Role)x]).ToList();
+
+        for (int i = 0; i < traits.Count; i++)
         {
+            ScriptableObject trait = traits[i];
+
             allySets[i].gameObject.SetActive(true);
-            allySets[i].SetText(allySetNames[i]);
+
+            if (trait as Archetype != null)
+                allySets[i].SetText(trait.name + ": " + allyBoard.Archetypes[(Archetype)trait]);
+            else
+                allySets[i].SetText(trait.name + ": " + allyBoard.Roles[(Role)trait]);
         }
+    }
 
-        //enemy sets
+    void SetEnemyTraits(BoardData enemyBoard)
+    {
+        List<ScriptableObject> traits = new List<ScriptableObject>();
 
-        List<string> enemySetNames = new List<string>();
+        traits = new List<ScriptableObject>();
+
         foreach (var item in enemyBoard.Archetypes)
         {
-            enemySetNames.Add(item.Key.name + " (" + item.Value + ")");
-        }
-        foreach (var item in enemyBoard.Roles)
-        {
-            enemySetNames.Add(item.Key.name + " (" + item.Value + ")");
+            traits.Add(item.Key);
         }
 
-        for (int i = 0; i < enemySetNames.Count; i++)
+        foreach (var item in enemyBoard.Roles)
         {
+            traits.Add(item.Key);
+        }
+
+        traits = traits.OrderByDescending(x => x as Archetype != null ? enemyBoard.Archetypes[(Archetype)x] : enemyBoard.Roles[(Role)x]).ToList();
+
+        for (int i = 0; i < traits.Count; i++)
+        {
+            ScriptableObject trait = traits[i];
+
             enemySets[i].gameObject.SetActive(true);
-            enemySets[i].SetText(enemySetNames[i]);
+
+            if (trait as Archetype != null)
+                enemySets[i].SetText(trait.name + ": " + enemyBoard.Archetypes[(Archetype)trait]);
+            else
+                enemySets[i].SetText(trait.name + ": " + enemyBoard.Roles[(Role)trait]);
         }
     }
 }
