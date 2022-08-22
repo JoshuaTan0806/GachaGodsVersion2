@@ -2,30 +2,34 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.EventSystems;
 
-public class ViewCharacterPreview : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+[RequireComponent(typeof(Button))]
+public class ViewCharacterPreview : MonoBehaviour
 {
     Character character;
     CharacterPreview preview;
+    Button button;
+
+    private void Awake()
+    {
+        button = GetComponent<Button>();
+    }
 
     public void Initialise(Character character)
     {
+        button.onClick.RemoveAllListeners();
+        button.onClick.AddListener(() => PreviewCharacter());
+
         this.character = character;
         GetComponent<Image>().sprite = character.Icon;
     }
 
-    public void OnPointerEnter(PointerEventData eventData)
+    void PreviewCharacter()
     {
         if (character == null)
             return;
 
-        preview = Instantiate(UIManager.instance.CharacterPreviewPrefab, transform);
+        preview = Instantiate(UIManager.instance.CharacterPreviewPrefab);
         preview.Initialise(character);
-    }
-
-    public void OnPointerExit(PointerEventData eventData)
-    {
-        Destroy(preview.gameObject);
     }
 }

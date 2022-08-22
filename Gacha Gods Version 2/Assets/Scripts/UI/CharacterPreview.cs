@@ -7,11 +7,13 @@ using TMPro;
 public class CharacterPreview : MonoBehaviour
 {
     [SerializeField] Image icon;
+    [SerializeField] TextMeshProUGUI characterName;
     [SerializeField] List<TextMeshProUGUI> traits;
     [SerializeField] TextMeshProUGUI masteryNumber;
 
     public void Initialise(Character character)
     {
+        characterName.text = character.name;
         icon.sprite = character.Icon;
 
         int counter = 0;
