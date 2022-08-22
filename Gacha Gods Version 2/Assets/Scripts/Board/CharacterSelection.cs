@@ -29,7 +29,7 @@ public class CharacterSelection : MonoBehaviour
             if (unitType == UnitType.All)
             {
                 b = Instantiate(characterPrefab, characterHolder);
-                b.GetComponent<ViewCharacterPreview>().Initialise(item.Key);
+                b.GetComponent<Image>().sprite = item.Key.Icon;
                 b.onClick.AddListener(delegate { ChooseCharacter(item.Key); });
             }
             else if(unitType == UnitType.Assassin)
