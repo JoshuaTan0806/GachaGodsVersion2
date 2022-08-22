@@ -157,6 +157,7 @@ MonoBehaviour:
   - Achievements give gems upon completion
   - Assassins can be placed behind the opponents
   - You gain 10 gold at the start of every round
+  - Rate up characters have a 30% chance of appearing on every choice
 --- !u!1 &7561690044078346494
 GameObject:
   m_ObjectHideFlags: 0

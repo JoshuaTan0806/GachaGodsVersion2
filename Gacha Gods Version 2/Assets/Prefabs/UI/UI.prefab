@@ -5856,7 +5856,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 061ee3e1c62a1bc42b4397dd38ddc0a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RateUpChances: 50
+  RateUpChances: 30
   banners:
   - {fileID: 4249120517669599453}
   - {fileID: 5556487035000867882}
