@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8331235276289159867}
   - component: {fileID: 2383420808230002957}
   - component: {fileID: 6971105508247101376}
+  - component: {fileID: 525282958}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -76,6 +77,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &525282958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 62445040907721054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a795fdd819705146a18d74f2f1c4055, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &617980793116434919
 GameObject:
   m_ObjectHideFlags: 0
@@ -1958,6 +1971,7 @@ GameObject:
   - component: {fileID: 503019495171443242}
   - component: {fileID: 3375448741001282501}
   - component: {fileID: 2477576132547812129}
+  - component: {fileID: 1319794698}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -2023,6 +2037,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1319794698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3956852307514691351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a795fdd819705146a18d74f2f1c4055, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4028694897260017603
 GameObject:
   m_ObjectHideFlags: 0
@@ -5245,6 +5271,7 @@ GameObject:
   - component: {fileID: 6501454238391464154}
   - component: {fileID: 3293127210678957820}
   - component: {fileID: 895595598669003524}
+  - component: {fileID: 1592856253}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -5310,6 +5337,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1592856253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5389861938767046039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a795fdd819705146a18d74f2f1c4055, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5412476684600451129
 GameObject:
   m_ObjectHideFlags: 0
@@ -5321,6 +5360,7 @@ GameObject:
   - component: {fileID: 3360180441189298181}
   - component: {fileID: 5056255510402743564}
   - component: {fileID: 6321261764427378047}
+  - component: {fileID: 1030113614}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -5386,6 +5426,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1030113614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5412476684600451129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a795fdd819705146a18d74f2f1c4055, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5925854219555600659
 GameObject:
   m_ObjectHideFlags: 0
@@ -5397,6 +5449,7 @@ GameObject:
   - component: {fileID: 7795004849698987965}
   - component: {fileID: 4945366202445010234}
   - component: {fileID: 217280763304178905}
+  - component: {fileID: 1091130500}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -5462,6 +5515,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1091130500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5925854219555600659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a795fdd819705146a18d74f2f1c4055, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6001944875900113595
 GameObject:
   m_ObjectHideFlags: 0
@@ -5867,11 +5932,11 @@ MonoBehaviour:
   TenRollButtonReference: {fileID: 4479265896768961688}
   RateUpReference: {fileID: 7207526774244907716}
   RateUpCharactersPositionReference:
-  - {fileID: 217280763304178905}
-  - {fileID: 2477576132547812129}
-  - {fileID: 895595598669003524}
-  - {fileID: 6971105508247101376}
-  - {fileID: 6321261764427378047}
+  - {fileID: 1091130500}
+  - {fileID: 1319794698}
+  - {fileID: 1592856253}
+  - {fileID: 525282958}
+  - {fileID: 1030113614}
   RarityOddsReference:
   - {fileID: 8917614005260021964}
   - {fileID: 3238613281376793654}

@@ -15,7 +15,7 @@ public class BannerManager : MonoBehaviour
     [SerializeField] Button OneRollButtonReference;
     [SerializeField] Button TenRollButtonReference;
     [SerializeField] Transform RateUpReference;
-    [SerializeField] List<Image> RateUpCharactersPositionReference;
+    [SerializeField] List<ViewCharacterPreview> RateUpCharactersPositionReference;
     [SerializeField] List<Image> RarityOddsReference;
 
     [Header("Prefabs")]
@@ -54,7 +54,7 @@ public class BannerManager : MonoBehaviour
 
             for (int i = 0; i < RateUpCharactersPositionReference.Count; i++)
             {
-                RateUpCharactersPositionReference[i].sprite = banner.RateUpCharacters[i].Icon;
+                RateUpCharactersPositionReference[i].Initialise(banner.RateUpCharacters[i]);
             }
         }
     }

@@ -476,6 +476,7 @@ MonoBehaviour:
   achievementsCanvas: {fileID: 4312478131289729151}
   characterCanvas: {fileID: 4312478131289729150}
   roundStartPrefab: {fileID: 7561690045132176480, guid: 33af105a970ceb44e9959254755b2b74, type: 3}
+  characterPreviewPrefab: {fileID: 0}
 --- !u!1 &389624781
 GameObject:
   m_ObjectHideFlags: 0

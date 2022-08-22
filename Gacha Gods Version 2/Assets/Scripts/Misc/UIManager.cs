@@ -6,6 +6,8 @@ using TMPro;
 
 public class UIManager : MonoBehaviour
 {
+    public static UIManager instance;
+
     [Header("References")]
     [SerializeField] GameObject uiCanvas;
     [SerializeField] GameObject mainCanvas;
@@ -16,9 +18,16 @@ public class UIManager : MonoBehaviour
 
     [Header("Prefabs")]
     [SerializeField] GameObject roundStartPrefab;
+    public GameObject CharacterPreviewPrefab => characterPreviewPrefab;
+    [SerializeField] GameObject characterPreviewPrefab;
 
     private void OnEnable()
     {
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(gameObject);
+
         GameManager.OnRoundStart += OnRoundStart;
         GameManager.OnBattleStart += OnBattleStart;
 

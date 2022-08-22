@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 9113836040229078682}
   - component: {fileID: 704323430038098686}
   m_Layer: 0
-  m_Name: Assassin
+  m_Name: Tile - Assassin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
