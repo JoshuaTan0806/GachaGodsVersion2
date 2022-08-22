@@ -41,10 +41,16 @@ public class BannerManager : MonoBehaviour
         currentBanner = banner;
 
         if (banner.BannerType == BannerType.Regular)
+        {
             RateUpReference.gameObject.SafeSetActive(false);
+            TenRollButtonReference.gameObject.SetActive(true);
+            OneRollButtonReference.gameObject.SetActive(true);
+        }
         else
         {
             RateUpReference.gameObject.SafeSetActive(true);
+            TenRollButtonReference.gameObject.SetActive(false);
+            OneRollButtonReference.gameObject.SetActive(false);
 
             for (int i = 0; i < RateUpCharactersPositionReference.Count; i++)
             {
