@@ -103,6 +103,8 @@ GameObject:
   - component: {fileID: 2156160991611079612}
   - component: {fileID: 7506703103201897283}
   - component: {fileID: 4682626411965739489}
+  - component: {fileID: 1276409879858648126}
+  - component: {fileID: 6434602263089701069}
   m_Layer: 5
   m_Name: Character Button Prefab
   m_TagString: Untagged
@@ -262,3 +264,28 @@ MonoBehaviour:
   roundedOutlineFilled: {fileID: 0}
   roundedOutlineText: {fileID: 0}
   roundedOutlineTextHighligted: {fileID: 0}
+--- !u!114 &1276409879858648126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9164248802806009834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2784d5dc0d9e2bf4c857c3f78fe1e42d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToHold: 0.3
+--- !u!114 &6434602263089701069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9164248802806009834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a795fdd819705146a18d74f2f1c4055, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
