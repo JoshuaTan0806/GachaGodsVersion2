@@ -7,7 +7,7 @@ using UnityEngine.EventSystems;
 public class ViewCharacterPreview : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     Character character;
-    GameObject preview;
+    CharacterPreview preview;
 
     public void Initialise(Character character)
     {
@@ -20,11 +20,12 @@ public class ViewCharacterPreview : MonoBehaviour, IPointerEnterHandler, IPointe
         if (character == null)
             return;
 
-        //preview = Instantiate(UIManager.instance.CharacterPreviewPrefab);
+        preview = Instantiate(UIManager.instance.CharacterPreviewPrefab, transform);
+        preview.Initialise(character);
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        //Destroy(preview);
+        Destroy(preview.gameObject);
     }
 }

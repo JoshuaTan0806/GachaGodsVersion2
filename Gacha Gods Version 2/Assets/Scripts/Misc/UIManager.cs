@@ -18,8 +18,8 @@ public class UIManager : MonoBehaviour
 
     [Header("Prefabs")]
     [SerializeField] GameObject roundStartPrefab;
-    public GameObject CharacterPreviewPrefab => characterPreviewPrefab;
-    [SerializeField] GameObject characterPreviewPrefab;
+    public CharacterPreview CharacterPreviewPrefab => characterPreviewPrefab;
+    [SerializeField] CharacterPreview characterPreviewPrefab;
 
     private void OnEnable()
     {
