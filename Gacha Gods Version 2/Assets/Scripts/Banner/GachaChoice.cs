@@ -35,6 +35,8 @@ public class GachaChoice : MonoBehaviour
 
             buttons[counter].onClick.RemoveAllListeners();
 
+            buttons[counter].GetComponent<ViewCharacterPreview>().Initialise(item.Key);
+
             string str = character.name + "\n" + character.Rarity;
 
             foreach (var archetype in character.Archetypes)

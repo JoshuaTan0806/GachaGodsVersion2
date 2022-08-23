@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 
 public class HoldButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    [SerializeField] float timeToHold;
+    [SerializeField] float timeToHold = 0.3f;
     bool isBeingHovered = false;
     public System.Action OnHeld;
     bool isBeingHeld;
