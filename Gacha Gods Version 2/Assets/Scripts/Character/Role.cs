@@ -51,6 +51,9 @@ public class Role : ScriptableObject
 
         int setNum = FindLowestNumberForSet(num);
 
+        if (setNum == 0)
+            return null;
+
         return SetData[setNum];
     }
 }

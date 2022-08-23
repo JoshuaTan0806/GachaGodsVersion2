@@ -9071,7 +9071,7 @@ MonoBehaviour:
   - {fileID: 8640487435658109479}
   - {fileID: 3026193946143300092}
   viewTraitsButton: {fileID: 8200782095430312007}
-  traitsPreviewPrefab: {fileID: 0}
+  traitsPreviewPrefab: {fileID: 5051084574112215593, guid: a7af74c18b1b6384ab37729ef65b84f5, type: 3}
 --- !u!1 &8156104451241771320
 GameObject:
   m_ObjectHideFlags: 0

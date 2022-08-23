@@ -79,16 +79,6 @@ public class CharacterManager : Factories.FactoryBase
                 }
             }
 
-            foreach (var item in roles.ToList())
-            {
-                int setNum = item.Key.FindLowestNumberForSet(item.Value);
-
-                if (setNum == 0)
-                    roles.Remove(item.Key);
-                else
-                    roles[item.Key] = setNum;
-            }
-
             return roles;
         }
     }
@@ -122,16 +112,6 @@ public class CharacterManager : Factories.FactoryBase
                         }
                     }
                 }
-            }
-
-            foreach (var item in archetypes.ToList())
-            {
-                int setNum = item.Key.FindLowestNumberForSet(item.Value);
-
-                if (setNum == 0)
-                    archetypes.Remove(item.Key);
-                else
-                    archetypes[item.Key] = setNum;
             }
 
             return archetypes;
@@ -213,6 +193,39 @@ public class CharacterManager : Factories.FactoryBase
         {
             activeCharacters.Remove(character);
         }
+    }
+
+    public static List<StatData> FindStatsFromTraits(ActiveRoles roles, ActiveArchetypes archetypes)
+    {
+        List<StatData> statDatas = new List<StatData>();
+
+        foreach (var item in archetypes)
+        {
+            StatDatas stats = item.Key.FindStats(item.Value);
+
+            if (stats == null)
+                continue;
+
+            foreach (var stat in stats.Stats)
+            {
+                statDatas.Add(stat);
+            }
+        }
+
+        foreach (var item in roles)
+        {
+            StatDatas stats = item.Key.FindStats(item.Value);
+
+            if (stats == null)
+                continue;
+
+            foreach (var stat in stats.Stats)
+            {
+                statDatas.Add(stat);
+            }
+        }
+
+        return statDatas;
     }
 }
 
