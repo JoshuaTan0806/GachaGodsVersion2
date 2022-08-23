@@ -1,15 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Board : MonoBehaviour
 {
     public static List<Tile> Tiles;
     [SerializeField] List<Tile> tiles;
+    [SerializeField] Button viewTraitsButton;
+    [SerializeField] GameObject traitsPreviewPrefab;
 
     private void Awake()
     {
         Tiles = tiles;
+        viewTraitsButton.AddListenerToButton(() => ViewTraits());
     }
 
     private void OnEnable()
@@ -43,5 +47,10 @@ public class Board : MonoBehaviour
     public static void SaveBoardData()
     {
         BoardDatabase.SaveBoard(PlayerBoard());
+    }
+
+    void ViewTraits()
+    {
+        Instantiate(traitsPreviewPrefab);
     }
 }

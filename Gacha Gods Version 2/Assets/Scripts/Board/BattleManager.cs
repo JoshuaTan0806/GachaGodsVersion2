@@ -275,6 +275,7 @@ public class BattleManager : MonoBehaviour
         {
             allies.Remove(stats);
             targetableAllies.Remove(stats);
+            CoroutineManager.instance.StartCoroutine(RemoveCharacter(stats));
 
             if (allies.Count == 0)
                 CoroutineManager.instance.StartCoroutine(EndRound());
@@ -283,10 +284,17 @@ public class BattleManager : MonoBehaviour
         {
             enemies.Remove(stats);
             targetableEnemies.Remove(stats);
+            CoroutineManager.instance.StartCoroutine(RemoveCharacter(stats));
 
             if (enemies.Count == 0)
                 CoroutineManager.instance.StartCoroutine(EndRound());
         }
+    }
+
+    static IEnumerator RemoveCharacter(CharacterStats stats)
+    {
+        yield return new WaitForSeconds(0.1f);
+        Destroy(stats.gameObject);
     }
 
     static IEnumerator EndRound()

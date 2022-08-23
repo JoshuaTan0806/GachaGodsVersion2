@@ -24,21 +24,31 @@ public class Archetype : ScriptableObject
         return characters.Where(x => !x.Archetypes.Contains(this)).ToList();
     }
 
-    public StatDatas FindStats(int num)
+    public int FindLowestNumberForSet(int num)
     {
         if (SetData.IsNullOrEmpty())
-            return null;
+            return 0;
 
         //need to find the highest number that exists in the setdata that is lower than num
         int setNum = num;
 
         while (!SetData.ContainsKey(setNum))
         {
-            setNum--;
-
             if (setNum == 0)
-                return null;
+                return 0;
+
+            setNum--;
         }
+
+        return setNum;
+    }
+
+    public StatDatas FindStats(int num)
+    {
+        if (SetData.IsNullOrEmpty())
+            return null;
+
+        int setNum = FindLowestNumberForSet(num);
 
         return SetData[setNum];
     }

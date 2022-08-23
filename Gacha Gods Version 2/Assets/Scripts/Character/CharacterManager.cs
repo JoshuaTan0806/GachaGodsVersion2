@@ -79,6 +79,16 @@ public class CharacterManager : Factories.FactoryBase
                 }
             }
 
+            foreach (var item in roles.ToList())
+            {
+                int setNum = item.Key.FindLowestNumberForSet(item.Value);
+
+                if (setNum == 0)
+                    roles.Remove(item.Key);
+                else
+                    roles[item.Key] = setNum;
+            }
+
             return roles;
         }
     }
@@ -112,6 +122,16 @@ public class CharacterManager : Factories.FactoryBase
                         }
                     }
                 }
+            }
+
+            foreach (var item in archetypes.ToList())
+            {
+                int setNum = item.Key.FindLowestNumberForSet(item.Value);
+
+                if (setNum == 0)
+                    archetypes.Remove(item.Key);
+                else
+                    archetypes[item.Key] = setNum;
             }
 
             return archetypes;

@@ -25,21 +25,31 @@ public class Role : ScriptableObject
         return characters.Where(x => !x.Roles.Contains(this)).ToList();
     }
 
+    public int FindLowestNumberForSet(int num)
+    {
+        if (SetData.IsNullOrEmpty())
+            return 0;
+
+        //need to find the highest number that exists in the setdata that is lower than num
+        int setNum = num;
+
+        while (!SetData.ContainsKey(setNum))
+        {
+            if (setNum == 0)
+                return 0;
+
+            setNum--;
+        }
+
+        return setNum;
+    }
+
     public StatDatas FindStats(int num)
     {
-        //need to find the highest number that exists in the setdata that is lower than num
         if (SetData.IsNullOrEmpty())
             return null;
 
-        int setNum = num;
-
-        while(!SetData.ContainsKey(setNum))
-        {
-            setNum--;
-
-            if (setNum == 0)
-                return null;
-        }
+        int setNum = FindLowestNumberForSet(num);
 
         return SetData[setNum];
     }
