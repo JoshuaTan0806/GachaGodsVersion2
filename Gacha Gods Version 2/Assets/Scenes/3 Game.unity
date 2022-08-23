@@ -476,6 +476,8 @@ MonoBehaviour:
   achievementsCanvas: {fileID: 4312478131289729151}
   characterCanvas: {fileID: 4312478131289729150}
   roundStartPrefab: {fileID: 7561690045132176480, guid: 33af105a970ceb44e9959254755b2b74, type: 3}
+  battleWonPrefab: {fileID: 7561690045132176480, guid: d92a00fd0b0e44e4982d667b4a4a9d66, type: 3}
+  battleLostPrefab: {fileID: 7561690045132176480, guid: 7c87bf3d4a33e5f4f9273728a84c6109, type: 3}
   characterPreviewPrefab: {fileID: 4756457055999850876, guid: 8ad4ded8cac9847459b926abbfca277f, type: 3}
 --- !u!1 &389624781
 GameObject:

@@ -12,8 +12,8 @@ public class GameManager : MonoBehaviour
     public static System.Action OnRoundStart;
     public static System.Action OnBattleStart;
     public static System.Action OnRoundEnd;
-    public static System.Action OnRoundWon;
-    public static System.Action OnRoundLost;
+    public static System.Action OnBattleWon;
+    public static System.Action OnBattleLost;
 
     public static int RoundNumber;
 
@@ -181,16 +181,25 @@ public class GameManager : MonoBehaviour
     public static void AddExperience(int num)
     {
         Experience += num;
-    }
 
-    public static void ResetExperience()
-    {
-        Experience = 0;
+        if(Experience >= RequiredXP())
+        {
+            Experience -= RequiredXP();
+            AddLevel();
+        }
     }
 
     public static void AddLevel()
     {
+        if (Level == 10)
+            return;
+
         Level++;
+    }
+
+    public static int RequiredXP()
+    {
+        return (level - 2) * 5;
     }
 
     void SpeedUp()

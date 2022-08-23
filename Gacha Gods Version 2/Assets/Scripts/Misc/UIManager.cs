@@ -18,6 +18,9 @@ public class UIManager : MonoBehaviour
 
     [Header("Prefabs")]
     [SerializeField] GameObject roundStartPrefab;
+    [SerializeField] GameObject battleWonPrefab;
+    [SerializeField] GameObject battleLostPrefab;
+
     public CharacterPreview CharacterPreviewPrefab => characterPreviewPrefab;
     [SerializeField] CharacterPreview characterPreviewPrefab;
 
@@ -30,6 +33,8 @@ public class UIManager : MonoBehaviour
 
         GameManager.OnRoundStart += OnRoundStart;
         GameManager.OnBattleStart += OnBattleStart;
+        GameManager.OnBattleWon += OnBattleWon;
+        GameManager.OnBattleLost += OnBattleLost;
 
         uiCanvas.SafeSetActive(true);
         mainCanvas.SafeSetActive(true);
@@ -43,6 +48,8 @@ public class UIManager : MonoBehaviour
     {
         GameManager.OnRoundStart -= OnRoundStart;
         GameManager.OnBattleStart -= OnBattleStart;
+        GameManager.OnBattleWon -= OnBattleWon;
+        GameManager.OnBattleLost -= OnBattleLost;
     }
     
     void OnRoundStart()
@@ -54,6 +61,16 @@ public class UIManager : MonoBehaviour
     void OnBattleStart()
     {
         DeactivateMainCanvas();
+    }
+
+    void OnBattleWon()
+    {
+        Instantiate(battleWonPrefab);
+    }
+
+    void OnBattleLost()
+    {
+        Instantiate(battleLostPrefab);
     }
 
     void ActivateMainCanvas()
