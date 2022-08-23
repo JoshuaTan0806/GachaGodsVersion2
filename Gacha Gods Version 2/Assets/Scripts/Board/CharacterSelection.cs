@@ -32,8 +32,7 @@ public class CharacterSelection : MonoBehaviour
 
         hasChosen = false;
 
-        Button b = Instantiate(characterPrefab, characterHolder);
-        b.onClick.AddListener(delegate { ChooseCharacter(null); });
+        Button b;
 
         foreach (var item in CharacterManager.CharacterMastery)
         {

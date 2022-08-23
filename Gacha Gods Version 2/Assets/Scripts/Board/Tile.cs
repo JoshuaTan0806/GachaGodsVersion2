@@ -64,13 +64,6 @@ public class Tile : MonoBehaviour
 
     void PlaceCharacter(Character chosenCharacter)
     {
-        if (chosenCharacter == null && character != null)
-        {
-            CharacterManager.DeactivateCharacter(character);
-            RemoveCharacter();
-            return;
-        }
-
         //if the chosen character isn't on the field...
         if (!CharacterManager.ActiveCharacters.Contains(chosenCharacter))
         {
@@ -87,10 +80,6 @@ public class Tile : MonoBehaviour
                 if (CharacterManager.ActiveCharacters.Count == GameManager.Level)
                     return;
             }
-
-            //add them
-            if (chosenCharacter != null)
-                CharacterManager.ActivateCharacter(chosenCharacter);
         }
         //if the chosen character is on the field...
         else
@@ -115,6 +104,9 @@ public class Tile : MonoBehaviour
                 tile.PlaceCharacter(oldCharacter);
             }
         }
+
+        if (!CharacterManager.ActiveCharacters.Contains(chosenCharacter))
+            CharacterManager.ActivateCharacter(chosenCharacter);
 
         InitialiseCharacter(chosenCharacter);
     }
