@@ -294,8 +294,8 @@ public class BattleManager : MonoBehaviour
         yield return new WaitForSeconds(3);
 
         if (allies.Count == 0)
-            GameManager.OnBattleLost?.Invoke();
+            GameManager.LoseBattle(enemies.Count);
         else
-            GameManager.OnBattleWon?.Invoke();
+            GameManager.WinBattle();
     }
 }

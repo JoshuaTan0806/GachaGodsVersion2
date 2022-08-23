@@ -10,7 +10,9 @@ public enum TextType
     XP,
     Level,
     RoundNumber,
-    Stars
+    Stars,
+    Wins,
+    Health
 }
 
 [RequireComponent(typeof(TextMeshProUGUI))]
@@ -48,6 +50,12 @@ public class UpdateLabelText : MonoBehaviour
             case TextType.Stars:
                 GameManager.OnStarsChanged += UpdateText;
                 break;
+            case TextType.Wins:
+                GameManager.OnBattleWon += UpdateText;
+                break;
+            case TextType.Health:
+                GameManager.OnHealthChanged += UpdateText;
+                break;
             default:
                 break;
         }
@@ -75,6 +83,12 @@ public class UpdateLabelText : MonoBehaviour
             case TextType.Stars:
                 GameManager.OnStarsChanged -= UpdateText;
                 break;
+            case TextType.Wins:
+                GameManager.OnBattleWon -= UpdateText;
+                break;
+            case TextType.Health:
+                GameManager.OnHealthChanged -= UpdateText;
+                break;
             default:
                 break;
         }
@@ -85,22 +99,28 @@ public class UpdateLabelText : MonoBehaviour
         switch (textType)
         {
             case TextType.Gold:
-                label.SetText("Gold: " + GameManager.Gold);
+                label.SetText(GameManager.Gold.ToString());
                 break;
             case TextType.Gems:
-                label.SetText("Gems: " + GameManager.Gems);
+                label.SetText(GameManager.Gems.ToString());
                 break;
             case TextType.XP:
-                label.SetText("XP: " + GameManager.Experience);
+                label.SetText(GameManager.Experience.ToString());
                 break;
             case TextType.Level:
-                label.SetText("Level: " + GameManager.Level);
+                label.SetText(GameManager.Level.ToString());
                 break;
             case TextType.RoundNumber:
                 label.SetText("Day " + GameManager.RoundNumber);
                 break;
             case TextType.Stars:
-                label.SetText("Stars: " + GameManager.Stars);
+                label.SetText(GameManager.Stars.ToString());
+                break;
+            case TextType.Wins:
+                label.SetText(GameManager.Wins.ToString());
+                break;
+            case TextType.Health:
+                label.SetText(GameManager.Health.ToString());
                 break;
             default:
                 break;

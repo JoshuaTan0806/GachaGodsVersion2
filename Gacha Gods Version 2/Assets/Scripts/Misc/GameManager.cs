@@ -92,10 +92,39 @@ public class GameManager : MonoBehaviour
     static int experience;
     public static System.Action OnExperienceChanged;
 
+    public static int Wins
+    {
+        get
+        {
+            return wins;
+        }
+        set
+        {
+            wins = value;
+        }
+    }
+    static int wins;
+
+    public static int Health
+    {
+        get
+        {
+            return health;
+        }
+        set
+        {
+            health = value;
+            OnHealthChanged?.Invoke();
+        }
+    }
+    static int health;
+    public static System.Action OnHealthChanged;
+
     private void Start()
     {
         //LoadGame();
         RoundNumber = 1;
+        Health = 20;
         Level = 3;
         stars = 10;
         Gold = 100;
@@ -146,6 +175,18 @@ public class GameManager : MonoBehaviour
 #if UNITY_EDITOR
         SpeedUp();
 #endif
+    }
+
+    public static void WinBattle()
+    {
+        OnBattleWon?.Invoke();
+        Wins++;
+    }
+
+    public static void LoseBattle(int enemiesRemaining)
+    {
+        OnBattleLost?.Invoke();
+        Health -= enemiesRemaining;
     }
 
     public static void AddStars(int num)
