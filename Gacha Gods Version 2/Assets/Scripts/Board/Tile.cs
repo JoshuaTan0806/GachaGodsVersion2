@@ -46,6 +46,15 @@ public class Tile : MonoBehaviour
         Destroy(g.gameObject);
     }
 
+    void InitialiseCharacter(Character chosenCharacter)
+    {
+        character = chosenCharacter;
+        characterIcon.gameObject.SetActive(true);
+
+        if (chosenCharacter != null)
+            characterIcon.sprite = chosenCharacter.Icon;
+    }
+
     void RemoveCharacter()
     {
         characterIcon.gameObject.SetActive(false);
@@ -65,12 +74,13 @@ public class Tile : MonoBehaviour
         //if the chosen character isn't on the field...
         if (!CharacterManager.ActiveCharacters.Contains(chosenCharacter))
         {
-            //if theres a character on this spot..
+            //if theres a character on this spot...
             if (character != null)
             {
                 //replace them
                 CharacterManager.DeactivateCharacter(character);
             }
+            //if there isn't a character on this spot...
             else
             {
                 //we can't add any more characters
@@ -106,10 +116,6 @@ public class Tile : MonoBehaviour
             }
         }
 
-        character = chosenCharacter;
-        characterIcon.gameObject.SetActive(true);
-
-        if (chosenCharacter != null)
-            characterIcon.sprite = chosenCharacter.Icon;
+        InitialiseCharacter(chosenCharacter);
     }
 }

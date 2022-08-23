@@ -248,7 +248,7 @@ public class GameManager : MonoBehaviour
     void SpeedUp()
     {
         if (Input.GetKeyDown(KeyCode.LeftShift))
-            Time.timeScale = 5;
+            Time.timeScale = 3;
         else if (Input.GetKeyUp(KeyCode.LeftShift))
             Time.timeScale = 1;
     }

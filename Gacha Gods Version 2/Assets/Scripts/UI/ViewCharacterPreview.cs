@@ -6,7 +6,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(HoldButton))]
 public class ViewCharacterPreview : MonoBehaviour
 {
-    Character character;
+    [Sirenix.OdinInspector.ReadOnly, SerializeField] Character character;
     CharacterPreview preview;
     HoldButton button;
 
