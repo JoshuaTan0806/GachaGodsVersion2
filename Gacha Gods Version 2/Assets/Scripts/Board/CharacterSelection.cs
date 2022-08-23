@@ -14,6 +14,17 @@ public class CharacterSelection : MonoBehaviour
    [SerializeField] Button characterPrefab;
    [SerializeField] Transform characterHolder;
 
+    //used for previewing every owned character
+    public void InitialiseAll()
+    {
+        foreach (var item in CharacterManager.CharacterMastery)
+        {
+            Button b = Instantiate(characterPrefab, characterHolder);
+            b.GetComponent<ViewCharacterPreview>().Initialise(item.Key);
+        }
+    }
+
+    //used for selecting a character to add to your team
     public void Initialise(UnitType unitType)
     {
         if (unitType == UnitType.None)

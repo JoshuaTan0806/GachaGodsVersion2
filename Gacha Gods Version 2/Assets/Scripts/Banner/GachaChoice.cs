@@ -1,15 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GachaChoice : MonoBehaviour
 {
-    [SerializeField]
-    List<UnityEngine.UI.Button> buttons;
-    [SerializeField]
-    List<GameObject> rateUps;
+    [SerializeField] Button viewCharactersButton;
+    [SerializeField] CharacterSelection characterPreviewPrefab;
+    [SerializeField] List<Button> buttons;
+    [SerializeField] List<GameObject> rateUps;
     public bool HasBeenPicked => hasBeenPicked;
     bool hasBeenPicked;
+
+    private void Awake()
+    {
+        viewCharactersButton.AddListenerToButton(() => OpenCharactersPreview());
+    }
+
     public void Initialise(Dictionary<Character, bool> characters)
     {
         hasBeenPicked = false;
@@ -55,5 +62,11 @@ public class GachaChoice : MonoBehaviour
 
         CharacterManager.AddCharacter(character);
         hasBeenPicked = true;
+    }
+
+    void OpenCharactersPreview()
+    {
+        CharacterSelection g = Instantiate(characterPreviewPrefab);
+        g.InitialiseAll();
     }
 }

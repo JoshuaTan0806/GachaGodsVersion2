@@ -36,6 +36,9 @@ public class Tile : MonoBehaviour
 
         while (!g.HasChosen)
         {
+            if (g == null)
+                yield break;
+
             yield return new WaitForSeconds(0.1f);
         }
 
