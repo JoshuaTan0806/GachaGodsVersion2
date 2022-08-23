@@ -8,10 +8,10 @@ public class BattleStartCanvas : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI allyTeamName;
     [SerializeField] TextMeshProUGUI enemyTeamName;
-    [SerializeField] List<TextMeshProUGUI> allyCharacters;
-    [SerializeField] List<TextMeshProUGUI> enemyCharacters;
-    [SerializeField] List<TextMeshProUGUI> allySets;
-    [SerializeField] List<TextMeshProUGUI> enemySets;
+    [SerializeField] Transform allyCharactersHolder;
+    [SerializeField] Transform enemyCharactersHolder;
+    [SerializeField] Transform allySetsHolder;
+    [SerializeField] Transform enemySetsHolder;
 
     public void Initialise(BoardData allyBoard, BoardData enemyBoard)
     {
@@ -20,14 +20,20 @@ public class BattleStartCanvas : MonoBehaviour
 
         for (int i = 0; i < allyBoard.CharacterDatas.Count; i++)
         {
-            allyCharacters[i].gameObject.SetActive(true);
-            allyCharacters[i].SetText(allyBoard.CharacterDatas[i].Character.name + " (" + allyBoard.CharacterDatas[i].Mastery + ")");
+            allyCharactersHolder.GetChild(i).gameObject.SetActive(true);
+
+            TextMeshProUGUI text = allyCharactersHolder.GetChild(i).GetComponent<TextMeshProUGUI>();
+
+            text.SetText(allyBoard.CharacterDatas[i].Character.name + " (" + allyBoard.CharacterDatas[i].Mastery + ")");
         }
 
         for (int i = 0; i < enemyBoard.CharacterDatas.Count; i++)
         {
-            enemyCharacters[i].gameObject.SetActive(true);
-            enemyCharacters[i].SetText(enemyBoard.CharacterDatas[i].Character.name + " (" + enemyBoard.CharacterDatas[i].Mastery + ")");
+            enemyCharactersHolder.GetChild(i).gameObject.SetActive(true);
+
+            TextMeshProUGUI text = enemyCharactersHolder.GetChild(i).GetComponent<TextMeshProUGUI>();
+
+            text.SetText(enemyBoard.CharacterDatas[i].Character.name + " (" + enemyBoard.CharacterDatas[i].Mastery + ")");
         }
 
         SetAllyTraits(allyBoard);
@@ -54,12 +60,14 @@ public class BattleStartCanvas : MonoBehaviour
         {
             ScriptableObject trait = traits[i];
 
-            allySets[i].gameObject.SetActive(true);
+            TextMeshProUGUI text = allySetsHolder.GetChild(i).GetComponent<TextMeshProUGUI>();
+
+            text.gameObject.SetActive(true);
 
             if (trait as Archetype != null)
-                allySets[i].SetText(trait.name + ": " + allyBoard.Archetypes[(Archetype)trait]);
+                text.SetText(trait.name + ": " + allyBoard.Archetypes[(Archetype)trait]);
             else
-                allySets[i].SetText(trait.name + ": " + allyBoard.Roles[(Role)trait]);
+                text.SetText(trait.name + ": " + allyBoard.Roles[(Role)trait]);
         }
     }
 
@@ -85,12 +93,14 @@ public class BattleStartCanvas : MonoBehaviour
         {
             ScriptableObject trait = traits[i];
 
-            enemySets[i].gameObject.SetActive(true);
+            TextMeshProUGUI text = enemySetsHolder.GetChild(i).GetComponent<TextMeshProUGUI>();
+
+            text.gameObject.SetActive(true);
 
             if (trait as Archetype != null)
-                enemySets[i].SetText(trait.name + ": " + enemyBoard.Archetypes[(Archetype)trait]);
+                text.SetText(trait.name + ": " + enemyBoard.Archetypes[(Archetype)trait]);
             else
-                enemySets[i].SetText(trait.name + ": " + enemyBoard.Roles[(Role)trait]);
+                text.SetText(trait.name + ": " + enemyBoard.Roles[(Role)trait]);
         }
     }
 }
