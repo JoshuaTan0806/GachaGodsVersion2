@@ -126,6 +126,7 @@ public class GameManager : MonoBehaviour
         RoundNumber = 1;
         Health = 20;
         Experience = 0;
+        Wins = 0;
         Level = 3;
         stars = 10;
         Gold = 100;
