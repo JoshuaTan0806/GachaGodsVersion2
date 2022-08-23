@@ -15,18 +15,18 @@ MonoBehaviour:
   prefab: {fileID: 9166367694736361880, guid: 1b95a882d9e4e7d409ef20c987711b61, type: 3}
   icon: {fileID: 21300000, guid: 6a13cce74df6e71439c67adc95ad9867, type: 3}
   roles:
-  - {fileID: 11400000, guid: 2e97f9336ab26b6489cf2ff55d672b70, type: 2}
+  - {fileID: 11400000, guid: 3e1e39d6ab2932445a8dde7e9fe85b37, type: 2}
   archetypes:
-  - {fileID: 11400000, guid: 786cf183703fa3c47b6f53f33259a748, type: 2}
+  - {fileID: 11400000, guid: 6c6a0c3be76d00949a0dc31ba1da33f9, type: 2}
   rarity: {fileID: 11400000, guid: 27d5dc7d806f2df4f80365ac1b3a74b0, type: 2}
   baseStats:
     m_keys: 0000000002000000010000000600000009000000
     m_values:
-    - 870
-    - 109
-    - 4
-    - 0.7310641
-    - 0.89630127
+    - 708
+    - 153
+    - 2
+    - 0.96382356
+    - 0.90599346
   mastery:
   - {fileID: 11400000, guid: b3fd7e3c604a5bd49be1e8221a3103ea, type: 2}
   - {fileID: 11400000, guid: 6a45b3cf0192a7d40904faaa1dba9090, type: 2}

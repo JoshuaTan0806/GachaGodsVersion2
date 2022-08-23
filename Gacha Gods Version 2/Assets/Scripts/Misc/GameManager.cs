@@ -98,7 +98,7 @@ public class GameManager : MonoBehaviour
         RoundNumber = 1;
         Level = 3;
         stars = 10;
-        Gold = 0;
+        Gold = 100;
         Gems = 0;
         StartGame();
     }

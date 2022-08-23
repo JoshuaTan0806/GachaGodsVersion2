@@ -22,11 +22,11 @@ MonoBehaviour:
   baseStats:
     m_keys: 0000000002000000010000000600000009000000
     m_values:
-    - 586
-    - 118
-    - 4
-    - 0.75948036
-    - 0.98165756
+    - 531
+    - 168
+    - 2
+    - 0.7990434
+    - 0.96051335
   mastery:
   - {fileID: 11400000, guid: 4c08edd81dd1fb440837c0bbb4837f47, type: 2}
   - {fileID: 11400000, guid: e3ecfe271c5c10a41977084165cf7cdd, type: 2}

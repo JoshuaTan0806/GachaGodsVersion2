@@ -117,11 +117,16 @@ public class BannerManager : MonoBehaviour
             else
                 rarityToRollAt = RollRarity(GameManager.Level);
 
-            List<Character> characters = new List<Character>();
+            Dictionary<Character, bool> characters = new Dictionary<Character, bool>();
 
             for (int i = 0; i < 3; i++)
             {
-                characters.Add(RollCharacterOfRarity(rarityToRollAt));
+                Character character = RollCharacterOfRarity(rarityToRollAt);
+
+                while(characters.ContainsKey(character))
+                    character = RollCharacterOfRarity(rarityToRollAt);
+
+                characters.Add(character, currentBanner.RateUpCharacters.Contains(character));
             }
 
             gachaPrefab.Initialise(characters);
@@ -131,7 +136,7 @@ public class BannerManager : MonoBehaviour
                 yield return new WaitForSeconds(0.1f);
             }
 
-            yield return new WaitForSeconds(0.3f);
+            yield return new WaitForSeconds(0.1f);
 
             counter++;
         }

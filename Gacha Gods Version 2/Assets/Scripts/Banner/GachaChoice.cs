@@ -6,33 +6,45 @@ public class GachaChoice : MonoBehaviour
 {
     [SerializeField]
     List<UnityEngine.UI.Button> buttons;
+    [SerializeField]
+    List<GameObject> rateUps;
     public bool HasBeenPicked => hasBeenPicked;
     bool hasBeenPicked;
-    public void Initialise(List<Character> characters)
+    public void Initialise(Dictionary<Character, bool> characters)
     {
         hasBeenPicked = false;
 
-        for (int i = 0; i < buttons.Count; i++)
-        {
-            Character character = characters[i];
+        foreach (var item in rateUps)
+            item.SetActive(false);
 
-            buttons[i].onClick.RemoveAllListeners();
+        int counter = 0;
+
+        foreach (var item in characters)
+        {
+            Character character = item.Key;
+
+            if (item.Value)
+                rateUps[counter].gameObject.SetActive(true);
+
+            buttons[counter].onClick.RemoveAllListeners();
 
             string str = character.name + "\n" + character.Rarity;
 
-            foreach (var item in character.Archetypes)
+            foreach (var archetype in character.Archetypes)
             {
-                str += "\n" + item.name;
+                str += "\n" + archetype.name;
             }
 
-            foreach (var item in character.Roles)
+            foreach (var role in character.Roles)
             {
-                str += "\n" + item.name;
+                str += "\n" + role.name;
             }
 
-            buttons[i].GetComponentInChildren<TMPro.TextMeshProUGUI>().SetText(str);
+            buttons[counter].GetComponentInChildren<TMPro.TextMeshProUGUI>().SetText(str);
 
-            buttons[i].onClick.AddListener(delegate { AddCharacter(character); });
+            buttons[counter].onClick.AddListener(delegate { AddCharacter(character); });
+
+            counter++;
         }
     }
 
