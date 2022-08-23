@@ -25,9 +25,9 @@ public class BannerManager : MonoBehaviour
     {
         currentBanner = banners[0];
 
-        OneRollButtonReference.AddListenerToButton(Use1Gold);
+        OneRollButtonReference.AddListenerToButton(Use1Star);
         PremiumRollButtonReference.AddListenerToButton(Use1Gem);
-        TenRollButtonReference.AddListenerToButton(Use10Gold);
+        TenRollButtonReference.AddListenerToButton(Use10Stars);
     }
 
     private void OnEnable()
@@ -59,24 +59,24 @@ public class BannerManager : MonoBehaviour
         }
     }
 
-    void Use1Gold()
+    void Use1Star()
     {
-        if (GameManager.Gold < 1)
+        if (GameManager.Stars < 1)
             return;
         else
         {
-            GameManager.RemoveGold(1);
+            GameManager.RemoveStars(1);
             StartCoroutine(RollGacha(1));
         }
     }
 
-    void Use10Gold()
+    void Use10Stars()
     {
-        if (GameManager.Gold < 10)
+        if (GameManager.Stars < 10)
             return;
         else
         {
-            GameManager.RemoveGold(10);
+            GameManager.RemoveStars(10);
             StartCoroutine(RollGacha(10));
         }
     }

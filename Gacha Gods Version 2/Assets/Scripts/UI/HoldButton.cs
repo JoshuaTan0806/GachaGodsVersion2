@@ -8,7 +8,7 @@ public class HoldButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 {
     [SerializeField] float timeToHold;
     bool isBeingHovered = false;
-    public System.Action ActionToExecute;
+    public System.Action OnHeld;
     bool isBeingHeld;
     float timer = 0;
 
@@ -51,7 +51,7 @@ public class HoldButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 
     void Execute()
     {
-        ActionToExecute?.Invoke();
+        OnHeld?.Invoke();
         isBeingHovered = false;
         timer = timeToHold;
     }

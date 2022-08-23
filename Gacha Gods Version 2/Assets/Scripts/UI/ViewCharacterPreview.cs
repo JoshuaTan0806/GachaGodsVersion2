@@ -17,12 +17,12 @@ public class ViewCharacterPreview : MonoBehaviour
 
     private void OnEnable()
     {
-        button.ActionToExecute += PreviewCharacter;
+        button.OnHeld += PreviewCharacter;
     }
 
     private void OnDisable()
     {
-        button.ActionToExecute -= PreviewCharacter;
+        button.OnHeld -= PreviewCharacter;
     }
 
     public void Initialise(Character character)

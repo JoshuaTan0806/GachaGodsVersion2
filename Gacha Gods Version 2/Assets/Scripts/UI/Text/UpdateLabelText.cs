@@ -9,7 +9,8 @@ public enum TextType
     Gems,
     XP,
     Level,
-    RoundNumber
+    RoundNumber,
+    Stars
 }
 
 [RequireComponent(typeof(TextMeshProUGUI))]
@@ -44,6 +45,9 @@ public class UpdateLabelText : MonoBehaviour
             case TextType.RoundNumber:
                 GameManager.OnRoundStart += UpdateText;
                 break;
+            case TextType.Stars:
+                GameManager.OnStarsChanged += UpdateText;
+                break;
             default:
                 break;
         }
@@ -68,6 +72,9 @@ public class UpdateLabelText : MonoBehaviour
             case TextType.RoundNumber:
                 GameManager.OnRoundStart -= UpdateText;
                 break;
+            case TextType.Stars:
+                GameManager.OnStarsChanged -= UpdateText;
+                break;
             default:
                 break;
         }
@@ -91,6 +98,9 @@ public class UpdateLabelText : MonoBehaviour
                 break;
             case TextType.RoundNumber:
                 label.SetText("Day " + GameManager.RoundNumber);
+                break;
+            case TextType.Stars:
+                label.SetText("Stars: " + GameManager.Stars);
                 break;
             default:
                 break;

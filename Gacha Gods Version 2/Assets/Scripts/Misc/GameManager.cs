@@ -47,6 +47,21 @@ public class GameManager : MonoBehaviour
     static int gold;
     public static System.Action OnGoldChanged;
 
+    public static int Stars
+    {
+        get
+        {
+            return stars;
+        }
+        set
+        {
+            stars = value;
+            OnStarsChanged?.Invoke();
+        }
+    }
+    static int stars;
+    public static System.Action OnStarsChanged;
+
     public static int Gems
     {
         get
@@ -82,7 +97,8 @@ public class GameManager : MonoBehaviour
         //LoadGame();
         RoundNumber = 1;
         Level = 3;
-        Gold = 10;
+        stars = 10;
+        Gold = 0;
         Gems = 0;
         StartGame();
     }
@@ -105,8 +121,6 @@ public class GameManager : MonoBehaviour
     public static void StartRound()
     {
         OnRoundStart?.Invoke();
-
-        
     }
 
     [Button]
@@ -120,7 +134,7 @@ public class GameManager : MonoBehaviour
     {
         OnRoundEnd?.Invoke();
 
-        int interest = Mathf.Min(gold / 10, 5);
+        int interest = Mathf.Min(gold / 5, 5);
         AddGold(interest);
         AddGold(10);
         RoundNumber++;
@@ -132,6 +146,16 @@ public class GameManager : MonoBehaviour
 #if UNITY_EDITOR
         SpeedUp();
 #endif
+    }
+
+    public static void AddStars(int num)
+    {
+        Stars += num;
+    }
+
+    public static void RemoveStars(int num)
+    {
+        Stars -= num;
     }
 
     public static void AddGold(int num)
