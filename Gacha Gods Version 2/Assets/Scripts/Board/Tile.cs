@@ -48,65 +48,35 @@ public class Tile : MonoBehaviour
 
     void InitialiseCharacter(Character chosenCharacter)
     {
-        character = chosenCharacter;
         characterIcon.gameObject.SetActive(true);
-
-        if (chosenCharacter != null)
-            characterIcon.sprite = chosenCharacter.Icon;
+        characterIcon.sprite = chosenCharacter.Icon;
+        CharacterManager.ActivateCharacter(chosenCharacter);
+        character = chosenCharacter;
     }
 
     void RemoveCharacter()
     {
         characterIcon.gameObject.SetActive(false);
         characterIcon.sprite = null;
+        CharacterManager.DeactivateCharacter(character);
         character = null;
     }
 
     void PlaceCharacter(Character chosenCharacter)
     {
-        //if the chosen character isn't on the field...
-        if (!CharacterManager.ActiveCharacters.Contains(chosenCharacter))
+        if (character != null)
+            RemoveCharacter();
+
+        foreach (var item in Board.Tiles)
         {
-            //if theres a character on this spot...
-            if (character != null)
+            if (item.character == chosenCharacter)
             {
-                //replace them
-                CharacterManager.DeactivateCharacter(character);
-            }
-            //if there isn't a character on this spot...
-            else
-            {
-                //we can't add any more characters
-                if (CharacterManager.ActiveCharacters.Count == GameManager.Level)
-                    return;
-            }
-        }
-        //if the chosen character is on the field...
-        else
-        {
-            //find the tile they are on
-            Tile tile = null;
-
-            foreach (var item in Board.Tiles)
-            {
-                if (item.character == chosenCharacter)
-                    tile = item;
-            }
-
-            tile.RemoveCharacter();
-
-            //if theres a character on this spot..
-            if (character != null)
-            {
-                //swap them
-                Character oldCharacter = character;
-                RemoveCharacter();
-                tile.PlaceCharacter(oldCharacter);
+                item.RemoveCharacter();
             }
         }
 
-        if (!CharacterManager.ActiveCharacters.Contains(chosenCharacter))
-            CharacterManager.ActivateCharacter(chosenCharacter);
+        if (CharacterManager.ActiveCharacters.Count == GameManager.Level)
+            return;
 
         InitialiseCharacter(chosenCharacter);
     }
