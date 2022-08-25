@@ -8,6 +8,8 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public static System.Action OnGameStart;
+    public static System.Action OnGameWon;
+    public static System.Action OnGameLost;
     public static System.Action OnGameEnd;
     public static System.Action OnRoundStart;
     public static System.Action OnBattleStart;
@@ -141,11 +143,16 @@ public class GameManager : MonoBehaviour
         StartRound();
     }
 
-    [Button]
-    public static void EndGame()
+    public static void WinGame()
     {
+        OnGameWon?.Invoke();
         OnGameEnd?.Invoke();
-        RoundNumber++;
+    }
+
+    public static void LoseGame()
+    {
+        OnGameLost?.Invoke();
+        OnGameEnd?.Invoke();
     }
 
     [Button]
@@ -183,12 +190,18 @@ public class GameManager : MonoBehaviour
     {
         OnBattleWon?.Invoke();
         Wins++;
+
+        if (Wins == 10)
+            WinGame();
     }
 
     public static void LoseBattle(int enemiesRemaining)
     {
         OnBattleLost?.Invoke();
         Health -= enemiesRemaining;
+
+        if (health <= 0)
+            LoseGame();
     }
 
     public static void AddStars(int num)

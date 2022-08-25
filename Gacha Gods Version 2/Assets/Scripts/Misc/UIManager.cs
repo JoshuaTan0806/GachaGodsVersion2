@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 public class UIManager : MonoBehaviour
 {
@@ -20,6 +21,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject roundStartPrefab;
     [SerializeField] GameObject battleWonPrefab;
     [SerializeField] GameObject battleLostPrefab;
+    [SerializeField] GameObject gameWonPrefab;
+    [SerializeField] GameObject gameLostPrefab;
 
     public CharacterPreview CharacterPreviewPrefab => characterPreviewPrefab;
     [SerializeField] CharacterPreview characterPreviewPrefab;
@@ -35,6 +38,8 @@ public class UIManager : MonoBehaviour
         GameManager.OnBattleStart += OnBattleStart;
         GameManager.OnBattleWon += OnBattleWon;
         GameManager.OnBattleLost += OnBattleLost;
+        GameManager.OnGameWon += OnGameWon;
+        GameManager.OnGameLost += OnGameLost;
 
         uiCanvas.SafeSetActive(true);
         mainCanvas.SafeSetActive(true);
@@ -50,8 +55,21 @@ public class UIManager : MonoBehaviour
         GameManager.OnBattleStart -= OnBattleStart;
         GameManager.OnBattleWon -= OnBattleWon;
         GameManager.OnBattleLost -= OnBattleLost;
+        GameManager.OnGameWon -= OnGameWon;
+        GameManager.OnGameLost -= OnGameLost;
     }
-    
+
+
+    private void OnGameWon()
+    {
+        Instantiate(gameWonPrefab);
+    }
+
+    private void OnGameLost()
+    {
+        Instantiate(gameLostPrefab);
+    }
+
     void OnRoundStart()
     {
         SpawnRoundStartPrefab();

@@ -24,9 +24,6 @@ public class Buff
             conditions[i].OnConditionHit -= RemoveBuff;
             conditions[i].OnConditionHit += RemoveBuff;
         }
-
-        GameManager.OnGameEnd -= RemoveBuff;
-        GameManager.OnGameEnd += RemoveBuff;
     }
 
     public Buff(StatData statData, float timeInSeconds)
