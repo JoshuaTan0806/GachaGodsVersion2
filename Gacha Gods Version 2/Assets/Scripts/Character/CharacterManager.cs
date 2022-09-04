@@ -11,17 +11,13 @@ public class CharacterManager : Factories.FactoryBase
     static List<Character> characters = new List<Character>();
     [SerializeField] List<Character> _characters;
 
-    public static List<Role> Roles => roles;
-    static List<Role> roles = new List<Role>();
-    [SerializeField] List<Role> _roles;
+    public static List<Trait> Traits => traits;
+    static List<Trait> traits = new List<Trait>();
+    [SerializeField] List<Trait> _traits;
 
-    public static Role Assassin => assassin;
-    static Role assassin;
-    [SerializeField] Role _assassin;
-
-    public static List<Archetype> Archetypes => archetypes;
-    static List<Archetype> archetypes = new List<Archetype>();
-    [SerializeField] List<Archetype> _archetypes;
+    public static Trait Assassin => assassin;
+    static Trait assassin;
+    [SerializeField] Trait _assassin;
 
     public static List<Rarity> Rarities => rarities;
     static List<Rarity> rarities = new List<Rarity>();
@@ -48,75 +44,41 @@ public class CharacterManager : Factories.FactoryBase
     static CharacterMastery characterMastery = new CharacterMastery();
     public static List<Character> ActiveCharacters => activeCharacters;
     static List<Character> activeCharacters = new List<Character>();
-    public static ActiveRoles ActiveRoles
+    public static ActiveTraits ActiveTraits
     {
         get
         {
-            ActiveRoles roles = new ActiveRoles();
+            ActiveTraits trait = new ActiveTraits();
 
             foreach (var character in activeCharacters)
             {
-                foreach (var role in character.Roles)
+                foreach (var role in character.Traits)
                 {
-                    if (roles.ContainsKey(role))
-                        roles[role]++;
+                    if (trait.ContainsKey(role))
+                        trait[role]++;
                     else
-                        roles.Add(role, 1);
+                        trait.Add(role, 1);
                 }
 
                 for (int i = 0; i < characterMastery[character]; i++)
                 {
-                    if(character.Mastery[i].MasteryType == MasteryType.Role)
+                    if(character.Mastery[i].MasteryType == MasteryType.Trait)
                     {
-                        foreach (var role in character.Mastery[i].Roles)
+                        foreach (var role in character.Mastery[i].Traits)
                         {
-                            if (roles.ContainsKey(role))
-                                roles[role]++;
+                            if (trait.ContainsKey(role))
+                                trait[role]++;
                             else
-                                roles.Add(role, 1);
+                                trait.Add(role, 1);
                         }
                     }
                 }
             }
 
-            return roles;
+            return trait;
         }
     }
-
-    public static ActiveArchetypes ActiveArchetypes
-    {
-        get
-        {
-            ActiveArchetypes archetypes = new ActiveArchetypes();
-
-            foreach (var character in activeCharacters)
-            {
-                foreach (var archetype in character.Archetypes)
-                {
-                    if (archetypes.ContainsKey(archetype))
-                        archetypes[archetype]++;
-                    else
-                        archetypes.Add(archetype, 1);
-                }
-
-                for (int i = 0; i < characterMastery[character]; i++)
-                {
-                    if (character.Mastery[i].MasteryType == MasteryType.Role)
-                    {
-                        foreach (var archetype in character.Mastery[i].Archetypes)
-                        {
-                            if (archetypes.ContainsKey(archetype))
-                                archetypes[archetype]++;
-                            else
-                                archetypes.Add(archetype, 1);
-                        }
-                    }
-                }
-            }
-
-            return archetypes;
-        }
-    }
+  
     public static System.Action<Character> OnCharacterPulled;
 
     public override void Initialise()
@@ -129,8 +91,7 @@ public class CharacterManager : Factories.FactoryBase
 
         assassin = _assassin;
         characters = _characters;
-        roles = _roles;
-        archetypes = _archetypes;
+        traits = _traits;
         rarities = _rarities.OrderBy(x => x.RarityNumber).ToList();
         InitialiseOdds();
     }
@@ -156,8 +117,7 @@ public class CharacterManager : Factories.FactoryBase
     {
         CharacterMastery.Clear();
         ActiveCharacters.Clear();
-        ActiveRoles.Clear();
-        ActiveArchetypes.Clear();
+        ActiveTraits.Clear();
     }
 
     public static void AddCharacter(Character character)
@@ -195,24 +155,11 @@ public class CharacterManager : Factories.FactoryBase
         }
     }
 
-    public static List<StatData> FindStatsFromTraits(ActiveRoles roles, ActiveArchetypes archetypes)
+    public static List<StatData> FindStatsFromTraits(ActiveTraits traits)
     {
         List<StatData> statDatas = new List<StatData>();
 
-        foreach (var item in archetypes)
-        {
-            StatDatas stats = item.Key.FindStats(item.Value);
-
-            if (stats == null)
-                continue;
-
-            foreach (var stat in stats.Stats)
-            {
-                statDatas.Add(stat);
-            }
-        }
-
-        foreach (var item in roles)
+        foreach (var item in traits)
         {
             StatDatas stats = item.Key.FindStats(item.Value);
 
@@ -230,7 +177,6 @@ public class CharacterManager : Factories.FactoryBase
 }
 
 public class CharacterMastery : SerializableDictionary<Character, int> { }
-public class ActiveRoles : SerializableDictionary<Role, int> { }
-public class ActiveArchetypes : SerializableDictionary<Archetype, int> { }
+public class ActiveTraits : SerializableDictionary<Trait, int> { }
 [System.Serializable] public class SetData : SerializableDictionary<int, StatDatas> { }
 [System.Serializable] public class OddsDictionary : SerializableDictionary<Rarity, int> { }

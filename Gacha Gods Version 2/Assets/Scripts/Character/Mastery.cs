@@ -5,8 +5,7 @@ using Sirenix.OdinInspector;
 
 public enum MasteryType
 {
-    Role,
-    Archetype,
+    Trait,
     Stat,
     GlobalStat,
     Attack,
@@ -22,13 +21,9 @@ public class Mastery : ScriptableObject
     public MasteryType MasteryType => masteryType;
     [SerializeField] MasteryType masteryType;
 
-    public List<Role> Roles => roles;
-    [ShowIf("MasteryType", MasteryType.Role), SerializeField]
-    List<Role> roles;
-
-    public List<Archetype> Archetypes => archetypes;
-    [ShowIf("MasteryType", MasteryType.Archetype), SerializeField]
-    List<Archetype> archetypes;
+    public List<Trait> Traits => traits;
+    [ShowIf("MasteryType", MasteryType.Trait), SerializeField]
+    List<Trait> traits;
 
     public List<StatData> Stats => stats;
     [ShowIf("MasteryType", MasteryType.Stat), SerializeField]

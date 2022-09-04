@@ -12,10 +12,8 @@ public class Character : ScriptableObject
     [SerializeField] GameObject prefab;
     public Sprite Icon => icon;
     [SerializeField] Sprite icon;
-    public List<Role> Roles => roles;
-    [SerializeField] List<Role> roles;
-    public List<Archetype> Archetypes => archetypes;
-    [SerializeField] List<Archetype> archetypes;
+    public List<Trait> Traits => traits;
+    [SerializeField] List<Trait> traits;
     public Rarity Rarity => rarity;
     [SerializeField] Rarity rarity;
     public StatFloatDictionary BaseStats => baseStats;
@@ -39,9 +37,9 @@ public class Character : ScriptableObject
                 lastSlash = i;
         }
 
-        path = path.Remove(lastSlash + 1); 
+        path = path.Remove(lastSlash + 1);
 
-        if(!File.Exists(path + name + " Attack.asset"))
+        if (!File.Exists(path + name + " Attack.asset"))
         {
             Attack attack = CreateInstance<Attack>();
             AssetDatabase.CreateAsset(attack, path + name + " Attack.asset");
@@ -59,7 +57,7 @@ public class Character : ScriptableObject
 
         for (int i = 0; i < 6; i++)
         {
-            if (!File.Exists(path + name + " Mastery " + (i+1) + ".asset"))
+            if (!File.Exists(path + name + " Mastery " + (i + 1) + ".asset"))
             {
                 Mastery mastery = CreateInstance<Mastery>();
                 AssetDatabase.CreateAsset(mastery, path + name + " Mastery " + (i + 1) + ".asset");
@@ -73,17 +71,18 @@ public class Character : ScriptableObject
     [Button]
     void RandomiseTraits()
     {
-        archetypes.Clear();
-        roles.Clear();
+        traits.Clear();
 
-        archetypes.Add(CharacterManager.Archetypes.ChooseRandomElementInList());
-        roles.Add(CharacterManager.Roles.ChooseRandomElementInList());
+        for (int i = 0; i < 3; i++)
+        {
+            Trait trait = CharacterManager.Traits.ChooseRandomElementInList();
 
-        baseStats.Clear();
-        baseStats.Add(Stat.Health, Random.Range(500, 1000));
-        baseStats.Add(Stat.Dmg, Random.Range(100, 200));
-        baseStats.Add(Stat.Range, Random.Range(1, 5));
-        baseStats.Add(Stat.AtkSpd, Random.Range(0.5f, 1));
-        baseStats.Add(Stat.Spd, Random.Range(0.8f, 1));
+            while (traits.Contains(trait))
+            {
+                trait = CharacterManager.Traits.ChooseRandomElementInList();
+            }
+
+            traits.Add(trait);
+        }
     }
 }

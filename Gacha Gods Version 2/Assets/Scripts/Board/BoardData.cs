@@ -8,16 +8,13 @@ public class BoardData
     int roundNumber;
     public List<CharacterData> CharacterDatas => characterDatas;
     List<CharacterData> characterDatas;
-    public ActiveRoles Roles => roles;
-    ActiveRoles roles;
-    public ActiveArchetypes Archetypes => archetypes;
-    ActiveArchetypes archetypes;
+    public ActiveTraits Traits => traits;
+    ActiveTraits traits;
 
-    public BoardData(int roundNumber, List<CharacterData> characterDatas, ActiveRoles roles, ActiveArchetypes archetypes)
+    public BoardData(int roundNumber, List<CharacterData> characterDatas, ActiveTraits traits)
     {
         this.roundNumber = roundNumber;
-        this.roles = roles;
-        this.archetypes = archetypes;
+        this.traits = traits;
         this.characterDatas = characterDatas;
     }
 }

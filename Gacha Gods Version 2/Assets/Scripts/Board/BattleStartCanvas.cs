@@ -42,65 +42,49 @@ public class BattleStartCanvas : MonoBehaviour
 
     void SetAllyTraits(BoardData allyBoard)
     {
-        List<ScriptableObject> traits = new List<ScriptableObject>();
+        List<Trait> traits = new List<Trait>();
 
-        foreach (var item in allyBoard.Archetypes)
+        foreach (var item in allyBoard.Traits)
         {
             traits.Add(item.Key);
         }
 
-        foreach (var item in allyBoard.Roles)
-        {
-            traits.Add(item.Key);
-        }
-
-        traits = traits.OrderByDescending(x => x as Archetype != null ? allyBoard.Archetypes[(Archetype)x] : allyBoard.Roles[(Role)x]).ToList();
+        traits = traits.OrderByDescending(x => allyBoard.Traits[x]).ToList();
 
         for (int i = 0; i < traits.Count; i++)
         {
-            ScriptableObject trait = traits[i];
+            Trait trait = traits[i];
 
             TextMeshProUGUI text = allySetsHolder.GetChild(i).GetComponent<TextMeshProUGUI>();
 
             text.gameObject.SetActive(true);
 
-            if (trait as Archetype != null)
-                text.SetText(trait.name + ": " + allyBoard.Archetypes[(Archetype)trait]);
-            else
-                text.SetText(trait.name + ": " + allyBoard.Roles[(Role)trait]);
+            text.SetText(trait.name + ": " + allyBoard.Traits[trait]);
         }
     }
 
     void SetEnemyTraits(BoardData enemyBoard)
     {
-        List<ScriptableObject> traits = new List<ScriptableObject>();
+        List<Trait> traits = new List<Trait>();
 
-        traits = new List<ScriptableObject>();
+        traits = new List<Trait>();
 
-        foreach (var item in enemyBoard.Archetypes)
+        foreach (var item in enemyBoard.Traits)
         {
             traits.Add(item.Key);
         }
 
-        foreach (var item in enemyBoard.Roles)
-        {
-            traits.Add(item.Key);
-        }
-
-        traits = traits.OrderByDescending(x => x as Archetype != null ? enemyBoard.Archetypes[(Archetype)x] : enemyBoard.Roles[(Role)x]).ToList();
+        traits = traits.OrderByDescending(x => enemyBoard.Traits[x]).ToList();
 
         for (int i = 0; i < traits.Count; i++)
         {
-            ScriptableObject trait = traits[i];
+            Trait trait = traits[i];
 
-            TextMeshProUGUI text = enemySetsHolder.GetChild(i).GetComponent<TextMeshProUGUI>();
+            TextMeshProUGUI text = allySetsHolder.GetChild(i).GetComponent<TextMeshProUGUI>();
 
             text.gameObject.SetActive(true);
 
-            if (trait as Archetype != null)
-                text.SetText(trait.name + ": " + enemyBoard.Archetypes[(Archetype)trait]);
-            else
-                text.SetText(trait.name + ": " + enemyBoard.Roles[(Role)trait]);
+            text.SetText(trait.name + ": " + enemyBoard.Traits[trait]);
         }
     }
 }

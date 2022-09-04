@@ -101,14 +101,14 @@ public class CharacterStats : MonoBehaviour
 
     public void AddStat(StatData stat)
     {
-        if(stat.StatRequirement == StatRequirement.Archetype)
+        if(stat.StatRequirement == StatRequirement.Trait)
         {
-            if (!character.Archetypes.Contains(stat.Archetype))
+            if (!character.Traits.Contains(stat.Trait))
                 return;
         }
-        else if (stat.StatRequirement == StatRequirement.Role)
+        else if (stat.StatRequirement == StatRequirement.Character)
         {
-            if (!character.Roles.Contains(stat.Role))
+            if (character != stat.Character)
                 return;
         }
 

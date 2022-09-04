@@ -18,14 +18,7 @@ public class CharacterPreview : MonoBehaviour
 
         int counter = 0;
 
-        foreach (var item in character.Archetypes)
-        {
-            traits[counter].gameObject.SetActive(true);
-            traits[counter].text = item.name;
-            counter++;
-        }
-
-        foreach (var item in character.Roles)
+        foreach (var item in character.Traits)
         {
             traits[counter].gameObject.SetActive(true);
             traits[counter].text = item.name;

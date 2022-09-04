@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df548b6b88a01f843b037cc5cba429e6, type: 3}
+  m_Name: Kocho
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 9166367694736361880, guid: 1b95a882d9e4e7d409ef20c987711b61, type: 3}
+  icon: {fileID: 21300000, guid: 6a13cce74df6e71439c67adc95ad9867, type: 3}
+  traits:
+  - {fileID: 11400000, guid: 6aeb225c56b6c3e4bae24e132894b0e9, type: 2}
+  - {fileID: 11400000, guid: d62f17a6f2cc69a4e9476254b862f635, type: 2}
+  - {fileID: 11400000, guid: 5061af8e5007dae4eab099074d10c55d, type: 2}
+  rarity: {fileID: 11400000, guid: 3cd61046da265d44baf2779ecfbc1324, type: 2}
+  baseStats:
+    m_keys: 0000000002000000010000000600000009000000
+    m_values:
+    - 795
+    - 121
+    - 4
+    - 0.7126095
+    - 0.81909674
+  mastery:
+  - {fileID: 11400000, guid: 5da096b65a4658348bde68fd53ffe397, type: 2}
+  - {fileID: 11400000, guid: 8c36b5bbd8583454390139c44f8eaece, type: 2}
+  - {fileID: 11400000, guid: 66c3ae68eef3ea349bb39a65676a6bab, type: 2}
+  - {fileID: 11400000, guid: 094178bc66a41a34c8d0cbbc1c1c56df, type: 2}
+  - {fileID: 11400000, guid: a0e6906c2765d16409d6e9fa9baa9736, type: 2}
+  - {fileID: 11400000, guid: 3ecd4f3dbf9c61a4092de44c746b48ce, type: 2}
+  attack: {fileID: 11400000, guid: 8cf0a7bc8eb2361489ec3fe688eb1927, type: 2}
+  spell: {fileID: 11400000, guid: 4cb808b1f628cf64e8b368b5af58f322, type: 2}

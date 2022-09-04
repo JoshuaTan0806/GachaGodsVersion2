@@ -10,32 +10,24 @@ public class TraitsPreview : MonoBehaviour
 
     private void Awake()
     {
-        List<ScriptableObject> traits = new List<ScriptableObject>();
+        List<Trait> traits = new List<Trait>();
 
-        foreach (var item in CharacterManager.ActiveArchetypes)
+        foreach (var item in CharacterManager.ActiveTraits)
         {
             traits.Add(item.Key);
         }
 
-        foreach (var item in CharacterManager.ActiveRoles)
-        {
-            traits.Add(item.Key);
-        }
-
-        traits = traits.OrderByDescending(x => x as Archetype != null ? CharacterManager.ActiveArchetypes[(Archetype)x] : CharacterManager.ActiveRoles[(Role)x]).ToList();
+        traits = traits.OrderByDescending(x => CharacterManager.ActiveTraits[x]).ToList();
 
         for (int i = 0; i < traits.Count; i++)
         {
-            ScriptableObject trait = traits[i];
+            Trait trait = traits[i];
 
             TextMeshProUGUI text = SetsHolder.GetChild(i).GetComponent<TextMeshProUGUI>();
 
             text.gameObject.SetActive(true);
 
-            if (trait as Archetype != null)
-                text.SetText(trait.name + ": " + CharacterManager.ActiveArchetypes[(Archetype)trait]);
-            else
-                text.SetText(trait.name + ": " + CharacterManager.ActiveRoles[(Role)trait]);
+            text.SetText(trait.name + ": " + CharacterManager.ActiveTraits[trait]);
         }
     }
 }

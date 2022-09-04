@@ -51,7 +51,7 @@ public class BattleManager : MonoBehaviour
 
         playerBoardData = boardData;
 
-        List<StatData> globalBuffs = CharacterManager.FindStatsFromTraits(boardData.Roles, boardData.Archetypes);
+        List<StatData> globalBuffs = CharacterManager.FindStatsFromTraits(boardData.Traits);
 
         foreach (var item in boardData.CharacterDatas)
         {
@@ -110,7 +110,7 @@ public class BattleManager : MonoBehaviour
 
         enemyBoardData = boardData;
 
-        List<StatData> globalBuffs = CharacterManager.FindStatsFromTraits(boardData.Roles, boardData.Archetypes);
+        List<StatData> globalBuffs = CharacterManager.FindStatsFromTraits(boardData.Traits);
 
         foreach (var item in boardData.CharacterDatas)
         {

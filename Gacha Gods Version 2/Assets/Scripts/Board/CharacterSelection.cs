@@ -44,7 +44,7 @@ public class CharacterSelection : MonoBehaviour
             }
             else if(unitType == UnitType.Assassin)
             {
-                if (!item.Key.Roles.Contains(CharacterManager.Assassin))
+                if (!item.Key.Traits.Contains(CharacterManager.Assassin))
                     continue;
 
                 b = Instantiate(characterPrefab, characterHolder);

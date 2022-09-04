@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df548b6b88a01f843b037cc5cba429e6, type: 3}
+  m_Name: Mashiro
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 9166367694736361880, guid: 1b95a882d9e4e7d409ef20c987711b61, type: 3}
+  icon: {fileID: 21300000, guid: 6a13cce74df6e71439c67adc95ad9867, type: 3}
+  traits:
+  - {fileID: 11400000, guid: 54f45df22af82f54584dc03c9d8dd5d3, type: 2}
+  - {fileID: 11400000, guid: 33d842db20ed67045b9539a6eb79f2ad, type: 2}
+  - {fileID: 11400000, guid: a18909fd74595e84f96897ad634aeaa4, type: 2}
+  rarity: {fileID: 11400000, guid: dc32ef1f41aec134bafd5224085d3d74, type: 2}
+  baseStats:
+    m_keys: 0000000002000000010000000600000009000000
+    m_values:
+    - 506
+    - 171
+    - 3
+    - 0.92511064
+    - 0.97480786
+  mastery:
+  - {fileID: 11400000, guid: f0281d1f43ed91d438c9e2e695f84da7, type: 2}
+  - {fileID: 11400000, guid: 990b629f4e6e63b418234089fe5e33b8, type: 2}
+  - {fileID: 11400000, guid: d1147f07db3703848884dbcf532d39ad, type: 2}
+  - {fileID: 11400000, guid: 25e685e8acd87c2499d9f443ca52db55, type: 2}
+  - {fileID: 11400000, guid: b02d296abbdf59e4aa5ee911350b323e, type: 2}
+  - {fileID: 11400000, guid: b15c7a213f0f8154980164fd0466981c, type: 2}
+  attack: {fileID: 11400000, guid: d78360f182433a341a5616560e12f70d, type: 2}
+  spell: {fileID: 11400000, guid: 3c1dd59e7bbfe6f4c971a2533a1067bd, type: 2}

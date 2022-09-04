@@ -6,8 +6,8 @@ using Sirenix.OdinInspector;
 public enum StatRequirement
 {
     None,
-    Archetype,
-    Role
+    Trait,
+    Character
 }
 
 [CreateAssetMenu(menuName = "Character/Stat")]
@@ -19,10 +19,11 @@ public class StatData : ScriptableObject
     public StatRequirement StatRequirement => statRequirement;
     [SerializeField] StatRequirement statRequirement = StatRequirement.None;
 
-    public Archetype Archetype => archetype;
-    [ShowIf("statRequirement", StatRequirement.Archetype), SerializeField] Archetype archetype;
-    public Role Role => role;
-    [ShowIf("statRequirement", StatRequirement.Role), SerializeField] Role role;
+    public Trait Trait => trait;
+    [ShowIf("statRequirement", StatRequirement.Trait), SerializeField] Trait trait;
+
+    public Character Character => character;
+    [ShowIf("statRequirement", StatRequirement.Character), SerializeField] Character character;
 
     public float Flat
     {

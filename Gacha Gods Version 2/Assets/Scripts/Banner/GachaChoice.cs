@@ -39,12 +39,7 @@ public class GachaChoice : MonoBehaviour
 
             string str = character.name + "\n" + character.Rarity;
 
-            foreach (var archetype in character.Archetypes)
-            {
-                str += "\n" + archetype.name;
-            }
-
-            foreach (var role in character.Roles)
+            foreach (var role in character.Traits)
             {
                 str += "\n" + role.name;
             }

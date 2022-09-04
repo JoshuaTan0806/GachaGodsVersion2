@@ -41,7 +41,7 @@ public class Board : MonoBehaviour
             characterDatas.Add(characterData);
         }
 
-        return new BoardData(GameManager.RoundNumber, characterDatas, CharacterManager.ActiveRoles, CharacterManager.ActiveArchetypes);
+        return new BoardData(GameManager.RoundNumber, characterDatas, CharacterManager.ActiveTraits);
     }
 
     public static void SaveBoardData()
