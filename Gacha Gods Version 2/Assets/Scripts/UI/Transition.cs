@@ -29,15 +29,19 @@ public class Transition : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetMouseButtonDown(0))
+        {
+            FireEvents();
+            Destroy(gameObject);
+        }
+
         if(!hasFiredEvents)
         {
             if (!image.IsOpaque())
                 image.DecreaseTransparency(5f);
             else
             {
-                unityEvent?.Invoke();
-                action?.Invoke();
-                hasFiredEvents = true;
+                FireEvents();
             }
         }
         else
@@ -47,5 +51,12 @@ public class Transition : MonoBehaviour
             else
                 Destroy(gameObject);
         }
+    }
+
+    void FireEvents()
+    {
+        unityEvent?.Invoke();
+        action?.Invoke();
+        hasFiredEvents = true;
     }
 }
