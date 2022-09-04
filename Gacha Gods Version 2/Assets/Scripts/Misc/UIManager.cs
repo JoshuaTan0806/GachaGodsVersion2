@@ -80,7 +80,7 @@ public class UIManager : MonoBehaviour
 
     void OnBattleStart()
     {
-        DeactivateMainCanvas();
+       DeactivateMainCanvas();
     }
 
     void OnBattleWon()
@@ -113,5 +113,11 @@ public class UIManager : MonoBehaviour
     {
         Transition t = Instantiate(transitionPrefab).GetComponent<Transition>();
         t.Initialise(unityEvent);
+    }
+
+    public void SpawnTransition(Action action)
+    {
+        Transition t = Instantiate(transitionPrefab).GetComponent<Transition>();
+        t.Initialise(action);
     }
 }

@@ -80,7 +80,7 @@ public class BattleStartCanvas : MonoBehaviour
         {
             Trait trait = traits[i];
 
-            TextMeshProUGUI text = allySetsHolder.GetChild(i).GetComponent<TextMeshProUGUI>();
+            TextMeshProUGUI text = enemySetsHolder.GetChild(i).GetComponent<TextMeshProUGUI>();
 
             text.gameObject.SetActive(true);
 

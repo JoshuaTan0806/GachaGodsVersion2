@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
+using System;
 
 public class Transition : MonoBehaviour
 {
     Image image;
     bool hasFiredEvents = false;
     UnityEvent unityEvent;
+    Action action;
 
     private void Awake()
     {
@@ -20,6 +22,11 @@ public class Transition : MonoBehaviour
         this.unityEvent = unityEvent;
     }
 
+    public void Initialise(Action action)
+    {
+        this.action += action;
+    }
+
     private void Update()
     {
         if(!hasFiredEvents)
@@ -29,6 +36,7 @@ public class Transition : MonoBehaviour
             else
             {
                 unityEvent?.Invoke();
+                action?.Invoke();
                 hasFiredEvents = true;
             }
         }
