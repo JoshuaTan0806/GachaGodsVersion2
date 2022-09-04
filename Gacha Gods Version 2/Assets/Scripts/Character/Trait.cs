@@ -7,11 +7,12 @@ using UnityEngine;
 public class Trait : ScriptableObject
 {
     public string Name => name;
-
     public string Description => description;
     [SerializeField] string description;
     public Sprite Icon => icon;
     [SerializeField] Sprite icon;
+
+    [SerializeField] bool needExact;
     public SetData SetData => setData;
     [SerializeField] SetData setData;
 
@@ -29,6 +30,12 @@ public class Trait : ScriptableObject
     {
         if (SetData.IsNullOrEmpty())
             return 0;
+
+        if(needExact)
+        {
+            if (!SetData.ContainsKey(num))
+                return 0;
+        }
 
         //need to find the highest number that exists in the setdata that is lower than num
         int setNum = num;
