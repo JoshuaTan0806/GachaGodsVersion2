@@ -90,6 +90,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a795fdd819705146a18d74f2f1c4055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character: {fileID: 0}
 --- !u!114 &6028783489129918876
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2803,6 +2804,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a795fdd819705146a18d74f2f1c4055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character: {fileID: 0}
 --- !u!114 &1409121039805818238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4078,8 +4080,7 @@ GameObject:
   - component: {fileID: 4312478131565119976}
   - component: {fileID: 4312478131565119977}
   - component: {fileID: 4312478131565119982}
-  - component: {fileID: 280912279}
-  - component: {fileID: 280912278}
+  - component: {fileID: 8319271571529879645}
   m_Layer: 5
   m_Name: Gacha
   m_TagString: Untagged
@@ -4190,7 +4191,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &280912279
+--- !u!114 &8319271571529879645
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4199,25 +4200,36 @@ MonoBehaviour:
   m_GameObject: {fileID: 4312478131565119980}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9d985d9ebbcca24da5257c1997d32cf, type: 3}
+  m_Script: {fileID: 11500000, guid: 10e361743c5da144da604b79c3cda936, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameObject: {fileID: 4312478131985686423}
-  active: 0
---- !u!114 &280912278
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4312478131565119980}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9d985d9ebbcca24da5257c1997d32cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GameObject: {fileID: 6717803676560411516}
-  active: 1
+  unityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4312478131985686423}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 6717803676560411516}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1 &4312478131895212788
 GameObject:
   m_ObjectHideFlags: 0
@@ -6450,6 +6462,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a795fdd819705146a18d74f2f1c4055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character: {fileID: 0}
 --- !u!114 &6247546886262666474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6553,6 +6566,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a795fdd819705146a18d74f2f1c4055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character: {fileID: 0}
 --- !u!114 &1500660027351793914
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6656,6 +6670,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a795fdd819705146a18d74f2f1c4055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character: {fileID: 0}
 --- !u!114 &4620851788708696556
 MonoBehaviour:
   m_ObjectHideFlags: 0

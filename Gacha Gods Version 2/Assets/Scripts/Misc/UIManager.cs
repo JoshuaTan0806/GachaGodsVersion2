@@ -24,6 +24,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject gameWonPrefab;
     [SerializeField] GameObject gameLostPrefab;
 
+    public GameObject TransitionPrefab => transitionPrefab; 
+    [SerializeField] GameObject transitionPrefab; 
+
     public CharacterPreview CharacterPreviewPrefab => characterPreviewPrefab;
     [SerializeField] CharacterPreview characterPreviewPrefab;
 
