@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System;
+using UnityEngine.Events;
 
 public class UIManager : MonoBehaviour
 {
@@ -23,8 +24,6 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject battleLostPrefab;
     [SerializeField] GameObject gameWonPrefab;
     [SerializeField] GameObject gameLostPrefab;
-
-    public GameObject TransitionPrefab => transitionPrefab; 
     [SerializeField] GameObject transitionPrefab; 
 
     public CharacterPreview CharacterPreviewPrefab => characterPreviewPrefab;
@@ -108,5 +107,11 @@ public class UIManager : MonoBehaviour
     void SpawnRoundStartPrefab()
     {
         Instantiate(roundStartPrefab);
+    }
+
+    public void SpawnTransition(UnityEvent unityEvent)
+    {
+        Transition t = Instantiate(transitionPrefab).GetComponent<Transition>();
+        t.Initialise(unityEvent);
     }
 }
