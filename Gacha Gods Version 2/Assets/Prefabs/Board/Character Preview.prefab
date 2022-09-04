@@ -147,7 +147,7 @@ GameObject:
   - component: {fileID: 2289494268699243786}
   - component: {fileID: 3502748865709582529}
   - component: {fileID: 7197115327536235130}
-  - component: {fileID: 3014037910576577891}
+  - component: {fileID: 580592064586011049}
   m_Layer: 5
   m_Name: Character Preview
   m_TagString: Untagged
@@ -259,7 +259,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &3014037910576577891
+--- !u!114 &580592064586011049
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -268,10 +268,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 2854326140911438952}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4707ebd3244ac5145a12725f3f6e79aa, type: 3}
+  m_Script: {fileID: 11500000, guid: 10e361743c5da144da604b79c3cda936, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameObjectToDestroy: {fileID: 4510230020022710984}
+  unityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7109008889712860204}
+        m_TargetAssemblyTypeName: DestroyGameObjectEvent, Assembly-CSharp
+        m_MethodName: DestroyGameobject
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3174414984415404010
 GameObject:
   m_ObjectHideFlags: 0
@@ -552,6 +566,7 @@ GameObject:
   - component: {fileID: 8574762542908662787}
   - component: {fileID: 5512987868835941583}
   - component: {fileID: 4756457055999850876}
+  - component: {fileID: 7109008889712860204}
   m_Layer: 5
   m_Name: Character Preview
   m_TagString: Untagged
@@ -661,6 +676,18 @@ MonoBehaviour:
   - {fileID: 5660678746015544330}
   - {fileID: 7147012969975668926}
   masteryNumber: {fileID: 5981416886401409895}
+--- !u!114 &7109008889712860204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4510230020022710984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53921d3489cf57e4a9dfd3627a50e209, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4956499520090151310
 GameObject:
   m_ObjectHideFlags: 0

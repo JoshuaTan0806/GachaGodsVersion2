@@ -45,14 +45,16 @@ public class HoldButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
             timer -= Time.deltaTime;
 
             if (timer < 0)
-                Execute();
+            {
+                timer = timeToHold;
+                isBeingHeld = false;
+                UIManager.instance.SpawnTransition(() => Execute());
+            }
         }
     }
 
     void Execute()
     {
         OnHeld?.Invoke();
-        isBeingHovered = false;
-        timer = timeToHold;
     }
 }
