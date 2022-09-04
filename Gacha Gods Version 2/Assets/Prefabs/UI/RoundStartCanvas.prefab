@@ -456,6 +456,7 @@ GameObject:
   - component: {fileID: 7561690045132176485}
   - component: {fileID: 7561690045132176482}
   - component: {fileID: 7561690045132176483}
+  - component: {fileID: 9156277599663293100}
   m_Layer: 5
   m_Name: RoundStartCanvas
   m_TagString: Untagged
@@ -548,6 +549,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 119
+--- !u!114 &9156277599663293100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7561690045132176480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53921d3489cf57e4a9dfd3627a50e209, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7561690044052232014
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -699,7 +712,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &5993221510019286113
+--- !u!114 &6324339883427122175
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -708,10 +721,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 6525286381112146892}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4707ebd3244ac5145a12725f3f6e79aa, type: 3}
+  m_Script: {fileID: 11500000, guid: 10e361743c5da144da604b79c3cda936, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameObjectToDestroy: {fileID: 7561690045132176480}
+  unityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 9156277599663293100}
+        m_TargetAssemblyTypeName: DestroyGameObjectEvent, Assembly-CSharp
+        m_MethodName: DestroyGameobject
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &7561690044158852483
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -819,71 +846,9 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3648734634690984032, guid: 1e6046c8ca90c8d4b83d1f974e3d576e, type: 3}
   m_PrefabInstance: {fileID: 7561690044158852483}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7110156118895758464}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &7110156118895758464 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 746713916065198339, guid: 1e6046c8ca90c8d4b83d1f974e3d576e, type: 3}
-  m_PrefabInstance: {fileID: 7561690044158852483}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &5561734668631704660
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7110156118895758464}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 0
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 6508385192759625187}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &8145882288947861486
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7110156118895758464}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4707ebd3244ac5145a12725f3f6e79aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GameObjectToDestroy: {fileID: 7561690045132176480}
