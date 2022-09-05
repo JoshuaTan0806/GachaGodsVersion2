@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using Sirenix.OdinInspector;
+using UnityEditor;
 
 [CreateAssetMenu(menuName = "Character/Trait")]
 public class Trait : ScriptableObject
@@ -62,5 +64,17 @@ public class Trait : ScriptableObject
             return null;
 
         return SetData[setNum];
+    }
+
+    [Button]
+    void AddSetData()
+    {
+        for (int i = setData.Count; i < 5; i++)
+        {
+            StatDatas stats = ScriptableObject.CreateInstance<StatDatas>();
+            stats.name = "SetData";
+            setData.Add(i, stats);
+            AssetDatabase.AddObjectToAsset(stats, this);
+        }
     }
 }
