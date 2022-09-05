@@ -1,5 +1,71 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-5395582299181489036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 399e31e81443a354cb3f96002dc9ba07, type: 3}
+  m_Name: Kurona Attack
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 0}
+  description: 
+--- !u!114 &-4601974902517630432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99945a18a04da734ab5c5b79d16d63b2, type: 3}
+  m_Name: Kurona Mastery 4
+  m_EditorClassIdentifier: 
+  description: 
+  masteryType: 0
+  traits: []
+  stats: []
+  globalStats: []
+  attack: {fileID: 0}
+  spell: {fileID: 0}
+--- !u!114 &-1386394286229463600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99945a18a04da734ab5c5b79d16d63b2, type: 3}
+  m_Name: Kurona Mastery 1
+  m_EditorClassIdentifier: 
+  description: 
+  masteryType: 0
+  traits: []
+  stats: []
+  globalStats: []
+  attack: {fileID: 0}
+  spell: {fileID: 0}
+--- !u!114 &-1035053449371094118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdd8227d4cb09f54597cb52eec63840e, type: 3}
+  m_Name: Kurona Spell
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 0}
+  description: 
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27,12 +93,88 @@ MonoBehaviour:
     - 4
     - 0.9395902
     - 0.86407167
-  mastery:
-  - {fileID: 11400000, guid: 9c6982be70c19344e8cdd3c16d2cbf25, type: 2}
-  - {fileID: 11400000, guid: c3727bc87496a764ea6d35e47d6cb458, type: 2}
-  - {fileID: 11400000, guid: c4d982e0608e2b241b5f388b1274fcaf, type: 2}
-  - {fileID: 11400000, guid: 36a4f695e73ecbe4dae9a22f570cfe9d, type: 2}
-  - {fileID: 11400000, guid: b98a95786f6f9504e9b6b38e181416c3, type: 2}
-  - {fileID: 11400000, guid: 45ee894c3a6789e4788b3304b98e08f7, type: 2}
-  attack: {fileID: 11400000, guid: a1cb3cea910ddc94ea6b9a51a8d80dc5, type: 2}
-  spell: {fileID: 11400000, guid: 27c852bf142670e44b9ed4604206990b, type: 2}
+  masteries:
+  - {fileID: -1386394286229463600}
+  - {fileID: 2232995192767366024}
+  - {fileID: 9204717176650989110}
+  - {fileID: -4601974902517630432}
+  - {fileID: 69886801376764255}
+  - {fileID: 5445259722604484562}
+  attack: {fileID: -5395582299181489036}
+  spell: {fileID: -1035053449371094118}
+--- !u!114 &69886801376764255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99945a18a04da734ab5c5b79d16d63b2, type: 3}
+  m_Name: Kurona Mastery 5
+  m_EditorClassIdentifier: 
+  description: 
+  masteryType: 0
+  traits: []
+  stats: []
+  globalStats: []
+  attack: {fileID: 0}
+  spell: {fileID: 0}
+--- !u!114 &2232995192767366024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99945a18a04da734ab5c5b79d16d63b2, type: 3}
+  m_Name: Kurona Mastery 2
+  m_EditorClassIdentifier: 
+  description: 
+  masteryType: 0
+  traits: []
+  stats: []
+  globalStats: []
+  attack: {fileID: 0}
+  spell: {fileID: 0}
+--- !u!114 &5445259722604484562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99945a18a04da734ab5c5b79d16d63b2, type: 3}
+  m_Name: Kurona Mastery 6
+  m_EditorClassIdentifier: 
+  description: 
+  masteryType: 0
+  traits: []
+  stats: []
+  globalStats: []
+  attack: {fileID: 0}
+  spell: {fileID: 0}
+--- !u!114 &9204717176650989110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99945a18a04da734ab5c5b79d16d63b2, type: 3}
+  m_Name: Kurona Mastery 3
+  m_EditorClassIdentifier: 
+  description: 
+  masteryType: 0
+  traits: []
+  stats: []
+  globalStats: []
+  attack: {fileID: 0}
+  spell: {fileID: 0}

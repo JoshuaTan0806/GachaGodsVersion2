@@ -1,5 +1,57 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-6903367202186100434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99945a18a04da734ab5c5b79d16d63b2, type: 3}
+  m_Name: Rui Mastery 1
+  m_EditorClassIdentifier: 
+  description: 
+  masteryType: 0
+  traits: []
+  stats: []
+  globalStats: []
+  attack: {fileID: 0}
+  spell: {fileID: 0}
+--- !u!114 &-6270823470893099332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdd8227d4cb09f54597cb52eec63840e, type: 3}
+  m_Name: Rui Spell
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 0}
+  description: 
+--- !u!114 &-4448659760584832288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99945a18a04da734ab5c5b79d16d63b2, type: 3}
+  m_Name: Rui Mastery 5
+  m_EditorClassIdentifier: 
+  description: 
+  masteryType: 0
+  traits: []
+  stats: []
+  globalStats: []
+  attack: {fileID: 0}
+  spell: {fileID: 0}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27,12 +79,102 @@ MonoBehaviour:
     - 1
     - 0.8759945
     - 0.8945205
-  mastery:
-  - {fileID: 11400000, guid: 7e421e626accf12409fc7b48117ab610, type: 2}
-  - {fileID: 11400000, guid: 9c9aafc15f4a3c24a90d548a5dc05d4a, type: 2}
-  - {fileID: 11400000, guid: fa3479e58a018d54f93a255d62e01879, type: 2}
-  - {fileID: 11400000, guid: 612b5743b3206504180fea44237ff901, type: 2}
-  - {fileID: 11400000, guid: 59f719884db956344aa541ddc694b613, type: 2}
-  - {fileID: 11400000, guid: 6ff9f3d3180bb56478c532ce14f957d3, type: 2}
-  attack: {fileID: 11400000, guid: 73fe949e21b3eab47b7bfd941aa44457, type: 2}
-  spell: {fileID: 11400000, guid: acc2b9a170879f147971061f6044ace1, type: 2}
+  masteries:
+  - {fileID: -6903367202186100434}
+  - {fileID: 7308129788472951461}
+  - {fileID: 2965588050097977257}
+  - {fileID: 5186705368163433951}
+  - {fileID: -4448659760584832288}
+  - {fileID: 1616404473547546751}
+  attack: {fileID: 9165282660842858438}
+  spell: {fileID: -6270823470893099332}
+--- !u!114 &1616404473547546751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99945a18a04da734ab5c5b79d16d63b2, type: 3}
+  m_Name: Rui Mastery 6
+  m_EditorClassIdentifier: 
+  description: 
+  masteryType: 0
+  traits: []
+  stats: []
+  globalStats: []
+  attack: {fileID: 0}
+  spell: {fileID: 0}
+--- !u!114 &2965588050097977257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99945a18a04da734ab5c5b79d16d63b2, type: 3}
+  m_Name: Rui Mastery 3
+  m_EditorClassIdentifier: 
+  description: 
+  masteryType: 0
+  traits: []
+  stats: []
+  globalStats: []
+  attack: {fileID: 0}
+  spell: {fileID: 0}
+--- !u!114 &5186705368163433951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99945a18a04da734ab5c5b79d16d63b2, type: 3}
+  m_Name: Rui Mastery 4
+  m_EditorClassIdentifier: 
+  description: 
+  masteryType: 0
+  traits: []
+  stats: []
+  globalStats: []
+  attack: {fileID: 0}
+  spell: {fileID: 0}
+--- !u!114 &7308129788472951461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99945a18a04da734ab5c5b79d16d63b2, type: 3}
+  m_Name: Rui Mastery 2
+  m_EditorClassIdentifier: 
+  description: 
+  masteryType: 0
+  traits: []
+  stats: []
+  globalStats: []
+  attack: {fileID: 0}
+  spell: {fileID: 0}
+--- !u!114 &9165282660842858438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 399e31e81443a354cb3f96002dc9ba07, type: 3}
+  m_Name: Rui Attack
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 0}
+  description: 

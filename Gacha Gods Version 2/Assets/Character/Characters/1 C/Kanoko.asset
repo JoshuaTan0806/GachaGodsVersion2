@@ -1,5 +1,57 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-6968005136101620368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdd8227d4cb09f54597cb52eec63840e, type: 3}
+  m_Name: Kanoko Spell
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 0}
+  description: 
+--- !u!114 &-4368669881241369895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99945a18a04da734ab5c5b79d16d63b2, type: 3}
+  m_Name: Kanoko Mastery 2
+  m_EditorClassIdentifier: 
+  description: 
+  masteryType: 0
+  traits: []
+  stats: []
+  globalStats: []
+  attack: {fileID: 0}
+  spell: {fileID: 0}
+--- !u!114 &-228186496945938728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99945a18a04da734ab5c5b79d16d63b2, type: 3}
+  m_Name: Kanoko Mastery 3
+  m_EditorClassIdentifier: 
+  description: 
+  masteryType: 0
+  traits: []
+  stats: []
+  globalStats: []
+  attack: {fileID: 0}
+  spell: {fileID: 0}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27,12 +79,102 @@ MonoBehaviour:
     - 2
     - 0.8511194
     - 0.93000257
-  mastery:
-  - {fileID: 11400000, guid: 042785f53c3e2074a81469d1cd097833, type: 2}
-  - {fileID: 11400000, guid: 30a47328b875007489bd177e02857e3f, type: 2}
-  - {fileID: 11400000, guid: a3a1702b5c835c340b5345f5e126a0d7, type: 2}
-  - {fileID: 11400000, guid: 2e147552879e40546a910802650e23de, type: 2}
-  - {fileID: 11400000, guid: d0edc2e7d8fa61b46acd374a16f7daa3, type: 2}
-  - {fileID: 11400000, guid: f512d09bef6889f46bbf524b2e50fb6c, type: 2}
-  attack: {fileID: 11400000, guid: e43ec66f65250cb4f8fdafa7e652cb4b, type: 2}
-  spell: {fileID: 11400000, guid: 295d3fb2b1b6a9f4e9cf61e6b06c9df1, type: 2}
+  masteries:
+  - {fileID: 5803183096660486649}
+  - {fileID: -4368669881241369895}
+  - {fileID: -228186496945938728}
+  - {fileID: 8822331420240370952}
+  - {fileID: 4262671245573922970}
+  - {fileID: 6705637228889686771}
+  attack: {fileID: 1768469090849784830}
+  spell: {fileID: -6968005136101620368}
+--- !u!114 &1768469090849784830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 399e31e81443a354cb3f96002dc9ba07, type: 3}
+  m_Name: Kanoko Attack
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 0}
+  description: 
+--- !u!114 &4262671245573922970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99945a18a04da734ab5c5b79d16d63b2, type: 3}
+  m_Name: Kanoko Mastery 5
+  m_EditorClassIdentifier: 
+  description: 
+  masteryType: 0
+  traits: []
+  stats: []
+  globalStats: []
+  attack: {fileID: 0}
+  spell: {fileID: 0}
+--- !u!114 &5803183096660486649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99945a18a04da734ab5c5b79d16d63b2, type: 3}
+  m_Name: Kanoko Mastery 1
+  m_EditorClassIdentifier: 
+  description: 
+  masteryType: 0
+  traits: []
+  stats: []
+  globalStats: []
+  attack: {fileID: 0}
+  spell: {fileID: 0}
+--- !u!114 &6705637228889686771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99945a18a04da734ab5c5b79d16d63b2, type: 3}
+  m_Name: Kanoko Mastery 6
+  m_EditorClassIdentifier: 
+  description: 
+  masteryType: 0
+  traits: []
+  stats: []
+  globalStats: []
+  attack: {fileID: 0}
+  spell: {fileID: 0}
+--- !u!114 &8822331420240370952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99945a18a04da734ab5c5b79d16d63b2, type: 3}
+  m_Name: Kanoko Mastery 4
+  m_EditorClassIdentifier: 
+  description: 
+  masteryType: 0
+  traits: []
+  stats: []
+  globalStats: []
+  attack: {fileID: 0}
+  spell: {fileID: 0}

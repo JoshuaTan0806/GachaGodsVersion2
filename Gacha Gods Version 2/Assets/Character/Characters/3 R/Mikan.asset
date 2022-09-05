@@ -1,5 +1,76 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9169625414712161169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99945a18a04da734ab5c5b79d16d63b2, type: 3}
+  m_Name: Mikan Mastery 6
+  m_EditorClassIdentifier: 
+  description: 
+  masteryType: 0
+  traits: []
+  stats: []
+  globalStats: []
+  attack: {fileID: 0}
+  spell: {fileID: 0}
+--- !u!114 &-7980753265129970368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdd8227d4cb09f54597cb52eec63840e, type: 3}
+  m_Name: Mikan Spell
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 0}
+  description: 
+--- !u!114 &-6600547958997197655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99945a18a04da734ab5c5b79d16d63b2, type: 3}
+  m_Name: Mikan Mastery 3
+  m_EditorClassIdentifier: 
+  description: 
+  masteryType: 0
+  traits: []
+  stats: []
+  globalStats: []
+  attack: {fileID: 0}
+  spell: {fileID: 0}
+--- !u!114 &-6572954993401925140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99945a18a04da734ab5c5b79d16d63b2, type: 3}
+  m_Name: Mikan Mastery 4
+  m_EditorClassIdentifier: 
+  description: 
+  masteryType: 0
+  traits: []
+  stats: []
+  globalStats: []
+  attack: {fileID: 0}
+  spell: {fileID: 0}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27,12 +98,83 @@ MonoBehaviour:
     - 2
     - 0.62651515
     - 0.85501415
-  mastery:
-  - {fileID: 11400000, guid: bb6738be9bf04104aba0d42037412131, type: 2}
-  - {fileID: 11400000, guid: 8792ba18447a48545a3ccbb8478482f5, type: 2}
-  - {fileID: 11400000, guid: e93a343e90009b24581c0d360c8b1650, type: 2}
-  - {fileID: 11400000, guid: 76b975d62edd48847817ef917f541794, type: 2}
-  - {fileID: 11400000, guid: 7662a26a15cd2474db1de06dde39479d, type: 2}
-  - {fileID: 11400000, guid: 1686898223c051941931529de490089b, type: 2}
-  attack: {fileID: 11400000, guid: 847cb3b1c489d9b4097b0643c220fb34, type: 2}
-  spell: {fileID: 11400000, guid: 9bb0e234e7465c64da1fa75d7fb2201b, type: 2}
+  masteries:
+  - {fileID: 7218703738941957982}
+  - {fileID: 5708334555147970905}
+  - {fileID: -6600547958997197655}
+  - {fileID: -6572954993401925140}
+  - {fileID: 2086665371171003853}
+  - {fileID: -9169625414712161169}
+  attack: {fileID: 117753239144241375}
+  spell: {fileID: -7980753265129970368}
+--- !u!114 &117753239144241375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 399e31e81443a354cb3f96002dc9ba07, type: 3}
+  m_Name: Mikan Attack
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 0}
+  description: 
+--- !u!114 &2086665371171003853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99945a18a04da734ab5c5b79d16d63b2, type: 3}
+  m_Name: Mikan Mastery 5
+  m_EditorClassIdentifier: 
+  description: 
+  masteryType: 0
+  traits: []
+  stats: []
+  globalStats: []
+  attack: {fileID: 0}
+  spell: {fileID: 0}
+--- !u!114 &5708334555147970905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99945a18a04da734ab5c5b79d16d63b2, type: 3}
+  m_Name: Mikan Mastery 2
+  m_EditorClassIdentifier: 
+  description: 
+  masteryType: 0
+  traits: []
+  stats: []
+  globalStats: []
+  attack: {fileID: 0}
+  spell: {fileID: 0}
+--- !u!114 &7218703738941957982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99945a18a04da734ab5c5b79d16d63b2, type: 3}
+  m_Name: Mikan Mastery 1
+  m_EditorClassIdentifier: 
+  description: 
+  masteryType: 0
+  traits: []
+  stats: []
+  globalStats: []
+  attack: {fileID: 0}
+  spell: {fileID: 0}

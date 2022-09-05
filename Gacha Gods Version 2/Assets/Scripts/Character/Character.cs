@@ -18,52 +18,37 @@ public class Character : ScriptableObject
     [SerializeField] Rarity rarity;
     public StatFloatDictionary BaseStats => baseStats;
     [SerializeField] StatFloatDictionary baseStats;
-    public List<Mastery> Mastery => mastery;
-    [SerializeField] List<Mastery> mastery;
+    public List<Mastery> Masteries => masteries;
+    [SerializeField, ReadOnly] List<Mastery> masteries;
     public Attack Attack => attack;
-    [SerializeField] Attack attack;
+    [SerializeField, ReadOnly] Attack attack;
     public Spell Spell => spell;
-    [SerializeField] Spell spell;
+    [SerializeField, ReadOnly] Spell spell;
 
     [Button]
     void CreateScriptables()
     {
-        string path = AssetDatabase.GetAssetPath(this);
-        int lastSlash = 0;
-
-        for (int i = 0; i < path.Length; i++)
-        {
-            if (path[i] == '/')
-                lastSlash = i;
-        }
-
-        path = path.Remove(lastSlash + 1);
-
-        if (!File.Exists(path + name + " Attack.asset"))
-        {
-            Attack attack = CreateInstance<Attack>();
-            AssetDatabase.CreateAsset(attack, path + name + " Attack.asset");
-            this.attack = attack;
-        }
-
-        if (!File.Exists(path + name + " Spell.asset"))
-        {
-            Spell spell = CreateInstance<Spell>();
-            AssetDatabase.CreateAsset(spell, path + name + " Spell.asset");
-            this.spell = spell;
-        }
-
-        mastery.Clear();
+        if (Attack != null)
+            return;
 
         for (int i = 0; i < 6; i++)
         {
-            if (!File.Exists(path + name + " Mastery " + (i + 1) + ".asset"))
-            {
-                Mastery mastery = CreateInstance<Mastery>();
-                AssetDatabase.CreateAsset(mastery, path + name + " Mastery " + (i + 1) + ".asset");
-                this.mastery.Add(mastery);
-            }
+            Mastery mastery = ScriptableObject.CreateInstance<Mastery>();
+            mastery.name = name + " Mastery " + (i + 1);
+            masteries.Add(mastery);
+
+            AssetDatabase.AddObjectToAsset(mastery, this);
         }
+
+        Attack attack = ScriptableObject.CreateInstance<Attack>();
+        attack.name = name + " Attack";
+        this.attack = attack;
+        AssetDatabase.AddObjectToAsset(attack, this);
+
+        Spell spell = ScriptableObject.CreateInstance<Spell>();
+        spell.name = name + " Spell";
+        this.spell = spell;
+        AssetDatabase.AddObjectToAsset(spell, this);
 
         EditorExtensionMethods.SaveAsset(this);
     }

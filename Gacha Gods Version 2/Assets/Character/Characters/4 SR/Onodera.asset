@@ -1,5 +1,57 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-6472291783400112440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99945a18a04da734ab5c5b79d16d63b2, type: 3}
+  m_Name: Onodera Mastery 5
+  m_EditorClassIdentifier: 
+  description: 
+  masteryType: 0
+  traits: []
+  stats: []
+  globalStats: []
+  attack: {fileID: 0}
+  spell: {fileID: 0}
+--- !u!114 &-6249802907293855007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99945a18a04da734ab5c5b79d16d63b2, type: 3}
+  m_Name: Onodera Mastery 3
+  m_EditorClassIdentifier: 
+  description: 
+  masteryType: 0
+  traits: []
+  stats: []
+  globalStats: []
+  attack: {fileID: 0}
+  spell: {fileID: 0}
+--- !u!114 &-2817988106667166439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdd8227d4cb09f54597cb52eec63840e, type: 3}
+  m_Name: Onodera Spell
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 0}
+  description: 
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27,12 +79,102 @@ MonoBehaviour:
     - 2
     - 0.62651515
     - 0.85501415
-  mastery:
-  - {fileID: 11400000, guid: bb6738be9bf04104aba0d42037412131, type: 2}
-  - {fileID: 11400000, guid: 8792ba18447a48545a3ccbb8478482f5, type: 2}
-  - {fileID: 11400000, guid: e93a343e90009b24581c0d360c8b1650, type: 2}
-  - {fileID: 11400000, guid: 76b975d62edd48847817ef917f541794, type: 2}
-  - {fileID: 11400000, guid: 7662a26a15cd2474db1de06dde39479d, type: 2}
-  - {fileID: 11400000, guid: 1686898223c051941931529de490089b, type: 2}
-  attack: {fileID: 11400000, guid: 847cb3b1c489d9b4097b0643c220fb34, type: 2}
-  spell: {fileID: 11400000, guid: 9bb0e234e7465c64da1fa75d7fb2201b, type: 2}
+  masteries:
+  - {fileID: 3836180482819893342}
+  - {fileID: 2575256982131295791}
+  - {fileID: -6249802907293855007}
+  - {fileID: 5577144374471002564}
+  - {fileID: -6472291783400112440}
+  - {fileID: 2145955569220035584}
+  attack: {fileID: 7351474439340585832}
+  spell: {fileID: -2817988106667166439}
+--- !u!114 &2145955569220035584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99945a18a04da734ab5c5b79d16d63b2, type: 3}
+  m_Name: Onodera Mastery 6
+  m_EditorClassIdentifier: 
+  description: 
+  masteryType: 0
+  traits: []
+  stats: []
+  globalStats: []
+  attack: {fileID: 0}
+  spell: {fileID: 0}
+--- !u!114 &2575256982131295791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99945a18a04da734ab5c5b79d16d63b2, type: 3}
+  m_Name: Onodera Mastery 2
+  m_EditorClassIdentifier: 
+  description: 
+  masteryType: 0
+  traits: []
+  stats: []
+  globalStats: []
+  attack: {fileID: 0}
+  spell: {fileID: 0}
+--- !u!114 &3836180482819893342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99945a18a04da734ab5c5b79d16d63b2, type: 3}
+  m_Name: Onodera Mastery 1
+  m_EditorClassIdentifier: 
+  description: 
+  masteryType: 0
+  traits: []
+  stats: []
+  globalStats: []
+  attack: {fileID: 0}
+  spell: {fileID: 0}
+--- !u!114 &5577144374471002564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99945a18a04da734ab5c5b79d16d63b2, type: 3}
+  m_Name: Onodera Mastery 4
+  m_EditorClassIdentifier: 
+  description: 
+  masteryType: 0
+  traits: []
+  stats: []
+  globalStats: []
+  attack: {fileID: 0}
+  spell: {fileID: 0}
+--- !u!114 &7351474439340585832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 399e31e81443a354cb3f96002dc9ba07, type: 3}
+  m_Name: Onodera Attack
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 0}
+  description: 

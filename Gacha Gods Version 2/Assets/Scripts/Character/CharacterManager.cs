@@ -62,9 +62,9 @@ public class CharacterManager : Factories.FactoryBase
 
                 for (int i = 0; i < characterMastery[character]; i++)
                 {
-                    if(character.Mastery[i].MasteryType == MasteryType.Trait)
+                    if(character.Masteries[i].MasteryType == MasteryType.Trait)
                     {
-                        foreach (var role in character.Mastery[i].Traits)
+                        foreach (var role in character.Masteries[i].Traits)
                         {
                             if (trait.ContainsKey(role))
                                 trait[role]++;

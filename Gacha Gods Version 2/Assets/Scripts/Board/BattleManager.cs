@@ -63,7 +63,7 @@ public class BattleManager : MonoBehaviour
 
             for (int i = 0; i < item.Mastery; i++)
             {
-                Mastery mastery = item.Character.Mastery[i];
+                Mastery mastery = item.Character.Masteries[i];
 
                 switch (mastery.MasteryType)
                 {
@@ -121,7 +121,7 @@ public class BattleManager : MonoBehaviour
 
             for (int i = 0; i < item.Mastery; i++)
             {
-                Mastery mastery = item.Character.Mastery[i];
+                Mastery mastery = item.Character.Masteries[i];
 
                 switch (mastery.MasteryType)
                 {
