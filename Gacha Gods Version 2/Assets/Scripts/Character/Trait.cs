@@ -77,4 +77,12 @@ public class Trait : ScriptableObject
             AssetDatabase.AddObjectToAsset(stats, this);
         }
     }
+
+    private void OnValidate()
+    {
+        foreach (var item in SetData)
+        {
+            item.Value.name = name + " " + item.Key.ToString();
+        }
+    }
 }
