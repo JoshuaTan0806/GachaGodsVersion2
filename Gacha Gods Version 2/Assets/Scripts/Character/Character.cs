@@ -52,22 +52,4 @@ public class Character : ScriptableObject
 
         EditorExtensionMethods.SaveAsset(this);
     }
-
-    [Button]
-    void RandomiseTraits()
-    {
-        traits.Clear();
-
-        for (int i = 0; i < 3; i++)
-        {
-            Trait trait = CharacterManager.Traits.ChooseRandomElementInList();
-
-            while (traits.Contains(trait))
-            {
-                trait = CharacterManager.Traits.ChooseRandomElementInList();
-            }
-
-            traits.Add(trait);
-        }
-    }
 }

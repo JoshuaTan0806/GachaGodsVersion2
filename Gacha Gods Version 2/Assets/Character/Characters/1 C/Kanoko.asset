@@ -67,18 +67,18 @@ MonoBehaviour:
   prefab: {fileID: 9166367694736361880, guid: 1b95a882d9e4e7d409ef20c987711b61, type: 3}
   icon: {fileID: 21300000, guid: 6a13cce74df6e71439c67adc95ad9867, type: 3}
   traits:
-  - {fileID: 11400000, guid: 4d94422b7d72a2545a72af464cfebb55, type: 2}
-  - {fileID: 11400000, guid: c6acc17009f47914ea6441f7129cbab7, type: 2}
-  - {fileID: 11400000, guid: d52b622b5fb56554d98e1126b549d08c, type: 2}
+  - {fileID: 11400000, guid: e6e70784d95f4e34caa80d44c5bed23b, type: 2}
+  - {fileID: 11400000, guid: d8d509393ddacbf42aebc6d23825c28a, type: 2}
+  - {fileID: 11400000, guid: 9ecbc2bcd491e8d4baa1cb2dc6f7f567, type: 2}
   rarity: {fileID: 11400000, guid: 5caa1fcf88ed40b4abb3e1f7df2d8f23, type: 2}
   baseStats:
     m_keys: 0000000002000000010000000600000009000000
     m_values:
-    - 768
-    - 173
-    - 2
-    - 0.8511194
-    - 0.93000257
+    - 100
+    - 20
+    - 1
+    - 1
+    - 1
   masteries:
   - {fileID: 5803183096660486649}
   - {fileID: -4368669881241369895}
