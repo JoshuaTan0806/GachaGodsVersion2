@@ -15,6 +15,7 @@ public class Transition : MonoBehaviour
     private void Awake()
     {
         image = GetComponentInChildren<Image>();
+        DontDestroyOnLoad(gameObject);
     }
 
     public void Initialise(UnityEvent unityEvent)
