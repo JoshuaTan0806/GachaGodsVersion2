@@ -60,7 +60,7 @@ public class Character : ScriptableObject
 
         for (int i = 0; i < masteries.Count; i++)
         {
-            masteries[i].name = "Mastery " + (i + 1);
+            masteries[i].name = "M" + (i + 1);
         }
     }
 }
