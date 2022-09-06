@@ -34,22 +34,33 @@ public class Character : ScriptableObject
         for (int i = 0; i < 6; i++)
         {
             Mastery mastery = ScriptableObject.CreateInstance<Mastery>();
-            mastery.name = name + " Mastery " + (i + 1);
+            mastery.name = "Mastery " + (i + 1);
             masteries.Add(mastery);
 
             AssetDatabase.AddObjectToAsset(mastery, this);
         }
 
         Attack attack = ScriptableObject.CreateInstance<Attack>();
-        attack.name = name + " Attack";
+        attack.name = "Attack";
         this.attack = attack;
         AssetDatabase.AddObjectToAsset(attack, this);
 
         Spell spell = ScriptableObject.CreateInstance<Spell>();
-        spell.name = name + " Spell";
+        spell.name = "Spell";
         this.spell = spell;
         AssetDatabase.AddObjectToAsset(spell, this);
 
         EditorExtensionMethods.SaveAsset(this);
+    }
+
+    private void OnValidate()
+    {
+        attack.name = "Attack";
+        spell.name = "Spell";
+
+        for (int i = 0; i < masteries.Count; i++)
+        {
+            masteries[i].name = "Mastery " + (i + 1);
+        }
     }
 }

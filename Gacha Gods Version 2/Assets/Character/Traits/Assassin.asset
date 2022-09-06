@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 50516a162d4ff774aa02d0c63f15e9d7, type: 3}
-  m_Name: SetData
+  m_Name: Assassin 2
   m_EditorClassIdentifier: 
   stats: []
 --- !u!114 &-5336122375631626737
@@ -23,7 +23,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 50516a162d4ff774aa02d0c63f15e9d7, type: 3}
-  m_Name: SetData
+  m_Name: Assassin 4
   m_EditorClassIdentifier: 
   stats: []
 --- !u!114 &-3096293409091413400
@@ -36,7 +36,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 50516a162d4ff774aa02d0c63f15e9d7, type: 3}
-  m_Name: SetData
+  m_Name: Assassin 3
   m_EditorClassIdentifier: 
   stats: []
 --- !u!114 &11400000
@@ -72,7 +72,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 50516a162d4ff774aa02d0c63f15e9d7, type: 3}
-  m_Name: SetData
+  m_Name: Assassin 1
   m_EditorClassIdentifier: 
   stats: []
 --- !u!114 &9184808327883657792
@@ -85,6 +85,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 50516a162d4ff774aa02d0c63f15e9d7, type: 3}
-  m_Name: SetData
+  m_Name: Assassin 0
   m_EditorClassIdentifier: 
   stats: []

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cdd8227d4cb09f54597cb52eec63840e, type: 3}
-  m_Name: Mikoto Spell
+  m_Name: Spell
   m_EditorClassIdentifier: 
   prefab: {fileID: 0}
   description: 
@@ -24,7 +24,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 99945a18a04da734ab5c5b79d16d63b2, type: 3}
-  m_Name: Mikoto Mastery 1
+  m_Name: Mastery 1
   m_EditorClassIdentifier: 
   description: 
   masteryType: 0
@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 99945a18a04da734ab5c5b79d16d63b2, type: 3}
-  m_Name: Mikoto Mastery 3
+  m_Name: Mastery 3
   m_EditorClassIdentifier: 
   description: 
   masteryType: 0
@@ -62,7 +62,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 399e31e81443a354cb3f96002dc9ba07, type: 3}
-  m_Name: Mikoto Attack
+  m_Name: Attack
   m_EditorClassIdentifier: 
   prefab: {fileID: 0}
   description: 
@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 99945a18a04da734ab5c5b79d16d63b2, type: 3}
-  m_Name: Mikoto Mastery 6
+  m_Name: Mastery 6
   m_EditorClassIdentifier: 
   description: 
   masteryType: 0
@@ -131,7 +131,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 99945a18a04da734ab5c5b79d16d63b2, type: 3}
-  m_Name: Mikoto Mastery 4
+  m_Name: Mastery 4
   m_EditorClassIdentifier: 
   description: 
   masteryType: 0
@@ -150,7 +150,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 99945a18a04da734ab5c5b79d16d63b2, type: 3}
-  m_Name: Mikoto Mastery 2
+  m_Name: Mastery 2
   m_EditorClassIdentifier: 
   description: 
   masteryType: 0
@@ -169,7 +169,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 99945a18a04da734ab5c5b79d16d63b2, type: 3}
-  m_Name: Mikoto Mastery 5
+  m_Name: Mastery 5
   m_EditorClassIdentifier: 
   description: 
   masteryType: 0
