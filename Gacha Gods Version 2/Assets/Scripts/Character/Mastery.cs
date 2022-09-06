@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Sirenix.OdinInspector;
+using UnityEditor;
 
 public enum MasteryType
 {
@@ -26,11 +27,11 @@ public class Mastery : ScriptableObject
     List<Trait> traits;
 
     public List<StatData> Stats => stats;
-    [ShowIf("MasteryType", MasteryType.Stat), SerializeField]
+    [ShowIf("MasteryType", MasteryType.Stat), SerializeField, ReadOnly]
     List<StatData> stats;
 
     public List<StatData> GlobalStats => globalStats;
-    [ShowIf("MasteryType", MasteryType.GlobalStat), SerializeField]
+    [ShowIf("MasteryType", MasteryType.GlobalStat), SerializeField, ReadOnly]
     List<StatData> globalStats;
 
     public Attack Attack => attack;
@@ -40,4 +41,62 @@ public class Mastery : ScriptableObject
     public Spell Spell => spell;
     [ShowIf("MasteryType", MasteryType.Spell), SerializeField]
     Spell spell;
+
+    [ShowIf("MasteryType", MasteryType.Stat), Button]
+    void RefreshStatNames()
+    {
+        foreach (var item in stats)
+        {
+            item.name = name + " " + item.Stat.ToString();
+        }
+    }
+
+    [ShowIf("MasteryType", MasteryType.GlobalStat), Button]
+    void RefreshGlobalStatNames()
+    {
+        foreach (var item in globalStats)
+        {
+            item.name = name + " " + item.Stat.ToString();
+        }
+    }
+
+    [ShowIf("MasteryType", MasteryType.Stat), Button]
+    void CreateStatData()
+    {
+        StatData stats = ScriptableObject.CreateInstance<StatData>();
+        stats.name = name + " S";
+        this.stats.Add(stats);
+        AssetDatabase.AddObjectToAsset(stats, this);
+    }
+
+    [ShowIf("MasteryType", MasteryType.GlobalStat), Button]
+    void CreateGlobalStatData()
+    {
+        StatData stats = ScriptableObject.CreateInstance<StatData>();
+        stats.name = name + " S";
+        this.globalStats.Add(stats);
+        AssetDatabase.AddObjectToAsset(stats, this);
+    }
+
+    [ShowIf("MasteryType", MasteryType.Stat), Button]
+    void ClearStatData()
+    {
+        foreach (var item in stats)
+        {
+            DestroyImmediate(item, true);
+        }
+
+        stats.Clear();
+    }
+
+    [ShowIf("MasteryType", MasteryType.GlobalStat), Button]
+    void ClearGlobalStatData()
+    {
+        foreach (var item in globalStats)
+        {
+            DestroyImmediate(item, true);
+        }
+
+        globalStats.Clear();
+    }
 }

@@ -30,4 +30,17 @@ public class StatDatas : ScriptableObject
             item.name = name + " " + item.Stat.ToString();
         }
     }
+
+    private void OnDestroy()
+    {
+        foreach (var item in stats)
+        {
+            if (item == null)
+                continue;
+
+            DestroyImmediate(item, true);
+        }
+
+        stats.Clear();
+    }
 }
