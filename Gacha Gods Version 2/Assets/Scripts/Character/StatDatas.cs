@@ -8,14 +8,26 @@ using UnityEditor;
 public class StatDatas : ScriptableObject
 {
     public List<StatData> Stats => stats;
-    [SerializeField] List<StatData> stats;
+    [SerializeField, ReadOnly] List<StatData> stats;
 
     [Button]
     void AddStat()
     {
         StatData stat = ScriptableObject.CreateInstance<StatData>();
-        stat.name = "Stat";
+        stat.name = name;
         stats.Add(stat);
         AssetDatabase.AddObjectToAsset(stat, this);
+    }
+
+    [Button]
+    void RefreshNames()
+    {
+        foreach (var item in stats)
+        {
+            if (item == null)
+                continue;
+
+            item.name = name + " " + item.Stat.ToString();
+        }
     }
 }

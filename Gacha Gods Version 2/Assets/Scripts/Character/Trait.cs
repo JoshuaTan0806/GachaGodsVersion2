@@ -72,7 +72,7 @@ public class Trait : ScriptableObject
         for (int i = setData.Count; i < 5; i++)
         {
             StatDatas stats = ScriptableObject.CreateInstance<StatDatas>();
-            stats.name = "SetData";
+            stats.name = "S" + i.ToString();
             setData.Add(i, stats);
             AssetDatabase.AddObjectToAsset(stats, this);
         }
@@ -82,7 +82,7 @@ public class Trait : ScriptableObject
     {
         foreach (var item in SetData)
         {
-            item.Value.name = name + " " + item.Key.ToString();
+            item.Value.name = "S" + item.Key.ToString();
         }
     }
 }
