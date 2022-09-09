@@ -16,6 +16,8 @@ public class CharacterStats : MonoBehaviour
     List<Buff> buffs = new List<Buff>();
     public System.Action OnDeath;
 
+    public System.Action OnKill;
+
     public Attack Attack => attack;
     Attack attack;
     public Spell Spell => spell;
