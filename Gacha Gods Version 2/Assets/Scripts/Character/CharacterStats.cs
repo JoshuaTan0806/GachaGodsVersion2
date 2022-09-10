@@ -18,10 +18,10 @@ public class CharacterStats : MonoBehaviour
 
     public System.Action OnKill;
 
-    public Attack Attack => attack;
-    Attack attack;
-    public Spell Spell => spell;
-    Spell spell;
+    public Ability Attack => attack;
+    Ability attack;
+    public Ability Spell => spell;
+    Ability spell;
 
     public float CurrentHealth
     {
@@ -151,12 +151,12 @@ public class CharacterStats : MonoBehaviour
         return CurrentHealth < 0;
     }
 
-    public void UpgradeAttack(Attack attack)
+    public void UpgradeAttack(Ability attack)
     {
         this.attack = attack;
     }
 
-    public void UpgradeSpell(Spell spell)
+    public void UpgradeSpell(Ability spell)
     {
         this.spell = spell;
     }

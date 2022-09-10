@@ -20,10 +20,10 @@ public class Character : ScriptableObject
     [SerializeField] StatFloatDictionary baseStats;
     public List<Mastery> Masteries => masteries;
     [SerializeField, ReadOnly] List<Mastery> masteries;
-    public Attack Attack => attack;
-    [SerializeField, ReadOnly] Attack attack;
-    public Spell Spell => spell;
-    [SerializeField, ReadOnly] Spell spell;
+    public Ability Attack => attack;
+    [SerializeField, ReadOnly] Ability attack;
+    public Ability Spell => spell;
+    [SerializeField, ReadOnly] Ability spell;
 
     [Button]
     void CreateScriptables()
@@ -40,12 +40,12 @@ public class Character : ScriptableObject
             AssetDatabase.AddObjectToAsset(mastery, this);
         }
 
-        Attack attack = ScriptableObject.CreateInstance<Attack>();
+        Ability attack = ScriptableObject.CreateInstance<Ability>();
         attack.name = "Attack";
         this.attack = attack;
         AssetDatabase.AddObjectToAsset(attack, this);
 
-        Spell spell = ScriptableObject.CreateInstance<Spell>();
+        Ability spell = ScriptableObject.CreateInstance<Ability>();
         spell.name = "Spell";
         this.spell = spell;
         AssetDatabase.AddObjectToAsset(spell, this);

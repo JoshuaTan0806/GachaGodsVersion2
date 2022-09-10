@@ -66,7 +66,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdd8227d4cb09f54597cb52eec63840e, type: 3}
+  m_Script: {fileID: 11500000, guid: 399e31e81443a354cb3f96002dc9ba07, type: 3}
   m_Name: Spell
   m_EditorClassIdentifier: 
   prefab: {fileID: 0}

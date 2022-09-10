@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Character/Spell")]
-public class Spell : ScriptableObject
+[CreateAssetMenu(menuName = "Character/Attack")]
+public class Ability : ScriptableObject
 {
     public GameObject Prefab => prefab;
     [SerializeField] GameObject prefab;
