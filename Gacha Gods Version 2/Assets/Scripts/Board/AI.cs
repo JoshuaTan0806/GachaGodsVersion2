@@ -147,24 +147,8 @@ public class AI : MonoBehaviour
         return enemies.OrderBy(x => Vector3.SqrMagnitude(transform.position - x.transform.position)).ToList()[0];
     }
 
-    CharacterStats FindFurtherEnemy()
-    {
-        List<CharacterStats> enemies = this.enemies;
-
-        if (enemies.Count == 0)
-            return null;
-
-        return enemies.OrderByDescending(x => Vector3.SqrMagnitude(transform.position - x.transform.position)).ToList()[0];
-    }
-
     CharacterStats FindTarget(AbilityData abilityData)
     {
-        if (abilityData.TargetType == TargetType.Current)
-            return target;
-
-        if (abilityData.TargetType == TargetType.Closest)
-            return FindClosestEnemy();
-
         List<CharacterStats> possibleTargets = new();
 
         if (abilityData.TeamType == TeamType.Ally)
@@ -172,27 +156,28 @@ public class AI : MonoBehaviour
         else
             possibleTargets = enemies;
 
-        //which ones are in range
-        possibleTargets = possibleTargets.Where(x => Vector3.SqrMagnitude(transform.position - x.transform.position) < abilityData.MaxRange * abilityData.MaxRange).ToList();
+        //if theres a range, limit possible targets to ones in range
+        if (abilityData.HasMaxRange)
+            possibleTargets = possibleTargets.Where(x => Vector3.SqrMagnitude(transform.position - x.transform.position) < abilityData.MaxRange * abilityData.MaxRange).ToList();
 
+        if (possibleTargets.Count == 0)
+            return null;
 
         switch (abilityData.TargetType)
         {
+            case TargetType.Current:
+                return target;
             case TargetType.Closest:
-
-                break;
+                return possibleTargets.OrderBy(x => Vector3.SqrMagnitude(transform.position - x.transform.position)).ToList()[0];
             case TargetType.Furthest:
-                break;
+                return possibleTargets.OrderByDescending(x => Vector3.SqrMagnitude(transform.position - x.transform.position)).ToList()[0];
             case TargetType.HighestHealth:
-                break;
+                return possibleTargets.OrderByDescending(x => x.GetStat(Stat.Health)).ToList()[0];
             case TargetType.LowestHealth:
-                break;
-            case TargetType.HighestDensity:
-                break;
-            default:
-                break;
+                return possibleTargets.OrderBy(x => x.GetStat(Stat.Health)).ToList()[0];
         }
 
+        Debug.LogError("Missing " + abilityData.TargetType + " in switch statement.");
         return null;
     }
 }
