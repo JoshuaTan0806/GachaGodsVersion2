@@ -6,8 +6,8 @@ using Sirenix.OdinInspector;
 [CreateAssetMenu(menuName = "Character/Attack")]
 public class AbilityData : ScriptableObject
 {
-    public GameObject Prefab => prefab;
-    [SerializeField] GameObject prefab;
+    public Ability Prefab => prefab;
+    [SerializeField] Ability prefab;
 
     public string Description => description;
     [SerializeField] string description;
