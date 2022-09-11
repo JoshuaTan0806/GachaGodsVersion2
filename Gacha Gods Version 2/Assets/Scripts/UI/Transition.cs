@@ -10,7 +10,6 @@ public class Transition : MonoBehaviour
     Image image;
     bool hasFiredEvents = false;
     UnityEvent unityEvent;
-    Action action;
 
     private void Awake()
     {
@@ -25,15 +24,22 @@ public class Transition : MonoBehaviour
 
     public void Initialise(Action action)
     {
-        this.action += action;
+        unityEvent.AddListener(() => action?.Invoke());
     }
 
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            FireEvents();
-            Destroy(gameObject);
+            if (!hasFiredEvents)
+            {
+                FireEvents();
+                image.SetTransparency(1);
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
         }
 
         if(!hasFiredEvents)
@@ -57,7 +63,6 @@ public class Transition : MonoBehaviour
     void FireEvents()
     {
         unityEvent?.Invoke();
-        action?.Invoke();
         hasFiredEvents = true;
     }
 }

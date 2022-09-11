@@ -12,7 +12,5 @@ public class CoroutineManager : MonoBehaviour
             instance = this;
         else
             Destroy(gameObject);
-
-        DontDestroyOnLoad(gameObject);
     }
 }
