@@ -95,7 +95,8 @@ public class AI : MonoBehaviour
         canChooseAction = false;
         StartCoroutine(AllowAction(1 / stats.GetStat(Stat.AtkSpd)));
 
-        //Instantiate(stats.Attack.Prefab, transform.position, Quaternion.identity);
+        //Ability g = Instantiate(stats.Attack.Prefab, transform.position, Quaternion.identity);
+        //g.Initialise(stats);
 
         target.TakeDamage(stats.GetStat(Stat.Dmg));
     }
@@ -113,7 +114,8 @@ public class AI : MonoBehaviour
         canChooseAction = false;
         StartCoroutine(AllowAction(1 / stats.GetStat(Stat.SpellSpd)));
 
-        Instantiate(stats.Spell.Prefab, transform.position, Quaternion.identity);
+        // g = Instantiate(stats.Spell.Prefab, transform.position, Quaternion.identity);
+        //g.Initialise(stats);
     }
 
     IEnumerator AllowAction(float time)
