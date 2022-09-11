@@ -12,7 +12,7 @@ public class AbilityData : ScriptableObject
     public string Description => description;
     [SerializeField] string description;
 
-    public bool HasMaxRange => HasMaxRange;
+    public bool HasMaxRange => hasMaxRange;
     [SerializeField] bool hasMaxRange = false;
 
     public int MaxRange => maxRange;

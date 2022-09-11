@@ -55,15 +55,20 @@ public class AI : MonoBehaviour
             target = FindTarget(stats.Character.Spell);
 
             if (HasTarget())
+            {
                 Cast();
+                return;
+            }
         }
         else
         {
-            if (!HasTarget())
-                target = FindTarget(stats.Character.Attack);
+            target = FindTarget(stats.Character.Attack);
 
             if (HasTarget())
+            {
                 Attack();
+                return;
+            }
         }
 
         if (!HasTarget())
