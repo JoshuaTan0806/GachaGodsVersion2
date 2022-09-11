@@ -47,11 +47,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 399e31e81443a354cb3f96002dc9ba07, type: 3}
+  m_Script: {fileID: 11500000, guid: 82c6334bfc64052488e9d14b616bd764, type: 3}
   m_Name: Spell
   m_EditorClassIdentifier: 
   prefab: {fileID: 0}
   description: 
+  maxRange: 1
+  numberOfTargets: 1
+  numberOfSpawns: 1
+  targetType: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,11 +101,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 399e31e81443a354cb3f96002dc9ba07, type: 3}
+  m_Script: {fileID: 11500000, guid: 82c6334bfc64052488e9d14b616bd764, type: 3}
   m_Name: Attack
   m_EditorClassIdentifier: 
   prefab: {fileID: 0}
   description: 
+  maxRange: 1
+  numberOfTargets: 1
+  numberOfSpawns: 1
+  targetType: 0
 --- !u!114 &3623396031724575237
 MonoBehaviour:
   m_ObjectHideFlags: 0
