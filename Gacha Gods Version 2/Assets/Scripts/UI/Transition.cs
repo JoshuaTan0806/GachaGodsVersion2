@@ -10,6 +10,7 @@ public class Transition : MonoBehaviour
     Image image;
     bool hasFiredEvents = false;
     UnityEvent unityEvent;
+    Action action;
 
     private void Awake()
     {
@@ -24,7 +25,7 @@ public class Transition : MonoBehaviour
 
     public void Initialise(Action action)
     {
-        unityEvent.AddListener(() => action?.Invoke());
+        this.action += action;
     }
 
     private void Update()
@@ -63,6 +64,7 @@ public class Transition : MonoBehaviour
     void FireEvents()
     {
         unityEvent?.Invoke();
+        action?.Invoke();
         hasFiredEvents = true;
     }
 }

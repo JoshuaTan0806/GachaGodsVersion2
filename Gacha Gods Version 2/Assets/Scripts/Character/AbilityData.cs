@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Character/Attack")]
-public class Ability : ScriptableObject
+public class AbilityData : ScriptableObject
 {
     public GameObject Prefab => prefab;
     [SerializeField] GameObject prefab;

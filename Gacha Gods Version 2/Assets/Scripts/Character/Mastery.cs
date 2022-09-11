@@ -34,13 +34,13 @@ public class Mastery : ScriptableObject
     [ShowIf("MasteryType", MasteryType.GlobalStat), SerializeField, ReadOnly]
     List<StatData> globalStats;
 
-    public Ability Attack => attack;
+    public AbilityData Attack => attack;
     [ShowIf("MasteryType", MasteryType.Attack), SerializeField]
-    Ability attack;
+    AbilityData attack;
 
-    public Ability Spell => spell;
+    public AbilityData Spell => spell;
     [ShowIf("MasteryType", MasteryType.Spell), SerializeField]
-    Ability spell;
+    AbilityData spell;
 
     [ShowIf("MasteryType", MasteryType.Stat), Button]
     void RefreshStatNames()
