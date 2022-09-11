@@ -5,6 +5,7 @@ using UnityEngine;
 public class Ability : MonoBehaviour
 {
     CharacterStats stats;
+    AbilityData ability;
 
     private void OnEnable()
     {
@@ -18,9 +19,10 @@ public class Ability : MonoBehaviour
         GameManager.OnBattleLost -= DestroyGameobject;
     }
 
-    public void Initialise(CharacterStats stats)
+    public void Initialise(CharacterStats stats, AbilityData ability)
     {
         this.stats = stats;
+        this.ability = ability;
     }
 
     void DestroyGameobject()

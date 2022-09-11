@@ -101,7 +101,7 @@ public class AI : MonoBehaviour
         StartCoroutine(AllowAction(1 / stats.GetStat(Stat.AtkSpd)));
 
         //Ability g = Instantiate(stats.Attack.Prefab, transform.position, Quaternion.identity);
-        //g.Initialise(stats);
+        //g.Initialise(stats, attack);
 
         target.TakeDamage(stats.GetStat(Stat.Dmg));
     }
@@ -120,7 +120,7 @@ public class AI : MonoBehaviour
         StartCoroutine(AllowAction(1 / stats.GetStat(Stat.SpellSpd)));
 
         // g = Instantiate(stats.Spell.Prefab, transform.position, Quaternion.identity);
-        //g.Initialise(stats);
+        //g.Initialise(stats, spell);
     }
 
     IEnumerator AllowAction(float time)
