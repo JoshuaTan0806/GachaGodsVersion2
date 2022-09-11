@@ -14,9 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 0}
   description: 
+  hasMaxRange: 0
   maxRange: 1
   numberOfTargets: 1
   numberOfSpawns: 1
+  teamType: 0
   targetType: 0
 --- !u!114 &-4368669881241369895
 MonoBehaviour:
@@ -106,9 +108,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 0}
   description: 
+  hasMaxRange: 0
   maxRange: 1
   numberOfTargets: 1
   numberOfSpawns: 1
+  teamType: 1
   targetType: 0
 --- !u!114 &4262671245573922970
 MonoBehaviour:

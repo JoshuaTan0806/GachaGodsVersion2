@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using System.Linq;
 
 public class AI : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class AI : MonoBehaviour
     public System.Action OnSpellCast;
 
     List<CharacterStats> enemies => stats.Enemies;
+    List<CharacterStats> allies => stats.Allies;
 
     private void Awake()
     {
@@ -48,38 +50,27 @@ public class AI : MonoBehaviour
         if (HasTarget() && !TargetIsInRange())
             target = null;
 
-        if (!HasTarget())
-            target = FindClosestEnemy();
-
         if (CanCastSpell())
-            Cast();
-
-        if (TargetIsInRange())
-            Attack();
-        else
-            Move();
-    }
-
-    CharacterStats FindClosestEnemy()
-    {
-        float minDist = Mathf.Infinity;
-        CharacterStats closestEnemy = null;
-
-        for (int i = 0; i < enemies.Count; i++)
         {
-            if (enemies[i] == null)
-                continue;
+            target = FindTarget(stats.Character.Spell);
 
-            float dist = Vector3.SqrMagnitude(transform.position - enemies[i].transform.position);
+            if (HasTarget())
+                Cast();
+        }
+        else
+        {
+            if (!HasTarget())
+                target = FindTarget(stats.Character.Attack);
 
-            if(dist < minDist)
-            {
-                minDist = dist;
-                closestEnemy = enemies[i];
-            }
+            if (HasTarget())
+                Attack();
         }
 
-        return closestEnemy;
+        if (!HasTarget())
+        {
+            target = FindClosestEnemy();
+            Move();
+        }
     }
 
     bool HasTarget()
@@ -125,20 +116,17 @@ public class AI : MonoBehaviour
         Instantiate(stats.Spell.Prefab, transform.position, Quaternion.identity);
     }
 
-    void GetStunned(float time)
-    {
-        //animator.Play("Stun");
-        canChooseAction = false;
-        StartCoroutine(AllowAction(time));
-    }
-
     IEnumerator AllowAction(float time)
     {
         yield return new WaitForSeconds(time);
         canChooseAction = true;
     }
 
-    [Button]
+    void OnDeath()
+    {
+        BattleManager.KillCharacter(stats);
+    }
+
     public void Buff()
     {
         Condition condition = new Condition(ref OnAttack, 5);
@@ -149,8 +137,62 @@ public class AI : MonoBehaviour
         stats.AddBuff(buff);
     }
 
-    void OnDeath()
+    CharacterStats FindClosestEnemy()
     {
-        BattleManager.KillCharacter(stats);
+        List<CharacterStats> enemies = this.enemies;
+
+        if (enemies.Count == 0)
+            return null;
+
+        return enemies.OrderBy(x => Vector3.SqrMagnitude(transform.position - x.transform.position)).ToList()[0];
+    }
+
+    CharacterStats FindFurtherEnemy()
+    {
+        List<CharacterStats> enemies = this.enemies;
+
+        if (enemies.Count == 0)
+            return null;
+
+        return enemies.OrderByDescending(x => Vector3.SqrMagnitude(transform.position - x.transform.position)).ToList()[0];
+    }
+
+    CharacterStats FindTarget(AbilityData abilityData)
+    {
+        if (abilityData.TargetType == TargetType.Current)
+            return target;
+
+        if (abilityData.TargetType == TargetType.Closest)
+            return FindClosestEnemy();
+
+        List<CharacterStats> possibleTargets = new();
+
+        if (abilityData.TeamType == TeamType.Ally)
+            possibleTargets = allies;
+        else
+            possibleTargets = enemies;
+
+        //which ones are in range
+        possibleTargets = possibleTargets.Where(x => Vector3.SqrMagnitude(transform.position - x.transform.position) < abilityData.MaxRange * abilityData.MaxRange).ToList();
+
+
+        switch (abilityData.TargetType)
+        {
+            case TargetType.Closest:
+
+                break;
+            case TargetType.Furthest:
+                break;
+            case TargetType.HighestHealth:
+                break;
+            case TargetType.LowestHealth:
+                break;
+            case TargetType.HighestDensity:
+                break;
+            default:
+                break;
+        }
+
+        return null;
     }
 }

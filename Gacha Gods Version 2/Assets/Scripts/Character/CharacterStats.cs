@@ -61,6 +61,8 @@ public class CharacterStats : MonoBehaviour
     [SerializeField] TMPro.TextMeshProUGUI HealthLabel;
     public List<CharacterStats> Enemies => enemies;
     List<CharacterStats> enemies;
+    public List<CharacterStats> Allies => allies;
+    List<CharacterStats> allies;
 
     private void OnEnable()
     {
@@ -88,6 +90,7 @@ public class CharacterStats : MonoBehaviour
         this.character = character;
         spell = character.Spell;
         attack = character.Attack;
+        allies = BattleManager.FindAllies(this);
         enemies = BattleManager.FindEnemies(this);
 
         if (enemies == BattleManager.targetableEnemies)

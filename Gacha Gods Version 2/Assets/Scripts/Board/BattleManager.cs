@@ -36,7 +36,15 @@ public class BattleManager : MonoBehaviour
         GameManager.OnBattleStart -= OnBattleStart;
         GameManager.OnRoundEnd -= ClearBoard;
     }
- 
+
+    public static List<CharacterStats> FindAllies(CharacterStats stats)
+    {
+        if (allies.Contains(stats))
+            return targetableAllies;
+        else
+            return targetableEnemies;
+    }
+
     public static List<CharacterStats> FindEnemies(CharacterStats stats)
     {
         if (allies.Contains(stats))
