@@ -107,6 +107,11 @@ public class StatData : ScriptableObject
 
         return stat;
     }
+
+    public void SetStat(Stat stat)
+    {
+        this.stat = stat;
+    }
 }
 
 [System.Serializable] public class StatDictionary : SerializableDictionary<Stat, StatData> { }
@@ -126,7 +131,9 @@ public enum Stat
     Spd,
     CritChance,
     CritMult,
-    Lifesteal
+    Lifesteal,
+    CurrentHealth,
+    CurrentMana
 }
 
 public enum StatModifier
