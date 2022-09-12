@@ -1,5 +1,194 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8888763675043969212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea081abe43720704da89d92321d2b0ba, type: 3}
+  m_Name: Range
+  m_EditorClassIdentifier: 
+  stat: 1
+  statRequirement: 0
+  trait: {fileID: 0}
+  character: {fileID: 0}
+  flat: 1
+  percent: 0
+  multiplier: 1
+  total: 0
+  current: 0
+--- !u!114 &-7004431227586264621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea081abe43720704da89d92321d2b0ba, type: 3}
+  m_Name: AtkSpd
+  m_EditorClassIdentifier: 
+  stat: 6
+  statRequirement: 0
+  trait: {fileID: 0}
+  character: {fileID: 0}
+  flat: 1
+  percent: 0
+  multiplier: 1
+  total: 0
+  current: 0
+--- !u!114 &-6880176356499640932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea081abe43720704da89d92321d2b0ba, type: 3}
+  m_Name: Dmg
+  m_EditorClassIdentifier: 
+  stat: 2
+  statRequirement: 0
+  trait: {fileID: 0}
+  character: {fileID: 0}
+  flat: 1
+  percent: 0
+  multiplier: 1
+  total: 0
+  current: 0
+--- !u!114 &-6688895915662078275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea081abe43720704da89d92321d2b0ba, type: 3}
+  m_Name: ManaGainPerHit
+  m_EditorClassIdentifier: 
+  stat: 5
+  statRequirement: 0
+  trait: {fileID: 0}
+  character: {fileID: 0}
+  flat: 1
+  percent: 0
+  multiplier: 1
+  total: 0
+  current: 0
+--- !u!114 &-5178948227309409329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea081abe43720704da89d92321d2b0ba, type: 3}
+  m_Name: Health
+  m_EditorClassIdentifier: 
+  stat: 0
+  statRequirement: 0
+  trait: {fileID: 0}
+  character: {fileID: 0}
+  flat: 1
+  percent: 0
+  multiplier: 1
+  total: 0
+  current: 0
+--- !u!114 &-5103251870466929771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea081abe43720704da89d92321d2b0ba, type: 3}
+  m_Name: CritMult
+  m_EditorClassIdentifier: 
+  stat: 11
+  statRequirement: 0
+  trait: {fileID: 0}
+  character: {fileID: 0}
+  flat: 1
+  percent: 0
+  multiplier: 1
+  total: 0
+  current: 0
+--- !u!114 &-4464040950054926193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea081abe43720704da89d92321d2b0ba, type: 3}
+  m_Name: SpellSpd
+  m_EditorClassIdentifier: 
+  stat: 7
+  statRequirement: 0
+  trait: {fileID: 0}
+  character: {fileID: 0}
+  flat: 1
+  percent: 0
+  multiplier: 1
+  total: 0
+  current: 0
+--- !u!114 &-4003992699493113500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea081abe43720704da89d92321d2b0ba, type: 3}
+  m_Name: Lifesteal
+  m_EditorClassIdentifier: 
+  stat: 12
+  statRequirement: 0
+  trait: {fileID: 0}
+  character: {fileID: 0}
+  flat: 1
+  percent: 0
+  multiplier: 1
+  total: 0
+  current: 0
+--- !u!114 &-3935532517289001026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea081abe43720704da89d92321d2b0ba, type: 3}
+  m_Name: ManaCost
+  m_EditorClassIdentifier: 
+  stat: 3
+  statRequirement: 0
+  trait: {fileID: 0}
+  character: {fileID: 0}
+  flat: 1
+  percent: 0
+  multiplier: 1
+  total: 0
+  current: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13,15 +202,146 @@ MonoBehaviour:
   m_Name: StatManager
   m_EditorClassIdentifier: 
   stats:
-  - {fileID: 11400000, guid: 704cb25c65fe13649a6ac8e5f28d8a6a, type: 2}
-  - {fileID: 11400000, guid: b805e0bbd3c48bd4e9932e44c6a8dcc3, type: 2}
-  - {fileID: 11400000, guid: a7f175a3580de9d48836e9b80d3fdcd4, type: 2}
-  - {fileID: 11400000, guid: e9e36ea7bdc0ffa419a6a2c0af9afa96, type: 2}
-  - {fileID: 11400000, guid: 9ab2e0c217cdb5447b04fc7ed9765436, type: 2}
-  - {fileID: 11400000, guid: f69746b7dbe665b45989734875124b26, type: 2}
-  - {fileID: 11400000, guid: 1d8a66f92b40b1c42bff49b9033812a0, type: 2}
-  - {fileID: 11400000, guid: 1e394b3ae40177445aad20169b2a97ed, type: 2}
-  - {fileID: 11400000, guid: 1fef17890879cbd41889b16d7825a6e1, type: 2}
-  - {fileID: 11400000, guid: b3a0e4112cd495642acd9e5868af30db, type: 2}
-  - {fileID: 11400000, guid: caf6684fc7da47d46858d6711b37b408, type: 2}
-  - {fileID: 11400000, guid: 3c1c9abb29af96c45a021ff031b17990, type: 2}
+    m_keys: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e000000
+    m_values:
+    - {fileID: -5178948227309409329}
+    - {fileID: -8888763675043969212}
+    - {fileID: -6880176356499640932}
+    - {fileID: -3935532517289001026}
+    - {fileID: 3815642066247012585}
+    - {fileID: -6688895915662078275}
+    - {fileID: -7004431227586264621}
+    - {fileID: -4464040950054926193}
+    - {fileID: 2888958790176798418}
+    - {fileID: 4891231289172339175}
+    - {fileID: 7384254398996691346}
+    - {fileID: -5103251870466929771}
+    - {fileID: -4003992699493113500}
+    - {fileID: 1535366186428545041}
+    - {fileID: 162049945025050116}
+--- !u!114 &162049945025050116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea081abe43720704da89d92321d2b0ba, type: 3}
+  m_Name: CurrentMana
+  m_EditorClassIdentifier: 
+  stat: 14
+  statRequirement: 0
+  trait: {fileID: 0}
+  character: {fileID: 0}
+  flat: 1
+  percent: 0
+  multiplier: 1
+  total: 0
+  current: 0
+--- !u!114 &1535366186428545041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea081abe43720704da89d92321d2b0ba, type: 3}
+  m_Name: CurrentHealth
+  m_EditorClassIdentifier: 
+  stat: 13
+  statRequirement: 0
+  trait: {fileID: 0}
+  character: {fileID: 0}
+  flat: 1
+  percent: 0
+  multiplier: 1
+  total: 0
+  current: 0
+--- !u!114 &2888958790176798418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea081abe43720704da89d92321d2b0ba, type: 3}
+  m_Name: SpellDmg
+  m_EditorClassIdentifier: 
+  stat: 8
+  statRequirement: 0
+  trait: {fileID: 0}
+  character: {fileID: 0}
+  flat: 1
+  percent: 0
+  multiplier: 1
+  total: 0
+  current: 0
+--- !u!114 &3815642066247012585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea081abe43720704da89d92321d2b0ba, type: 3}
+  m_Name: StartingMana
+  m_EditorClassIdentifier: 
+  stat: 4
+  statRequirement: 0
+  trait: {fileID: 0}
+  character: {fileID: 0}
+  flat: 1
+  percent: 0
+  multiplier: 1
+  total: 0
+  current: 0
+--- !u!114 &4891231289172339175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea081abe43720704da89d92321d2b0ba, type: 3}
+  m_Name: Spd
+  m_EditorClassIdentifier: 
+  stat: 9
+  statRequirement: 0
+  trait: {fileID: 0}
+  character: {fileID: 0}
+  flat: 1
+  percent: 0
+  multiplier: 1
+  total: 0
+  current: 0
+--- !u!114 &7384254398996691346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea081abe43720704da89d92321d2b0ba, type: 3}
+  m_Name: CritChance
+  m_EditorClassIdentifier: 
+  stat: 10
+  statRequirement: 0
+  trait: {fileID: 0}
+  character: {fileID: 0}
+  flat: 1
+  percent: 0
+  multiplier: 1
+  total: 0
+  current: 0

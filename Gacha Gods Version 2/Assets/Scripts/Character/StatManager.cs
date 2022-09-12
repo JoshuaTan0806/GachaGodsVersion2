@@ -1,23 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Sirenix.OdinInspector;
+using UnityEditor;
 
 [CreateAssetMenu(menuName = "Managers/StatManager")]
 public class StatManager : Factories.FactoryBase
 {
     public static StatDictionary StatDictionary => statDictionary;
     static StatDictionary statDictionary = new StatDictionary();
-
-    [SerializeField]
-    List<StatData> stats;
+    [SerializeField, ReadOnly] StatDictionary stats;
 
     public override void Initialise()
     {
-        for (int i = 0; i < stats.Count; i++)
-        {
-            if (!StatDictionary.ContainsKey(stats[i].Stat))
-                statDictionary.Add(stats[i].Stat, stats[i]);
-        }
+        statDictionary = stats;
     }
 
     public static StatData NullStat(Stat stat)
@@ -34,5 +30,21 @@ public class StatManager : Factories.FactoryBase
         newStat.Multiplier = multiplier;
    
         return newStat;
+    }
+
+    [Button]
+    void CreateStats()
+    {
+        for (int i = 0; i < System.Enum.GetNames(typeof(Stat)).Length; i++)
+        {
+            if (stats.ContainsKey((Stat)i))
+                continue;
+
+            StatData stat = ScriptableObject.CreateInstance<StatData>();
+            stat.name = ((Stat)i).ToString();
+            stat.SetStat((Stat)i);
+            AssetDatabase.AddObjectToAsset(stat, this);
+            stats.Add((Stat)i, stat);
+        }
     }
 }

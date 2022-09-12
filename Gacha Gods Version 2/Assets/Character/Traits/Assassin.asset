@@ -46,6 +46,7 @@ MonoBehaviour:
   percent: 0
   multiplier: 1
   total: 1
+  current: 0
 --- !u!114 &-3096293409091413400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -102,6 +103,7 @@ MonoBehaviour:
   percent: 0
   multiplier: 1
   total: 1
+  current: 0
 --- !u!114 &6658093533412018714
 MonoBehaviour:
   m_ObjectHideFlags: 0
