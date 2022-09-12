@@ -8,7 +8,7 @@ public class CharacterStats : MonoBehaviour
     public StatDictionary Stats => stats;
     StatDictionary stats = new StatDictionary();
     [ReadOnly, SerializeField] StatFloatDictionary totalStats = new StatFloatDictionary();
-    public System.Action OnStatsChanged;
+    public System.Action<Stat> OnStatsChanged;
 
     public Character Character => character;
     Character character;
@@ -22,35 +22,6 @@ public class CharacterStats : MonoBehaviour
     AbilityData attack;
     public AbilityData Spell => spell;
     AbilityData spell;
-
-    public float CurrentHealth
-    {
-        get
-        {
-            return currentHealth;
-        }
-        set
-        {
-            currentHealth = value;
-            OnHealthChanged?.Invoke();
-        }
-    }
-    float currentHealth;
-    public static System.Action OnHealthChanged;
-    public float CurrentMana
-    {
-        get
-        {
-            return currentMana;
-        }
-        set
-        {
-            currentMana = value;
-            OnManaChanged?.Invoke();
-        }
-    }
-    float currentMana;
-    public static System.Action OnManaChanged;
 
     public bool RoundHasEnded => roundHasEnded;
     bool roundHasEnded = false;
@@ -66,14 +37,12 @@ public class CharacterStats : MonoBehaviour
 
     private void OnEnable()
     {
-        OnHealthChanged += ResetHealthBar;
         OnStatsChanged += ResetHealthBar;
         GameManager.OnRoundEnd += EndRound;
     }
 
     private void OnDisable()
     {
-        OnHealthChanged -= ResetHealthBar;
         OnStatsChanged -= ResetHealthBar;
         GameManager.OnRoundEnd -= EndRound;
     }
@@ -85,7 +54,8 @@ public class CharacterStats : MonoBehaviour
             AddStat(StatManager.CreateStat(item.Key, item.Value));
         }
 
-        CurrentHealth = stats[Stat.Health].Total;
+        AddStat(StatManager.CreateStat(Stat.CurrentHealth, GetStat(Stat.Health)));
+        AddStat(StatManager.CreateStat(Stat.CurrentMana, GetStat(Stat.StartingMana)));
 
         this.character = character;
         spell = character.Spell;
@@ -129,7 +99,7 @@ public class CharacterStats : MonoBehaviour
 
         totalStats[stat.Stat] = stats[stat.Stat].Total;
 
-        OnStatsChanged?.Invoke();
+        OnStatsChanged?.Invoke(stat.Stat);
     }
 
     public void RemoveStat(StatData stat)
@@ -146,12 +116,12 @@ public class CharacterStats : MonoBehaviour
 
         totalStats[stat.Stat] = stats[stat.Stat].Total;
 
-        OnStatsChanged?.Invoke();
+        OnStatsChanged?.Invoke(stat.Stat);
     }
 
     public bool IsDead()
     {
-        return CurrentHealth < 0;
+        return GetStat(Stat.CurrentHealth) < 0;
     }
 
     public void UpgradeAttack(AbilityData attack)
@@ -194,22 +164,22 @@ public class CharacterStats : MonoBehaviour
         if (roundHasEnded)
             return;
 
-        CurrentHealth -= damage;
+        RemoveStat(StatManager.CreateStat(Stat.CurrentHealth, damage));
 
         if (IsDead())
             OnDeath?.Invoke();
     }
 
-    void ResetHealthBar()
+    void ResetHealthBar(Stat stat)
     {
-        if (!Stats.ContainsKey(Stat.Health))
+        if (stat != Stat.Health && stat != Stat.CurrentHealth)
             return;
 
-        HealthBar.fillAmount = CurrentHealth / Stats[Stat.Health].Total;
+        HealthBar.fillAmount = GetStat(Stat.CurrentHealth) / GetStat(Stat.Health);
 
-        float currentHealth = Mathf.Round(CurrentHealth);
-        currentHealth = Mathf.Max(0, currentHealth);
-        float maxHealth = Mathf.Round(Stats[Stat.Health].Total);
+        float currentHealth = Mathf.Clamp(GetStat(Stat.CurrentHealth), 0, GetStat(Stat.Health));
+        currentHealth = Mathf.Round(currentHealth);
+        float maxHealth = Mathf.Round(GetStat(Stat.Health));
 
         HealthLabel.text = currentHealth + "/" + maxHealth;
     }
