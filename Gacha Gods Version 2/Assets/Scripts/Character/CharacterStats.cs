@@ -105,6 +105,7 @@ public class CharacterStats : MonoBehaviour
     public void SetStat(StatData stat)
     {
         stats[stat.Stat] = stat;
+        OnStatsChanged?.Invoke(stat.Stat);
     }
 
     public void RemoveStat(StatData stat)

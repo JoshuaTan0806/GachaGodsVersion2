@@ -65,6 +65,7 @@ public class BattleManager : MonoBehaviour
         {
             Vector3 spawnPos = spawnPoints[item.Position].position;
             CharacterStats stats = Instantiate(BaseCharacterPrefab, spawnPos, Quaternion.identity, transform);
+            stats.name = "Ally " + item.Character;
             allies.Add(stats);
             stats.InitialiseCharacter(item.Character);
             Instantiate(item.Character.Prefab, stats.transform);
@@ -124,6 +125,7 @@ public class BattleManager : MonoBehaviour
         {
             Vector3 spawnPos = spawnPoints[spawnPoints.Count - 1 - item.Position].position;
             CharacterStats stats = Instantiate(BaseCharacterPrefab, spawnPos, Quaternion.identity, transform);
+            stats.name = "Enemy " + item.Character;
             stats.InitialiseCharacter(item.Character);
             Instantiate(item.Character.Prefab, stats.transform);
 
