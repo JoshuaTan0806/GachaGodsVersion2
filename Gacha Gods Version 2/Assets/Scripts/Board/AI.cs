@@ -59,6 +59,11 @@ public class AI : MonoBehaviour
                 Cast();
                 return;
             }
+            else
+            {
+                target = FindClosestTarget(stats.Character.Spell);
+                Move();
+            }
         }
         else
         {
@@ -69,12 +74,11 @@ public class AI : MonoBehaviour
                 Attack();
                 return;
             }
-        }
-
-        if (!HasTarget())
-        {
-            target = FindClosestEnemy();
-            Move();
+            else
+            {
+                target = FindClosestTarget(stats.Character.Attack);
+                Move();
+            }
         }
     }
 
@@ -103,11 +107,17 @@ public class AI : MonoBehaviour
         //Ability g = Instantiate(stats.Attack.Prefab, transform.position, Quaternion.identity);
         //g.Initialise(stats, attack);
 
-        target.TakeDamage(stats.GetStat(Stat.Dmg));
+        if (IsAlly(target))
+            target.TakeDamage(-stats.GetStat(Stat.Dmg));
+        else
+            target.TakeDamage(stats.GetStat(Stat.Dmg));
     }
 
     void Move()
     {
+        if (!HasTarget())
+            return;
+
         //animator.Play("Move");
         transform.MoveToPosition(target.transform.position, stats.GetStat(Stat.Spd));
     }
@@ -144,14 +154,14 @@ public class AI : MonoBehaviour
         stats.AddBuff(buff);
     }
 
-    CharacterStats FindClosestEnemy()
+    CharacterStats FindClosestTarget(AbilityData abilityData)
     {
-        List<CharacterStats> enemies = this.enemies;
+        List<CharacterStats> possibleTargets = abilityData.TeamType == TeamType.Ally ? allies : enemies;
 
-        if (enemies.Count == 0)
+        if (possibleTargets.Count == 0)
             return null;
 
-        return enemies.OrderBy(x => Vector3.SqrMagnitude(transform.position - x.transform.position)).ToList()[0];
+        return possibleTargets.OrderBy(x => Vector3.SqrMagnitude(transform.position - x.transform.position)).ToList()[0];
     }
 
     CharacterStats FindTarget(AbilityData abilityData)
@@ -159,7 +169,12 @@ public class AI : MonoBehaviour
         List<CharacterStats> possibleTargets = new();
 
         if (abilityData.TeamType == TeamType.Ally)
+        {
             possibleTargets = allies;
+
+            if (!abilityData.CanTargetSelf)
+                possibleTargets.Remove(stats);
+        }
         else
             possibleTargets = enemies;
 
@@ -178,13 +193,18 @@ public class AI : MonoBehaviour
                 return possibleTargets.OrderBy(x => Vector3.SqrMagnitude(transform.position - x.transform.position)).ToList()[0];
             case TargetType.Furthest:
                 return possibleTargets.OrderByDescending(x => Vector3.SqrMagnitude(transform.position - x.transform.position)).ToList()[0];
-            case TargetType.HighestHealth:
-                return possibleTargets.OrderByDescending(x => x.GetStat(Stat.Health)).ToList()[0];
-            case TargetType.LowestHealth:
-                return possibleTargets.OrderBy(x => x.GetStat(Stat.Health)).ToList()[0];
+            case TargetType.HighestStat:
+                return possibleTargets.OrderByDescending(x => x.GetStat(abilityData.HighestStat)).ToList()[0];
+            case TargetType.LowestStat:
+                return possibleTargets.OrderBy(x => x.GetStat(abilityData.LowestStat)).ToList()[0];
         }
 
         Debug.LogError("Missing " + abilityData.TargetType + " in switch statement.");
         return null;
+    }
+
+    bool IsAlly(CharacterStats stat)
+    {
+        return allies.Contains(stat);
     }
 }
