@@ -37,7 +37,7 @@ public class StatData : ScriptableObject
             CalculateTotal();
         }
     }
-    [SerializeField] float flat = 1;
+    [SerializeField] float flat = 0;
 
     public float Percent
     {

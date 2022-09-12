@@ -16,11 +16,10 @@ MonoBehaviour:
   statRequirement: 0
   trait: {fileID: 0}
   character: {fileID: 0}
-  flat: 1
+  flat: 0
   percent: 0
   multiplier: 1
   total: 0
-  current: 0
 --- !u!114 &-7004431227586264621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37,11 +36,10 @@ MonoBehaviour:
   statRequirement: 0
   trait: {fileID: 0}
   character: {fileID: 0}
-  flat: 1
+  flat: 0
   percent: 0
   multiplier: 1
   total: 0
-  current: 0
 --- !u!114 &-6880176356499640932
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58,11 +56,10 @@ MonoBehaviour:
   statRequirement: 0
   trait: {fileID: 0}
   character: {fileID: 0}
-  flat: 1
+  flat: 0
   percent: 0
   multiplier: 1
   total: 0
-  current: 0
 --- !u!114 &-6688895915662078275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79,11 +76,10 @@ MonoBehaviour:
   statRequirement: 0
   trait: {fileID: 0}
   character: {fileID: 0}
-  flat: 1
+  flat: 0
   percent: 0
   multiplier: 1
   total: 0
-  current: 0
 --- !u!114 &-5178948227309409329
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -100,11 +96,10 @@ MonoBehaviour:
   statRequirement: 0
   trait: {fileID: 0}
   character: {fileID: 0}
-  flat: 1
+  flat: 0
   percent: 0
   multiplier: 1
   total: 0
-  current: 0
 --- !u!114 &-5103251870466929771
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121,11 +116,10 @@ MonoBehaviour:
   statRequirement: 0
   trait: {fileID: 0}
   character: {fileID: 0}
-  flat: 1
+  flat: 0
   percent: 0
   multiplier: 1
   total: 0
-  current: 0
 --- !u!114 &-4464040950054926193
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,11 +136,10 @@ MonoBehaviour:
   statRequirement: 0
   trait: {fileID: 0}
   character: {fileID: 0}
-  flat: 1
+  flat: 0
   percent: 0
   multiplier: 1
   total: 0
-  current: 0
 --- !u!114 &-4003992699493113500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,11 +156,10 @@ MonoBehaviour:
   statRequirement: 0
   trait: {fileID: 0}
   character: {fileID: 0}
-  flat: 1
+  flat: 0
   percent: 0
   multiplier: 1
   total: 0
-  current: 0
 --- !u!114 &-3935532517289001026
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -184,11 +176,10 @@ MonoBehaviour:
   statRequirement: 0
   trait: {fileID: 0}
   character: {fileID: 0}
-  flat: 1
+  flat: 0
   percent: 0
   multiplier: 1
   total: 0
-  current: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -235,11 +226,10 @@ MonoBehaviour:
   statRequirement: 0
   trait: {fileID: 0}
   character: {fileID: 0}
-  flat: 1
+  flat: 0
   percent: 0
   multiplier: 1
   total: 0
-  current: 0
 --- !u!114 &1535366186428545041
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -256,11 +246,10 @@ MonoBehaviour:
   statRequirement: 0
   trait: {fileID: 0}
   character: {fileID: 0}
-  flat: 1
+  flat: 0
   percent: 0
   multiplier: 1
   total: 0
-  current: 0
 --- !u!114 &2888958790176798418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -277,11 +266,10 @@ MonoBehaviour:
   statRequirement: 0
   trait: {fileID: 0}
   character: {fileID: 0}
-  flat: 1
+  flat: 0
   percent: 0
   multiplier: 1
   total: 0
-  current: 0
 --- !u!114 &3815642066247012585
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -298,11 +286,10 @@ MonoBehaviour:
   statRequirement: 0
   trait: {fileID: 0}
   character: {fileID: 0}
-  flat: 1
+  flat: 0
   percent: 0
   multiplier: 1
   total: 0
-  current: 0
 --- !u!114 &4891231289172339175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -319,11 +306,10 @@ MonoBehaviour:
   statRequirement: 0
   trait: {fileID: 0}
   character: {fileID: 0}
-  flat: 1
+  flat: 0
   percent: 0
   multiplier: 1
   total: 0
-  current: 0
 --- !u!114 &7384254398996691346
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -340,8 +326,7 @@ MonoBehaviour:
   statRequirement: 0
   trait: {fileID: 0}
   character: {fileID: 0}
-  flat: 1
+  flat: 0
   percent: 0
   multiplier: 1
   total: 0
-  current: 0

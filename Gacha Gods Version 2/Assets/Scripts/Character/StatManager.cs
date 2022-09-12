@@ -21,7 +21,7 @@ public class StatManager : Factories.FactoryBase
         return Instantiate(statDictionary[stat]);
     }
 
-    public static StatData CreateStat(Stat stat, float flat = 1, float percent = 0, float multiplier = 1)
+    public static StatData CreateStat(Stat stat, float flat = 0, float percent = 0, float multiplier = 1)
     {
         StatData newStat = NullStat(stat);
 
