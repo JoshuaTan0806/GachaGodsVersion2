@@ -9,14 +9,14 @@ public class Ability : MonoBehaviour
 
     private void OnEnable()
     {
-        GameManager.OnBattleWon += DestroyGameobject;
-        GameManager.OnBattleLost += DestroyGameobject;
+        GameManager.OnBattleWon += DestroyGameObject;
+        GameManager.OnBattleLost += DestroyGameObject;
     }
 
     private void OnDisable()
     {
-        GameManager.OnBattleWon -= DestroyGameobject;
-        GameManager.OnBattleLost -= DestroyGameobject;
+        GameManager.OnBattleWon -= DestroyGameObject;
+        GameManager.OnBattleLost -= DestroyGameObject;
     }
 
     public void Initialise(CharacterStats stats, AbilityData ability)
@@ -25,7 +25,7 @@ public class Ability : MonoBehaviour
         this.ability = ability;
     }
 
-    void DestroyGameobject()
+    void DestroyGameObject()
     {
         Destroy(gameObject);
     }

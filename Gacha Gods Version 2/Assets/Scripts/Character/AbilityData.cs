@@ -27,8 +27,17 @@ public class AbilityData : ScriptableObject
     public TeamType TeamType => teamType;
     [SerializeField] TeamType teamType;
 
+    public bool CanTargetSelf => canTargetSelf;
+    [SerializeField, ShowIf("TeamType", TeamType.Ally)] bool canTargetSelf;
+
     public TargetType TargetType => targetType;
     [SerializeField] TargetType targetType;
+
+    public Stat HighestStat => highestStat;
+    [SerializeField, ShowIf("TargetType", TargetType.HighestStat)] Stat highestStat;
+
+    public Stat LowestStat => lowestStat;
+    [SerializeField, ShowIf("TargetType", TargetType.LowestStat)] Stat lowestStat;
 
     [Button] 
     void SetAsAttack()
@@ -53,8 +62,8 @@ public enum TargetType
     Current,
     Closest,
     Furthest,
-    HighestHealth,
-    LowestHealth,
+    HighestStat,
+    LowestStat,
     HighestDensity
 }
 
