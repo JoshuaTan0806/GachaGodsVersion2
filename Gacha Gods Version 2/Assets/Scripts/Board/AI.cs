@@ -172,7 +172,7 @@ public class AI : MonoBehaviour
         {
             possibleTargets = allies;
 
-            if (!abilityData.CanTargetSelf)
+            if (abilityData.AllyTargetType == AllyTargetType.Others)
                 possibleTargets.Remove(stats);
         }
         else
@@ -190,17 +190,20 @@ public class AI : MonoBehaviour
             case TargetType.Current:
                 return target;
             case TargetType.Closest:
-                return possibleTargets.OrderBy(x => Vector3.SqrMagnitude(transform.position - x.transform.position)).ToList()[0];
+                possibleTargets = possibleTargets.OrderBy(x => Vector3.SqrMagnitude(transform.position - x.transform.position)).ToList();
+                break;
             case TargetType.Furthest:
-                return possibleTargets.OrderByDescending(x => Vector3.SqrMagnitude(transform.position - x.transform.position)).ToList()[0];
+                possibleTargets = possibleTargets.OrderByDescending(x => Vector3.SqrMagnitude(transform.position - x.transform.position)).ToList();
+                break;
             case TargetType.HighestStat:
-                return possibleTargets.OrderByDescending(x => x.GetStat(abilityData.HighestStat)).ToList()[0];
+                possibleTargets = possibleTargets.OrderByDescending(x => x.GetStat(abilityData.HighestStat)).ToList();
+                break;
             case TargetType.LowestStat:
-                return possibleTargets.OrderBy(x => x.GetStat(abilityData.LowestStat)).ToList()[0];
+                possibleTargets = possibleTargets.OrderBy(x => x.GetStat(abilityData.LowestStat)).ToList();
+                break;
         }
 
-        Debug.LogError("Missing " + abilityData.TargetType + " in switch statement.");
-        return null;
+        return possibleTargets[0];
     }
 
     bool IsAlly(CharacterStats stat)

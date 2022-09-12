@@ -27,8 +27,8 @@ public class AbilityData : ScriptableObject
     public TeamType TeamType => teamType;
     [SerializeField] TeamType teamType;
 
-    public bool CanTargetSelf => canTargetSelf;
-    [SerializeField, ShowIf("TeamType", TeamType.Ally)] bool canTargetSelf;
+    public AllyTargetType AllyTargetType => allyTargetType;
+    [SerializeField, ShowIf("TeamType", TeamType.Ally)] AllyTargetType allyTargetType;
 
     public TargetType TargetType => targetType;
     [SerializeField] TargetType targetType;
@@ -71,4 +71,11 @@ public enum AbilityType
 {
     SpawnDirectlyOnTarget,
     Projectile
+}
+
+public enum AllyTargetType
+{
+    Self,
+    PrioritiseOthers,
+    Others
 }

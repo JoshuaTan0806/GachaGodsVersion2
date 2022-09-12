@@ -102,6 +102,11 @@ public class CharacterStats : MonoBehaviour
         OnStatsChanged?.Invoke(stat.Stat);
     }
 
+    public void SetStat(StatData stat)
+    {
+        stats[stat.Stat] = stat;
+    }
+
     public void RemoveStat(StatData stat)
     {
         if (stats.ContainsKey(stat.Stat))
@@ -121,7 +126,7 @@ public class CharacterStats : MonoBehaviour
 
     public bool IsDead()
     {
-        return GetStat(Stat.CurrentHealth) < 0;
+        return GetStat(Stat.CurrentHealth) <= 0;
     }
 
     public void UpgradeAttack(AbilityData attack)
@@ -166,6 +171,12 @@ public class CharacterStats : MonoBehaviour
 
         RemoveStat(StatManager.CreateStat(Stat.CurrentHealth, damage));
 
+        //this is a clamp
+        if (GetStat(Stat.CurrentHealth) < 0)
+            SetStat(StatManager.CreateStat(Stat.CurrentHealth));
+        else if(GetStat(Stat.CurrentHealth) > GetStat(Stat.Health))
+            SetStat(StatManager.CreateStat(Stat.CurrentHealth, GetStat(Stat.Health)));
+
         if (IsDead())
             OnDeath?.Invoke();
     }
@@ -177,18 +188,15 @@ public class CharacterStats : MonoBehaviour
 
         HealthBar.fillAmount = GetStat(Stat.CurrentHealth) / GetStat(Stat.Health);
 
-        float currentHealth = Mathf.Clamp(GetStat(Stat.CurrentHealth), 0, GetStat(Stat.Health));
-        currentHealth = Mathf.Round(currentHealth);
+        float currentHealth = Mathf.Round(GetStat(Stat.CurrentHealth));
         float maxHealth = Mathf.Round(GetStat(Stat.Health));
 
         HealthLabel.text = currentHealth + "/" + maxHealth;
     }
 
-    [Button]
-    public void RandomiseColour()
+    void EndRound()
     {
-        Color color = new Vector4(Random.Range(0, 1f), Random.Range(0, 1f), Random.Range(0, 1f), 1);
-        GetComponent<SpriteRenderer>().color = color;
+        roundHasEnded = true;
     }
 
     [Button]
@@ -197,10 +205,5 @@ public class CharacterStats : MonoBehaviour
         Condition condition = new Condition(ref GameManager.OnRoundEnd, 2);
         Buff buff = new(StatManager.CreateStat(Stat.Health, 100), condition);
         AddBuff(buff);
-    }
-
-    void EndRound()
-    {
-        roundHasEnded = true;
     }
 }
