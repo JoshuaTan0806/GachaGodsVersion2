@@ -57,7 +57,10 @@ MonoBehaviour:
   numberOfTargets: 1
   numberOfSpawns: 1
   teamType: 0
+  canTargetSelf: 0
   targetType: 0
+  highestStat: 0
+  lowestStat: 0
 --- !u!114 &-315710514059914134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77,7 +80,10 @@ MonoBehaviour:
   numberOfTargets: 1
   numberOfSpawns: 1
   teamType: 1
+  canTargetSelf: 0
   targetType: 0
+  highestStat: 0
+  lowestStat: 0
 --- !u!114 &-258704397300721537
 MonoBehaviour:
   m_ObjectHideFlags: 0

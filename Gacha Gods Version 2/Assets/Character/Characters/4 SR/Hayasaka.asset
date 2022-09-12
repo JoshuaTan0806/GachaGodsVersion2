@@ -19,7 +19,10 @@ MonoBehaviour:
   numberOfTargets: 1
   numberOfSpawns: 1
   teamType: 1
+  canTargetSelf: 0
   targetType: 0
+  highestStat: 0
+  lowestStat: 0
 --- !u!114 &-6973442414049981240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,7 +173,10 @@ MonoBehaviour:
   numberOfTargets: 1
   numberOfSpawns: 1
   teamType: 0
+  canTargetSelf: 0
   targetType: 0
+  highestStat: 0
+  lowestStat: 0
 --- !u!114 &8130112116828905063
 MonoBehaviour:
   m_ObjectHideFlags: 0
