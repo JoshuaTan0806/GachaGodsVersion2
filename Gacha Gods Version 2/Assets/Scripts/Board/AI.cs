@@ -144,19 +144,19 @@ public class AI : MonoBehaviour
         BattleManager.KillCharacter(stats);
     }
 
-    public void Buff()
-    {
-        Condition condition = new Condition(ref OnAttack, 5);
-        Condition condition1 = new Condition(ref OnSpellCast, 3);
-        Condition condition2 = new Condition(ref GameManager.OnRoundEnd);
-        List<Condition> conditions = new List<Condition>() { condition, condition1, condition2 };
-        Buff buff = new(StatManager.CreateStat(Stat.Health, 1, 3, 100), conditions);
-        stats.AddBuff(buff);
-    }
-
     CharacterStats FindClosestTarget(AbilityData abilityData)
     {
-        List<CharacterStats> possibleTargets = abilityData.TeamType == TeamType.Ally ? allies : enemies;
+        List<CharacterStats> possibleTargets;
+
+        if (abilityData.TeamType == TeamType.Ally)
+        {
+            possibleTargets = new List<CharacterStats>(allies);
+
+            if (abilityData.AllyTargetType == AllyTargetType.Others)
+                possibleTargets.Remove(stats);
+        }
+        else
+            possibleTargets = new List<CharacterStats>(enemies);
 
         if (possibleTargets.Count == 0)
             return null;
@@ -166,17 +166,17 @@ public class AI : MonoBehaviour
 
     CharacterStats FindTarget(AbilityData abilityData)
     {
-        List<CharacterStats> possibleTargets = new();
+        List<CharacterStats> possibleTargets;
 
         if (abilityData.TeamType == TeamType.Ally)
         {
-            possibleTargets = allies;
+            possibleTargets = new List<CharacterStats>(allies);
 
             if (abilityData.AllyTargetType == AllyTargetType.Others)
                 possibleTargets.Remove(stats);
         }
         else
-            possibleTargets = enemies;
+            possibleTargets = new List<CharacterStats>(enemies);
 
         //if theres a range, limit possible targets to ones in range
         if (abilityData.HasMaxRange)
@@ -209,5 +209,15 @@ public class AI : MonoBehaviour
     bool IsAlly(CharacterStats stat)
     {
         return allies.Contains(stat);
+    }
+
+    public void Buff()
+    {
+        Condition condition = new Condition(ref OnAttack, 5);
+        Condition condition1 = new Condition(ref OnSpellCast, 3);
+        Condition condition2 = new Condition(ref GameManager.OnRoundEnd);
+        List<Condition> conditions = new List<Condition>() { condition, condition1, condition2 };
+        Buff buff = new(StatManager.CreateStat(Stat.Health, 1, 3, 100), conditions);
+        stats.AddBuff(buff);
     }
 }
