@@ -38,7 +38,7 @@ MonoBehaviour:
   numberOfTargets: 1
   numberOfSpawns: 1
   teamType: 0
-  canTargetSelf: 0
+  allyTargetType: 2
   targetType: 0
   highestStat: 0
   lowestStat: 0
@@ -118,7 +118,7 @@ MonoBehaviour:
   numberOfTargets: 1
   numberOfSpawns: 1
   teamType: 0
-  canTargetSelf: 0
+  allyTargetType: 0
   targetType: 0
   highestStat: 0
   lowestStat: 0
@@ -164,8 +164,8 @@ MonoBehaviour:
     m_keys: 0000000002000000010000000600000009000000
     m_values:
     - 100
-    - 20
-    - 1
+    - 5
+    - 5
     - 1
     - 1
   masteries:
