@@ -39,7 +39,7 @@ MonoBehaviour:
   numberOfSpawns: 1
   teamType: 0
   allyTargetType: 2
-  targetType: 0
+  targetType: 4
   highestStat: 0
   lowestStat: 0
 --- !u!114 &-7903269366215054773
