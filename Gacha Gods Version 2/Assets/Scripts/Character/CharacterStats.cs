@@ -30,6 +30,10 @@ public class CharacterStats : MonoBehaviour
     [SerializeField] UnityEngine.UI.Image healthBar;
     public UnityEngine.UI.Image HealthBar => healthBar;
     [SerializeField] TMPro.TextMeshProUGUI HealthLabel;
+
+    [SerializeField] UnityEngine.UI.Image cooldownBar;
+    public UnityEngine.UI.Image CooldownBar => cooldownBar;
+
     public List<CharacterStats> Enemies => enemies;
     List<CharacterStats> enemies;
     public List<CharacterStats> Allies => allies;

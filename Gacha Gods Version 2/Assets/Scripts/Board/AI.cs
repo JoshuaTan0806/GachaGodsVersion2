@@ -93,6 +93,7 @@ public class AI : MonoBehaviour
     private void ReduceSpellCooldown()
     {
         stats.RemoveStat(StatManager.CreateStat(Stat.CurrentSpellCD, Time.deltaTime));
+        stats.CooldownBar.fillAmount = GetStat(Stat.CurrentSpellCD) / GetStat(Stat.SpellCD);
     }
 
     bool HasTarget()
@@ -141,6 +142,7 @@ public class AI : MonoBehaviour
         //animator.Play("Cast");
         canChooseAction = false;
         StartCoroutine(AllowAction(1 / GetStat(Stat.CastSpd)));
+        stats.SetStat(StatManager.CreateStat(Stat.CurrentSpellCD, GetStat(Stat.SpellCD)));
 
         if (IsAlly(target))
             target.TakeDamage(-GetStat(Stat.SpellDmgMult));
