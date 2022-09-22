@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8888763675043969212
+--- !u!114 &-7635725972823279727
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ea081abe43720704da89d92321d2b0ba, type: 3}
-  m_Name: Range
+  m_Name: Spd
   m_EditorClassIdentifier: 
-  stat: 1
+  stat: 9
   statRequirement: 0
   trait: {fileID: 0}
   character: {fileID: 0}
@@ -20,67 +20,7 @@ MonoBehaviour:
   percent: 0
   multiplier: 1
   total: 0
---- !u!114 &-7004431227586264621
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea081abe43720704da89d92321d2b0ba, type: 3}
-  m_Name: AtkSpd
-  m_EditorClassIdentifier: 
-  stat: 6
-  statRequirement: 0
-  trait: {fileID: 0}
-  character: {fileID: 0}
-  flat: 0
-  percent: 0
-  multiplier: 1
-  total: 0
---- !u!114 &-6880176356499640932
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea081abe43720704da89d92321d2b0ba, type: 3}
-  m_Name: Dmg
-  m_EditorClassIdentifier: 
-  stat: 2
-  statRequirement: 0
-  trait: {fileID: 0}
-  character: {fileID: 0}
-  flat: 0
-  percent: 0
-  multiplier: 1
-  total: 0
---- !u!114 &-6688895915662078275
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea081abe43720704da89d92321d2b0ba, type: 3}
-  m_Name: ManaGainPerHit
-  m_EditorClassIdentifier: 
-  stat: 5
-  statRequirement: 0
-  trait: {fileID: 0}
-  character: {fileID: 0}
-  flat: 0
-  percent: 0
-  multiplier: 1
-  total: 0
---- !u!114 &-5178948227309409329
+--- !u!114 &-6499499417881408703
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -100,47 +40,7 @@ MonoBehaviour:
   percent: 0
   multiplier: 1
   total: 0
---- !u!114 &-5103251870466929771
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea081abe43720704da89d92321d2b0ba, type: 3}
-  m_Name: CritMult
-  m_EditorClassIdentifier: 
-  stat: 11
-  statRequirement: 0
-  trait: {fileID: 0}
-  character: {fileID: 0}
-  flat: 0
-  percent: 0
-  multiplier: 1
-  total: 0
---- !u!114 &-4464040950054926193
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea081abe43720704da89d92321d2b0ba, type: 3}
-  m_Name: SpellSpd
-  m_EditorClassIdentifier: 
-  stat: 7
-  statRequirement: 0
-  trait: {fileID: 0}
-  character: {fileID: 0}
-  flat: 0
-  percent: 0
-  multiplier: 1
-  total: 0
---- !u!114 &-4003992699493113500
+--- !u!114 &-6035221801669861556
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -160,7 +60,7 @@ MonoBehaviour:
   percent: 0
   multiplier: 1
   total: 0
---- !u!114 &-3935532517289001026
+--- !u!114 &-4100410240793294695
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -170,9 +70,129 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ea081abe43720704da89d92321d2b0ba, type: 3}
-  m_Name: ManaCost
+  m_Name: DmgMult
+  m_EditorClassIdentifier: 
+  stat: 4
+  statRequirement: 0
+  trait: {fileID: 0}
+  character: {fileID: 0}
+  flat: 0
+  percent: 0
+  multiplier: 1
+  total: 0
+--- !u!114 &-3952699118137154585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea081abe43720704da89d92321d2b0ba, type: 3}
+  m_Name: CurrentSpellCD
   m_EditorClassIdentifier: 
   stat: 3
+  statRequirement: 0
+  trait: {fileID: 0}
+  character: {fileID: 0}
+  flat: 0
+  percent: 0
+  multiplier: 1
+  total: 0
+--- !u!114 &-1596646986921765597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea081abe43720704da89d92321d2b0ba, type: 3}
+  m_Name: AtkSpd
+  m_EditorClassIdentifier: 
+  stat: 5
+  statRequirement: 0
+  trait: {fileID: 0}
+  character: {fileID: 0}
+  flat: 0
+  percent: 0
+  multiplier: 1
+  total: 0
+--- !u!114 &-382051657517611217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea081abe43720704da89d92321d2b0ba, type: 3}
+  m_Name: CastSpd
+  m_EditorClassIdentifier: 
+  stat: 6
+  statRequirement: 0
+  trait: {fileID: 0}
+  character: {fileID: 0}
+  flat: 0
+  percent: 0
+  multiplier: 1
+  total: 0
+--- !u!114 &-268758017333672719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea081abe43720704da89d92321d2b0ba, type: 3}
+  m_Name: SpellCD
+  m_EditorClassIdentifier: 
+  stat: 2
+  statRequirement: 0
+  trait: {fileID: 0}
+  character: {fileID: 0}
+  flat: 0
+  percent: 0
+  multiplier: 1
+  total: 0
+--- !u!114 &-251628741312675662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea081abe43720704da89d92321d2b0ba, type: 3}
+  m_Name: SpellDmgMult
+  m_EditorClassIdentifier: 
+  stat: 7
+  statRequirement: 0
+  trait: {fileID: 0}
+  character: {fileID: 0}
+  flat: 0
+  percent: 0
+  multiplier: 1
+  total: 0
+--- !u!114 &-147726818065295366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea081abe43720704da89d92321d2b0ba, type: 3}
+  m_Name: Range
+  m_EditorClassIdentifier: 
+  stat: 8
   statRequirement: 0
   trait: {fileID: 0}
   character: {fileID: 0}
@@ -193,24 +213,22 @@ MonoBehaviour:
   m_Name: StatManager
   m_EditorClassIdentifier: 
   stats:
-    m_keys: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e000000
+    m_keys: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c000000
     m_values:
-    - {fileID: -5178948227309409329}
-    - {fileID: -8888763675043969212}
-    - {fileID: -6880176356499640932}
-    - {fileID: -3935532517289001026}
-    - {fileID: 3815642066247012585}
-    - {fileID: -6688895915662078275}
-    - {fileID: -7004431227586264621}
-    - {fileID: -4464040950054926193}
-    - {fileID: 2888958790176798418}
-    - {fileID: 4891231289172339175}
-    - {fileID: 7384254398996691346}
-    - {fileID: -5103251870466929771}
-    - {fileID: -4003992699493113500}
-    - {fileID: 1535366186428545041}
-    - {fileID: 162049945025050116}
---- !u!114 &162049945025050116
+    - {fileID: -6499499417881408703}
+    - {fileID: 6236675595350187064}
+    - {fileID: -268758017333672719}
+    - {fileID: -3952699118137154585}
+    - {fileID: -4100410240793294695}
+    - {fileID: -1596646986921765597}
+    - {fileID: -382051657517611217}
+    - {fileID: -251628741312675662}
+    - {fileID: -147726818065295366}
+    - {fileID: -7635725972823279727}
+    - {fileID: 7437158488844191188}
+    - {fileID: 1460657151557516540}
+    - {fileID: -6035221801669861556}
+--- !u!114 &1460657151557516540
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -220,9 +238,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ea081abe43720704da89d92321d2b0ba, type: 3}
-  m_Name: CurrentMana
+  m_Name: CritMult
   m_EditorClassIdentifier: 
-  stat: 14
+  stat: 11
   statRequirement: 0
   trait: {fileID: 0}
   character: {fileID: 0}
@@ -230,7 +248,7 @@ MonoBehaviour:
   percent: 0
   multiplier: 1
   total: 0
---- !u!114 &1535366186428545041
+--- !u!114 &6236675595350187064
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -242,7 +260,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea081abe43720704da89d92321d2b0ba, type: 3}
   m_Name: CurrentHealth
   m_EditorClassIdentifier: 
-  stat: 13
+  stat: 1
   statRequirement: 0
   trait: {fileID: 0}
   character: {fileID: 0}
@@ -250,67 +268,7 @@ MonoBehaviour:
   percent: 0
   multiplier: 1
   total: 0
---- !u!114 &2888958790176798418
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea081abe43720704da89d92321d2b0ba, type: 3}
-  m_Name: SpellDmg
-  m_EditorClassIdentifier: 
-  stat: 8
-  statRequirement: 0
-  trait: {fileID: 0}
-  character: {fileID: 0}
-  flat: 0
-  percent: 0
-  multiplier: 1
-  total: 0
---- !u!114 &3815642066247012585
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea081abe43720704da89d92321d2b0ba, type: 3}
-  m_Name: StartingMana
-  m_EditorClassIdentifier: 
-  stat: 4
-  statRequirement: 0
-  trait: {fileID: 0}
-  character: {fileID: 0}
-  flat: 0
-  percent: 0
-  multiplier: 1
-  total: 0
---- !u!114 &4891231289172339175
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea081abe43720704da89d92321d2b0ba, type: 3}
-  m_Name: Spd
-  m_EditorClassIdentifier: 
-  stat: 9
-  statRequirement: 0
-  trait: {fileID: 0}
-  character: {fileID: 0}
-  flat: 0
-  percent: 0
-  multiplier: 1
-  total: 0
---- !u!114 &7384254398996691346
+--- !u!114 &7437158488844191188
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

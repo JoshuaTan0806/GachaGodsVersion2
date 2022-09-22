@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using System.Linq;
+using System;
 
 public class AI : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class AI : MonoBehaviour
 
     public System.Action OnAttack;
     public System.Action OnSpellCast;
+
+    float GetStat(Stat stat) => stats.GetStat(stat);
 
     List<CharacterStats> enemies => stats.Enemies;
     List<CharacterStats> allies => stats.Allies;
@@ -38,6 +41,11 @@ public class AI : MonoBehaviour
 
     void Update()
     {
+        if (!BattleManager.battleHasStarted)
+            return;
+
+        ReduceSpellCooldown();
+
         if (enemies.Count == 0)
             return;
 
@@ -82,6 +90,11 @@ public class AI : MonoBehaviour
         }
     }
 
+    private void ReduceSpellCooldown()
+    {
+        stats.RemoveStat(StatManager.CreateStat(Stat.CurrentSpellCD, Time.deltaTime));
+    }
+
     bool HasTarget()
     {
         return target != null && !target.IsDead();
@@ -89,12 +102,12 @@ public class AI : MonoBehaviour
 
     bool TargetIsInRange()
     {
-        return Vector3.SqrMagnitude(transform.position - target.transform.position) < stats.GetStat(Stat.Range);
+        return Vector3.SqrMagnitude(transform.position - target.transform.position) < GetStat(Stat.Range);
     }
 
     bool CanCastSpell()
     {
-        return false;
+        return GetStat(Stat.CurrentSpellCD) <= 0;
     }
 
     void Attack()
@@ -102,15 +115,15 @@ public class AI : MonoBehaviour
         OnAttack?.Invoke();
         //animator.Play("Attack");
         canChooseAction = false;
-        StartCoroutine(AllowAction(1 / stats.GetStat(Stat.AtkSpd)));
+        StartCoroutine(AllowAction(1 / GetStat(Stat.AtkSpd)));
 
         //Ability g = Instantiate(stats.Attack.Prefab, transform.position, Quaternion.identity);
         //g.Initialise(stats, attack);
 
         if (IsAlly(target))
-            target.TakeDamage(-stats.GetStat(Stat.Dmg));
+            target.TakeDamage(-GetStat(Stat.DmgMult));
         else
-            target.TakeDamage(stats.GetStat(Stat.Dmg));
+            target.TakeDamage(GetStat(Stat.DmgMult));
     }
 
     void Move()
@@ -119,7 +132,7 @@ public class AI : MonoBehaviour
             return;
 
         //animator.Play("Move");
-        transform.MoveToPosition(target.transform.position, stats.GetStat(Stat.Spd));
+        transform.MoveToPosition(target.transform.position, GetStat(Stat.Spd));
     }
 
     void Cast()
@@ -127,7 +140,12 @@ public class AI : MonoBehaviour
         OnSpellCast?.Invoke();
         //animator.Play("Cast");
         canChooseAction = false;
-        StartCoroutine(AllowAction(1 / stats.GetStat(Stat.SpellSpd)));
+        StartCoroutine(AllowAction(1 / GetStat(Stat.CastSpd)));
+
+        if (IsAlly(target))
+            target.TakeDamage(-GetStat(Stat.SpellDmgMult));
+        else
+            target.TakeDamage(GetStat(Stat.SpellDmgMult));
 
         // g = Instantiate(stats.Spell.Prefab, transform.position, Quaternion.identity);
         //g.Initialise(stats, spell);

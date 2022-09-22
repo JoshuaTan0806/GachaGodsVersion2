@@ -41,7 +41,7 @@ MonoBehaviour:
   maxRange: 1
   numberOfTargets: 1
   numberOfSpawns: 1
-  teamType: 0
+  teamType: 1
   allyTargetType: 0
   targetType: 0
   highestStat: 0
@@ -104,12 +104,15 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e690afab9c19d484081f6651ab5a77bf, type: 2}
   rarity: {fileID: 11400000, guid: 5caa1fcf88ed40b4abb3e1f7df2d8f23, type: 2}
   baseStats:
-    m_keys: 0000000002000000010000000600000009000000
+    m_keys: 0000000004000000050000000600000009000000070000000200000008000000
     m_values:
     - 100
-    - 20
     - 1
     - 1
+    - 1
+    - 1
+    - 100
+    - 5
     - 1
   masteries:
   - {fileID: -1797055718804289174}

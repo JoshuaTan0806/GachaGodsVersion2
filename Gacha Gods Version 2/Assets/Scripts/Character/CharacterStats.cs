@@ -55,7 +55,7 @@ public class CharacterStats : MonoBehaviour
         }
 
         AddStat(StatManager.CreateStat(Stat.CurrentHealth, GetStat(Stat.Health)));
-        AddStat(StatManager.CreateStat(Stat.CurrentMana, GetStat(Stat.StartingMana)));
+        AddStat(StatManager.CreateStat(Stat.CurrentSpellCD, GetStat(Stat.SpellCD)));
 
         this.character = character;
         spell = character.Spell;

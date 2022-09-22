@@ -33,6 +33,17 @@ public class StatManager : Factories.FactoryBase
     }
 
     [Button]
+    void DestroyStats()
+    {
+        foreach (var item in stats)
+        {
+            DestroyImmediate(item.Value, true);
+        }
+
+        stats.Clear();
+    }
+
+    [Button]
     void CreateStats()
     {
         for (int i = 0; i < System.Enum.GetNames(typeof(Stat)).Length; i++)

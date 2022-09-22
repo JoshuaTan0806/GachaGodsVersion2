@@ -13,6 +13,8 @@ public class BattleManager : MonoBehaviour
     public static BoardData playerBoardData;
     public static BoardData enemyBoardData;
 
+    public static bool battleHasStarted = false;
+
     [Header("References")]
     [SerializeField] List<Transform> spawnPoints;
 
@@ -188,6 +190,8 @@ public class BattleManager : MonoBehaviour
 
         yield return new WaitForSeconds(1);
 
+        battleHasStarted = true;
+
         foreach (var item in allies)
         {
             //5 if its in the back square
@@ -258,6 +262,8 @@ public class BattleManager : MonoBehaviour
     static IEnumerator EndRound()
     {
         yield return new WaitForSeconds(3);
+
+        battleHasStarted = false;
 
         if (allies.Count == 0)
             GameManager.LoseBattle(enemies.Count);

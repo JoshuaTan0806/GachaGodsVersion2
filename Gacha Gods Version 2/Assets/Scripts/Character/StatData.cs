@@ -120,20 +120,18 @@ public class StatData : ScriptableObject
 public enum Stat
 {
     Health,
-    Range,
-    Dmg,
-    ManaCost,
-    StartingMana,
-    ManaGainPerHit,
+    CurrentHealth,
+    SpellCD,
+    CurrentSpellCD,
+    DmgMult,
     AtkSpd,
-    SpellSpd,
-    SpellDmg,
+    CastSpd,
+    SpellDmgMult,
+    Range,
     Spd,
     CritChance,
     CritMult,
     Lifesteal,
-    CurrentHealth,
-    CurrentMana
 }
 
 public enum StatModifier
