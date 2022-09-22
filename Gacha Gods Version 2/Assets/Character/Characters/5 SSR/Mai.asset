@@ -17,8 +17,8 @@ MonoBehaviour:
   traits: []
   stats: []
   globalStats: []
-  attack: {fileID: 0}
-  spell: {fileID: 0}
+  attacks: []
+  spells: []
 --- !u!114 &-8042544114756990887
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36,9 +36,9 @@ MonoBehaviour:
   traits: []
   stats: []
   globalStats: []
-  attack: {fileID: 0}
-  spell: {fileID: 0}
---- !u!114 &-5336185294577223905
+  attacks: []
+  spells: []
+--- !u!114 &-7740658389025403932
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 82c6334bfc64052488e9d14b616bd764, type: 3}
-  m_Name: Attack
+  m_Name: Spell 1
   m_EditorClassIdentifier: 
   prefab: {fileID: 0}
   description: 
@@ -56,12 +56,12 @@ MonoBehaviour:
   range: 1
   numberOfTargets: 1
   numberOfSpawns: 1
-  teamType: 1
+  teamType: 0
   allyTargetType: 0
   targetType: 0
   highestStat: 0
   lowestStat: 0
---- !u!114 &-3132576947236991685
+--- !u!114 &-7714658829218050611
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -71,7 +71,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 82c6334bfc64052488e9d14b616bd764, type: 3}
-  m_Name: Spell
+  m_Name: Attack 1
   m_EditorClassIdentifier: 
   prefab: {fileID: 0}
   description: 
@@ -79,7 +79,7 @@ MonoBehaviour:
   range: 1
   numberOfTargets: 1
   numberOfSpawns: 1
-  teamType: 1
+  teamType: 0
   allyTargetType: 0
   targetType: 0
   highestStat: 0
@@ -101,8 +101,8 @@ MonoBehaviour:
   traits: []
   stats: []
   globalStats: []
-  attack: {fileID: 0}
-  spell: {fileID: 0}
+  attacks: []
+  spells: []
 --- !u!114 &-2234753773311868588
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,8 +120,8 @@ MonoBehaviour:
   traits: []
   stats: []
   globalStats: []
-  attack: {fileID: 0}
-  spell: {fileID: 0}
+  attacks: []
+  spells: []
 --- !u!114 &-690971180902165931
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,8 +139,8 @@ MonoBehaviour:
   traits: []
   stats: []
   globalStats: []
-  attack: {fileID: 0}
-  spell: {fileID: 0}
+  attacks: []
+  spells: []
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,8 +176,10 @@ MonoBehaviour:
   - {fileID: -690971180902165931}
   - {fileID: -8360682430454238054}
   - {fileID: 7310257728226830043}
-  attack: {fileID: -5336185294577223905}
-  spell: {fileID: -3132576947236991685}
+  attacks:
+  - {fileID: -7714658829218050611}
+  spells:
+  - {fileID: -7740658389025403932}
   themeSong: {fileID: 0}
 --- !u!114 &7310257728226830043
 MonoBehaviour:
@@ -196,5 +198,5 @@ MonoBehaviour:
   traits: []
   stats: []
   globalStats: []
-  attack: {fileID: 0}
-  spell: {fileID: 0}
+  attacks: []
+  spells: []

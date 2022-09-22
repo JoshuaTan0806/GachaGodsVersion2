@@ -1,28 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-7206530235598091983
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82c6334bfc64052488e9d14b616bd764, type: 3}
-  m_Name: Attack
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
-  description: 
-  actionSpeed: 1
-  range: 1
-  numberOfTargets: 1
-  numberOfSpawns: 1
-  teamType: 1
-  allyTargetType: 0
-  targetType: 0
-  highestStat: 0
-  lowestStat: 0
 --- !u!114 &-7124861741822626511
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40,8 +17,8 @@ MonoBehaviour:
   traits: []
   stats: []
   globalStats: []
-  attack: {fileID: 0}
-  spell: {fileID: 0}
+  attacks: []
+  spells: []
 --- !u!114 &-3485955579645308784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59,8 +36,8 @@ MonoBehaviour:
   traits: []
   stats: []
   globalStats: []
-  attack: {fileID: 0}
-  spell: {fileID: 0}
+  attacks: []
+  spells: []
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96,8 +73,10 @@ MonoBehaviour:
   - {fileID: 7876155403353571243}
   - {fileID: 8933773906463182779}
   - {fileID: -7124861741822626511}
-  attack: {fileID: -7206530235598091983}
-  spell: {fileID: 7328561322009394220}
+  attacks:
+  - {fileID: 5236787802900825261}
+  spells:
+  - {fileID: 3011480892339009300}
   themeSong: {fileID: 0}
 --- !u!114 &1670320731866807797
 MonoBehaviour:
@@ -116,8 +95,54 @@ MonoBehaviour:
   traits: []
   stats: []
   globalStats: []
-  attack: {fileID: 0}
-  spell: {fileID: 0}
+  attacks: []
+  spells: []
+--- !u!114 &3011480892339009300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82c6334bfc64052488e9d14b616bd764, type: 3}
+  m_Name: Spell 1
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 0}
+  description: 
+  actionSpeed: 1
+  range: 1
+  numberOfTargets: 1
+  numberOfSpawns: 1
+  teamType: 0
+  allyTargetType: 0
+  targetType: 0
+  highestStat: 0
+  lowestStat: 0
+--- !u!114 &5236787802900825261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82c6334bfc64052488e9d14b616bd764, type: 3}
+  m_Name: Attack 1
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 0}
+  description: 
+  actionSpeed: 1
+  range: 1
+  numberOfTargets: 1
+  numberOfSpawns: 1
+  teamType: 0
+  allyTargetType: 0
+  targetType: 0
+  highestStat: 0
+  lowestStat: 0
 --- !u!114 &6470998491741703745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,31 +160,8 @@ MonoBehaviour:
   traits: []
   stats: []
   globalStats: []
-  attack: {fileID: 0}
-  spell: {fileID: 0}
---- !u!114 &7328561322009394220
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82c6334bfc64052488e9d14b616bd764, type: 3}
-  m_Name: Spell
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
-  description: 
-  actionSpeed: 1
-  range: 1
-  numberOfTargets: 1
-  numberOfSpawns: 1
-  teamType: 1
-  allyTargetType: 0
-  targetType: 0
-  highestStat: 0
-  lowestStat: 0
+  attacks: []
+  spells: []
 --- !u!114 &7876155403353571243
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,8 +179,8 @@ MonoBehaviour:
   traits: []
   stats: []
   globalStats: []
-  attack: {fileID: 0}
-  spell: {fileID: 0}
+  attacks: []
+  spells: []
 --- !u!114 &8933773906463182779
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,5 +198,5 @@ MonoBehaviour:
   traits: []
   stats: []
   globalStats: []
-  attack: {fileID: 0}
-  spell: {fileID: 0}
+  attacks: []
+  spells: []

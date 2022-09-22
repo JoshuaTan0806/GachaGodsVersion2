@@ -20,19 +20,16 @@ public class Character : ScriptableObject
     [SerializeField] StatFloatDictionary baseStats;
     public List<Mastery> Masteries => masteries;
     [SerializeField, ReadOnly] List<Mastery> masteries;
-    public AbilityData Attack => attack;
-    [SerializeField, ReadOnly] AbilityData attack;
-    public AbilityData Spell => spell;
-    [SerializeField, ReadOnly] AbilityData spell;
+    public List<AbilityData> Attacks => attacks;
+    [SerializeField, ReadOnly] List<AbilityData> attacks;
+    public List<AbilityData> Spells => spells;
+    [SerializeField, ReadOnly] List<AbilityData> spells;
 
     [SerializeField] AudioClip themeSong;
 
     [Button]
-    void CreateScriptables()
+    void CreateMasteries()
     {
-        if (Attack != null)
-            return;
-
         for (int i = 0; i < 6; i++)
         {
             Mastery mastery = ScriptableObject.CreateInstance<Mastery>();
@@ -41,24 +38,45 @@ public class Character : ScriptableObject
 
             AssetDatabase.AddObjectToAsset(mastery, this);
         }
-
-        AbilityData attack = ScriptableObject.CreateInstance<AbilityData>();
-        attack.name = "Attack";
-        this.attack = attack;
-        AssetDatabase.AddObjectToAsset(attack, this);
-
-        AbilityData spell = ScriptableObject.CreateInstance<AbilityData>();
-        spell.name = "Spell";
-        this.spell = spell;
-        AssetDatabase.AddObjectToAsset(spell, this);
-
         EditorExtensionMethods.SaveAsset(this);
+    }
+
+    [Button]
+    void CreateAttack()
+    {
+        AbilityData attack = ScriptableObject.CreateInstance<AbilityData>();
+        attack.name = "Attack " + (attacks.Count + 1);
+        attacks.Add(attack);
+        AssetDatabase.AddObjectToAsset(attack, this);
+    }
+
+    [Button]
+    void CreateSpell()
+    {
+        AbilityData spell = ScriptableObject.CreateInstance<AbilityData>();
+        spell.name = "Spell " + (spells.Count + 1);
+        spells.Add(spell);
+        AssetDatabase.AddObjectToAsset(spell, this);
     }
 
     private void OnValidate()
     {
-        attack.name = "Attack";
-        spell.name = "Spell";
+        for (int i = attacks.Count - 1; i >= 0; i--)
+        {
+            if (attacks[i] == null)
+                attacks.RemoveAt(i);
+
+            attacks[i].name = "Attack " + (i + 1);
+        }
+
+        for (int i = spells.Count - 1; i >= 0; i--)
+        {
+            if (spells[i] == null)
+                spells.RemoveAt(i);
+
+            spells[i].name = "Spell " + (i + 1);
+        }
+
 
         for (int i = 0; i < masteries.Count; i++)
         {

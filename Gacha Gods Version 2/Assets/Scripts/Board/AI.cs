@@ -23,6 +23,11 @@ public class AI : MonoBehaviour
     List<CharacterStats> enemies => stats.Enemies;
     List<CharacterStats> allies => stats.Allies;
 
+    List<AbilityData> attacks => stats.Attacks;
+    List<AbilityData> spells => stats.Spells;
+    int attackIndex;
+    int spellIndex;
+
     private void Awake()
     {
         stats = GetComponent<CharacterStats>();
@@ -60,7 +65,7 @@ public class AI : MonoBehaviour
 
         if (CanCastSpell())
         {
-            target = FindTarget(stats.Character.Spell);
+            target = FindTarget(spells[spellIndex]);
 
             if (HasTarget())
             {
@@ -69,13 +74,13 @@ public class AI : MonoBehaviour
             }
             else
             {
-                target = FindClosestTarget(stats.Character.Spell);
+                target = FindClosestTarget(spells[spellIndex]);
                 Move();
             }
         }
         else
         {
-            target = FindTarget(stats.Character.Attack);
+            target = FindTarget(attacks[attackIndex]);
 
             if (HasTarget())
             {
@@ -84,7 +89,7 @@ public class AI : MonoBehaviour
             }
             else
             {
-                target = FindClosestTarget(stats.Character.Attack);
+                target = FindClosestTarget(attacks[attackIndex]);
                 Move();
             }
         }
@@ -117,7 +122,7 @@ public class AI : MonoBehaviour
         OnAttack?.Invoke();
         //animator.Play("Attack");
         canChooseAction = false;
-        StartCoroutine(AllowAction(1 / stats.Character.Attack.ActionSpeed * GetStat(Stat.ActionSpdMult)));
+        StartCoroutine(AllowAction(1 / attacks[attackIndex].ActionSpeed * GetStat(Stat.ActionSpdMult)));
 
         //Ability g = Instantiate(stats.Attack.Prefab, transform.position, Quaternion.identity);
         //g.Initialise(stats, attack);
@@ -142,7 +147,7 @@ public class AI : MonoBehaviour
         OnSpellCast?.Invoke();
         //animator.Play("Cast");
         canChooseAction = false;
-        StartCoroutine(AllowAction(1 / stats.Character.Spell.ActionSpeed * GetStat(Stat.ActionSpdMult)));
+        StartCoroutine(AllowAction(1 / spells[spellIndex].ActionSpeed * GetStat(Stat.ActionSpdMult)));
         stats.SetStat(StatManager.CreateStat(Stat.CurrentSpellCD, GetStat(Stat.SpellCD)));
 
         if (IsAlly(target))

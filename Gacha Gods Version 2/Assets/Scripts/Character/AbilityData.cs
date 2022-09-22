@@ -48,6 +48,12 @@ public class AbilityData : ScriptableObject
         teamType = TeamType.Enemy;
         targetType = TargetType.Current;
     }
+
+    [Button]
+    void DestroyScriptable()
+    {
+        DestroyImmediate(this, true);
+    }
 }
 
 public enum TeamType

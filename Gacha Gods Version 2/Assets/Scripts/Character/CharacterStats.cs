@@ -18,10 +18,10 @@ public class CharacterStats : MonoBehaviour
 
     public System.Action OnKill;
 
-    public AbilityData Attack => attack;
-    AbilityData attack;
-    public AbilityData Spell => spell;
-    AbilityData spell;
+    public List<AbilityData> Attacks => attacks;
+    List<AbilityData> attacks;
+    public List<AbilityData> Spells => spells;
+    List<AbilityData> spells;
 
     public bool RoundHasEnded => roundHasEnded;
     bool roundHasEnded = false;
@@ -62,8 +62,9 @@ public class CharacterStats : MonoBehaviour
         AddStat(StatManager.CreateStat(Stat.CurrentSpellCD, GetStat(Stat.SpellCD)));
 
         this.character = character;
-        spell = character.Spell;
-        attack = character.Attack;
+        attacks = new List<AbilityData>(character.Attacks);
+        spells = new List<AbilityData>(character.Spells);
+
         allies = BattleManager.FindAllies(this);
         enemies = BattleManager.FindEnemies(this);
 
@@ -134,14 +135,14 @@ public class CharacterStats : MonoBehaviour
         return GetStat(Stat.CurrentHealth) <= 0;
     }
 
-    public void UpgradeAttack(AbilityData attack)
+    public void UpgradeAttack(List<AbilityData> attacks)
     {
-        this.attack = attack;
+        this.attacks = new List<AbilityData>(attacks);
     }
 
-    public void UpgradeSpell(AbilityData spell)
+    public void UpgradeSpell(List<AbilityData> spells)
     {
-        this.spell = spell;
+        this.spells = new List<AbilityData>(spells);
     }
 
     public void AddBuff(Buff buff)

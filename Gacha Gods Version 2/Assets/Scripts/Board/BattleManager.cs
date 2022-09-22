@@ -91,10 +91,10 @@ public class BattleManager : MonoBehaviour
                         }
                         break;
                     case MasteryType.Attack:
-                        stats.UpgradeAttack(mastery.Attack);
+                        stats.UpgradeAttack(mastery.Attacks);
                         break;
                     case MasteryType.Spell:
-                        stats.UpgradeSpell(mastery.Spell);
+                        stats.UpgradeSpell(mastery.Spells);
                         break;
                     default:
                         break;
@@ -150,10 +150,10 @@ public class BattleManager : MonoBehaviour
                         }
                         break;
                     case MasteryType.Attack:
-                        stats.UpgradeAttack(mastery.Attack);
+                        stats.UpgradeAttack(mastery.Attacks);
                         break;
                     case MasteryType.Spell:
-                        stats.UpgradeSpell(mastery.Spell);
+                        stats.UpgradeSpell(mastery.Spells);
                         break;
                     default:
                         break;
