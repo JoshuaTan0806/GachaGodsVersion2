@@ -103,7 +103,8 @@ public class AI : MonoBehaviour
 
     bool TargetIsInRange()
     {
-        return Vector3.SqrMagnitude(transform.position - target.transform.position) < GetStat(Stat.Range);
+        return true; 
+            //Vector3.SqrMagnitude(transform.position - target.transform.position) < GetStat(Stat.Range);
     }
 
     bool CanCastSpell()
@@ -116,7 +117,7 @@ public class AI : MonoBehaviour
         OnAttack?.Invoke();
         //animator.Play("Attack");
         canChooseAction = false;
-        StartCoroutine(AllowAction(1 / GetStat(Stat.AtkSpd)));
+        StartCoroutine(AllowAction(1 / stats.Character.Attack.ActionSpeed * GetStat(Stat.ActionSpdMult)));
 
         //Ability g = Instantiate(stats.Attack.Prefab, transform.position, Quaternion.identity);
         //g.Initialise(stats, attack);
@@ -141,7 +142,7 @@ public class AI : MonoBehaviour
         OnSpellCast?.Invoke();
         //animator.Play("Cast");
         canChooseAction = false;
-        StartCoroutine(AllowAction(1 / GetStat(Stat.CastSpd)));
+        StartCoroutine(AllowAction(1 / stats.Character.Spell.ActionSpeed * GetStat(Stat.ActionSpdMult)));
         stats.SetStat(StatManager.CreateStat(Stat.CurrentSpellCD, GetStat(Stat.SpellCD)));
 
         if (IsAlly(target))
@@ -199,8 +200,7 @@ public class AI : MonoBehaviour
             possibleTargets = new List<CharacterStats>(enemies);
 
         //if theres a range, limit possible targets to ones in range
-        if (abilityData.HasMaxRange)
-            possibleTargets = possibleTargets.Where(x => Vector3.SqrMagnitude(transform.position - x.transform.position) < abilityData.MaxRange * abilityData.MaxRange).ToList();
+        possibleTargets = possibleTargets.Where(x => Vector3.SqrMagnitude(transform.position - x.transform.position) < abilityData.Range * abilityData.Range).ToList();
 
         if (possibleTargets.Count == 0)
             return null;

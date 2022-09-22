@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 0}
   description: 
-  hasMaxRange: 0
-  maxRange: 1
+  actionSpeed: 1
+  range: 1
   numberOfTargets: 1
   numberOfSpawns: 1
   teamType: 1
@@ -81,16 +81,14 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9ecbc2bcd491e8d4baa1cb2dc6f7f567, type: 2}
   rarity: {fileID: 11400000, guid: 5caa1fcf88ed40b4abb3e1f7df2d8f23, type: 2}
   baseStats:
-    m_keys: 0000000004000000050000000600000009000000070000000200000008000000
+    m_keys: 000000000400000005000000060000000700000002000000
     m_values:
     - 100
     - 1
+    - 50
     - 1
     - 1
-    - 1
-    - 100
     - 5
-    - 1
   masteries:
   - {fileID: 5803183096660486649}
   - {fileID: -4368669881241369895}
@@ -115,8 +113,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 0}
   description: 
-  hasMaxRange: 0
-  maxRange: 1
+  actionSpeed: 1
+  range: 1
   numberOfTargets: 1
   numberOfSpawns: 1
   teamType: 1

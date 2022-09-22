@@ -12,11 +12,11 @@ public class AbilityData : ScriptableObject
     public string Description => description;
     [SerializeField] string description;
 
-    public bool HasMaxRange => hasMaxRange;
-    [SerializeField] bool hasMaxRange = false;
+    public int ActionSpeed => actionSpeed;
+    [SerializeField] int actionSpeed = 1;
 
-    public int MaxRange => maxRange;
-    [SerializeField, ShowIf("hasMaxRange", true)] int maxRange = 1;
+    public int Range => range;
+    [SerializeField] int range = 1;
 
     public int NumberOfTargets => numberOfTargets;
     [SerializeField] int numberOfTargets = 1;
@@ -42,10 +42,9 @@ public class AbilityData : ScriptableObject
     [Button] 
     void SetAsAttack()
     {
-        maxRange = 1;
+        range = 1;
         numberOfTargets = 1;
         numberOfSpawns = 1;
-        hasMaxRange = false;
         teamType = TeamType.Enemy;
         targetType = TargetType.Current;
     }
