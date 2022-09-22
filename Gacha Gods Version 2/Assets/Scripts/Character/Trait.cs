@@ -69,20 +69,37 @@ public class Trait : ScriptableObject
     [Button]
     void AddSetData()
     {
-        for (int i = setData.Count; i < 5; i++)
+        int num = 0;
+
+        if (setData.IsNullOrEmpty())
         {
-            StatDatas stats = ScriptableObject.CreateInstance<StatDatas>();
-            stats.name = "S" + i.ToString();
-            setData.Add(i, stats);
-            AssetDatabase.AddObjectToAsset(stats, this);
+            num = -1;
         }
+        else
+        {
+            foreach (var item in setData)
+            {
+                if (item.Key > num)
+                    num = item.Key;
+            }
+        }
+
+        num++;
+
+        StatDatas stats = ScriptableObject.CreateInstance<StatDatas>();
+        stats.name = "S" + num;
+        setData.Add(num, stats);
+        AssetDatabase.AddObjectToAsset(stats, this);
     }
 
     private void OnValidate()
     {
-        foreach (var item in SetData)
+        foreach (var item in setData.ToList())
         {
-            item.Value.name = "S" + item.Key.ToString();
+            if (item.Value == null)
+                setData.Remove(item.Key);
+            else
+                item.Value.name = "S" + item.Key.ToString();
         }
     }
 }

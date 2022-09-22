@@ -31,7 +31,8 @@ public class StatDatas : ScriptableObject
         }
     }
 
-    private void OnDestroy()
+    [Button]
+    void DestroyScriptable()
     {
         foreach (var item in stats)
         {
@@ -41,6 +42,6 @@ public class StatDatas : ScriptableObject
             DestroyImmediate(item, true);
         }
 
-        stats.Clear();
+        DestroyImmediate(this, true);
     }
 }

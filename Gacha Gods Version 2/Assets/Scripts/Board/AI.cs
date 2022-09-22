@@ -108,8 +108,8 @@ public class AI : MonoBehaviour
 
     bool TargetIsInRange()
     {
-        return true; 
-            //Vector3.SqrMagnitude(transform.position - target.transform.position) < GetStat(Stat.Range);
+        int range = attacks[attackIndex].Range;
+        return Vector3.SqrMagnitude(transform.position - target.transform.position) < range * range;
     }
 
     bool CanCastSpell()
