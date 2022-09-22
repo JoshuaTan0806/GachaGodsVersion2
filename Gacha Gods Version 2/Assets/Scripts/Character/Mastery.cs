@@ -42,13 +42,10 @@ public class Mastery : ScriptableObject
     [ShowIf("MasteryType", MasteryType.Spell), SerializeField]
     List<AbilityData> spells;
 
-    [ShowIf("MasteryType", MasteryType.Stat), Button]
-    void RefreshStatNames()
+    [Button]
+    void Refresh()
     {
-        foreach (var item in stats)
-        {
-            item.name = name + " " + item.Stat.ToString();
-        }
+        OnValidate();
     }
 
     [ShowIf("MasteryType", MasteryType.GlobalStat), Button]
@@ -78,6 +75,28 @@ public class Mastery : ScriptableObject
         AssetDatabase.AddObjectToAsset(stats, this);
     }
 
+    [ShowIf("MasteryType", MasteryType.Attack), Button]
+    void CreateAttack()
+    {
+        AbilityData attack = ScriptableObject.CreateInstance<AbilityData>();
+        attack.name = name + " Attack " + (attacks.Count + 1);
+        attacks.Add(attack);
+        AssetDatabase.AddObjectToAsset(attack, this);
+
+        OnValidate();
+    }
+
+    [ShowIf("MasteryType", MasteryType.Spell), Button]
+    void CreateSpell()
+    {
+        AbilityData spell = ScriptableObject.CreateInstance<AbilityData>();
+        spell.name = name + " Spell " + (attacks.Count + 1);
+        spells.Add(spell);
+        AssetDatabase.AddObjectToAsset(spell, this);
+
+        OnValidate();
+    }
+
     [ShowIf("MasteryType", MasteryType.Stat), Button]
     void ClearStatData()
     {
@@ -98,5 +117,35 @@ public class Mastery : ScriptableObject
         }
 
         globalStats.Clear();
+    }
+
+    private void OnValidate()
+    {
+        for (int i = attacks.Count - 1; i >= 0; i--)
+        {
+            if (attacks[i] == null)
+                attacks.RemoveAt(i);
+        }
+
+        for (int i = 0; i < attacks.Count; i++)
+        {
+            attacks[i].name = name + " Attack " + (i + 1);
+        }
+
+        for (int i = spells.Count - 1; i >= 0; i--)
+        {
+            if (spells[i] == null)
+                spells.RemoveAt(i);
+        }
+
+        for (int i = 0; i < spells.Count; i++)
+        {
+            spells[i].name = name + " Spell " + (i + 1);
+        }
+
+        foreach (var item in stats)
+        {
+            item.name = name + " " + item.Stat.ToString();
+        }
     }
 }
