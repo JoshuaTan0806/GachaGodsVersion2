@@ -25,6 +25,8 @@ public class Character : ScriptableObject
     public AbilityData Spell => spell;
     [SerializeField, ReadOnly] AbilityData spell;
 
+    [SerializeField] AudioClip themeSong;
+
     [Button]
     void CreateScriptables()
     {
@@ -62,5 +64,11 @@ public class Character : ScriptableObject
         {
             masteries[i].name = "M" + (i + 1);
         }
+    }
+
+    public void PlayThemeSong()
+    {
+        if (themeSong != null)
+            SoundManager.PlaySFX(themeSong);
     }
 }

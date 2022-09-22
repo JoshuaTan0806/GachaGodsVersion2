@@ -101,6 +101,7 @@ MonoBehaviour:
   - {fileID: 5458460683487160943}
   attack: {fileID: -3464839773039292794}
   spell: {fileID: -1028421481572121624}
+  themeSong: {fileID: 0}
 --- !u!114 &2263499946789708714
 MonoBehaviour:
   m_ObjectHideFlags: 0

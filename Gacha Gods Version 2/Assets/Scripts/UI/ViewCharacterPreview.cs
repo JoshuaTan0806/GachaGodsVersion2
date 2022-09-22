@@ -38,5 +38,6 @@ public class ViewCharacterPreview : MonoBehaviour
 
         preview = Instantiate(UIManager.instance.CharacterPreviewPrefab);
         preview.Initialise(character);
+        character.PlayThemeSong();
     }
 }
