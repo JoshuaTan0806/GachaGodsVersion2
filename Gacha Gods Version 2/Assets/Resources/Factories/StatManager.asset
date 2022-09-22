@@ -1,66 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-4959729562971334253
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea081abe43720704da89d92321d2b0ba, type: 3}
-  m_Name: CurrentHealth
-  m_EditorClassIdentifier: 
-  stat: 1
-  statRequirement: 0
-  trait: {fileID: 0}
-  character: {fileID: 0}
-  flat: 0
-  percent: 0
-  multiplier: 1
-  total: 0
---- !u!114 &-4452416242815729651
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea081abe43720704da89d92321d2b0ba, type: 3}
-  m_Name: CritMult
-  m_EditorClassIdentifier: 
-  stat: 10
-  statRequirement: 0
-  trait: {fileID: 0}
-  character: {fileID: 0}
-  flat: 0
-  percent: 0
-  multiplier: 1
-  total: 0
---- !u!114 &-2382559802371480383
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea081abe43720704da89d92321d2b0ba, type: 3}
-  m_Name: CritChance
-  m_EditorClassIdentifier: 
-  stat: 9
-  statRequirement: 0
-  trait: {fileID: 0}
-  character: {fileID: 0}
-  flat: 0
-  percent: 0
-  multiplier: 1
-  total: 0
---- !u!114 &-2090465793547003642
+--- !u!114 &-8912750770311230382
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -73,6 +13,86 @@ MonoBehaviour:
   m_Name: SpellCD
   m_EditorClassIdentifier: 
   stat: 2
+  statRequirement: 0
+  trait: {fileID: 0}
+  character: {fileID: 0}
+  flat: 0
+  percent: 0
+  multiplier: 1
+  total: 0
+--- !u!114 &-8226290005271874705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea081abe43720704da89d92321d2b0ba, type: 3}
+  m_Name: Lifesteal
+  m_EditorClassIdentifier: 
+  stat: 10
+  statRequirement: 0
+  trait: {fileID: 0}
+  character: {fileID: 0}
+  flat: 0
+  percent: 0
+  multiplier: 1
+  total: 0
+--- !u!114 &-2256290002813369167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea081abe43720704da89d92321d2b0ba, type: 3}
+  m_Name: CurrentSpellCD
+  m_EditorClassIdentifier: 
+  stat: 3
+  statRequirement: 0
+  trait: {fileID: 0}
+  character: {fileID: 0}
+  flat: 0
+  percent: 0
+  multiplier: 1
+  total: 0
+--- !u!114 &-2178134579558657633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea081abe43720704da89d92321d2b0ba, type: 3}
+  m_Name: Health
+  m_EditorClassIdentifier: 
+  stat: 0
+  statRequirement: 0
+  trait: {fileID: 0}
+  character: {fileID: 0}
+  flat: 0
+  percent: 0
+  multiplier: 1
+  total: 0
+--- !u!114 &-1404911568098453978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea081abe43720704da89d92321d2b0ba, type: 3}
+  m_Name: SpellDmgMult
+  m_EditorClassIdentifier: 
+  stat: 5
   statRequirement: 0
   trait: {fileID: 0}
   character: {fileID: 0}
@@ -93,41 +113,20 @@ MonoBehaviour:
   m_Name: StatManager
   m_EditorClassIdentifier: 
   stats:
-    m_keys: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b000000
+    m_keys: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a000000
     m_values:
-    - {fileID: 805084166574659117}
-    - {fileID: -4959729562971334253}
-    - {fileID: -2090465793547003642}
-    - {fileID: 2843995533554670071}
-    - {fileID: 921566183905557143}
-    - {fileID: 8516583887991810810}
-    - {fileID: 3363120978142809215}
-    - {fileID: 8497930417823116010}
-    - {fileID: 9190188186882638570}
-    - {fileID: -2382559802371480383}
-    - {fileID: -4452416242815729651}
-    - {fileID: 5932459696754448727}
---- !u!114 &805084166574659117
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea081abe43720704da89d92321d2b0ba, type: 3}
-  m_Name: Health
-  m_EditorClassIdentifier: 
-  stat: 0
-  statRequirement: 0
-  trait: {fileID: 0}
-  character: {fileID: 0}
-  flat: 0
-  percent: 0
-  multiplier: 1
-  total: 0
---- !u!114 &921566183905557143
+    - {fileID: -2178134579558657633}
+    - {fileID: 7018396081011494622}
+    - {fileID: -8912750770311230382}
+    - {fileID: -2256290002813369167}
+    - {fileID: 5401250451938978042}
+    - {fileID: -1404911568098453978}
+    - {fileID: 7476921148612873026}
+    - {fileID: 6658866013205511445}
+    - {fileID: 6596686908469552223}
+    - {fileID: 6130054975207521269}
+    - {fileID: -8226290005271874705}
+--- !u!114 &5401250451938978042
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -147,7 +146,7 @@ MonoBehaviour:
   percent: 0
   multiplier: 1
   total: 0
---- !u!114 &2843995533554670071
+--- !u!114 &6130054975207521269
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -157,9 +156,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ea081abe43720704da89d92321d2b0ba, type: 3}
-  m_Name: CurrentSpellCD
+  m_Name: CritMult
   m_EditorClassIdentifier: 
-  stat: 3
+  stat: 9
   statRequirement: 0
   trait: {fileID: 0}
   character: {fileID: 0}
@@ -167,7 +166,7 @@ MonoBehaviour:
   percent: 0
   multiplier: 1
   total: 0
---- !u!114 &3363120978142809215
+--- !u!114 &6596686908469552223
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -177,9 +176,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ea081abe43720704da89d92321d2b0ba, type: 3}
-  m_Name: CastSpd
+  m_Name: CritChance
   m_EditorClassIdentifier: 
-  stat: 6
+  stat: 8
   statRequirement: 0
   trait: {fileID: 0}
   character: {fileID: 0}
@@ -187,67 +186,7 @@ MonoBehaviour:
   percent: 0
   multiplier: 1
   total: 0
---- !u!114 &5932459696754448727
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea081abe43720704da89d92321d2b0ba, type: 3}
-  m_Name: Lifesteal
-  m_EditorClassIdentifier: 
-  stat: 11
-  statRequirement: 0
-  trait: {fileID: 0}
-  character: {fileID: 0}
-  flat: 0
-  percent: 0
-  multiplier: 1
-  total: 0
---- !u!114 &8497930417823116010
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea081abe43720704da89d92321d2b0ba, type: 3}
-  m_Name: SpellDmgMult
-  m_EditorClassIdentifier: 
-  stat: 7
-  statRequirement: 0
-  trait: {fileID: 0}
-  character: {fileID: 0}
-  flat: 0
-  percent: 0
-  multiplier: 1
-  total: 0
---- !u!114 &8516583887991810810
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea081abe43720704da89d92321d2b0ba, type: 3}
-  m_Name: AtkSpd
-  m_EditorClassIdentifier: 
-  stat: 5
-  statRequirement: 0
-  trait: {fileID: 0}
-  character: {fileID: 0}
-  flat: 0
-  percent: 0
-  multiplier: 1
-  total: 0
---- !u!114 &9190188186882638570
+--- !u!114 &6658866013205511445
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -259,7 +198,47 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea081abe43720704da89d92321d2b0ba, type: 3}
   m_Name: Spd
   m_EditorClassIdentifier: 
-  stat: 8
+  stat: 7
+  statRequirement: 0
+  trait: {fileID: 0}
+  character: {fileID: 0}
+  flat: 0
+  percent: 0
+  multiplier: 1
+  total: 0
+--- !u!114 &7018396081011494622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea081abe43720704da89d92321d2b0ba, type: 3}
+  m_Name: CurrentHealth
+  m_EditorClassIdentifier: 
+  stat: 1
+  statRequirement: 0
+  trait: {fileID: 0}
+  character: {fileID: 0}
+  flat: 0
+  percent: 0
+  multiplier: 1
+  total: 0
+--- !u!114 &7476921148612873026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea081abe43720704da89d92321d2b0ba, type: 3}
+  m_Name: ActionSpdMult
+  m_EditorClassIdentifier: 
+  stat: 6
   statRequirement: 0
   trait: {fileID: 0}
   character: {fileID: 0}
