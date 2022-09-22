@@ -12,17 +12,17 @@ public class AbilityData : ScriptableObject
     public string Description => description;
     [SerializeField] string description;
 
-    public int ActionSpeed => actionSpeed;
-    [SerializeField] int actionSpeed = 1;
+    public float ActionSpeed => actionSpeed;
+    [Min(0), SerializeField] float actionSpeed = 1;
 
     public int Range => range;
-    [SerializeField] int range = 1;
+    [Min(0), SerializeField] int range = 1;
 
     public int NumberOfTargets => numberOfTargets;
-    [SerializeField] int numberOfTargets = 1;
+    [Min(0), SerializeField] int numberOfTargets = 1;
 
     public int NumberOfSpawns => numberOfSpawns;
-    [SerializeField] int numberOfSpawns = 1;
+    [Min(0), SerializeField] int numberOfSpawns = 1;
 
     public TeamType TeamType => teamType;
     [SerializeField] TeamType teamType = TeamType.Enemy;
