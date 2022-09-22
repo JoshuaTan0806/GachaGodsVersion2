@@ -57,30 +57,7 @@ MonoBehaviour:
   globalStats: []
   attacks: []
   spells: []
---- !u!114 &-4412335791515297476
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82c6334bfc64052488e9d14b616bd764, type: 3}
-  m_Name: Spell 1
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
-  description: 
-  actionSpeed: 1
-  range: 1
-  numberOfTargets: 1
-  numberOfSpawns: 1
-  teamType: 0
-  allyTargetType: 0
-  targetType: 0
-  highestStat: 0
-  lowestStat: 0
---- !u!114 &-4261207988569377874
+--- !u!114 &-6163577992044718509
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -98,7 +75,30 @@ MonoBehaviour:
   range: 1
   numberOfTargets: 1
   numberOfSpawns: 1
-  teamType: 0
+  teamType: 1
+  allyTargetType: 0
+  targetType: 0
+  highestStat: 0
+  lowestStat: 0
+--- !u!114 &-3987797204804443613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82c6334bfc64052488e9d14b616bd764, type: 3}
+  m_Name: Spell 1
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 0}
+  description: 
+  actionSpeed: 1
+  range: 1
+  numberOfTargets: 1
+  numberOfSpawns: 1
+  teamType: 1
   allyTargetType: 0
   targetType: 0
   highestStat: 0
@@ -139,9 +139,9 @@ MonoBehaviour:
   - {fileID: 2086665371171003853}
   - {fileID: -9169625414712161169}
   attacks:
-  - {fileID: -4261207988569377874}
+  - {fileID: -6163577992044718509}
   spells:
-  - {fileID: -4412335791515297476}
+  - {fileID: -3987797204804443613}
   themeSong: {fileID: 0}
 --- !u!114 &2086665371171003853
 MonoBehaviour:

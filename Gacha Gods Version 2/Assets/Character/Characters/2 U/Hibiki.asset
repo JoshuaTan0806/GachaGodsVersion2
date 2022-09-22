@@ -57,7 +57,7 @@ MonoBehaviour:
   globalStats: []
   attacks: []
   spells: []
---- !u!114 &-3910815203091824350
+--- !u!114 &-2265116183771218688
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -75,7 +75,30 @@ MonoBehaviour:
   range: 1
   numberOfTargets: 1
   numberOfSpawns: 1
-  teamType: 0
+  teamType: 1
+  allyTargetType: 0
+  targetType: 0
+  highestStat: 0
+  lowestStat: 0
+--- !u!114 &-1634734189353080197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82c6334bfc64052488e9d14b616bd764, type: 3}
+  m_Name: Spell 1
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 0}
+  description: 
+  actionSpeed: 1
+  range: 1
+  numberOfTargets: 1
+  numberOfSpawns: 1
+  teamType: 1
   allyTargetType: 0
   targetType: 0
   highestStat: 0
@@ -116,9 +139,9 @@ MonoBehaviour:
   - {fileID: -8825064120967699655}
   - {fileID: 7081566833767954292}
   attacks:
-  - {fileID: -3910815203091824350}
+  - {fileID: -2265116183771218688}
   spells:
-  - {fileID: 2868683591732970904}
+  - {fileID: -1634734189353080197}
   themeSong: {fileID: 0}
 --- !u!114 &2075248386659680554
 MonoBehaviour:
@@ -139,29 +162,6 @@ MonoBehaviour:
   globalStats: []
   attacks: []
   spells: []
---- !u!114 &2868683591732970904
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82c6334bfc64052488e9d14b616bd764, type: 3}
-  m_Name: Spell 1
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
-  description: 
-  actionSpeed: 1
-  range: 1
-  numberOfTargets: 1
-  numberOfSpawns: 1
-  teamType: 0
-  allyTargetType: 0
-  targetType: 0
-  highestStat: 0
-  lowestStat: 0
 --- !u!114 &7081566833767954292
 MonoBehaviour:
   m_ObjectHideFlags: 0

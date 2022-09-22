@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-7623159124481872020
+--- !u!114 &-7432573484973953515
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -18,7 +18,7 @@ MonoBehaviour:
   range: 1
   numberOfTargets: 1
   numberOfSpawns: 1
-  teamType: 0
+  teamType: 1
   allyTargetType: 0
   targetType: 0
   highestStat: 0
@@ -78,9 +78,9 @@ MonoBehaviour:
   - {fileID: 8316758313069599483}
   - {fileID: 7756004074138380455}
   attacks:
-  - {fileID: -7623159124481872020}
+  - {fileID: -7432573484973953515}
   spells:
-  - {fileID: 4259774233095367225}
+  - {fileID: 6586712794688678076}
   themeSong: {fileID: 0}
 --- !u!114 &470452340724903122
 MonoBehaviour:
@@ -120,29 +120,6 @@ MonoBehaviour:
   globalStats: []
   attacks: []
   spells: []
---- !u!114 &4259774233095367225
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82c6334bfc64052488e9d14b616bd764, type: 3}
-  m_Name: Spell 1
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
-  description: 
-  actionSpeed: 1
-  range: 1
-  numberOfTargets: 1
-  numberOfSpawns: 1
-  teamType: 0
-  allyTargetType: 0
-  targetType: 0
-  highestStat: 0
-  lowestStat: 0
 --- !u!114 &5895285880753957130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,6 +139,29 @@ MonoBehaviour:
   globalStats: []
   attacks: []
   spells: []
+--- !u!114 &6586712794688678076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82c6334bfc64052488e9d14b616bd764, type: 3}
+  m_Name: Spell 1
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 0}
+  description: 
+  actionSpeed: 1
+  range: 1
+  numberOfTargets: 1
+  numberOfSpawns: 1
+  teamType: 1
+  allyTargetType: 0
+  targetType: 0
+  highestStat: 0
+  lowestStat: 0
 --- !u!114 &7756004074138380455
 MonoBehaviour:
   m_ObjectHideFlags: 0

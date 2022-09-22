@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-7479512755281583329
+--- !u!114 &-7492935035570274507
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 82c6334bfc64052488e9d14b616bd764, type: 3}
-  m_Name: Attack 1
+  m_Name: Spell 1
   m_EditorClassIdentifier: 
   prefab: {fileID: 0}
   description: 
@@ -18,7 +18,7 @@ MonoBehaviour:
   range: 1
   numberOfTargets: 1
   numberOfSpawns: 1
-  teamType: 0
+  teamType: 1
   allyTargetType: 0
   targetType: 0
   highestStat: 0
@@ -61,7 +61,7 @@ MonoBehaviour:
   globalStats: []
   attacks: []
   spells: []
---- !u!114 &-3652161579083651708
+--- !u!114 &-3754543513127540279
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -71,7 +71,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 82c6334bfc64052488e9d14b616bd764, type: 3}
-  m_Name: Spell 1
+  m_Name: Attack 1
   m_EditorClassIdentifier: 
   prefab: {fileID: 0}
   description: 
@@ -79,7 +79,7 @@ MonoBehaviour:
   range: 1
   numberOfTargets: 1
   numberOfSpawns: 1
-  teamType: 0
+  teamType: 1
   allyTargetType: 0
   targetType: 0
   highestStat: 0
@@ -139,9 +139,9 @@ MonoBehaviour:
   - {fileID: 8467656815755767647}
   - {fileID: 7806042712734635347}
   attacks:
-  - {fileID: -7479512755281583329}
+  - {fileID: -3754543513127540279}
   spells:
-  - {fileID: -3652161579083651708}
+  - {fileID: -7492935035570274507}
   themeSong: {fileID: 0}
 --- !u!114 &4346499083781386132
 MonoBehaviour:

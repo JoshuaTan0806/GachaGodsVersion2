@@ -123,6 +123,7 @@ public class AI : MonoBehaviour
         //animator.Play("Attack");
         canChooseAction = false;
         StartCoroutine(AllowAction(1 / attacks[attackIndex].ActionSpeed * GetStat(Stat.ActionSpdMult)));
+        IncrementAttackIndex();
 
         //Ability g = Instantiate(stats.Attack.Prefab, transform.position, Quaternion.identity);
         //g.Initialise(stats, attack);
@@ -149,6 +150,7 @@ public class AI : MonoBehaviour
         canChooseAction = false;
         StartCoroutine(AllowAction(1 / spells[spellIndex].ActionSpeed * GetStat(Stat.ActionSpdMult)));
         stats.SetStat(StatManager.CreateStat(Stat.CurrentSpellCD, GetStat(Stat.SpellCD)));
+        IncrementSpellIndex();
 
         if (IsAlly(target))
             target.TakeDamage(-GetStat(Stat.SpellDmgMult));
@@ -244,5 +246,21 @@ public class AI : MonoBehaviour
         List<Condition> conditions = new List<Condition>() { condition, condition1, condition2 };
         Buff buff = new(StatManager.CreateStat(Stat.Health, 1, 3, 100), conditions);
         stats.AddBuff(buff);
+    }
+
+    void IncrementAttackIndex()
+    {
+        if (attackIndex == attacks.Count - 1)
+            attackIndex = 0;
+        else
+            attackIndex++;
+    }
+
+    void IncrementSpellIndex()
+    {
+        if (spellIndex == spells.Count - 1)
+            spellIndex = 0;
+        else
+            spellIndex++;
     }
 }

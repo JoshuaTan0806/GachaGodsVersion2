@@ -25,13 +25,13 @@ public class AbilityData : ScriptableObject
     [SerializeField] int numberOfSpawns = 1;
 
     public TeamType TeamType => teamType;
-    [SerializeField] TeamType teamType;
+    [SerializeField] TeamType teamType = TeamType.Enemy;
 
     public AllyTargetType AllyTargetType => allyTargetType;
     [SerializeField, ShowIf("TeamType", TeamType.Ally)] AllyTargetType allyTargetType;
 
     public TargetType TargetType => targetType;
-    [SerializeField] TargetType targetType;
+    [SerializeField] TargetType targetType = TargetType.Current;
 
     public Stat HighestStat => highestStat;
     [SerializeField, ShowIf("TargetType", TargetType.HighestStat)] Stat highestStat;

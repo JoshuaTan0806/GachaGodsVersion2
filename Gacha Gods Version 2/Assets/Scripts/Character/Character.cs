@@ -28,6 +28,12 @@ public class Character : ScriptableObject
     [SerializeField] AudioClip themeSong;
 
     [Button]
+    void Refresh()
+    {
+        OnValidate();
+    }
+
+    [Button]
     void CreateMasteries()
     {
         for (int i = 0; i < 6; i++)
@@ -48,6 +54,8 @@ public class Character : ScriptableObject
         attack.name = "Attack " + (attacks.Count + 1);
         attacks.Add(attack);
         AssetDatabase.AddObjectToAsset(attack, this);
+
+        OnValidate();
     }
 
     [Button]
@@ -57,6 +65,8 @@ public class Character : ScriptableObject
         spell.name = "Spell " + (spells.Count + 1);
         spells.Add(spell);
         AssetDatabase.AddObjectToAsset(spell, this);
+
+        OnValidate();
     }
 
     private void OnValidate()
@@ -65,7 +75,10 @@ public class Character : ScriptableObject
         {
             if (attacks[i] == null)
                 attacks.RemoveAt(i);
+        }
 
+        for (int i = 0; i < attacks.Count; i++)
+        {
             attacks[i].name = "Attack " + (i + 1);
         }
 
@@ -73,10 +86,12 @@ public class Character : ScriptableObject
         {
             if (spells[i] == null)
                 spells.RemoveAt(i);
-
-            spells[i].name = "Spell " + (i + 1);
         }
 
+        for (int i = 0; i < spells.Count; i++)
+        {
+            spells[i].name = "Spell " + (i + 1);
+        }
 
         for (int i = 0; i < masteries.Count; i++)
         {
