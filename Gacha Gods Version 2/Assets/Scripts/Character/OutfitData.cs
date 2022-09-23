@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(menuName = "Character/Appearance/Outfit")]
 public class OutfitData : ScriptableObject
 {
     public GameObject TopPrefab => topPrefab;

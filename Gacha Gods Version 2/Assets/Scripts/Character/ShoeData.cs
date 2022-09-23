@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(menuName = "Character/Appearance/Shoe")]
 public class ShoeData : ScriptableObject
 {
     public GameObject LShoePrefab => lshoePrefab;
     [SerializeField] GameObject lshoePrefab;
-    public GameObject rShoePrefab => rshoePrefab;
+    public GameObject RShoePrefab => rshoePrefab;
     [SerializeField] GameObject rshoePrefab;
 }
