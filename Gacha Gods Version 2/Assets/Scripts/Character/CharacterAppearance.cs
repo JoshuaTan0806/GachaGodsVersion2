@@ -6,6 +6,7 @@ public class CharacterAppearance : MonoBehaviour
 {
     [SerializeField] Transform HairStylePos;
     [SerializeField] Transform HatPos;
+    [SerializeField] Transform FacePos;
     [SerializeField] Transform BackPos;
     [SerializeField] Transform TopPos;
     [SerializeField] Transform BottomPos;
@@ -26,6 +27,7 @@ public class CharacterAppearance : MonoBehaviour
         EquipShoe(a.CurrentShoes);
         EquipHairStyle(a.CurrentHairStyle);
         EquipBack(a.CurrentBack);
+        EquipFace(a.CurrentFace);
     }
 
     public void EquipOutfit(OutfitData outfitData)
@@ -34,6 +36,11 @@ public class CharacterAppearance : MonoBehaviour
         ReplaceEquipment(outfitData.BottomPrefab, BottomPos);
         ReplaceEquipment(outfitData.LSleevePrefab, LSleevePos);
         ReplaceEquipment(outfitData.RSleevePrefab, RSleevePos);
+    }
+
+    public void EquipFace(FaceData faceData)
+    {
+        ReplaceEquipment(faceData.FacePrefab, FacePos);
     }
 
     public void EquipHat(HatData hatData)
