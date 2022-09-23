@@ -27,6 +27,8 @@ public class AI : MonoBehaviour
     List<AbilityData> spells => stats.Spells;
     int attackIndex;
     int spellIndex;
+    AbilityData currentAttack => attacks[attackIndex];
+    AbilityData currentSpell => spells[spellIndex];
 
     private void Awake()
     {
@@ -80,7 +82,7 @@ public class AI : MonoBehaviour
         }
         else
         {
-            target = FindTarget(attacks[attackIndex]);
+            target = FindTarget(currentAttack);
 
             if (HasTarget())
             {
@@ -89,7 +91,7 @@ public class AI : MonoBehaviour
             }
             else
             {
-                target = FindClosestTarget(attacks[attackIndex]);
+                target = FindClosestTarget(currentAttack);
                 Move();
             }
         }
@@ -108,7 +110,7 @@ public class AI : MonoBehaviour
 
     bool TargetIsInRange()
     {
-        int range = attacks[attackIndex].Range;
+        int range = currentAttack.Range;
         return Vector3.SqrMagnitude(transform.position - target.transform.position) < range * range;
     }
 
@@ -120,10 +122,9 @@ public class AI : MonoBehaviour
     void Attack()
     {
         OnAttack?.Invoke();
-        //animator.Play("Attack");
+        animator.Play(currentAttack.AnimationName);
         canChooseAction = false;
-        StartCoroutine(AllowAction(1 / attacks[attackIndex].ActionSpeed * GetStat(Stat.ActionSpdMult)));
-        IncrementAttackIndex();
+        StartCoroutine(AllowAction(1 / currentAttack.ActionSpeed * GetStat(Stat.ActionSpdMult)));
 
         //Ability g = Instantiate(stats.Attack.Prefab, transform.position, Quaternion.identity);
         //g.Initialise(stats, attack);
@@ -132,6 +133,8 @@ public class AI : MonoBehaviour
             target.TakeDamage(-GetStat(Stat.DmgMult));
         else
             target.TakeDamage(GetStat(Stat.DmgMult));
+
+        IncrementAttackIndex();
     }
 
     void Move()
@@ -146,11 +149,10 @@ public class AI : MonoBehaviour
     void Cast()
     {
         OnSpellCast?.Invoke();
-        //animator.Play("Cast");
+        animator.Play(currentSpell.AnimationName);
         canChooseAction = false;
-        StartCoroutine(AllowAction(1 / spells[spellIndex].ActionSpeed * GetStat(Stat.ActionSpdMult)));
+        StartCoroutine(AllowAction(1 / currentSpell.ActionSpeed * GetStat(Stat.ActionSpdMult)));
         stats.SetStat(StatManager.CreateStat(Stat.CurrentSpellCD, GetStat(Stat.SpellCD)));
-        IncrementSpellIndex();
 
         if (IsAlly(target))
             target.TakeDamage(-GetStat(Stat.SpellDmgMult));
@@ -159,6 +161,9 @@ public class AI : MonoBehaviour
 
         // g = Instantiate(stats.Spell.Prefab, transform.position, Quaternion.identity);
         //g.Initialise(stats, spell);
+
+
+        IncrementSpellIndex();
     }
 
     IEnumerator AllowAction(float time)

@@ -12,6 +12,9 @@ public class AbilityData : ScriptableObject
     public string Description => description;
     [SerializeField] string description;
 
+    public string AnimationName => animationName;
+    [SerializeField] string animationName;
+
     public float ActionSpeed => actionSpeed;
     [Min(0), SerializeField] float actionSpeed = 1;
 
