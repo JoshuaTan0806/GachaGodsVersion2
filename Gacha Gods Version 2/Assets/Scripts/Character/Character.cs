@@ -28,6 +28,12 @@ public class Character : ScriptableObject
     [SerializeField] AudioClip themeSong;
 
     [Button]
+    void GrantCharacter()
+    {
+        CharacterManager.AddCharacter(this);
+    }
+
+    [Button]
     void Refresh()
     {
         OnValidate();
