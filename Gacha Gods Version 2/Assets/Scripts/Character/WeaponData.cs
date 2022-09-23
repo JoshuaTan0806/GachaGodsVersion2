@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Character/Appearance/Weapon")]
-public class WeaponData : ScriptableObject
+public class WeaponData : CosmeticData
 {
     public GameObject LHWeaponPrefab => lhWeaponPrefab;
     [SerializeField] GameObject lhWeaponPrefab;

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Character/Appearance/Hat")]
-public class HatData : ScriptableObject
+public class HatData : CosmeticData
 {
     public GameObject HatPrefab => hatPrefab;
     [SerializeField] GameObject hatPrefab;

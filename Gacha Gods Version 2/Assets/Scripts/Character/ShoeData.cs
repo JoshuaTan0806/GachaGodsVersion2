@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Character/Appearance/Shoe")]
-public class ShoeData : ScriptableObject
+public class ShoeData : CosmeticData
 {
     public GameObject LShoePrefab => lshoePrefab;
     [SerializeField] GameObject lshoePrefab;
