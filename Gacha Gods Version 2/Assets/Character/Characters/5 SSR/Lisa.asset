@@ -33,6 +33,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 0}
   description: 
+  animationName: 
   actionSpeed: 1
   range: 1
   numberOfTargets: 1
@@ -138,6 +139,7 @@ MonoBehaviour:
   - {fileID: -3629679161814623164}
   spells:
   - {fileID: 3603980786788898917}
+  appearance: {fileID: 5489230892594331115}
   themeSong: {fileID: 0}
 --- !u!114 &2236122820159594998
 MonoBehaviour:
@@ -172,6 +174,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 0}
   description: 
+  animationName: 
   actionSpeed: 1
   range: 1
   numberOfTargets: 1
@@ -181,6 +184,32 @@ MonoBehaviour:
   targetType: 0
   highestStat: 0
   lowestStat: 0
+--- !u!114 &5489230892594331115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ab4386cadeff6e4a9068eacce6c3692, type: 3}
+  m_Name: Appearance
+  m_EditorClassIdentifier: 
+  DefaultFace: {fileID: 0}
+  DefaultOutfit: {fileID: 0}
+  DefaultHairstyle: {fileID: 0}
+  DefaultBack: {fileID: 0}
+  DefaultHat: {fileID: 0}
+  DefaultShoes: {fileID: 0}
+  DefaultWeapon: {fileID: 0}
+  Faces: []
+  Outfits: []
+  HairStyles: []
+  Backs: []
+  Hats: []
+  Shoes: []
+  Weapons: []
 --- !u!114 &6463800592476190128
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -24,6 +24,8 @@ public class Character : ScriptableObject
     [SerializeField, ReadOnly] List<AbilityData> attacks;
     public List<AbilityData> Spells => spells;
     [SerializeField, ReadOnly] List<AbilityData> spells;
+    public AppearanceData Appearance => appearance;
+    [SerializeField, ReadOnly] AppearanceData appearance;
 
     [SerializeField] AudioClip themeSong;
 
@@ -105,9 +107,23 @@ public class Character : ScriptableObject
         }
     }
 
+    [Button]
+    public void CreateAppearance()
+    {
+        if (this.appearance != null)
+            return;
+
+        AppearanceData appearance = ScriptableObject.CreateInstance<AppearanceData>();
+        appearance.name = "Appearance";
+        this.appearance = appearance;
+        AssetDatabase.AddObjectToAsset(appearance, this);
+    }
+
     public void PlayThemeSong()
     {
         if (themeSong != null)
             SoundManager.PlaySFX(themeSong);
     }
+
+
 }
