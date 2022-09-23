@@ -15,13 +15,14 @@ public class CharacterStats : MonoBehaviour
 
     List<Buff> buffs = new List<Buff>();
     public System.Action OnDeath;
-
     public System.Action OnKill;
 
     public List<AbilityData> Attacks => attacks;
     List<AbilityData> attacks;
     public List<AbilityData> Spells => spells;
     List<AbilityData> spells;
+    public List<Trait> Traits => traits;
+    List<Trait> traits;
 
     public bool RoundHasEnded => roundHasEnded;
     bool roundHasEnded = false;
@@ -58,6 +59,11 @@ public class CharacterStats : MonoBehaviour
             AddStat(StatManager.CreateStat(item.Key, item.Value));
         }
 
+        foreach (var item in character.Traits)
+        {
+            AddTrait(item);
+        }
+  
         AddStat(StatManager.CreateStat(Stat.CurrentHealth, GetStat(Stat.Health)));
         AddStat(StatManager.CreateStat(Stat.CurrentSpellCD, GetStat(Stat.SpellCD)));
 
@@ -83,7 +89,7 @@ public class CharacterStats : MonoBehaviour
     {
         if(stat.StatRequirement == StatRequirement.Trait)
         {
-            if (!character.Traits.Contains(stat.Trait))
+            if (!traits.Contains(stat.Trait))
                 return;
         }
         else if (stat.StatRequirement == StatRequirement.Character)
@@ -111,6 +117,12 @@ public class CharacterStats : MonoBehaviour
     {
         stats[stat.Stat] = stat;
         OnStatsChanged?.Invoke(stat.Stat);
+    }
+
+    public void AddTrait(Trait trait)
+    {
+        if (!traits.Contains(trait))
+            traits.Add(trait);
     }
 
     public void RemoveStat(StatData stat)

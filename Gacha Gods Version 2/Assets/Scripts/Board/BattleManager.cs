@@ -90,6 +90,12 @@ public class BattleManager : MonoBehaviour
                             globalBuffs.Add(stat);
                         }
                         break;
+                    case MasteryType.Trait:
+                        foreach (var trait in mastery.Traits)
+                        {
+                            stats.AddTrait(trait);
+                        }
+                        break;
                     case MasteryType.Attack:
                         stats.UpgradeAttack(mastery.Attacks);
                         break;
@@ -147,6 +153,12 @@ public class BattleManager : MonoBehaviour
                         foreach (var stat in mastery.GlobalStats)
                         {
                             globalBuffs.Add(stat);
+                        }
+                        break;
+                    case MasteryType.Trait:
+                        foreach (var trait in mastery.Traits)
+                        {
+                            stats.AddTrait(trait);
                         }
                         break;
                     case MasteryType.Attack:
