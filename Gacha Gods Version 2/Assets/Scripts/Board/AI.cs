@@ -122,7 +122,7 @@ public class AI : MonoBehaviour
     void Attack()
     {
         OnAttack?.Invoke();
-        animator.Play(currentAttack.AnimationName);
+        //animator.Play(currentAttack.AnimationName);
         canChooseAction = false;
         StartCoroutine(AllowAction(1 / currentAttack.ActionSpeed * GetStat(Stat.ActionSpdMult)));
 
@@ -149,7 +149,7 @@ public class AI : MonoBehaviour
     void Cast()
     {
         OnSpellCast?.Invoke();
-        animator.Play(currentSpell.AnimationName);
+        //animator.Play(currentSpell.AnimationName);
         canChooseAction = false;
         StartCoroutine(AllowAction(1 / currentSpell.ActionSpeed * GetStat(Stat.ActionSpdMult)));
         stats.SetStat(StatManager.CreateStat(Stat.CurrentSpellCD, GetStat(Stat.SpellCD)));

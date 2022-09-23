@@ -22,7 +22,7 @@ public class CharacterStats : MonoBehaviour
     public List<AbilityData> Spells => spells;
     List<AbilityData> spells;
     public List<Trait> Traits => traits;
-    List<Trait> traits;
+    List<Trait> traits = new();
 
     public bool RoundHasEnded => roundHasEnded;
     bool roundHasEnded = false;
