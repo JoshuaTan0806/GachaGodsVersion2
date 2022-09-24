@@ -40,7 +40,6 @@ MonoBehaviour:
   masteryType: 0
   traits: []
   stats: []
-  globalStats: []
   attacks: []
   spells: []
 --- !u!114 &11400000
@@ -124,7 +123,6 @@ MonoBehaviour:
   masteryType: 0
   traits: []
   stats: []
-  globalStats: []
   attacks: []
   spells: []
 --- !u!114 &2862917527612631464
@@ -143,7 +141,6 @@ MonoBehaviour:
   masteryType: 0
   traits: []
   stats: []
-  globalStats: []
   attacks: []
   spells: []
 --- !u!114 &5458460683487160943
@@ -162,7 +159,6 @@ MonoBehaviour:
   masteryType: 0
   traits: []
   stats: []
-  globalStats: []
   attacks: []
   spells: []
 --- !u!114 &6995232347486850217
@@ -181,7 +177,6 @@ MonoBehaviour:
   masteryType: 0
   traits: []
   stats: []
-  globalStats: []
   attacks: []
   spells: []
 --- !u!114 &6997297123650213900
@@ -200,7 +195,6 @@ MonoBehaviour:
   masteryType: 0
   traits: []
   stats: []
-  globalStats: []
   attacks: []
   spells: []
 --- !u!114 &7702736215120722533
@@ -215,10 +209,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ab4386cadeff6e4a9068eacce6c3692, type: 3}
   m_Name: Appearance
   m_EditorClassIdentifier: 
-  Faces: []
-  Outfits: []
-  HairStyles: []
-  Backs: []
-  Hats: []
-  Shoes: []
-  Weapons: []
+  faces: []
+  outfits: []
+  hairStyles: []
+  backs: []
+  hats: []
+  shoes: []
+  weapons: []
