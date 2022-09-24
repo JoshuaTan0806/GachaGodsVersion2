@@ -1082,6 +1082,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -1922,6 +1923,73 @@ Transform:
   m_Father: {fileID: 18212467}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1458403201
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1458403202}
+  - component: {fileID: 1458403203}
+  m_Layer: 0
+  m_Name: AppearanceManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1458403202
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1458403201}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1891534096}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1458403203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1458403201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1fd2e5f54e2b0c488f2150eca0b7672, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterPrefab: {fileID: 0}
+  LHat: {fileID: 0}
+  RHat: {fileID: 0}
+  HatIndex: {fileID: 0}
+  LBack: {fileID: 0}
+  RBack: {fileID: 0}
+  BackIndex: {fileID: 0}
+  LShoe: {fileID: 0}
+  RShoe: {fileID: 0}
+  ShoesIndex: {fileID: 0}
+  LOutfit: {fileID: 0}
+  ROutfit: {fileID: 0}
+  OutfitIndex: {fileID: 0}
+  LWeapon: {fileID: 0}
+  RWeapon: {fileID: 0}
+  WeaponIndex: {fileID: 0}
+  LFace: {fileID: 0}
+  RFace: {fileID: 0}
+  FaceIndex: {fileID: 0}
+  LHairstyle: {fileID: 0}
+  RHairstyle: {fileID: 0}
+  HairstyleIndex: {fileID: 0}
+  SaveButton: {fileID: 0}
 --- !u!1 &1509082621
 GameObject:
   m_ObjectHideFlags: 0
@@ -2663,6 +2731,7 @@ Transform:
   - {fileID: 1879796315}
   - {fileID: 778508031}
   - {fileID: 1409345689}
+  - {fileID: 1458403202}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
