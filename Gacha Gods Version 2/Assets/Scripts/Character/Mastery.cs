@@ -8,7 +8,6 @@ public enum MasteryType
 {
     Trait,
     Stat,
-    GlobalStat,
     Attack,
     Spell
 }
@@ -30,10 +29,6 @@ public class Mastery : ScriptableObject
     [ShowIf("MasteryType", MasteryType.Stat), SerializeField, ReadOnly]
     List<StatData> stats;
 
-    public List<StatData> GlobalStats => globalStats;
-    [ShowIf("MasteryType", MasteryType.GlobalStat), SerializeField, ReadOnly]
-    List<StatData> globalStats;
-
     public List<AbilityData> Attacks => attacks;
     [ShowIf("MasteryType", MasteryType.Attack), SerializeField]
     List<AbilityData> attacks;
@@ -48,30 +43,12 @@ public class Mastery : ScriptableObject
         OnValidate();
     }
 
-    [ShowIf("MasteryType", MasteryType.GlobalStat), Button]
-    void RefreshGlobalStatNames()
-    {
-        foreach (var item in globalStats)
-        {
-            item.name = name + " " + item.Stat.ToString();
-        }
-    }
-
     [ShowIf("MasteryType", MasteryType.Stat), Button]
     void CreateStatData()
     {
         StatData stats = ScriptableObject.CreateInstance<StatData>();
         stats.name = name + " S";
         this.stats.Add(stats);
-        AssetDatabase.AddObjectToAsset(stats, this);
-    }
-
-    [ShowIf("MasteryType", MasteryType.GlobalStat), Button]
-    void CreateGlobalStatData()
-    {
-        StatData stats = ScriptableObject.CreateInstance<StatData>();
-        stats.name = name + " S";
-        this.globalStats.Add(stats);
         AssetDatabase.AddObjectToAsset(stats, this);
     }
 
@@ -106,17 +83,6 @@ public class Mastery : ScriptableObject
         }
 
         stats.Clear();
-    }
-
-    [ShowIf("MasteryType", MasteryType.GlobalStat), Button]
-    void ClearGlobalStatData()
-    {
-        foreach (var item in globalStats)
-        {
-            DestroyImmediate(item, true);
-        }
-
-        globalStats.Clear();
     }
 
     private void OnValidate()

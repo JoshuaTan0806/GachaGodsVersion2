@@ -81,12 +81,6 @@ public class BattleManager : MonoBehaviour
                     case MasteryType.Stat:
                         foreach (var stat in mastery.Stats)
                         {
-                            stats.AddStat(stat);
-                        }
-                        break;
-                    case MasteryType.GlobalStat:
-                        foreach (var stat in mastery.GlobalStats)
-                        {
                             globalBuffs.Add(stat);
                         }
                         break;
@@ -145,12 +139,6 @@ public class BattleManager : MonoBehaviour
                 {
                     case MasteryType.Stat:
                         foreach (var stat in mastery.Stats)
-                        {
-                            stats.AddStat(stat);
-                        }
-                        break;
-                    case MasteryType.GlobalStat:
-                        foreach (var stat in mastery.GlobalStats)
                         {
                             globalBuffs.Add(stat);
                         }

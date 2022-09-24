@@ -134,13 +134,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ab4386cadeff6e4a9068eacce6c3692, type: 3}
   m_Name: Appearance
   m_EditorClassIdentifier: 
-  DefaultFace: {fileID: 0}
-  DefaultOutfit: {fileID: 0}
-  DefaultHairstyle: {fileID: 0}
-  DefaultBack: {fileID: 0}
-  DefaultHat: {fileID: 0}
-  DefaultShoes: {fileID: 0}
-  DefaultWeapon: {fileID: 0}
   Faces: []
   Outfits: []
   HairStyles: []
