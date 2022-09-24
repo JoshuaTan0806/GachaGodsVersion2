@@ -4,139 +4,204 @@ using UnityEngine;
 
 public class AppearanceData : ScriptableObject
 {
-    public FaceData CurrentFace => Faces[faceIndex];
+    public FaceData CurrentFace => faces[faceIndex];
+    public int FaceIndex => faceIndex;
     int faceIndex = 0;
-    public OutfitData CurrentOutfit => Outfits[outfitIndex];
+
+    public OutfitData CurrentOutfit => outfits[outfitIndex];
+    public int OutfitIndex => outfitIndex;
     int outfitIndex = 0;
-    public HairstyleData CurrentHairStyle => HairStyles[hairStyleIndex];
+
+    public HairstyleData CurrentHairStyle => hairStyles[hairStyleIndex];
+    public int HairStyleIndex => hairStyleIndex;
     int hairStyleIndex = 0;
-    public BackData CurrentBack => Backs[backIndex];
+
+    public BackData CurrentBack => backs[backIndex];
+    public int BackIndex => backIndex;
     int backIndex = 0;
-    public HatData CurrentHat => Hats[hatIndex];
+
+    public HatData CurrentHat => hats[hatIndex];
+    public int HatIndex => hatIndex;
     int hatIndex = 0;
-    public ShoeData CurrentShoes => Shoes[shoesIndex];
+
+    public ShoeData CurrentShoes => shoes[shoesIndex];
+    public int ShoesIndex => shoesIndex;
     int shoesIndex = 0;
-    public WeaponData CurrentWeapon => Weapons[weaponIndex];
+
+    public WeaponData CurrentWeapon => weapons[weaponIndex];
+    public int WeaponIndex => weaponIndex;
     int weaponIndex = 0;
 
-    [SerializeField] List<FaceData> Faces;
-    [SerializeField] List<OutfitData> Outfits;
-    [SerializeField] List<HairstyleData> HairStyles;
-    [SerializeField] List<BackData> Backs;
-    [SerializeField] List<HatData> Hats;
-    [SerializeField] List<ShoeData> Shoes;
-    [SerializeField] List<WeaponData> Weapons;
+    [SerializeField] List<FaceData> faces;
+    [SerializeField] List<OutfitData> outfits;
+    [SerializeField] List<HairstyleData> hairStyles;
+    [SerializeField] List<BackData> backs;
+    [SerializeField] List<HatData> hats;
+    [SerializeField] List<ShoeData> shoes;
+    [SerializeField] List<WeaponData> weapons;
+
+    public System.Action OnAppearanceChanged;
+
+    public void LoadAppearance(Character character)
+    {
+        faceIndex = PlayerPrefs.GetInt(character.name + FaceData.ID);
+        outfitIndex = PlayerPrefs.GetInt(character.name + OutfitData.ID);
+        hairStyleIndex = PlayerPrefs.GetInt(character.name + HairstyleData.ID);
+        backIndex = PlayerPrefs.GetInt(character.name + BackData.ID);
+        hatIndex = PlayerPrefs.GetInt(character.name + HatData.ID);
+        shoesIndex = PlayerPrefs.GetInt(character.name + ShoeData.ID);
+        weaponIndex = PlayerPrefs.GetInt(character.name + WeaponData.ID);
+    }
+
+    public void SaveAppearance(Character character)
+    {
+        PlayerPrefs.SetInt(character.name + FaceData.ID, faceIndex);
+        PlayerPrefs.SetInt(character.name + OutfitData.ID, outfitIndex);
+        PlayerPrefs.SetInt(character.name + HairstyleData.ID, hairStyleIndex);
+        PlayerPrefs.SetInt(character.name + BackData.ID, backIndex);
+        PlayerPrefs.SetInt(character.name + HatData.ID, hatIndex);
+        PlayerPrefs.SetInt(character.name + ShoeData.ID, shoesIndex);
+        PlayerPrefs.SetInt(character.name + WeaponData.ID, weaponIndex);
+    }
 
     public void CycleFaceRight()
     {
-        if (faceIndex == Faces.Count)
+        if (faceIndex == faces.Count)
             faceIndex = 0;
         else
             faceIndex++;
+
+        OnAppearanceChanged?.Invoke();
     }
 
     public void CycleFaceLeft()
     {
         if (faceIndex == 0)
-            faceIndex = Faces.Count - 1;
+            faceIndex = faces.Count - 1;
         else
             faceIndex--;
+
+        OnAppearanceChanged?.Invoke();
     }
 
     public void CycleOutfitRight()
     {
-        if (outfitIndex == Outfits.Count)
+        if (outfitIndex == outfits.Count)
             outfitIndex = 0;
         else
             outfitIndex++;
+
+        OnAppearanceChanged?.Invoke();
     }
 
     public void CycleOutfitLeft()
     {
         if (outfitIndex == 0)
-            outfitIndex = Outfits.Count - 1;
+            outfitIndex = outfits.Count - 1;
         else
             outfitIndex--;
+
+        OnAppearanceChanged?.Invoke();
     }
 
     public void CycleHairstyleRight()
     {
-        if (hairStyleIndex == HairStyles.Count)
+        if (hairStyleIndex == hairStyles.Count)
             hairStyleIndex = 0;
         else
             hairStyleIndex++;
+
+        OnAppearanceChanged?.Invoke();
     }
 
     public void CycleHairstyleLeft()
     {
         if (hairStyleIndex == 0)
-            hairStyleIndex = HairStyles.Count - 1;
+            hairStyleIndex = hairStyles.Count - 1;
         else
             hairStyleIndex--;
+
+        OnAppearanceChanged?.Invoke();
     }
 
     public void CycleBackRight()
     {
-        if (backIndex == Backs.Count)
+        if (backIndex == backs.Count)
             backIndex = 0;
         else
             backIndex++;
+
+        OnAppearanceChanged?.Invoke();
     }
 
     public void CycleBackLeft()
     {
         if (backIndex == 0)
-            backIndex = Backs.Count - 1;
+            backIndex = backs.Count - 1;
         else
             backIndex--;
+
+        OnAppearanceChanged?.Invoke();
     }
 
     public void CycleHatRight()
     {
-        if (hatIndex == Hats.Count)
+        if (hatIndex == hats.Count)
             hatIndex = 0;
         else
             hatIndex++;
+
+        OnAppearanceChanged?.Invoke();
     }
 
     public void CycleHatLeft()
     {
         if (hatIndex == 0)
-            hatIndex = Hats.Count - 1;
+            hatIndex = hats.Count - 1;
         else
             hatIndex--;
+
+        OnAppearanceChanged?.Invoke();
     }
 
     public void CycleShoeRight()
     {
-        if (shoesIndex == Shoes.Count)
+        if (shoesIndex == shoes.Count)
             shoesIndex = 0;
         else
             shoesIndex++;
+
+        OnAppearanceChanged?.Invoke();
     }
 
     public void CycleShoeLeft()
     {
         if (shoesIndex == 0)
-            shoesIndex = Shoes.Count - 1;
+            shoesIndex = shoes.Count - 1;
         else
             shoesIndex--;
+
+        OnAppearanceChanged?.Invoke();
     }
 
     public void CycleWeaponRight()
     {
-        if (weaponIndex == Weapons.Count)
+        if (weaponIndex == weapons.Count)
             weaponIndex = 0;
         else
             weaponIndex++;
+
+        OnAppearanceChanged?.Invoke();
     }
 
     public void CycleWeaponLeft()
     {
         if (weaponIndex == 0)
-            weaponIndex = Weapons.Count - 1;
+            weaponIndex = weapons.Count - 1;
         else
             weaponIndex--;
+
+        OnAppearanceChanged?.Invoke();
     }
 }
 

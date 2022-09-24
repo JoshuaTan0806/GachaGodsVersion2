@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class CharacterAppearance : MonoBehaviour
 {
+    public Character Character => character;
+    Character character;
+
     [SerializeField] Transform HairStylePos;
     [SerializeField] Transform HatPos;
     [SerializeField] Transform FacePos;
@@ -17,60 +20,77 @@ public class CharacterAppearance : MonoBehaviour
     [SerializeField] Transform LWeaponPos;
     [SerializeField] Transform RWeaponPos;
 
-    public void MakeCharacter(Character character)
+    public void Initialise(Character character)
     {
-        AppearanceData a = character.Appearance;
+        return;
+        this.character = character;
+        MakeCharacter();
+    }
 
-        EquipOutfit(a.CurrentOutfit);
-        EquipHat(a.CurrentHat);
-        EquipWeapon(a.CurrentWeapon);
-        EquipShoe(a.CurrentShoes);
-        EquipHairStyle(a.CurrentHairStyle);
-        EquipBack(a.CurrentBack);
-        EquipFace(a.CurrentFace);
+    private void OnEnable()
+    {
+        if (character != null)
+            character.Appearance.OnAppearanceChanged += MakeCharacter;
+    }
+
+    private void OnDisable()
+    {
+        if (character != null)
+            character.Appearance.OnAppearanceChanged -= MakeCharacter;
+    }
+
+    void MakeCharacter()
+    {
+        EquipOutfit(character.Appearance.CurrentOutfit);
+        EquipHat(character.Appearance.CurrentHat);
+        EquipWeapon(character.Appearance.CurrentWeapon);
+        EquipShoe(character.Appearance.CurrentShoes);
+        EquipHairStyle(character.Appearance.CurrentHairStyle);
+        EquipBack(character.Appearance.CurrentBack);
+        EquipFace(character.Appearance.CurrentFace);
     }
 
     public void EquipOutfit(OutfitData outfitData)
     {
-        ReplaceEquipment(outfitData.TopPrefab, TopPos);
-        ReplaceEquipment(outfitData.BottomPrefab, BottomPos);
-        ReplaceEquipment(outfitData.LSleevePrefab, LSleevePos);
-        ReplaceEquipment(outfitData.RSleevePrefab, RSleevePos);
+        ReplaceCosmetic(outfitData.TopPrefab, TopPos);
+        ReplaceCosmetic(outfitData.BottomPrefab, BottomPos);
+        ReplaceCosmetic(outfitData.LSleevePrefab, LSleevePos);
+        ReplaceCosmetic(outfitData.RSleevePrefab, RSleevePos);
     }
 
     public void EquipFace(FaceData faceData)
     {
-        ReplaceEquipment(faceData.FacePrefab, FacePos);
+        ReplaceCosmetic(faceData.FacePrefab, FacePos);
     }
 
     public void EquipHat(HatData hatData)
     {
-        ReplaceEquipment(hatData.HatPrefab, HatPos);
+        ReplaceCosmetic(hatData.HatPrefab, HatPos);
     }
 
     public void EquipWeapon(WeaponData weaponData)
     {
-        ReplaceEquipment(weaponData.LHWeaponPrefab, LWeaponPos);
-        ReplaceEquipment(weaponData.RHWeaponPrefab, RWeaponPos);
+        ReplaceCosmetic(weaponData.LHWeaponPrefab, LWeaponPos);
+        ReplaceCosmetic(weaponData.RHWeaponPrefab, RWeaponPos);
     }
 
     public void EquipBack(BackData backData)
     {
-        ReplaceEquipment(backData.BackPrefab, BackPos);
+        ReplaceCosmetic(backData.BackPrefab, BackPos);
     }
 
     public void EquipShoe(ShoeData shoeData)
     {
-        ReplaceEquipment(shoeData.LShoePrefab, LShoePos);
-        ReplaceEquipment(shoeData.RShoePrefab, RShoePos);
+        ReplaceCosmetic(shoeData.LShoePrefab, LShoePos);
+        ReplaceCosmetic(shoeData.RShoePrefab, RShoePos);
     }
 
     public void EquipHairStyle(HairstyleData hairstyleData)
     {
-        ReplaceEquipment(hairstyleData.HairstylePrefab, HairStylePos);
+        ReplaceCosmetic(hairstyleData.HairstylePrefab, HairStylePos);
     }
 
-    void ReplaceEquipment(GameObject gameObject, Transform transform)
+    void ReplaceCosmetic(GameObject gameObject, Transform transform)
     {
         if (transform == null)
             return;

@@ -5,6 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Character/Appearance/Outfit")]
 public class OutfitData : CosmeticData
 {
+    public const string ID = "Outfit";
     public GameObject TopPrefab => topPrefab;
     [SerializeField] GameObject topPrefab;
     public GameObject LSleevePrefab => lSleevePrefab;

@@ -54,6 +54,9 @@ public class CharacterStats : MonoBehaviour
 
     public void InitialiseCharacter(Character character)
     {
+        this.character = character;
+        GetComponent<CharacterAppearance>().Initialise(character);
+
         foreach (var item in character.BaseStats)
         {
             AddStat(StatManager.CreateStat(item.Key, item.Value));
@@ -67,7 +70,6 @@ public class CharacterStats : MonoBehaviour
         AddStat(StatManager.CreateStat(Stat.CurrentHealth, GetStat(Stat.Health)));
         AddStat(StatManager.CreateStat(Stat.CurrentSpellCD, GetStat(Stat.SpellCD)));
 
-        this.character = character;
         attacks = new List<AbilityData>(character.Attacks);
         spells = new List<AbilityData>(character.Spells);
 
