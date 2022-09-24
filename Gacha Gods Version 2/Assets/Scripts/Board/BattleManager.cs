@@ -70,7 +70,6 @@ public class BattleManager : MonoBehaviour
             stats.name = "Ally " + item.Character;
             allies.Add(stats);
             stats.InitialiseCharacter(item.Character);
-            Instantiate(item.Character.Prefab, stats.transform);
 
             for (int i = 0; i < item.Mastery; i++)
             {
@@ -129,7 +128,6 @@ public class BattleManager : MonoBehaviour
             CharacterStats stats = Instantiate(BaseCharacterPrefab, spawnPos, Quaternion.identity, transform);
             stats.name = "Enemy " + item.Character;
             stats.InitialiseCharacter(item.Character);
-            Instantiate(item.Character.Prefab, stats.transform);
 
             for (int i = 0; i < item.Mastery; i++)
             {
