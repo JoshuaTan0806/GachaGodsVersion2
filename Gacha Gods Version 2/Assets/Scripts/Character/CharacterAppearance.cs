@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class CharacterAppearance : MonoBehaviour
 {
-    public Character Character => character;
-    Character character;
-
     [SerializeField] Transform HairStylePos;
     [SerializeField] Transform HatPos;
     [SerializeField] Transform FacePos;
@@ -23,24 +20,6 @@ public class CharacterAppearance : MonoBehaviour
     public void Initialise(Character character)
     {
         return;
-        this.character = character;
-        MakeCharacter();
-    }
-
-    private void OnEnable()
-    {
-        if (character != null)
-            character.Appearance.OnAppearanceChanged += MakeCharacter;
-    }
-
-    private void OnDisable()
-    {
-        if (character != null)
-            character.Appearance.OnAppearanceChanged -= MakeCharacter;
-    }
-
-    void MakeCharacter()
-    {
         EquipOutfit(character.Appearance.CurrentOutfit);
         EquipHat(character.Appearance.CurrentHat);
         EquipWeapon(character.Appearance.CurrentWeapon);

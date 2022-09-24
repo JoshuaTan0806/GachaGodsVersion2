@@ -40,8 +40,6 @@ public class AppearanceData : ScriptableObject
     [SerializeField] List<ShoeData> shoes;
     [SerializeField] List<WeaponData> weapons;
 
-    public System.Action OnAppearanceChanged;
-
     public void LoadAppearance(Character character)
     {
         faceIndex = PlayerPrefs.GetInt(character.name + FaceData.ID);
@@ -70,8 +68,6 @@ public class AppearanceData : ScriptableObject
             faceIndex = 0;
         else
             faceIndex++;
-
-        OnAppearanceChanged?.Invoke();
     }
 
     public void CycleFaceLeft()
@@ -80,8 +76,6 @@ public class AppearanceData : ScriptableObject
             faceIndex = faces.Count - 1;
         else
             faceIndex--;
-
-        OnAppearanceChanged?.Invoke();
     }
 
     public void CycleOutfitRight()
@@ -90,8 +84,6 @@ public class AppearanceData : ScriptableObject
             outfitIndex = 0;
         else
             outfitIndex++;
-
-        OnAppearanceChanged?.Invoke();
     }
 
     public void CycleOutfitLeft()
@@ -100,8 +92,6 @@ public class AppearanceData : ScriptableObject
             outfitIndex = outfits.Count - 1;
         else
             outfitIndex--;
-
-        OnAppearanceChanged?.Invoke();
     }
 
     public void CycleHairstyleRight()
@@ -110,8 +100,6 @@ public class AppearanceData : ScriptableObject
             hairStyleIndex = 0;
         else
             hairStyleIndex++;
-
-        OnAppearanceChanged?.Invoke();
     }
 
     public void CycleHairstyleLeft()
@@ -120,8 +108,6 @@ public class AppearanceData : ScriptableObject
             hairStyleIndex = hairStyles.Count - 1;
         else
             hairStyleIndex--;
-
-        OnAppearanceChanged?.Invoke();
     }
 
     public void CycleBackRight()
@@ -130,8 +116,6 @@ public class AppearanceData : ScriptableObject
             backIndex = 0;
         else
             backIndex++;
-
-        OnAppearanceChanged?.Invoke();
     }
 
     public void CycleBackLeft()
@@ -140,8 +124,6 @@ public class AppearanceData : ScriptableObject
             backIndex = backs.Count - 1;
         else
             backIndex--;
-
-        OnAppearanceChanged?.Invoke();
     }
 
     public void CycleHatRight()
@@ -150,8 +132,6 @@ public class AppearanceData : ScriptableObject
             hatIndex = 0;
         else
             hatIndex++;
-
-        OnAppearanceChanged?.Invoke();
     }
 
     public void CycleHatLeft()
@@ -160,8 +140,6 @@ public class AppearanceData : ScriptableObject
             hatIndex = hats.Count - 1;
         else
             hatIndex--;
-
-        OnAppearanceChanged?.Invoke();
     }
 
     public void CycleShoeRight()
@@ -170,8 +148,6 @@ public class AppearanceData : ScriptableObject
             shoesIndex = 0;
         else
             shoesIndex++;
-
-        OnAppearanceChanged?.Invoke();
     }
 
     public void CycleShoeLeft()
@@ -180,8 +156,6 @@ public class AppearanceData : ScriptableObject
             shoesIndex = shoes.Count - 1;
         else
             shoesIndex--;
-
-        OnAppearanceChanged?.Invoke();
     }
 
     public void CycleWeaponRight()
@@ -190,8 +164,6 @@ public class AppearanceData : ScriptableObject
             weaponIndex = 0;
         else
             weaponIndex++;
-
-        OnAppearanceChanged?.Invoke();
     }
 
     public void CycleWeaponLeft()
@@ -200,8 +172,5 @@ public class AppearanceData : ScriptableObject
             weaponIndex = weapons.Count - 1;
         else
             weaponIndex--;
-
-        OnAppearanceChanged?.Invoke();
     }
 }
-

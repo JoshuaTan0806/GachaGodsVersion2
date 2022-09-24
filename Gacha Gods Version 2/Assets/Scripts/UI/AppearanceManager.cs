@@ -36,26 +36,26 @@ public class AppearanceManager : MonoBehaviour
 
     private void Awake()
     {
-        LoadApperanceData();
+        LoadAppearance();
 
-        LHat.onClick.AddListener(CycleHatLeft);
-        RHat.onClick.AddListener(CycleHatRight);
-        LOutfit.onClick.AddListener(CycleOutfitLeft);
-        ROutfit.onClick.AddListener(CycleOutfitRight);
-        LBack.onClick.AddListener(CycleBackLeft);
-        RBack.onClick.AddListener(CycleBackRight);
-        LShoe.onClick.AddListener(CycleShoeLeft);
-        RShoe.onClick.AddListener(CycleShoeRight);
-        LWeapon.onClick.AddListener(CycleWeaponLeft);
-        RWeapon.onClick.AddListener(CycleWeaponRight);
-        LFace.onClick.AddListener(CycleFaceLeft);
-        RFace.onClick.AddListener(CycleFaceRight);
-        LHairstyle.onClick.AddListener(CycleHairstyleLeft);
-        RHairstyle.onClick.AddListener(CycleHairstyleRight);
-        SaveButton.onClick.AddListener(SaveApperance);
+        LHat.onClick.AddListener(delegate { CycleHatLeft(); Initialise(character); });
+        RHat.onClick.AddListener(delegate { CycleHatRight(); Initialise(character); });
+        LOutfit.onClick.AddListener(delegate { CycleOutfitLeft(); Initialise(character); });
+        ROutfit.onClick.AddListener(delegate { CycleOutfitRight(); Initialise(character); });
+        LBack.onClick.AddListener(delegate { CycleBackLeft(); Initialise(character); });
+        RBack.onClick.AddListener(delegate { CycleBackRight(); Initialise(character); });
+        LShoe.onClick.AddListener(delegate { CycleShoeLeft(); Initialise(character); });
+        RShoe.onClick.AddListener(delegate { CycleShoeRight(); Initialise(character); });
+        LWeapon.onClick.AddListener(delegate { CycleWeaponLeft(); Initialise(character); });
+        RWeapon.onClick.AddListener(delegate { CycleWeaponRight(); Initialise(character); });
+        LFace.onClick.AddListener(delegate { CycleFaceLeft(); Initialise(character); });
+        RFace.onClick.AddListener(delegate { CycleFaceRight(); Initialise(character); });
+        LHairstyle.onClick.AddListener(delegate { CycleHairstyleLeft(); Initialise(character); });
+        RHairstyle.onClick.AddListener(delegate { CycleHairstyleRight(); Initialise(character); });
+        SaveButton.onClick.AddListener(delegate { SaveApperance(); Initialise(character); });
     }
 
-    public void LoadApperanceData()
+    public void LoadAppearance()
     {
         foreach (var character in CharacterManager.Characters)
         {
