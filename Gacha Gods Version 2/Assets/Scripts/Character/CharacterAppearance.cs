@@ -19,7 +19,6 @@ public class CharacterAppearance : MonoBehaviour
 
     public void Initialise(Character character)
     {
-        return;
         EquipOutfit(character.Appearance.CurrentOutfit);
         EquipHat(character.Appearance.CurrentHat);
         EquipWeapon(character.Appearance.CurrentWeapon);

@@ -66,13 +66,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ab4386cadeff6e4a9068eacce6c3692, type: 3}
   m_Name: Appearance
   m_EditorClassIdentifier: 
-  faces: []
-  outfits: []
-  hairStyles: []
-  backs: []
-  hats: []
-  shoes: []
-  weapons: []
+  faces:
+  - {fileID: 11400000, guid: 03c5bd0d1745c814fbb9f614ce1a4179, type: 2}
+  outfits:
+  - {fileID: 11400000, guid: 5e0e65aaf526b7846866a3e13925517d, type: 2}
+  hairStyles:
+  - {fileID: 11400000, guid: 37113ebffb6bd804cbdec0595c5eff01, type: 2}
+  backs:
+  - {fileID: 11400000, guid: de240532c17a0cb498d46e6baab5623d, type: 2}
+  hats:
+  - {fileID: 11400000, guid: ac0f199489dcc464ab70db609d4818be, type: 2}
+  shoes:
+  - {fileID: 11400000, guid: f698d06995a4da3439e8898b9e6248ca, type: 2}
+  weapons:
+  - {fileID: 11400000, guid: eb8399926c6579948a2183fc70a04b72, type: 2}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
