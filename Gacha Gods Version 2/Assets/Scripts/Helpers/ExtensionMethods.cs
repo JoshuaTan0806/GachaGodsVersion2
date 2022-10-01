@@ -394,4 +394,17 @@ public static class ExtensionMethods
     {
         t.transform.position = vector3;
     }
+
+    public static bool TryDestroyComponent<T>(this T t) where T : MonoBehaviour
+    {
+        if(t != null)
+        {
+            UnityEngine.Object.Destroy(t);
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 }
