@@ -11,12 +11,12 @@ public class UIManager : MonoBehaviour
     public static UIManager instance;
 
     [Header("References")]
+    [SerializeField] GameObject uiCanvas;
     [SerializeField] GameObject mainCanvas;
     [SerializeField] GameObject teamCanvas;
     [SerializeField] GameObject gachaCanvas;
     [SerializeField] GameObject achievementsCanvas;
     [SerializeField] GameObject characterCanvas;
-    [SerializeField] GameObject battleCanvas;
 
     [Header("Prefabs")]
     [SerializeField] GameObject roundStartPrefab;
@@ -43,6 +43,7 @@ public class UIManager : MonoBehaviour
         GameManager.OnGameWon += OnGameWon;
         GameManager.OnGameLost += OnGameLost;
 
+        uiCanvas.SafeSetActive(true);
         mainCanvas.SafeSetActive(true);
         teamCanvas.SafeSetActive(false);
         gachaCanvas.SafeSetActive(false);
@@ -74,14 +75,12 @@ public class UIManager : MonoBehaviour
     void OnRoundStart()
     {
         SpawnRoundStartPrefab();
-        mainCanvas.SafeSetActive(true);
-        battleCanvas.SafeSetActive(false);
+        ActivateMainCanvas();
     }
 
     void OnBattleStart()
     {
-        mainCanvas.SafeSetActive(false);
-        battleCanvas.SafeSetActive(true);
+       DeactivateMainCanvas();
     }
 
     void OnBattleWon()
@@ -92,6 +91,17 @@ public class UIManager : MonoBehaviour
     void OnBattleLost()
     {
         Instantiate(battleLostPrefab);
+    }
+
+    void ActivateMainCanvas()
+    {
+        uiCanvas.SafeSetActive(true);
+        mainCanvas.SafeSetActive(true);
+    }
+
+    void DeactivateMainCanvas()
+    {
+        uiCanvas.SafeSetActive(false);
     }
 
     void SpawnRoundStartPrefab()
