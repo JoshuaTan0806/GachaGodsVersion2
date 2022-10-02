@@ -10,6 +10,8 @@ public class BattleManager : MonoBehaviour
     public static List<CharacterStats> targetableAllies = new List<CharacterStats>();
     public static List<CharacterStats> targetableEnemies = new List<CharacterStats>();
 
+    public static List<Transform> availableNodes = new();
+
     public static BoardData playerBoardData;
     public static BoardData enemyBoardData;
 
