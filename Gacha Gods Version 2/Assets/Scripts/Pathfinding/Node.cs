@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Sirenix.OdinInspector;
 
 public class Node : MonoBehaviour
 {
+    [ReadOnly, ShowInInspector] bool isAvailable => BattleManager.availableNodes.Contains(transform);
+
     private void Awake()
     {
         BattleManager.availableNodes.Add(transform);
