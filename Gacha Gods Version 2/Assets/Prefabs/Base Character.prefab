@@ -569,6 +569,7 @@ GameObject:
   - component: {fileID: -330335870900928024}
   - component: {fileID: 2812764109403383914}
   - component: {fileID: 4288948428792908556}
+  - component: {fileID: 5705057440537615270}
   - component: {fileID: 8846539709975084188}
   - component: {fileID: 7559784608579061105}
   - component: {fileID: 1386445686476040046}
@@ -649,6 +650,19 @@ MonoBehaviour:
   RShoePos: {fileID: 0}
   LWeaponPos: {fileID: 0}
   RWeaponPos: {fileID: 0}
+--- !u!114 &5705057440537615270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9072951069611768050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e1ddaff84a87d3409fa53195f0e8f51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentNode: {fileID: 0}
 --- !u!114 &8846539709975084188
 MonoBehaviour:
   m_ObjectHideFlags: 0

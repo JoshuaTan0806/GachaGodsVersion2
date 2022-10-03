@@ -8,6 +8,7 @@ using System;
 
 public class AI : MonoBehaviour
 {
+    Pathfinder pathfinder;
     CharacterStats stats;
     Animator animator;
 
@@ -33,6 +34,7 @@ public class AI : MonoBehaviour
     private void Awake()
     {
         stats = GetComponent<CharacterStats>();
+        pathfinder = GetComponent<Pathfinder>();
         //animator = GetComponent<Animator>();
     }
 
@@ -143,7 +145,8 @@ public class AI : MonoBehaviour
             return;
 
         //animator.Play("Move");
-        transform.MoveToPosition(target.transform.position, GetStat(Stat.Spd));
+        Node node = pathfinder.FindTargetNode(target.currentNode);
+        transform.MoveToPosition(node.position, GetStat(Stat.Spd));
     }
 
     void Cast()

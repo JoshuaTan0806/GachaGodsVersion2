@@ -5,6 +5,7 @@ using Sirenix.OdinInspector;
 
 public class Node : MonoBehaviour
 {
+    public Vector3 position => transform.position;
     public bool IsAvailable => isAvailable;
     [ReadOnly, ShowInInspector] bool isAvailable => BattleManager.availableNodes.Contains(transform);
     public List<Transform> Neighbours => neighbours;
@@ -25,11 +26,15 @@ public class Node : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponent<AI>() == null)
+        Pathfinder pathfinder = collision.GetComponent<Pathfinder>();
+
+        if (pathfinder == null)
             return;
 
         if (BattleManager.availableNodes.Contains(transform))
             BattleManager.availableNodes.Remove(transform);
+
+        pathfinder.currentNode = this;
     }
 
     private void OnTriggerExit2D(Collider2D collision)

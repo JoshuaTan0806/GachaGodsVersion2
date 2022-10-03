@@ -40,6 +40,14 @@ public class CharacterStats : MonoBehaviour
     public List<CharacterStats> Allies => allies;
     List<CharacterStats> allies;
 
+    public Node currentNode => pathfinder.currentNode;
+    Pathfinder pathfinder;
+    
+    private void Awake()
+    {
+        pathfinder = GetComponent<Pathfinder>();
+    }
+
     private void OnEnable()
     {
         OnStatsChanged += ResetHealthBar;

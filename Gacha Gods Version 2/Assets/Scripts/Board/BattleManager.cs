@@ -26,7 +26,6 @@ public class BattleManager : MonoBehaviour
     [SerializeField] Transform spawnsReference;
     [SerializeField] Transform nodesReference;
 
-
     [Header("Prefabs")]
     [SerializeField] BattleStartCanvas battleStartPrefab;
     [SerializeField] CharacterStats BaseCharacterPrefab;
