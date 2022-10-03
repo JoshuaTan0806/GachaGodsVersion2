@@ -1,3 +1,4 @@
+using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,16 +18,22 @@ public class BattleManager : MonoBehaviour
 
     public static bool battleHasStarted = false;
 
+    [ReadOnly, SerializeField] List<Transform> spawnPoints;
+
     [Header("References")]
-    [SerializeField] List<Transform> spawnPoints;
+    [SerializeField] Transform spawnsReference;
+    [SerializeField] Transform nodesReference;
+
 
     [Header("Prefabs")]
     [SerializeField] BattleStartCanvas battleStartPrefab;
     [SerializeField] CharacterStats BaseCharacterPrefab;
+    [SerializeField] Transform nodePrefab;
 
     private void Awake()
     {
         ClearBoard();
+        SpawnBoard();
     }
 
     private void OnEnable()
@@ -39,6 +46,29 @@ public class BattleManager : MonoBehaviour
     {
         GameManager.OnBattleStart -= OnBattleStart;
         GameManager.OnRoundEnd -= ClearBoard;
+    }
+
+    void SpawnBoard()
+    {
+        spawnPoints = new();
+
+        //we have to go downwards first
+
+        for (int i = 0; i < 10; i++)
+        {
+            for (int j = 0; j < 6; j++)
+            {
+                Vector3 spawnPos = new();
+                spawnPos.x = -9 + (i * 2);
+                spawnPos.y = 5 - (j * 2);
+
+                GameObject g = new GameObject();
+                g.name = "Spawn Point";
+                g.transform.position = spawnPos;
+                g.SetParent(spawnsReference);
+                spawnPoints.Add(g.transform);
+            }
+        }
     }
 
     public static List<CharacterStats> FindAllies(CharacterStats stats)
