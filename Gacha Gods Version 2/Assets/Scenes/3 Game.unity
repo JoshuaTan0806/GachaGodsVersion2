@@ -859,11 +859,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16f173f9cceb45843ae1044282500873, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnPoints: []
+  nodes: []
   spawnsReference: {fileID: 1221914754}
-  nodesReference: {fileID: 0}
+  nodesReference: {fileID: 70171514}
   battleStartPrefab: {fileID: 4778340183604792129, guid: 6a053756dc6844044b1802d136e6533a, type: 3}
   BaseCharacterPrefab: {fileID: -330335870900928024, guid: 178fb3e03156f1344b5d8ac13deff374, type: 3}
-  nodePrefab: {fileID: 0}
+  nodePrefab: {fileID: 88050961351234719, guid: 44e61ae0d49248d48acb9e970cdb07ab, type: 3}
 --- !u!1 &1891534095
 GameObject:
   m_ObjectHideFlags: 0

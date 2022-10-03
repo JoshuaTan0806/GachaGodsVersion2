@@ -5,11 +5,22 @@ using Sirenix.OdinInspector;
 
 public class Node : MonoBehaviour
 {
+    public bool IsAvailable => isAvailable;
     [ReadOnly, ShowInInspector] bool isAvailable => BattleManager.availableNodes.Contains(transform);
+    public List<Transform> Neighbours => neighbours;
+    [ReadOnly, ShowInInspector] List<Transform> neighbours = new();
 
     private void Awake()
     {
         BattleManager.availableNodes.Add(transform);
+    }
+
+    public void AddNeighbour(Node node)
+    {
+        if(!neighbours.Contains(node.transform))
+        {
+            neighbours.Add(node.transform);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

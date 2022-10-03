@@ -2,6 +2,7 @@ using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class BattleManager : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class BattleManager : MonoBehaviour
     public static bool battleHasStarted = false;
 
     [ReadOnly, SerializeField] List<Transform> spawnPoints;
+    [ReadOnly, SerializeField] List<Node> nodes;
 
     [Header("References")]
     [SerializeField] Transform spawnsReference;
@@ -28,7 +30,7 @@ public class BattleManager : MonoBehaviour
     [Header("Prefabs")]
     [SerializeField] BattleStartCanvas battleStartPrefab;
     [SerializeField] CharacterStats BaseCharacterPrefab;
-    [SerializeField] Transform nodePrefab;
+    [SerializeField] Node nodePrefab;
 
     private void Awake()
     {
@@ -52,8 +54,9 @@ public class BattleManager : MonoBehaviour
     {
         spawnPoints = new();
 
-        //we have to go downwards first
+        //make the spawn points
 
+        //we have to go downwards first
         for (int i = 0; i < 10; i++)
         {
             for (int j = 0; j < 6; j++)
@@ -67,6 +70,36 @@ public class BattleManager : MonoBehaviour
                 g.transform.position = spawnPos;
                 g.SetParent(spawnsReference);
                 spawnPoints.Add(g.transform);
+            }
+        }
+
+        //make the nodes
+        Vector3 nodeSize = Vector3.one * 0.3f;
+
+        for (int i = 0; i < 23; i++)
+        {
+            for (int j = 0; j < 13; j++)
+            {
+                Vector3 spawnPos = new();
+
+                spawnPos.x = -11 + i;
+                spawnPos.y = -6 + j;
+
+                Node g = Instantiate(nodePrefab, spawnPos, Quaternion.identity, nodesReference);
+                g.transform.localScale = nodeSize;
+                nodes.Add(g);
+            }
+        }
+
+        for (int i = 0; i < nodes.Count; i++)
+        {
+            Node node = nodes[i];
+
+            List<Node> neighbours = nodes.Where(x => Vector3.SqrMagnitude(node.transform.position - x.transform.position) <= 2 && x != node).ToList();
+
+            for (int j = 0; j < neighbours.Count; j++)
+            {
+                node.AddNeighbour(neighbours[j]);
             }
         }
     }
