@@ -11,6 +11,12 @@ public class Node : MonoBehaviour
     public Dictionary<Node, float> Neighbours => neighbours;
     [ReadOnly, ShowInInspector] Dictionary<Node, float> neighbours = new();
 
+    public Dictionary<Node, float> ActiveNeighbours => activeNeighbours;
+    [ReadOnly, ShowInInspector] Dictionary<Node, float> activeNeighbours = new();
+
+    public System.Action<Node> OnBecameInactive;
+    public System.Action<Node> OnBecameActive;
+
     private void Awake()
     {
         BattleManager.availableNodes.Add(this);
@@ -18,11 +24,30 @@ public class Node : MonoBehaviour
 
     public void AddNeighbour(Node node, float distance)
     {
-        if(!neighbours.ContainsKey(node))
-        {
+        if (!neighbours.ContainsKey(node))
             neighbours.Add(node, distance);
-        }
+
+        if (!activeNeighbours.ContainsKey(node))
+            activeNeighbours.Add(node, distance);
+
+        node.OnBecameActive -= ActivateNeighbour;
+        node.OnBecameActive += ActivateNeighbour;
+        node.OnBecameInactive -= DeactivateNeighbour;
+        node.OnBecameInactive += DeactivateNeighbour;
     }
+
+    public void ActivateNeighbour(Node node)
+    {
+        if (!activeNeighbours.ContainsKey(node))
+            activeNeighbours.Add(node, neighbours[node]);
+    }
+
+    public void DeactivateNeighbour(Node node)
+    {
+        if (activeNeighbours.ContainsKey(node))
+            activeNeighbours.Remove(node);
+    }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -35,6 +60,7 @@ public class Node : MonoBehaviour
             BattleManager.availableNodes.Remove(this);
 
         pathfinder.start = this;
+        OnBecameInactive?.Invoke(this);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -44,5 +70,7 @@ public class Node : MonoBehaviour
 
         if (!BattleManager.availableNodes.Contains(this))
             BattleManager.availableNodes.Add(this);
+
+        OnBecameActive?.Invoke(this);
     }
 }

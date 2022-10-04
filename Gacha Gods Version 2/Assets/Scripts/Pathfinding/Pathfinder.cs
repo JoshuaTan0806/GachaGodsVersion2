@@ -26,13 +26,10 @@ public class Pathfinder : MonoBehaviour
             current = frontier.Dequeue();
             if (current == goal) break; // Early exit
 
-            foreach (var next in current.Neighbours)
+            foreach (var next in current.ActiveNeighbours.ToList())
             {
                 float new_cost = cost_so_far[current] + next.Value;
-
-                //if (!next.Key.IsAvailable)
-                //    continue;
-
+            
                 if (!cost_so_far.ContainsKey(next.Key) || new_cost < cost_so_far[next.Key])
                 {
                     cost_so_far[next.Key] = new_cost;
@@ -51,7 +48,7 @@ public class Pathfinder : MonoBehaviour
         path.Remove(start);
 
         if (path.Count > 1)
-            return path[path.Count - 1];
+            return path[^1];
         else
             return start;
     }
