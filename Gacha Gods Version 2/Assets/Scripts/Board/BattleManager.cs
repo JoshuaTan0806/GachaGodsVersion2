@@ -98,7 +98,8 @@ public class BattleManager : MonoBehaviour
 
             for (int j = 0; j < neighbours.Count; j++)
             {
-                node.AddNeighbour(neighbours[j]);
+                float distance = Vector3.Distance(node.transform.position, neighbours[j].transform.position);
+                node.AddNeighbour(neighbours[j], distance);
             }
         }
     }

@@ -8,19 +8,19 @@ public class Node : MonoBehaviour
     public Vector3 position => transform.position;
     public bool IsAvailable => isAvailable;
     [ReadOnly, ShowInInspector] bool isAvailable => BattleManager.availableNodes.Contains(transform);
-    public List<Transform> Neighbours => neighbours;
-    [ReadOnly, ShowInInspector] List<Transform> neighbours = new();
+    public Dictionary<Transform, float> Neighbours => neighbours;
+    [ReadOnly, ShowInInspector] Dictionary<Transform, float> neighbours = new();
 
     private void Awake()
     {
         BattleManager.availableNodes.Add(transform);
     }
 
-    public void AddNeighbour(Node node)
+    public void AddNeighbour(Node node, float distance)
     {
-        if(!neighbours.Contains(node.transform))
+        if(!neighbours.ContainsKey(node.transform))
         {
-            neighbours.Add(node.transform);
+            neighbours.Add(node.transform, distance);
         }
     }
 
