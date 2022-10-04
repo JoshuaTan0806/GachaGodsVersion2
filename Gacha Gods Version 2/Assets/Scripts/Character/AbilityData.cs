@@ -18,8 +18,8 @@ public class AbilityData : ScriptableObject
     public float ActionSpeed => actionSpeed;
     [Min(0), SerializeField] float actionSpeed = 1;
 
-    public int Range => range;
-    [Min(0), SerializeField] int range = 1;
+    public float Range => range;
+    [Min(1.5f), SerializeField] float range = 1;
 
     public int NumberOfTargets => numberOfTargets;
     [Min(0), SerializeField] int numberOfTargets = 1;

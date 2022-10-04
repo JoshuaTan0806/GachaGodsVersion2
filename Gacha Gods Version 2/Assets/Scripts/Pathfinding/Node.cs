@@ -7,20 +7,20 @@ public class Node : MonoBehaviour
 {
     public Vector3 position => transform.position;
     public bool IsAvailable => isAvailable;
-    [ReadOnly, ShowInInspector] bool isAvailable => BattleManager.availableNodes.Contains(transform);
-    public Dictionary<Transform, float> Neighbours => neighbours;
-    [ReadOnly, ShowInInspector] Dictionary<Transform, float> neighbours = new();
+    [ReadOnly, ShowInInspector] bool isAvailable => BattleManager.availableNodes.Contains(this);
+    public Dictionary<Node, float> Neighbours => neighbours;
+    [ReadOnly, ShowInInspector] Dictionary<Node, float> neighbours = new();
 
     private void Awake()
     {
-        BattleManager.availableNodes.Add(transform);
+        BattleManager.availableNodes.Add(this);
     }
 
     public void AddNeighbour(Node node, float distance)
     {
-        if(!neighbours.ContainsKey(node.transform))
+        if(!neighbours.ContainsKey(node))
         {
-            neighbours.Add(node.transform, distance);
+            neighbours.Add(node, distance);
         }
     }
 
@@ -31,10 +31,10 @@ public class Node : MonoBehaviour
         if (pathfinder == null)
             return;
 
-        if (BattleManager.availableNodes.Contains(transform))
-            BattleManager.availableNodes.Remove(transform);
+        if (BattleManager.availableNodes.Contains(this))
+            BattleManager.availableNodes.Remove(this);
 
-        pathfinder.currentNode = this;
+        pathfinder.start = this;
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -42,7 +42,7 @@ public class Node : MonoBehaviour
         if (collision.GetComponent<AI>() == null)
             return;
 
-        if (!BattleManager.availableNodes.Contains(transform))
-            BattleManager.availableNodes.Add(transform);
+        if (!BattleManager.availableNodes.Contains(this))
+            BattleManager.availableNodes.Add(this);
     }
 }

@@ -112,7 +112,7 @@ public class AI : MonoBehaviour
 
     bool TargetIsInRange()
     {
-        int range = currentAttack.Range;
+        float range = currentAttack.Range;
         return Vector3.SqrMagnitude(transform.position - target.transform.position) < range * range;
     }
 

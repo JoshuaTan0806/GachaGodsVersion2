@@ -40,7 +40,7 @@ public class CharacterStats : MonoBehaviour
     public List<CharacterStats> Allies => allies;
     List<CharacterStats> allies;
 
-    public Node currentNode => pathfinder.currentNode;
+    public Node currentNode => pathfinder.start;
     Pathfinder pathfinder;
     
     private void Awake()

@@ -136,7 +136,7 @@ MonoBehaviour:
   description: 
   animationName: 
   actionSpeed: 1
-  range: 1
+  range: 1.5
   numberOfTargets: 1
   numberOfSpawns: 1
   teamType: 1
@@ -178,7 +178,7 @@ MonoBehaviour:
   description: 
   animationName: 
   actionSpeed: 1
-  range: 1
+  range: 1.5
   numberOfTargets: 1
   numberOfSpawns: 1
   teamType: 1
