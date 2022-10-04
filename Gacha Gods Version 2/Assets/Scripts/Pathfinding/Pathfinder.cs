@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using Sirenix.OdinInspector;
 
 public class Pathfinder : MonoBehaviour
 {
-    [HideInInspector] public Node start;
+    [ReadOnly] public Node start;
 
     public Node FindTargetNode(Node goal)
     {
@@ -26,7 +27,12 @@ public class Pathfinder : MonoBehaviour
             current = frontier.Dequeue();
             if (current == goal) break; // Early exit
 
-            foreach (var next in current.ActiveNeighbours.ToList())
+            //we want to add the goal to the list even if it has been deactivated
+            Dictionary<Node, float> activeNeighbours = new Dictionary<Node, float>(current.ActiveNeighbours);
+            if (current.Neighbours.ContainsKey(goal) && !activeNeighbours.ContainsKey(goal))
+                activeNeighbours.Add(goal, current.Neighbours[goal]);
+
+            foreach (var next in activeNeighbours.ToList())
             {
                 float new_cost = cost_so_far[current] + next.Value;
             
