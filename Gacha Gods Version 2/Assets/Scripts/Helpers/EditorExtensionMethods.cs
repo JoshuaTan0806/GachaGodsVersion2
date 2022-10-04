@@ -5,6 +5,7 @@ using UnityEditor;
 using System.Linq;
 using System.IO;
 
+#if UNITY_EDITOR
 public class EditorExtensionMethods : Editor
 {
     public static List<T> GetAllInstances<T>() where T : ScriptableObject
@@ -38,3 +39,4 @@ public class EditorExtensionMethods : Editor
         AssetDatabase.SaveAssets();
     }
 }
+#endif

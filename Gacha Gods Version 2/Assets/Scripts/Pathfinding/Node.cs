@@ -50,7 +50,6 @@ public class Node : MonoBehaviour
             activeNeighbours.Remove(node);
     }
 
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Pathfinder pathfinder = collision.GetComponent<Pathfinder>();
