@@ -19,6 +19,7 @@ public class BattleManager : MonoBehaviour
 
     public static bool battleHasStarted = false;
 
+    [SerializeField] float nodeSize;
     [ReadOnly, SerializeField] List<Transform> spawnPoints;
     [ReadOnly, SerializeField] List<Node> nodes;
 
@@ -66,7 +67,7 @@ public class BattleManager : MonoBehaviour
                 spawnPos.y = 5 - (j * 2);
 
                 GameObject g = new GameObject();
-                g.name = "Spawn Point";
+                g.name = "Spawn Point (" + i + ", " + j + ")";
                 g.transform.position = spawnPos;
                 g.SetParent(spawnsReference);
                 spawnPoints.Add(g.transform);
@@ -74,8 +75,6 @@ public class BattleManager : MonoBehaviour
         }
 
         //make the nodes
-        Vector3 nodeSize = Vector3.one * 0.3f;
-
         for (int i = 0; i < 23; i++)
         {
             for (int j = 0; j < 13; j++)
@@ -86,7 +85,8 @@ public class BattleManager : MonoBehaviour
                 spawnPos.y = -6 + j;
 
                 Node g = Instantiate(nodePrefab, spawnPos, Quaternion.identity, nodesReference);
-                g.transform.localScale = nodeSize;
+                g.name = "Node (" + i + ", " + j + ")";
+                g.transform.localScale = Vector3.one * nodeSize;
                 nodes.Add(g);
             }
         }

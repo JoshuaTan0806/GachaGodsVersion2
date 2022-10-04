@@ -859,6 +859,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16f173f9cceb45843ae1044282500873, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nodeSize: 0.5
   spawnPoints: []
   nodes: []
   spawnsReference: {fileID: 1221914754}

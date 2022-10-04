@@ -663,6 +663,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   start: {fileID: 0}
+  goal: {fileID: 0}
 --- !u!114 &8846539709975084188
 MonoBehaviour:
   m_ObjectHideFlags: 0

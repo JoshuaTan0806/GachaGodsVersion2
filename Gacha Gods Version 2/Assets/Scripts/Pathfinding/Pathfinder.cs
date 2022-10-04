@@ -7,6 +7,7 @@ using Sirenix.OdinInspector;
 public class Pathfinder : MonoBehaviour
 {
     [ReadOnly] public Node start;
+    [ReadOnly] public Node goal;
 
     public Node FindTargetNode(Node goal)
     {
@@ -54,8 +55,14 @@ public class Pathfinder : MonoBehaviour
         path.Remove(start);
 
         if (path.Count > 1)
+        {
+            this.goal = path[^1];
             return path[^1];
+        }
         else
+        {
+            this.goal = start;
             return start;
+        }
     }
 }

@@ -6,8 +6,8 @@ using Sirenix.OdinInspector;
 public class Node : MonoBehaviour
 {
     public Vector3 position => transform.position;
-    public bool IsAvailable => isAvailable;
-    [ReadOnly, ShowInInspector] bool isAvailable => BattleManager.availableNodes.Contains(this);
+    public bool IsActive => isActive;
+    [ReadOnly, ShowInInspector] bool isActive => BattleManager.availableNodes.Contains(this);
     public Dictionary<Node, float> Neighbours => neighbours;
     [ReadOnly, ShowInInspector] Dictionary<Node, float> neighbours = new();
 
@@ -16,6 +16,8 @@ public class Node : MonoBehaviour
 
     public System.Action<Node> OnBecameInactive;
     public System.Action<Node> OnBecameActive;
+
+    [ReadOnly, ShowInInspector] List<Pathfinder> characters = new();
 
     private void Awake()
     {
@@ -56,16 +58,32 @@ public class Node : MonoBehaviour
         if (pathfinder == null)
             return;
 
+        if (!characters.Contains(pathfinder))
+            characters.Add(pathfinder);
+
+        pathfinder.start = this;
+
+        //deactivate the node
+
         if (BattleManager.availableNodes.Contains(this))
             BattleManager.availableNodes.Remove(this);
 
-        pathfinder.start = this;
         OnBecameInactive?.Invoke(this);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.GetComponent<AI>() == null)
+        Pathfinder pathfinder = collision.GetComponent<Pathfinder>();
+
+        if (pathfinder == null)
+            return;
+
+        if (characters.Contains(pathfinder))
+            characters.Remove(pathfinder);
+
+        //only reactivate if there are no more characters on this spot
+
+        if (characters.Count > 0)
             return;
 
         if (!BattleManager.availableNodes.Contains(this))
