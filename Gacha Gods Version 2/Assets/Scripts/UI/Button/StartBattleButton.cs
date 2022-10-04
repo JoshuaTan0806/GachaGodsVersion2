@@ -14,6 +14,6 @@ public class StartBattleButton : MonoBehaviour
         if (CharacterManager.ActiveCharacters.Count == 0)
             return;
 
-        UIManager.instance.SpawnTransition(() => GameManager.StartBattle());
+        TransitionManager.SpawnTransition(() => GameManager.StartBattle());
     }
 }

@@ -24,7 +24,6 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject battleLostPrefab;
     [SerializeField] GameObject gameWonPrefab;
     [SerializeField] GameObject gameLostPrefab;
-    [SerializeField] GameObject transitionPrefab; 
 
     public CharacterPreview CharacterPreviewPrefab => characterPreviewPrefab;
     [SerializeField] CharacterPreview characterPreviewPrefab;
@@ -109,15 +108,5 @@ public class UIManager : MonoBehaviour
         Instantiate(roundStartPrefab);
     }
 
-    public void SpawnTransition(UnityEvent unityEvent)
-    {
-        Transition t = Instantiate(transitionPrefab).GetComponent<Transition>();
-        t.Initialise(unityEvent);
-    }
 
-    public void SpawnTransition(Action action)
-    {
-        Transition t = Instantiate(transitionPrefab).GetComponent<Transition>();
-        t.Initialise(action);
-    }
 }

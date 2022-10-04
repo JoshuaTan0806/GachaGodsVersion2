@@ -14,6 +14,6 @@ public class SpawnTransitionButton : MonoBehaviour
 
     void SpawnTransition()
     {
-        UIManager.instance.SpawnTransition(unityEvent);
+        TransitionManager.SpawnTransition(unityEvent);
     }
 }

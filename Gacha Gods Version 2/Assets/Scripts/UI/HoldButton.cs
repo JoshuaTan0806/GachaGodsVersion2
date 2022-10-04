@@ -48,7 +48,7 @@ public class HoldButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
             {
                 timer = timeToHold;
                 isBeingHeld = false;
-                UIManager.instance.SpawnTransition(() => Execute());
+                TransitionManager.SpawnTransition(() => Execute());
             }
         }
     }

@@ -15,6 +15,6 @@ public class SwitchScenesButton : MonoBehaviour
 
     void SwitchScenes()
     {
-        UIManager.instance.SpawnTransition(() => SceneManager.LoadScene(SceneNumber));
+        TransitionManager.SpawnTransition(() => SceneManager.LoadScene(SceneNumber));
     }
 }
