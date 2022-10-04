@@ -35,6 +35,7 @@ public class BattleManager : MonoBehaviour
     {
         ClearBoard();
         SpawnBoard();
+        battleHasStarted = false;
     }
 
     private void OnEnable()
