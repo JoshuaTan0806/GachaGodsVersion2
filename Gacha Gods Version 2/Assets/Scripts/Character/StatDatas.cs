@@ -10,6 +10,7 @@ public class StatDatas : ScriptableObject
     public List<StatData> Stats => stats;
     [SerializeField, ReadOnly] List<StatData> stats;
 
+#if UNITY_EDITOR
     [Button]
     void AddStat()
     {
@@ -44,4 +45,5 @@ public class StatDatas : ScriptableObject
 
         DestroyImmediate(this, true);
     }
+#endif
 }

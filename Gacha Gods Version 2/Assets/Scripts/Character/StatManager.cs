@@ -32,6 +32,7 @@ public class StatManager : Factories.FactoryBase
         return newStat;
     }
 
+#if UNITY_EDITOR
     [Button]
     void DestroyStats()
     {
@@ -58,4 +59,5 @@ public class StatManager : Factories.FactoryBase
             stats.Add((Stat)i, stat);
         }
     }
+#endif
 }

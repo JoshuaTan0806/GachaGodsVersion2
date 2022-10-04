@@ -37,6 +37,7 @@ public class Mastery : ScriptableObject
     [ShowIf("MasteryType", MasteryType.Spell), SerializeField]
     List<AbilityData> spells;
 
+#if UNITY_EDITOR
     [Button]
     void Refresh()
     {
@@ -114,4 +115,6 @@ public class Mastery : ScriptableObject
             item.name = name + " " + item.Stat.ToString();
         }
     }
+
+#endif
 }

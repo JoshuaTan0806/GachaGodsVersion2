@@ -66,6 +66,7 @@ public class Trait : ScriptableObject
         return SetData[setNum];
     }
 
+#if UNITY_EDITOR
     [Button]
     void AddSetData()
     {
@@ -102,4 +103,5 @@ public class Trait : ScriptableObject
                 item.Value.name = "S" + item.Key.ToString();
         }
     }
+#endif
 }

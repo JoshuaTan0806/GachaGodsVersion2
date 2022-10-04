@@ -33,6 +33,14 @@ public class Character : ScriptableObject
         CharacterManager.AddCharacter(this);
     }
 
+    public void PlayThemeSong()
+    {
+        if (themeSong != null)
+            SoundManager.PlaySFX(themeSong);
+    }
+
+#if UNITY_EDITOR
+
     [Button]
     void Refresh()
     {
@@ -75,6 +83,18 @@ public class Character : ScriptableObject
         OnValidate();
     }
 
+    [Button]
+    public void CreateAppearance()
+    {
+        if (this.appearance != null)
+            return;
+
+        AppearanceData appearance = ScriptableObject.CreateInstance<AppearanceData>();
+        appearance.name = "Appearance";
+        this.appearance = appearance;
+        AssetDatabase.AddObjectToAsset(appearance, this);
+    }
+
     private void OnValidate()
     {
         for (int i = attacks.Count - 1; i >= 0; i--)
@@ -104,24 +124,5 @@ public class Character : ScriptableObject
             masteries[i].name = "M" + (i + 1);
         }
     }
-
-    [Button]
-    public void CreateAppearance()
-    {
-        if (this.appearance != null)
-            return;
-
-        AppearanceData appearance = ScriptableObject.CreateInstance<AppearanceData>();
-        appearance.name = "Appearance";
-        this.appearance = appearance;
-        AssetDatabase.AddObjectToAsset(appearance, this);
-    }
-
-    public void PlayThemeSong()
-    {
-        if (themeSong != null)
-            SoundManager.PlaySFX(themeSong);
-    }
-
-
+#endif
 }
