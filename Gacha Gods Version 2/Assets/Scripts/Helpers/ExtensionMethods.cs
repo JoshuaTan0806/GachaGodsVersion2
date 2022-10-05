@@ -407,4 +407,13 @@ public static class ExtensionMethods
             return false;
         }
     }
+
+    public static Color32 Randomise(this Color32 color, float alpha = 255)
+    {
+        color.r = (byte)UnityEngine.Random.Range(0, 255);
+        color.g = (byte)UnityEngine.Random.Range(0, 255);
+        color.b = (byte)UnityEngine.Random.Range(0, 255);
+        color.a = (byte)alpha;
+        return color;
+    }
 }

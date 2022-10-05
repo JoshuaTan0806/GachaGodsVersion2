@@ -7,7 +7,13 @@ using Sirenix.OdinInspector;
 public class Pathfinder : MonoBehaviour
 {
     [ReadOnly] public Node start;
-    [ReadOnly] public Node goal;
+    [ReadOnly] public List<Node> path = new();
+    Color32 color = new();
+
+    private void Awake()
+    {
+        color = color.Randomise();
+    }
 
     public Node FindTargetNode(Node goal)
     {
@@ -52,17 +58,28 @@ public class Pathfinder : MonoBehaviour
             current = came_from[current];
         }
 
+        //for gizmos
+        this.path = new List<Node>(path);
+
         path.Remove(start);
 
         if (path.Count > 1)
-        {
-            this.goal = path[^1];
             return path[^1];
-        }
         else
-        {
-            this.goal = start;
             return start;
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = color;
+        Gizmos.DrawSphere(transform.position, 0.1f);
+
+        for (int i = 0; i < path.Count; i++)
+        {
+            if (i > 0)
+                Gizmos.DrawLine(path[i - 1].transform.position, path[i].transform.position);
+            else
+                Gizmos.DrawLine(start.position, path[i].transform.position);
         }
     }
 }
